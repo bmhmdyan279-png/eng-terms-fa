@@ -68,9 +68,8 @@ not_in_nav: |
 nav:
   - 🏠 خانه: index.md
   - 📖 واژه‌نامه: terms/index.md
-  - 📚 کتاب واژگان: book-vocab.md
+  - 📚 واژگان کتاب: book-vocab.md
   - 🏗️ اصطلاحات ساختمان: construction-terms.md
-  - 📱 کد QR: qr.md
   - ✍️ مشارکت: contribute.md
   - 📄 درباره ما: about.md
   - 📝 ارجاع: citation.md
