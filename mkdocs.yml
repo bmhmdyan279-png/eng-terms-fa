@@ -68,7 +68,7 @@ not_in_nav: |
 nav:
   - 🏠 خانه: index.md
   - 📖 واژه‌نامه: terms/index.md
-  - 📚 واژگان کتاب: book-vocab.md
+  - 📚 واژگان کتاب آزمایش‌های فناوری بتن: book-vocab.md
   - 🏗️ اصطلاحات ساختمان: construction-terms.md
   - ✍️ مشارکت: contribute.md
   - 📄 درباره ما: about.md
