@@ -1,0 +1,49 @@
+name: پیشنهاد واژهٔ جدید
+description: یک اصطلاح مهندسی برای افزودن به فرهنگ پیشنهاد دهید (فرم ساده)
+title: "[واژه جدید]: "
+labels: ["term-suggestion", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        سپاس! اگر YAML آشناست، سریع‌ترین راه PR مستقیم است (راهنما: CONTRIBUTING.md).
+        در غیر این صورت این فرم کافی است — داوطلبان آن را به داده تبدیل می‌کنند.
+  - type: input
+    id: term_fa
+    attributes:
+      label: واژهٔ فارسی
+      placeholder: مثلاً: ویبره
+    validations:
+      required: true
+  - type: input
+    id: term_en
+    attributes:
+      label: معادل انگلیسی (در صورت اطمینان)
+      placeholder: مثلاً: vibration / compaction by vibrator
+    validations:
+      required: false
+  - type: dropdown
+    id: domain
+    attributes:
+      label: حوزه
+      options:
+        - فناوری بتن
+        - اصطلاحات ساختمانی
+        - مکانیک
+        - سایر
+    validations:
+      required: true
+  - type: textarea
+    id: definition
+    attributes:
+      label: تعریف یا توضیح کوتاه (اختیاری ولی ارزشمند)
+      placeholder: این اصطلاح دقیقاً یعنی چه و کجا به کار می‌رود؟
+    validations:
+      required: false
+  - type: input
+    id: source
+    attributes:
+      label: منبع (استاندارد/کتاب/تجربهٔ کارگاهی)
+      placeholder: مثلاً: ACI 318-19 یا تجربهٔ اجرایی
+    validations:
+      required: false

@@ -1,90 +1,113 @@
 #!/usr/bin/env python3
-"""
-پاکسازی و یکسان‌سازی data/terms.yaml
+"""پاکسازی غیرمخرب داده‌های شاردشده (data/terms/*.yaml).
+
+اقدامات (بدون حذف هیچ رکوردی — حذف خودکار تکراری‌ها در v1 ممنوع است):
+- نرمال‌سازی ی/ک عربی در term_fa و حذف فاصله‌های ابتدا/انتهای رشته‌ها
+- حذف کلیدهای مردهٔ v0 (standards, source, category, featured_book)
+- تبدیل references رشته‌ای به فهرست آبجکت‌های {type, code}
+
+قبل از نوشتن، اعتبارسنجی اسکما اجرا می‌شود؛ در صورت خطا فایل تغییر نمی‌کند.
+
+Usage:
+    python scripts/cleanup_terms.py [--dry-run]
 """
 
+import argparse
 import sys
 from pathlib import Path
 
-try:
-    import yaml
-except ImportError:
-    print("❌ PyYAML نصب نیست: pip install pyyaml")
-    sys.exit(1)
+import yaml
+
+from build_pages import DATA_DIR, load_all_terms, load_meta, normalize_persian, validate_terms
 
 
-def cleanup_terms():
-    data_file = Path("data/terms.yaml")
-    if not data_file.exists():
-        print("❌ data/terms.yaml یافت نشد")
-        return
+class NoAliasDumper(yaml.SafeDumper):
+    def ignore_aliases(self, data):
+        return True
 
-    # پشتیبان‌گیری
-    backup_file = Path("data/terms_backup.yaml")
-    backup_file.write_text(data_file.read_text(encoding="utf-8"), encoding="utf-8")
-    print(f"✅ پشتیبان در {backup_file} ذخیره شد")
 
-    with open(data_file, "r", encoding="utf-8") as f:
-        terms = yaml.safe_load(f)
+DEAD_KEYS = ("standards", "source", "category", "featured_book")
 
-    if not isinstance(terms, list):
-        print("❌ فایل معتبر نیست")
-        return
 
-    cleaned = []
-    seen_terms = set()
+def clean_record(record):
+    changed = 0
+    if "term_fa" in record:
+        new_fa = normalize_persian(str(record["term_fa"]).strip())
+        if new_fa != record["term_fa"]:
+            record["term_fa"] = new_fa
+            changed += 1
+    for key in list(record.keys()):
+        value = record[key]
+        if isinstance(value, str):
+            stripped = value.strip()
+            if stripped != value:
+                record[key] = stripped
+                changed += 1
+            if stripped == "" and key in ("term_fr", "term_de", "term_ar"):
+                record[key] = None
+                changed += 1
+        if key in DEAD_KEYS:
+            del record[key]
+            changed += 1
+    refs = record.get("references")
+    if isinstance(refs, list) and any(isinstance(r, str) for r in refs):
+        record["references"] = [
+            {"type": "book" if str(r).startswith("کتاب") else "standard", "code": str(r)}
+            if isinstance(r, str) else r
+            for r in refs
+        ]
+        changed += 1
+    elif isinstance(refs, str):
+        record["references"] = [{"type": "book" if refs.startswith("کتاب") else "standard", "code": refs}]
+        changed += 1
+    return record, changed
 
-    for term in terms:
-        if not isinstance(term, dict):
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dry-run", action="store_true")
+    args = parser.parse_args()
+
+    total_changed = 0
+    for path in sorted(DATA_DIR.glob("*.yaml")):
+        if path.name.startswith("_"):
+            continue
+        doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        terms = doc.get("terms") or []
+        file_changed = 0
+        for index, record in enumerate(terms):
+            terms[index], changed = clean_record(record)
+            file_changed += changed
+
+        if not file_changed:
+            print(f"ℹ️  {path.name}: تغییری لازم نبود")
             continue
 
-        term_fa = term.get("term_fa", "").strip()
-        if not term_fa:
-            continue
+        if not args.dry_run:
+            header = "\n".join(
+                line for line in path.read_text(encoding="utf-8").splitlines()
+                if line.startswith("#")
+            )
+            body = yaml.dump(
+                {"schema": doc.get("schema", "term-v1"), "terms": terms},
+                Dumper=NoAliasDumper, allow_unicode=True, sort_keys=False,
+                width=4096, default_flow_style=False,
+            )
+            path.write_text(header + "\n" + body, encoding="utf-8")
+        total_changed += file_changed
+        print(f"✅ {path.name}: {file_changed} اصلاح")
 
-        # نرمال‌سازی
-        term["term_fa"] = term_fa.replace("ي", "ی").replace("ك", "ک")
-
-        # یکسان‌سازی فیلدهای منبع
-        references = term.get("references", [])
-        standards = term.get("standards", "")
-        source = term.get("source", "")
-
-        # تبدیل همه به یک لیست references
-        if isinstance(references, str):
-            references = [references] if references else []
-
-        if standards and standards not in references:
-            references.append(standards)
-
-        if source and source not in references:
-            references.append(source)
-
-        term["references"] = references
-        term.pop("standards", None)
-        term.pop("source", None)
-
-        # حذف فیلدهای اضافی
-        if "featured_book" in term:
-            term["featured_book"] = bool(term["featured_book"])
-
-        # بررسی تکراری
-        key = term_fa.lower()
-        if key in seen_terms:
-            print(f"⚠️  تکراری حذف شد: {term_fa}")
-            continue
-
-        seen_terms.add(key)
-        cleaned.append(term)
-
-    # ذخیره فایل تمیز
-    with open(data_file, "w", encoding="utf-8") as f:
-        yaml.dump(
-            cleaned, f, allow_unicode=True, sort_keys=False, default_flow_style=False
-        )
-
-    print(f"✅ {len(cleaned)} واژه تمیز ذخیره شد (از {len(terms)} واژه اولیه)")
+    # sanity: دادهٔ تمیزشده همچنان باید اعتبارسنجی شود
+    records = load_all_terms()
+    errors, _ = validate_terms(records, load_meta())
+    if errors:
+        print(f"✗ پس از پاکسازی {len(errors)} خطای اعتبارسنجی — بازبینی کنید:", file=sys.stderr)
+        for e in errors[:10]:
+            print("  ", e, file=sys.stderr)
+        return 1
+    print(f"✓ پاکسازی کامل شد ({total_changed} اصلاح) و اعتبارسنجی سبز است")
+    return 0
 
 
 if __name__ == "__main__":
-    cleanup_terms()
+    sys.exit(main())

@@ -1,0 +1,46 @@
+name: اصلاح ترجمه
+description: معادل نادرست یا مشکوک در یکی از زبان‌ها گزارش دهید
+title: "[Translation]: "
+labels: ["translation-fix", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ترجمه‌های ماشینی بزرگ‌ترین تهدید اعتبار این فرهنگ‌اند — گزارش شما مستقیم آسیب را متوقف می‌کند. 🙏
+  - type: input
+    id: term
+    attributes:
+      label: واژهٔ فارسی یا slug مدخل
+      placeholder: مثلاً: پوتر یا concrete-beam
+    validations:
+      required: true
+  - type: dropdown
+    id: lang
+    attributes:
+      label: زبان معادل مشکل‌دار
+      options:
+        - English
+        - Français
+        - Deutsch
+        - العربية
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: معادل فعلی (اشتباه/مشکوک)
+    validations:
+      required: true
+  - type: input
+    id: proposed
+    attributes:
+      label: پیشنهاد شما
+    validations:
+      required: false
+  - type: textarea
+    id: basis
+    attributes:
+      label: مستندات پیشنهاد (استاندارد، فرهنگ، منبع مکتوب)
+      description: پیشنهاد بدون منبع به‌عنوان «نیازمند بازبینی» برچسب می‌خورد.
+    validations:
+      required: false

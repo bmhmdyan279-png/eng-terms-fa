@@ -4,7 +4,7 @@
 
 این پروژه یک **دیکشنری تخصصی مهندسی** با تمرکز بر واژگان فنی و علمی در حوزه‌های **عمران، مکانیک، معماری و فناوری بتن** است.
 
-## Current Status (v0.1 - Work in Progress)
+## Current Status (v1.0 — infrastructure release; content review ongoing)
 - ✅ Data-driven architecture (YAML → MkDocs)
 - ✅ CI/CD pipeline
 - ⚠️  Content review in progress

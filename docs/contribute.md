@@ -49,4 +49,4 @@
 - slug منحصر به فرد باشد
 
 ## ارتباط
-سوالی دارید؟ [Issue جدید](https://github.com/bmhmdyan279-png/Eng-dict/issues) ایجاد کنید.
+سوالی دارید؟ [Issue جدید](https://github.com/bmhmdyan279-png/eng-terms-fa/issues) ایجاد کنید.

@@ -1,0 +1,50 @@
+name: گزارش خطا
+description: مشکلی در سایت، داده، اسکریپت‌ها یا CI پیدا کرده‌اید
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        پیش از ثبت، جستجو کنید که گزارش تکراری نباشد. برای ترجمهٔ اشتباه از قالب translation-fix استفاده کنید.
+  - type: dropdown
+    id: where
+    attributes:
+      label: محل مشکل
+      options:
+        - وب‌سایت (نمایش/جستجو/PWA)
+        - داده (ساختار/اسکیما)
+        - اسکریپت‌ها (build/validate/export)
+        - CI/CD
+        - مستندات
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: چه اتفاقی افتاد؟ (مراحل بازتولید)
+      placeholder: |
+        1. رفتم به ...
+        2. روی ... کلیک کردم
+        3. مشاهده شد ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: انتظار چه بود؟
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: نشانی صفحه/مدخل مرتبط (در صورت وجود)
+    validations:
+      required: false
+  - type: input
+    id: env
+    attributes:
+      label: مرورگر/سیستم یا نسخهٔ پایتون
+      placeholder: Firefox 130 / Windows 11 یا Python 3.12
+    validations:
+      required: false
