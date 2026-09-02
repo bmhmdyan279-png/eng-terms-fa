@@ -8,6 +8,7 @@ theme:
   name: material
   language: fa
   direction: rtl
+  custom_dir: docs/overrides
   font:
     text: Vazirmatn
     code: Fira Code
@@ -61,8 +62,10 @@ extra_css:
 extra_javascript:
   - assets/js/search-init.js
   - assets/js/term-filters.js
+  - assets/js/pwa-register.js
 
 extra:
+  manifest: manifest.webmanifest
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/bmhmdyan279-png/eng-terms-fa

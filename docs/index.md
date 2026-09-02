@@ -21,7 +21,7 @@ description: فرهنگ واژگان تخصصی مهندسی — معادل دق
 
 ## جستجوی واژه { #search }
 
-<div id="pagefind-ui" dir="rtl">در حال آماده‌سازی جستجو…</div>
+<div id="pagefind-ui" dir="rtl" role="search" aria-label="جستجوی واژگان فرهنگ"></div>
 
 ## بخش‌های اصلی
 

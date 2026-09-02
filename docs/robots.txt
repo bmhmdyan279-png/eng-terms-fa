@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bmhmdyan279-png.github.io/eng-terms-fa/sitemap.xml

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+
+  {# ---- جهت سند برای <html> (قالب متریال فقط روی body می‌گذارد) ---- #}
+  <script>document.documentElement.setAttribute("dir", "rtl");</script>
+
+  {# در صفحهٔ 404 متغیر page ممکن است None باشد #}
+  {% set page_title = page.title if page and page.title else config.site_name %}
+  {% set page_desc = (page.meta.description if page and page.meta and page.meta.description else config.site_description) %}
+  {% set page_url = page.canonical_url if page and page.canonical_url else config.site_url %}
+
+  {# ---- Open Graph ---- #}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="{{ page_title | e }} | {{ config.site_name }}">
+  <meta property="og:description" content="{{ page_desc | e }}">
+  <meta property="og:url" content="{{ page_url }}">
+  <meta property="og:image" content="{{ config.site_url }}assets/icon.svg">
+
+  {# ---- Twitter Cards ---- #}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page_title | e }} | {{ config.site_name }}">
+  <meta name="twitter:description" content="{{ page_desc | e }}">
+  <meta name="twitter:image" content="{{ config.site_url }}assets/icon.svg">
+
+  {# ---- PWA / تم ---- #}
+  <meta name="theme-color" content="#3f51b5">
+  <link rel="manifest" href="{{ (config.extra.manifest or 'manifest.webmanifest') | url }}">
+  <link rel="apple-touch-icon" href="{{ 'assets/icons/icon-192.png' | url }}">
+{% endblock %}

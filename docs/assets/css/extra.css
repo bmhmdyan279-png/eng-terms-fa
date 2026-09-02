@@ -133,12 +133,30 @@ ul.terms-list li.term-row {
     padding: 0.1rem 0.55rem;
     margin-inline-start: auto;
 }
-.term-status-draft { background: rgba(255, 193, 7, 0.16); color: #b98900; }
-.term-status-reviewed { background: rgba(76, 175, 80, 0.16); color: #2e7d32; }
-.term-status-published { background: rgba(33, 150, 243, 0.16); color: #1565c0; }
+.term-status-draft { background: rgba(255, 193, 7, 0.16); color: #664d00; }
+.term-status-reviewed { background: rgba(76, 175, 80, 0.16); color: #1b5e20; }
+.term-status-published { background: rgba(33, 150, 243, 0.16); color: #0d47a1; }
 [data-md-color-scheme="slate"] .term-status-draft { color: #ffd75e; }
 [data-md-color-scheme="slate"] .term-status-reviewed { color: #81c784; }
 [data-md-color-scheme="slate"] .term-status-published { color: #64b5f6; }
 
 /* جستجوی Pagefind در حالت تاریک */
 [data-md-color-scheme="slate"] .pagefind-ui { --pagefind-ui-text: #e6e6e6; --pagefind-ui-background: var(--md-default-bg-color); }
+
+/* ============ دسترس‌پذیری (WCAG AA) ============ */
+/* کنتراست نشان‌ها:
+   روشن : #664d00 ~7.5:1 | #1b5e20 ~7:1 | #0d47a1 ~8.9:1
+   تاریک: #ffd75e ~10:1  | #81c784 ~7:1  | #64b5f6 ~7:1  */
+:focus-visible {
+    outline: 0.1rem solid var(--md-accent-fg-color);
+    outline-offset: 0.1rem;
+}
+.md-button:focus-visible,
+.term-filters select:focus-visible,
+#pagefind-ui :focus-visible {
+    outline: 0.12rem solid var(--md-accent-fg-color);
+    outline-offset: 0.15rem;
+}
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+}

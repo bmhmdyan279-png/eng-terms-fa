@@ -41,5 +41,29 @@ jobs:
       - name: Build Pagefind search index
         run: npx --yes pagefind --site site/
 
+      - name: Lighthouse audit (min 90)
+        run: |
+          python -m http.server 8765 --directory site &
+          SERVER_PID=$!
+          sleep 3
+          npx --yes lighthouse http://127.0.0.1:8765/ \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=lighthouse-report.json \
+            --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage" \
+            --quiet --max-wait-for-load=45000
+          kill $SERVER_PID || true
+          node -e '
+            const report = require("./lighthouse-report.json");
+            const threshold = 0.9;
+            let failed = false;
+            for (const [name, cat] of Object.entries(report.categories)) {
+              const score = Math.round((cat.score || 0) * 100);
+              console.log(`Lighthouse ${name}: ${score}`);
+              if ((cat.score || 0) < threshold) failed = true;
+            }
+            if (failed) { console.error("Lighthouse audit failed: score(s) below 90"); process.exit(1); }
+            console.log("Lighthouse audit passed (all categories >= 90)");
+          '
+
       - name: pre-commit
         uses: pre-commit/action@v3.0.1

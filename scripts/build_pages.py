@@ -30,6 +30,9 @@ DOCS_TERMS_DIR = ROOT / "docs" / "terms"
 
 DEFINITION_TARGET_LENGTH = 50
 
+SITE_URL = "https://bmhmdyan279-png.github.io/eng-terms-fa/"
+TERM_SET_NAME = "فرهنگ واژگان تخصصی مهندسی"
+
 POS_FA = {"noun": "اسم", "verb": "فعل", "adjective": "صفت", "phrase": "عبارت"}
 REF_TYPE_FA = {"standard": "استاندارد", "book": "کتاب", "other": "سایر"}
 STATUS_FA = {"draft": "پیش‌نویس", "reviewed": "بازبینی‌شده", "published": "منتشرشده"}
@@ -40,6 +43,31 @@ def normalize_persian(text: str) -> str:
         return ""
     text = text.replace("ي", "ی").replace("ك", "ک")
     return unicodedata.normalize("NFKC", text)
+
+
+def render_jsonld(record) -> str:
+    """Build a schema.org DefinedTerm JSON-LD block for a term page."""
+    import json as _json
+
+    definition = str(record.get("definition_fa") or "").strip()
+    payload = {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": normalize_persian(record["term_fa"]),
+        "alternateName": str(record.get("term_en") or "").strip(),
+        "termCode": record["slug"],
+        "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": TERM_SET_NAME,
+            "url": SITE_URL,
+        },
+        "description": definition,
+        "inLanguage": ["fa", "en"],
+        "url": f"{SITE_URL}terms/{record['slug']}/",
+    }
+    body = _json.dumps(payload, ensure_ascii=False, indent=2)
+    body = body.replace("</", "<\\/")  # never allow </script> injection
+    return f'<script type="application/ld+json">\n{body}\n</script>\n'
 
 
 def fail(message: str):
@@ -152,6 +180,8 @@ def render_pages(records, meta):
             f"slug: {slug}\n---\n\n# {term_fa}\n"
         )
 
+        page += render_jsonld(record)
+
         if status == "draft":
             page += '\n!!! warning "وضعیت: پیش‌نویس"\n    این مدخل هنوز بازبینی تخصصی نشده است.\n'
         elif status == "reviewed":
@@ -169,10 +199,10 @@ def render_pages(records, meta):
 ## معادل‌های واژه
 | زبان | معادل |
 |------|-------|
-| **انگلیسی** | {term_en} |
-| **فرانسوی** | {term_fr} |
-| **آلمانی** | {term_de} |
-| **عربی** | {term_ar} |
+| **انگلیسی** | <span dir="ltr" lang="en">{term_en}</span> |
+| **فرانسوی** | <span dir="ltr" lang="fr">{term_fr}</span> |
+| **آلمانی** | <span dir="ltr" lang="de">{term_de}</span> |
+| **عربی** | <span dir="rtl" lang="ar">{term_ar}</span> |
 </div>
 ## تعریف
 {definition}
@@ -267,7 +297,7 @@ def render_index(records, meta):
             f' data-langs="{esc(" ".join(langs))}"'
             f' data-fa="{esc(fa)}" data-en="{esc(en)}">'
             f'<a href="./{esc(record["slug"])}.md">{esc(fa)}</a>'
-            f' <span class="term-en">{esc(en)}</span>'
+            f' <span class="term-en" dir="ltr" lang="en">{esc(en)}</span>'
             f' <span class="term-domain">{esc(domain_labels)}</span>'
             f' <span class="term-status term-status-{esc(status)}">{esc(status_label)}</span>'
             "</li>"

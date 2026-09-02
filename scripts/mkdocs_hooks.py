@@ -70,3 +70,62 @@ def on_page_content(html, page, config, files):
         stats_html = render_stats_html(_load_terms())
         html = STATS_MARKERS.sub(stats_html, html)
     return f'<div data-pagefind-body>{html}</div>'
+
+
+def _xml_escape(text: str) -> str:
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
+def collect_pages(site_dir: Path) -> list:
+    """Return (path, priority, changefreq) for every directory-style page."""
+    pages = []
+    for html_file in sorted(site_dir.rglob("index.html")):
+        rel = html_file.relative_to(site_dir)
+        path = rel.parent.as_posix()
+        if path == ".":
+            pages.append(("", "1.0", "weekly"))
+        elif path.startswith("terms"):
+            pages.append((path + "/", "0.8", "weekly"))
+        else:
+            pages.append((path + "/", "0.6", "monthly"))
+    return pages
+
+
+def write_sitemap(site_dir: Path, site_url: str) -> Path:
+    """Generate sitemap.xml with <lastmod> (file mtime) and <changefreq>."""
+    from datetime import datetime, timezone
+
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>']
+    lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    for path, priority, changefreq in collect_pages(site_dir):
+        html_file = site_dir / path / "index.html"
+        if not html_file.exists():
+            continue
+        lastmod = datetime.fromtimestamp(html_file.stat().st_mtime, tz=timezone.utc).strftime("%Y-%m-%d")
+        loc = site_url + path
+        if not loc.endswith("/"):
+            loc += "/"
+        lines.append(
+            "  <url>\n"
+            f"    <loc>{_xml_escape(loc)}</loc>\n"
+            f"    <lastmod>{lastmod}</lastmod>\n"
+            f"    <changefreq>{changefreq}</changefreq>\n"
+            f"    <priority>{priority}</priority>\n"
+            "  </url>"
+        )
+    lines.append("</urlset>")
+    sitemap_path = site_dir / "sitemap.xml"
+    sitemap_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return sitemap_path
+
+
+def on_post_build(config, **kwargs):
+    site_dir = Path(config["site_dir"])
+    site_url = (config.get("site_url") or "").rstrip("/") + "/"
+    sitemap = write_sitemap(site_dir, site_url)
+    print(f"sitemap.xml written with {len(collect_pages(site_dir))} urls")
