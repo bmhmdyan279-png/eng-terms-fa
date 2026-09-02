@@ -187,3 +187,24 @@ ul.terms-list li.term-row {
 .totd-term:hover { color: var(--md-accent-fg-color); }
 .totd-en { color: var(--md-default-fg-color--light); }
 .totd-def { color: var(--md-default-fg-color--light); font-size: 0.92rem; margin: 0.3rem 0 0; }
+
+/* ============ فونت خودمیزبان (بدون Google Fonts — عملکرد بهتر و آفلاین) ============ */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/vazirmatn-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/vazirmatn-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --md-text-font: "Vazirmatn", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --md-code-font: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+}
+body { font-family: var(--md-text-font); }

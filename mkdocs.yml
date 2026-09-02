@@ -8,10 +8,8 @@ theme:
   name: material
   language: fa
   direction: rtl
+  font: false
   custom_dir: docs/overrides
-  font:
-    text: Vazirmatn
-    code: Fira Code
   palette:
     - scheme: default
       primary: indigo

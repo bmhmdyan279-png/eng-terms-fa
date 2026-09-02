@@ -86,7 +86,7 @@ def render_totd_html(terms, day=None) -> str:
             str(t.get("slug", "")),
             str(t.get("term_fa", "")),
             str(t.get("term_en", "")),
-            str(t.get("definition_fa", "")),
+            str(t.get("definition_fa", ""))[:140],
         ]
         for t in terms
     ]

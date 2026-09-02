@@ -55,9 +55,9 @@ jobs:
 
       - name: Lighthouse audit (min 90)
         run: |
-          python -m http.server 8765 --directory site &
+          python tools/lh_server.py site 8765 &
           SERVER_PID=$!
-          sleep 3
+          sleep 2
           npx --yes lighthouse http://127.0.0.1:8765/ \
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json --output-path=lighthouse-report.json \
