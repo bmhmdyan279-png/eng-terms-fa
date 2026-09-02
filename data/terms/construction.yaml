@@ -1,0 +1,1192 @@
+# اصطلاحات ساختمانی و کارگاهی — برداشت‌شده از data/terms.yaml سابق (شکل‌بندی جدید از نسخهٔ ۰٫۲)
+# هر رکورد باید با schemas/term-v1.schema.json معتبر باشد.
+schema: term-v1
+terms:
+- id: sealing
+  term_fa: آب بندی
+  term_en: sealing
+  term_fr: scellage
+  term_de: Versiegelung
+  term_ar: ختم
+  pos: noun
+  domain:
+  - construction
+  definition_fa: جلوگیری از نفوذ آب یا رطوبت
+  status: draft
+  slug: sealing
+- id: pointing-mortar
+  term_fa: آب چین
+  term_en: pointing mortar
+  term_fr: Eau chinoise
+  term_de: Chinesisches Wasser
+  term_ar: المياه الصينية
+  pos: noun
+  domain:
+  - construction
+  definition_fa: دوغاب ریزی آجرکاری‌ها با ملات ماسه و سیمان یا مانند آن
+  status: draft
+  slug: pointing-mortar
+- id: square-brick
+  term_fa: آجر چهارگوش
+  term_en: Square brick
+  term_fr: Brique carrée
+  term_de: Quadratischer Ziegelstein
+  term_ar: لبنة مربعة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آجر مربع شکل
+  status: draft
+  slug: square-brick
+- id: three-quarter-brick
+  term_fa: آجر سه قدی
+  term_en: three-quarter brick
+  term_fr: Brique à trois hauteurs
+  term_de: Dreistöckiger Ziegelstein
+  term_ar: الطوب بثلاثة ارتفاعات
+  pos: noun
+  domain:
+  - construction
+  definition_fa: 3/4 آجر قزاقی
+  status: draft
+  slug: three-quarter-brick
+- id: bullnose-brick
+  term_fa: آجر فارسی بُر
+  term_en: bullnose brick
+  term_fr: Brique persane Bor
+  term_de: Bor persischer Ziegelstein
+  term_ar: بور الطوب الفارسي
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آجر لب پخ
+  status: draft
+  slug: bullnose-brick
+- id: corner-brick
+  term_fa: آجر نبشی
+  term_en: corner brick
+  term_fr: Ne pas briquer
+  term_de: Nicht mauern
+  term_ar: لا لبنة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آجر که در نبش دیوار به کار می رود
+  status: draft
+  slug: corner-brick
+- id: header-brick
+  term_fa: آجر نره
+  term_en: header brick
+  term_fr: Ne sois pas une brique
+  term_de: Sei kein Ziegelstein
+  term_ar: لا تكن لبنة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آجرهایی که طول یا عرض عمودی و افقی پهلوی یکدیگر قرار گیرند
+  status: draft
+  slug: header-brick
+- id: f-bar-bender
+  term_fa: آچار F
+  term_en: F-bar bender
+  term_fr: Cornichon F
+  term_de: Pickle F
+  term_ar: مخلل ف
+  pos: noun
+  domain:
+  - construction
+  definition_fa: وسیله ای به شکل F برای خم کردن میلگرد (آرماتوربندی)
+  status: draft
+  slug: f-bar-bender
+- id: asphalt
+  term_fa: آسفالت
+  term_en: asphalt
+  term_fr: asphalte
+  term_de: Asphalt
+  term_ar: أسفلت
+  pos: noun
+  domain:
+  - construction
+  definition_fa: شن و ماسه و قیر پخته شده
+  status: draft
+  slug: asphalt
+- id: burnt-asphalt
+  term_fa: آسفالت سوخته
+  term_en: Burnt asphalt
+  term_fr: Asphalte brûlé
+  term_de: Verbrannter Asphalt
+  term_ar: الأسفلت المحروق
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آسفالت بدون چسبندگی
+  status: draft
+  slug: burnt-asphalt
+- id: lime-bloom
+  term_fa: آلوئک
+  term_en: lime bloom
+  term_fr: Aloy
+  term_de: Aloy
+  term_ar: ألوي
+  pos: noun
+  domain:
+  - construction
+  definition_fa: لب پر شدن آجر به وسیله آهک
+  status: draft
+  slug: lime-bloom
+- id: pendant
+  term_fa: آویز
+  term_en: pendant
+  term_fr: pendentif
+  term_de: Anhänger
+  term_ar: قلادة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: در سقف تيرچه بلوك
+  status: draft
+  slug: pendant
+- id: embedded-steel
+  term_fa: آهن گُم
+  term_en: embedded steel
+  term_fr: sont perdus
+  term_de: sind verloren
+  term_ar: ضائعة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آهن سقف که روی آنها با آجر پوشانده اند
+  status: draft
+  slug: embedded-steel
+- id: spur
+  term_fa: اسپر
+  term_en: Spur
+  term_fr: Éperon
+  term_de: Sporn
+  term_ar: حفز
+  pos: noun
+  domain:
+  - construction
+  definition_fa: جرزهای طرفین یک تاقی یا قوس بالای در
+  status: draft
+  slug: spur
+- id: elasticity
+  term_fa: الاستیسیته
+  term_en: elasticity
+  term_fr: élasticité
+  term_de: Elastizität
+  term_ar: مرونة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: کشسانی ، لَم
+  status: draft
+  slug: elasticity
+- id: cramp
+  term_fa: اسکوپ
+  term_en: cramp
+  term_fr: Scoop
+  term_de: Scoop
+  term_ar: مغرفة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: میخ سر کج
+  status: draft
+  slug: cramp
+- id: aspel
+  term_fa: اشپیل
+  term_en: Aspel
+  term_fr: Tremble
+  term_de: Espe
+  term_ar: أسبن
+  pos: noun
+  domain:
+  - construction
+  definition_fa: میله ای که از شکاف عبور می کند
+  status: draft
+  slug: aspel
+- id: drop
+  term_fa: افت
+  term_en: drop
+  term_fr: baisse
+  term_de: fallen
+  term_ar: يسقط
+  pos: noun
+  domain:
+  - construction
+  definition_fa: نشست
+  status: draft
+  slug: drop
+- id: exposure
+  term_fa: اکسپوزه
+  term_en: Exposure
+  term_fr: Exposition
+  term_de: Belichtung
+  term_ar: التعرض
+  pos: noun
+  domain:
+  - construction
+  definition_fa: فرم ، نمایش ، حالت
+  status: draft
+  slug: exposure
+- id: orlip
+  term_fa: اورلپ
+  term_en: Orlip
+  term_fr: Orlip
+  term_de: Orlip
+  term_ar: أورليب
+  pos: noun
+  domain:
+  - construction
+  definition_fa: پوشش
+  status: draft
+  slug: orlip
+- id: isolation
+  term_fa: ایزولاسیون
+  term_en: Isolation
+  term_fr: Isolement
+  term_de: Isolierung
+  term_ar: عزل
+  pos: noun
+  domain:
+  - construction
+  definition_fa: عایق ، آب بندی
+  status: draft
+  slug: isolation
+- id: isolated
+  term_fa: ایزوله
+  term_en: isolated
+  term_fr: isolé
+  term_de: isoliert
+  term_ar: معزول
+  pos: adjective
+  domain:
+  - construction
+  definition_fa: عایق
+  status: draft
+  slug: isolated
+- id: pillow
+  term_fa: بالشتک
+  term_en: pillow
+  term_fr: oreiller
+  term_de: Kissen
+  term_ar: وسادة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آجر یا قطعه بتنی که زیر سر تیر آهن با مصالح پوششی دیگر قرار می دهند
+  status: draft
+  slug: pillow
+- id: blockage
+  term_fa: بلوکاژ
+  term_en: Blockage
+  term_fr: Obstruction
+  term_de: Blockierung
+  term_ar: انسداد
+  pos: noun
+  domain:
+  - construction
+  definition_fa: مراحل کف سازی
+  status: draft
+  slug: blockage
+- id: brick-block
+  term_fa: بند آجر
+  term_en: Brick block
+  term_fr: Bloc de brique
+  term_de: Ziegelblock
+  term_ar: كتلة من الطوب
+  pos: noun
+  domain:
+  - construction
+  definition_fa: قطعه آجری که فاصله دو آجر را در سقف پُر می کند
+  status: draft
+  slug: brick-block
+- id: clavicle-strap
+  term_fa: بند کلوکی
+  term_en: Clavicle strap
+  term_fr: Sangle de clavicule
+  term_de: Schlüsselbeinband
+  term_ar: حزام الترقوة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: قطعه آجری است به اندازه کلوک
+  status: draft
+  slug: clavicle-strap
+- id: springing
+  term_fa: پاتاق
+  term_en: springing
+  term_fr: Pagode
+  term_de: Pagode
+  term_ar: باغودا
+  pos: noun
+  domain:
+  - construction
+  definition_fa: شروع تاق از روی پایه با دیوار
+  status: draft
+  slug: springing
+- id: broken-brick
+  term_fa: پاره آجر
+  term_en: broken brick
+  term_fr: brique cassée
+  term_de: gebrochener Ziegelstein
+  term_ar: الطوب المكسور
+  pos: noun
+  domain:
+  - construction
+  definition_fa: قطعات مختلف آجر یا آجرهای شکسته
+  status: draft
+  slug: broken-brick
+- id: passing
+  term_fa: پاسنگ
+  term_en: Passing
+  term_fr: Passage
+  term_de: Vorbeigehen
+  term_ar: تمرير
+  pos: noun
+  domain:
+  - construction
+  definition_fa: پاخوری پای در یا دیوار
+  status: draft
+  slug: passing
+- id: pakar
+  term_fa: پاکار
+  term_en: Pakar
+  term_fr: Expert
+  term_de: Experte
+  term_ar: خبير
+  pos: noun
+  domain:
+  - construction
+  definition_fa: محل شروع قوس
+  status: draft
+  slug: pakar
+- id: care
+  term_fa: پالانه
+  term_en: care
+  term_fr: soins
+  term_de: Pflege
+  term_ar: رعاية
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آجر کاری که مانند فرش آجر بعد از ساختن سقف انجام می شود
+  status: draft
+  slug: care
+- id: chamfer
+  term_fa: پخ
+  term_en: chamfer
+  term_fr: chanfreiner
+  term_de: Fase
+  term_ar: الشطب
+  pos: noun
+  domain:
+  - construction
+  definition_fa: گوشه از آجر را فارسی بُر کردن یا در زاویه دیوارها ماهیچه بکاربردن
+  status: draft
+  slug: chamfer
+- id: behind-the-arm
+  term_fa: پشت بغل
+  term_en: behind the arm
+  term_fr: derrière le bras
+  term_de: hinter dem Arm
+  term_ar: خلف الذراع
+  pos: noun
+  domain:
+  - construction
+  definition_fa: لچکی بالای قوس
+  status: draft
+  slug: behind-the-arm
+- id: back-strap
+  term_fa: پشت بند
+  term_en: back strap
+  term_fr: sangle arrière
+  term_de: Rückengurt
+  term_ar: حزام الظهر
+  pos: noun
+  domain:
+  - construction
+  definition_fa: قطعات که پشت تخته های قاب میخ می کنند
+  status: draft
+  slug: back-strap
+- id: ripe
+  term_fa: پکافته
+  term_en: ripe
+  term_fr: mûr
+  term_de: reif
+  term_ar: ناضجة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: دیوار تیغه ای که به دیوار اصلی چسبیده است
+  status: draft
+  slug: ripe
+- id: plate
+  term_fa: پلیت
+  term_en: plate
+  term_fr: plaque
+  term_de: Platte
+  term_ar: طبق
+  pos: noun
+  domain:
+  - construction
+  definition_fa: ورق
+  status: draft
+  slug: plate
+- id: to-pump
+  term_fa: پمپ کردن
+  term_en: to pump
+  term_fr: pomper
+  term_de: pumpen
+  term_ar: لضخ
+  pos: verb
+  domain:
+  - construction
+  definition_fa: با فشار حرکت دادن
+  status: draft
+  slug: to-pump
+- id: concrete-beam
+  term_fa: پوتر
+  term_en: concrete beam
+  term_fr: potier
+  term_de: Töpfer
+  term_ar: الخزاف
+  pos: noun
+  domain:
+  - construction
+  definition_fa: تیر بتنی
+  status: draft
+  slug: concrete-beam
+- id: sap-skin
+  term_fa: پوست ساپ
+  term_en: sap skin
+  term_fr: peau de sève
+  term_de: Safthaut
+  term_ar: جلد النسغ
+  pos: noun
+  domain:
+  - construction
+  definition_fa: سمباده
+  status: draft
+  slug: sap-skin
+- id: shell
+  term_fa: پوسته
+  term_en: shell
+  term_fr: coquille
+  term_de: Hülse
+  term_ar: صدَفَة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: روکشی است که روی آجر کاری ها یا در جاهای مختلف ساختمان بکار می رود
+  status: draft
+  slug: shell
+- id: pistol
+  term_fa: پیستوله
+  term_en: pistol
+  term_fr: pistolet
+  term_de: Pistole
+  term_ar: مسدس
+  pos: noun
+  domain:
+  - construction
+  definition_fa: دستگاه پاشنده مواد
+  status: draft
+  slug: pistol
+- id: arch-crown
+  term_fa: تاج قوس
+  term_en: Arch crown
+  term_fr: Couronne en arc
+  term_de: Bogenkrone
+  term_ar: تاج القوس
+  pos: noun
+  domain:
+  - construction
+  definition_fa: بالای قوس
+  status: draft
+  slug: arch-crown
+- id: to-darken
+  term_fa: تاریک کردن
+  term_en: to darken
+  term_fr: assombrir
+  term_de: verdunkeln
+  term_ar: لتغميق
+  pos: verb
+  domain:
+  - construction
+  definition_fa: آجر کاری سقف را به اتمام رساندن
+  status: draft
+  slug: to-darken
+- id: boarding
+  term_fa: تخته شدن
+  term_en: Boarding
+  term_fr: Embarquement
+  term_de: Einsteigen
+  term_ar: الصعود
+  pos: verb
+  domain:
+  - construction
+  definition_fa: به انتها رساندن دیوار ، پایان دیوار چینی
+  status: draft
+  slug: boarding
+- id: tamper
+  term_fa: تخماق
+  term_en: tamper
+  term_fr: Toxique
+  term_de: Giftig
+  term_ar: سامة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: کوبه سنگین
+  status: draft
+  slug: tamper
+- id: traverse
+  term_fa: تراورس
+  term_en: traverse
+  term_fr: traverser
+  term_de: Traverse
+  term_ar: اجتياز
+  pos: noun
+  domain:
+  - construction
+  definition_fa: تخته های قطور و عریض
+  status: draft
+  slug: traverse
+- id: contact-him
+  term_fa: تماسه
+  term_en: Contact him
+  term_fr: Contactez-le
+  term_de: Kontaktieren Sie ihn
+  term_ar: اتصل به
+  pos: noun
+  domain:
+  - construction
+  definition_fa: وسیله اجرای دیوار کله راسته
+  status: draft
+  slug: contact-him
+- id: tension
+  term_fa: تنش
+  term_en: tension
+  term_fr: tension
+  term_de: Spannung
+  term_ar: توتر
+  pos: noun
+  domain:
+  - construction
+  definition_fa: تنیدن
+  status: draft
+  slug: tension
+- id: get-stuck
+  term_fa: تنگ افتادن
+  term_en: get stuck
+  term_fr: rester coincé
+  term_de: stecken bleiben
+  term_ar: تتعثر
+  pos: verb
+  domain:
+  - construction
+  definition_fa: درگیر شدن ، مهار شدن
+  status: draft
+  slug: get-stuck
+- id: a-ball
+  term_fa: توپی
+  term_en: a ball
+  term_fr: une balle
+  term_de: ein Ball
+  term_ar: كرة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: شی کروی پلاستیک
+  status: draft
+  slug: a-ball
+- id: fancy-lace
+  term_fa: توری فنسی
+  term_en: fancy lace
+  term_fr: dentelle fantaisie
+  term_de: ausgefallene Spitze
+  term_ar: الدانتيل يتوهم
+  pos: noun
+  domain:
+  - construction
+  definition_fa: کلاف بندی مشبک از مفتول های 2 و 3 میلیمتری نرم که در حصارکشی بین وادار پروفیل به کار می رود
+  status: draft
+  slug: fancy-lace
+- id: index-arrow
+  term_fa: تیر شاخص
+  term_en: Index arrow
+  term_fr: Flèche d'index
+  term_de: Indexpfeil
+  term_ar: سهم الفهرس
+  pos: noun
+  domain:
+  - construction
+  definition_fa: تیر عمودی وسط خرپا
+  status: draft
+  slug: index-arrow
+- id: tizon
+  term_fa: تیزون
+  term_en: Tizon
+  term_fr: Tizon
+  term_de: Tizon
+  term_ar: تيزون
+  pos: noun
+  domain:
+  - construction
+  definition_fa: پرگیر ، زودگیر
+  status: draft
+  slug: tizon
+- id: blade
+  term_fa: تیغه
+  term_en: blade
+  term_fr: lame
+  term_de: Klinge
+  term_ar: شفرة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: دیوارهای جدا کننده
+  status: draft
+  slug: blade
+- id: jan-panah
+  term_fa: جان پناه
+  term_en: Jan Panah
+  term_fr: Jan Flèche
+  term_de: Jan Arrow
+  term_ar: جان آرو
+  pos: noun
+  domain:
+  - construction
+  definition_fa: دیوار جلوی بالکن یا دیوار اطراف بام
+  status: draft
+  slug: jan-panah
+- id: john-is-plastered
+  term_fa: جان گچ گرفته شده
+  term_en: John is plastered
+  term_fr: John est plâtré
+  term_de: John ist verputzt
+  term_ar: جون مجصص
+  pos: noun
+  domain:
+  - construction
+  definition_fa: عدم خوردگی گچ
+  status: draft
+  slug: john-is-plastered
+- id: jerez
+  term_fa: جرز
+  term_en: Jerez
+  term_fr: Xérès
+  term_de: Jerez
+  term_ar: خيريز
+  pos: noun
+  domain:
+  - construction
+  definition_fa: دیوار یا پایه ضخیمی است که باربر باشد
+  status: draft
+  slug: jerez
+- id: zigzag-brickwork
+  term_fa: جُوَک
+  term_en: zigzag brickwork
+  term_fr: Votre ambiance
+  term_de: Ihre Atmosphäre
+  term_ar: الجو الخاص بك
+  pos: noun
+  domain:
+  - construction
+  definition_fa: نوعی آجر کاری زیگزاگ
+  status: draft
+  slug: zigzag-brickwork
+- id: quarter
+  term_fa: چارک
+  term_en: quarter
+  term_fr: quart
+  term_de: Quartal
+  term_ar: ربع
+  pos: noun
+  domain:
+  - construction
+  definition_fa: 1/4 آجر چهار گوش و 1/2 آجر قزاقی
+  status: draft
+  slug: quarter
+- id: blind-well
+  term_fa: چاه کور
+  term_en: blind well
+  term_fr: aveugle bien
+  term_de: blind gut
+  term_ar: أعمى جيدا
+  pos: noun
+  domain:
+  - construction
+  definition_fa: مشخص نبودن محل چاه در سطح زیر بنا و حوالی پی ها
+  status: draft
+  slug: blind-well
+- id: the-well
+  term_fa: چاهک
+  term_en: the well
+  term_fr: le puits
+  term_de: der Brunnen
+  term_ar: البئر
+  pos: noun
+  domain:
+  - construction
+  definition_fa: چاهی به ارتفاع 1.5 الی 2.5 متر
+  status: draft
+  slug: the-well
+- id: wheel-well
+  term_fa: چرخ چاه
+  term_en: wheel well
+  term_fr: passage de roue
+  term_de: Radkasten
+  term_ar: عجلة جيدا
+  pos: noun
+  domain:
+  - construction
+  definition_fa: وسیله چوبی و یا فلزی که به چرخش درون خزانه در پایه چرخ چاه و یا بلبرینگ سبب جابجایی مصالح به درون چاه و یا خارج آن می شود
+  status: draft
+  slug: wheel-well
+- id: four-dang
+  term_fa: چهار دنگ
+  term_en: four dang
+  term_fr: quatre heures
+  term_de: vier verdammt
+  term_ar: أربعة دانغ
+  pos: noun
+  domain:
+  - construction
+  definition_fa: 3/4 آجر چهار گوش
+  status: draft
+  slug: four-dang
+- id: affiliation
+  term_fa: الحاق
+  term_en: Affiliation
+  term_fr: Affiliation
+  term_de: Zugehörigkeit
+  term_ar: انتساب
+  pos: noun
+  domain:
+  - construction
+  definition_fa: وصل
+  status: draft
+  slug: affiliation
+- id: brackish-soil
+  term_fa: خاک شوره
+  term_en: brackish soil
+  term_fr: sol saumâtre
+  term_de: brackiger Boden
+  term_ar: التربة قليلة الملوحة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: خاکهای نمکی
+  status: draft
+  slug: brackish-soil
+- id: shriveled
+  term_fa: خرپشته
+  term_en: shriveled
+  term_fr: ratatiné
+  term_de: geschrumpft
+  term_ar: ذابل
+  pos: noun
+  domain:
+  - construction
+  definition_fa: سر پناه پله روی بام
+  status: draft
+  slug: shriveled
+- id: the-vault
+  term_fa: خرک
+  term_en: the vault
+  term_fr: le coffre-fort
+  term_de: der Tresor
+  term_ar: القبو
+  pos: noun
+  domain:
+  - construction
+  definition_fa: برای نگه داشتن میلگردهای مش فوقانی فونداسیون که خود با میلگرد درست می شود
+  status: draft
+  slug: the-vault
+- id: draw-a-line
+  term_fa: خط کردن
+  term_en: draw a line
+  term_fr: tracer une ligne
+  term_de: Zeichne eine Linie
+  term_ar: ارسم خطا
+  pos: verb
+  domain:
+  - construction
+  definition_fa: نشان کردن
+  status: draft
+  slug: draw-a-line
+- id: bending
+  term_fa: خمش
+  term_en: bending
+  term_fr: flexion
+  term_de: Biegen
+  term_ar: الانحناء
+  pos: noun
+  domain:
+  - construction
+  definition_fa: ممان ، سینه کردن
+  status: draft
+  slug: bending
+- id: rise-up
+  term_fa: خیز
+  term_en: rise up
+  term_fr: se soulever
+  term_de: aufstehen
+  term_ar: ترتفع
+  pos: noun
+  domain:
+  - construction
+  definition_fa: ارتفاع قوس
+  status: draft
+  slug: rise-up
+- id: dj
+  term_fa: دج
+  term_en: DJ
+  term_fr: DJ
+  term_de: DJ
+  term_ar: دي جي
+  pos: noun
+  domain:
+  - construction
+  definition_fa: زمین سخت
+  status: draft
+  slug: dj
+- id: cap
+  term_fa: درپوش
+  term_en: cap
+  term_fr: capuchon
+  term_de: Kappe
+  term_ar: كاب
+  pos: noun
+  domain:
+  - construction
+  definition_fa: قسمتی از روی دیوار آجری با دیوارهای دیگر می سازند
+  status: draft
+  slug: cap
+- id: reasoning
+  term_fa: دلیل گذاری
+  term_en: reasoning
+  term_fr: raisonnement
+  term_de: Argumentation
+  term_ar: المنطق
+  pos: noun
+  domain:
+  - construction
+  definition_fa: رج استاد ، رج اصولی
+  status: draft
+  slug: reasoning
+- id: two-piece
+  term_fa: دوپوش
+  term_en: two-piece
+  term_fr: deux pièces
+  term_de: zweiteilig
+  term_ar: قطعتين
+  pos: noun
+  domain:
+  - construction
+  definition_fa: گنبدی که با یک سقف اضافه پوشش شده باشد
+  status: draft
+  slug: two-piece
+- id: countries
+  term_fa: دول
+  term_en: Countries
+  term_fr: Pays
+  term_de: Länder
+  term_ar: بلدان
+  pos: noun
+  domain:
+  - construction
+  definition_fa: سطل بنایی
+  status: draft
+  slug: countries
+- id: retaining-wall
+  term_fa: دیوار حائل
+  term_en: retaining wall
+  term_fr: mur de soutènement
+  term_de: Stützmauer
+  term_ar: الجدار الاستنادي
+  pos: noun
+  domain:
+  - construction
+  definition_fa: دیوار واسطه باربر
+  status: draft
+  slug: retaining-wall
+- id: riser
+  term_fa: رایزر
+  term_en: Riser
+  term_fr: Contremarche
+  term_de: Steigleitung
+  term_ar: الناهض
+  pos: noun
+  domain:
+  - construction
+  definition_fa: کانال عمودی
+  status: draft
+  slug: riser
+- id: raj-bana
+  term_fa: رج بنا
+  term_en: Raj Bana
+  term_fr: Raj Bana
+  term_de: Raj Bana
+  term_ar: راج بانا
+  pos: noun
+  domain:
+  - construction
+  definition_fa: ردیف های آجر کاری
+  status: draft
+  slug: raj-bana
+- id: facing
+  term_fa: روکار
+  term_en: facing
+  term_fr: parement
+  term_de: gegenüber
+  term_ar: تواجه
+  pos: adjective
+  domain:
+  - construction
+  definition_fa: نمای ساختمان
+  status: draft
+  slug: facing
+- id: romi
+  term_fa: رومی
+  term_en: Romi
+  term_fr: Romi
+  term_de: Romi
+  term_ar: الرومي
+  pos: noun
+  domain:
+  - construction
+  definition_fa: قوس نیم دایره بالای درگاه
+  status: draft
+  slug: romi
+- id: hit-the-ground
+  term_fa: زمین زِد
+  term_en: hit the ground
+  term_fr: toucher le sol
+  term_de: auf den Boden fallen
+  term_ar: ضرب الأرض
+  pos: noun
+  domain:
+  - construction
+  definition_fa: زمین سخت که مقاومت و فشردگی دانه ترکیبی آن در حد کمتر از دج است
+  status: draft
+  slug: hit-the-ground
+- id: ginger
+  term_fa: زنجاب
+  term_en: Ginger
+  term_fr: Gingembre
+  term_de: Ingwer
+  term_ar: زنجبيل
+  pos: noun
+  domain:
+  - construction
+  definition_fa: آبخور
+  status: draft
+  slug: ginger
+- id: cumin
+  term_fa: زیره
+  term_en: cumin
+  term_fr: cumin
+  term_de: Kreuzkümmel
+  term_ar: كمون
+  pos: noun
+  domain:
+  - construction
+  definition_fa: دانه های خشن
+  status: draft
+  slug: cumin
+- id: zigzag
+  term_fa: زیگزاگ
+  term_en: zigzag
+  term_fr: zigzag
+  term_de: Zickzack
+  term_ar: متعرج
+  pos: noun
+  domain:
+  - construction
+  definition_fa: حرکت کنگره ای (چپ و راست)
+  status: draft
+  slug: zigzag
+- id: zigzag-1
+  term_fa: زیگزال
+  term_en: zigzag
+  term_fr: zigzag
+  term_de: Zickzack
+  term_ar: متعرج
+  pos: noun
+  domain:
+  - construction
+  definition_fa: میلگرد های خرپایی تیرچه
+  status: draft
+  slug: zigzag-1
+- id: a-basket
+  term_fa: سبدی
+  term_en: a basket
+  term_fr: un panier
+  term_de: ein Korb
+  term_ar: سلة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: میلگرد بافته شده برای بالا و پایین شناژ فونداسیون
+  status: draft
+  slug: a-basket
+- id: septic-tank
+  term_fa: سپتیک تانک
+  term_en: Septic tank
+  term_fr: Fosse septique
+  term_de: Klärgrube
+  term_ar: خزان الصرف الصحي
+  pos: noun
+  domain:
+  - construction
+  definition_fa: مخزن بزرگ فاضلاب (منابع و فضولات)
+  status: draft
+  slug: septic-tank
+- id: stiff-head
+  term_fa: سر سفت
+  term_en: stiff head
+  term_fr: tête raide
+  term_de: steifer Kopf
+  term_ar: رأس متصلب
+  pos: noun
+  domain:
+  - construction
+  definition_fa: نسبت به خط قائم جلوتر باشد
+  status: draft
+  slug: stiff-head
+- id: to-wander
+  term_fa: سرگرداندن
+  term_en: to wander
+  term_fr: errer
+  term_de: wandern
+  term_ar: للتجول
+  pos: verb
+  domain:
+  - construction
+  definition_fa: سرو ته کردن
+  status: draft
+  slug: to-wander
+- id: overwhelmed
+  term_fa: سروا افتاده
+  term_en: Overwhelmed
+  term_fr: Accablé
+  term_de: Überwältigt
+  term_ar: مُثقل
+  pos: noun
+  domain:
+  - construction
+  definition_fa: نسبت به خط قائم عقب تر باشد
+  status: draft
+  slug: overwhelmed
+- id: basket
+  term_fa: سِله
+  term_en: basket
+  term_fr: panier
+  term_de: Korb
+  term_ar: سلة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: پیش آمده
+  status: draft
+  slug: basket
+- id: pin
+  term_fa: سنجاقی
+  term_en: pin
+  term_fr: épingle
+  term_de: Stift
+  term_ar: دبوس
+  pos: noun
+  domain:
+  - construction
+  definition_fa: میلگرد های برش گیر فونداسیون
+  status: draft
+  slug: pin
+- id: gravel
+  term_fa: سنگ دانه
+  term_en: gravel
+  term_fr: gravier
+  term_de: Kies
+  term_ar: الحصى
+  pos: noun
+  domain:
+  - construction
+  definition_fa: سنگ های ریز
+  status: draft
+  slug: gravel
+- id: cesspool-tank
+  term_fa: سیسپول تانک
+  term_en: Cesspool tank
+  term_fr: Réservoir de puisard
+  term_de: Senkgrube
+  term_ar: خزان بالوعة
+  pos: noun
+  domain:
+  - construction
+  definition_fa: مخزن بزرگ فاضلاب (مایع)
+  status: draft
+  slug: cesspool-tank
+- id: silt
+  term_fa: سیلت
+  term_en: Silt
+  term_fr: Limon
+  term_de: Schlick
+  term_ar: الطمي
+  pos: noun
+  domain:
+  - construction
+  definition_fa: لای
+  status: draft
+  slug: silt
+- id: sailor
+  term_fa: سیلر
+  term_en: Sailor
+  term_fr: Marin
+  term_de: Seemann
+  term_ar: بحار
+  pos: noun
+  domain:
+  - construction
+  definition_fa: رنگ ثابت کننده
+  status: draft
+  slug: sailor
+- id: wire-reinforcement
+  term_fa: سیم آرماتور بندی
+  term_en: Wire reinforcement
+  term_fr: Renfort de fil
+  term_de: Drahtverstärkung
+  term_ar: تعزيز الأسلاك
+  pos: noun
+  domain:
+  - construction
+  definition_fa: سیم با قطر 1.5
+  status: draft
+  slug: wire-reinforcement
+- id: stone-cement
+  term_fa: سیمان سنگ شده
+  term_en: stone cement
+  term_fr: ciment de pierre
+  term_de: Steinzement
+  term_ar: الاسمنت الحجري
+  pos: noun
+  domain:
+  - construction
+  definition_fa: پودر سیمان فشرده
+  status: draft
+  slug: stone-cement
+- id: vertical
+  term_fa: شاقولی
+  term_en: vertical
+  term_fr: verticale
+  term_de: Vertikale
+  term_ar: رَأسِيّ
+  pos: adjective
+  domain:
+  - construction
+  definition_fa: قائم بودن
+  status: draft
+  slug: vertical

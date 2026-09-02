@@ -1,0 +1,27 @@
+# فرادادهٔ مجموعهٔ واژگان: دامنه‌ها و فایل‌های موضوعی.
+# scripts/build_pages.py دامنه‌های هر رکورد را با این فهرست اعتبارسنجی می‌کند.
+schema: meta-v1
+project: فرهنگ واژگان تخصصی مهندسی
+version: v0.1
+domains:
+- id: construction
+  title_fa: اصطلاحات ساختمانی
+- id: materials
+  title_fa: مصالح ساختمانی
+- id: concrete
+  title_fa: فناوری بتن
+- id: structures
+  title_fa: سازه‌های بتنی
+- id: mechanical
+  title_fa: مکانیک
+- id: testing
+  title_fa: آزمایشگاه و کنترل کیفیت
+files:
+- file: concrete.yaml
+  title_fa: بتن، سیمان و سازه‌های بتنی
+- file: construction.yaml
+  title_fa: اصطلاحات ساختمانی و کارگاهی
+- file: academy.yaml
+  title_fa: واژگان مصوب فرهنگستان (کتاب آزمایشات فناوری بتن)
+- file: mechanical.yaml
+  title_fa: واژگان مکانیک

@@ -1,0 +1,19 @@
+# واژگان مکانیک — برداشت‌شده از data/terms.yaml سابق (شکل‌بندی جدید از نسخهٔ ۰٫۲)
+# هر رکورد باید با schemas/term-v1.schema.json معتبر باشد.
+schema: term-v1
+terms:
+- id: gashtavar
+  term_fa: گشتاور
+  term_en: torque
+  term_fr: couple
+  term_de: Drehmoment
+  term_ar: عزم الدوران
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: کمیت فیزیکی که تمایل یک نیرو به چرخاندن جسم حول یک محور را نشان می‌دهد.
+  status: draft
+  slug: gashtavar
+  references:
+  - type: book
+    code: کتاب مکانیک تحلیلی

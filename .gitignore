@@ -7,6 +7,9 @@ __pycache__/
 site/
 .cache/
 
+# Generated term pages (rebuilt by scripts/build_pages.py from data/terms/*.yaml)
+docs/terms/
+
 # Node
 node_modules/
 

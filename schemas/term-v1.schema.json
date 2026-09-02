@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:eng-terms-fa:schemas:term-v1",
+  "title": "Engineering Term (v1)",
+  "description": "A single entry in the Persian engineering terminology dictionary. Uniqueness of id/slug and referential integrity of related_terms are enforced by scripts/build_pages.py at build time.",
+  "type": "object",
+  "required": ["id", "term_fa", "term_en", "pos", "domain", "definition_fa", "status", "slug"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable, unique identifier for the term (must never change once published)."
+    },
+    "term_fa": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The Persian term."
+    },
+    "term_en": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The English equivalent."
+    },
+    "term_fr": {
+      "type": ["string", "null"],
+      "description": "French equivalent (unverified translations must stay null)."
+    },
+    "term_de": {
+      "type": ["string", "null"],
+      "description": "German equivalent (unverified translations must stay null)."
+    },
+    "term_ar": {
+      "type": ["string", "null"],
+      "description": "Arabic equivalent (unverified translations must stay null)."
+    },
+    "pos": {
+      "enum": ["noun", "verb", "adjective", "phrase"],
+      "description": "Part of speech of the Persian term."
+    },
+    "domain": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Engineering domains; every value must exist in data/terms/_meta.yaml."
+    },
+    "definition_fa": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Persian definition. Target: at least 50 characters; shorter definitions are flagged as warnings by the build until content review is complete."
+    },
+    "synonyms": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "antonyms": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "usage_examples": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "references": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/reference" },
+      "description": "Sources backing the definition (standards, books, ...)."
+    },
+    "related_terms": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true,
+      "description": "Ids of related terms; every value must reference an existing term id."
+    },
+    "status": {
+      "enum": ["draft", "reviewed", "published"],
+      "description": "Editorial status. draft = not yet reviewed by a specialist."
+    },
+    "reviewed_by": {
+      "type": "string",
+      "description": "Name/handle of the specialist who reviewed this term (required once status != draft)."
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO date of the last expert review (YYYY-MM-DD)."
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Stable URL slug; must be unique across all data files."
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "required": ["type", "code"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["standard", "book", "other"] },
+        "code": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Standard designation (e.g. 'ACI 318-19') or book title."
+        },
+        "edition": { "type": "string" }
+      }
+    }
+  }
+}

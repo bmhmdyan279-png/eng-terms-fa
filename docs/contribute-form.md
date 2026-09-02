@@ -3,10 +3,10 @@
 ## 📝 روش‌های پیشنهاد واژه
 
 ### روش ۱: ویرایش مستقیم فایل
-اگر با Git آشنایی دارید، می‌توانید مستقیماً فایل `data/terms.yaml` را ویرایش کنید:
+اگر با Git آشنایی دارید، می‌توانید مستقیماً فایل `data/terms/` را ویرایش کنید:
 
 1. [Fork کردن مخزن](https://github.com/bmhmdyan279-png/eng-terms-fa/fork)
-2. ویرایش فایل `data/terms.yaml`
+2. ویرایش فایل `data/terms/`
 3. ایجاد Pull Request
 
 [راهنمای مشارکت](contribute.md)

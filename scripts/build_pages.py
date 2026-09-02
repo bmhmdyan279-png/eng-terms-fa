@@ -1,74 +1,167 @@
 #!/usr/bin/env python3
+"""Build the term pages (docs/terms/*.md) from the sharded YAML data.
+
+Data layout:
+    data/terms/_meta.yaml      collection metadata (domains, files)
+    data/terms/*.yaml          term records, one file per subject area
+
+Every record is validated against schemas/term-v1.schema.json plus
+cross-record rules (unique id/slug, referential integrity of
+related_terms, known domains). ANY invalid record fails the build.
+
+Definitions shorter than DEFINITION_TARGET_LENGTH characters are
+reported as warnings (content review is still in progress) but do not
+fail the build.
+"""
+
+import json
 import sys
-import yaml
-from pathlib import Path
-from slugify import slugify
 import unicodedata
+from pathlib import Path
+
+import yaml
+from jsonschema import Draft202012Validator
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT / "data" / "terms"
+META_FILE = DATA_DIR / "_meta.yaml"
+SCHEMA_FILE = ROOT / "schemas" / "term-v1.schema.json"
+DOCS_TERMS_DIR = ROOT / "docs" / "terms"
+
+DEFINITION_TARGET_LENGTH = 50
+
+POS_FA = {"noun": "اسم", "verb": "فعل", "adjective": "صفت", "phrase": "عبارت"}
+REF_TYPE_FA = {"standard": "استاندارد", "book": "کتاب", "other": "سایر"}
+
 
 def normalize_persian(text: str) -> str:
-    if not text: return ""
+    if not text:
+        return ""
     text = text.replace("ي", "ی").replace("ك", "ک")
     return unicodedata.normalize("NFKC", text)
 
-def main():
-    data_file = Path("data/terms.yaml")
-    if not data_file.exists():
-        sys.exit("data/terms.yaml not found")
 
-    with open(data_file, "r", encoding="utf-8") as f:
-        raw_terms = yaml.safe_load(f)
+def fail(message: str):
+    print(f"ERROR: {message}", file=sys.stderr)
+    sys.exit(1)
 
-    valid_terms, seen_slugs, seen_terms = [], set(), set()
 
-    for term in raw_terms:
-        if not isinstance(term, dict): continue
+def load_meta() -> dict:
+    if not META_FILE.exists():
+        fail(f"metadata file not found: {META_FILE}")
+    meta = yaml.safe_load(META_FILE.read_text(encoding="utf-8"))
+    if not isinstance(meta, dict) or not isinstance(meta.get("domains"), list):
+        fail(f"{META_FILE} is malformed (expected a 'domains' list)")
+    return meta
 
-        term_fa = normalize_persian(str(term.get("term_fa") or "").strip())
-        if not term_fa or term_fa in seen_terms: continue
 
-        seen_terms.add(term_fa)
-        term["term_fa"] = term_fa
+def load_all_terms():
+    """Return a list of (source_file_name, record) tuples from all shards."""
+    if not DATA_DIR.exists():
+        fail(f"data directory not found: {DATA_DIR}")
+    records = []
+    for path in sorted(DATA_DIR.glob("*.yaml")):
+        if path.name.startswith("_"):
+            continue
+        doc = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(doc, dict) or doc.get("schema") != "term-v1":
+            fail(f"{path.name}: missing or unsupported top-level 'schema: term-v1'")
+        terms = doc.get("terms")
+        if not isinstance(terms, list):
+            fail(f"{path.name}: missing 'terms' list")
+        for index, record in enumerate(terms):
+            if not isinstance(record, dict):
+                fail(f"{path.name}: entry #{index + 1} is not a mapping")
+            records.append((path.name, record))
+    if not records:
+        fail("no term records found in data/terms/")
+    return records
 
-        slug = term.get("slug") or ""
-        if not slug:
-            term_en = str(term.get("term_en") or "").strip()
-            slug = slugify(term_en if term_en else term_fa, separator='-', lowercase=True)
 
-        base_slug, counter = slug, 1
-        while slug in seen_slugs:
-            slug = f"{base_slug}-{counter}"
-            counter += 1
+def validate_terms(records, meta):
+    """Validate every record; return (errors, warnings)."""
+    errors, warnings = [], []
 
-        term["slug"] = slug
-        seen_slugs.add(slug)
-        valid_terms.append(term)
+    schema = json.loads(SCHEMA_FILE.read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema)
+    known_domains = {d["id"] for d in meta["domains"] if isinstance(d, dict) and "id" in d}
 
-    if not valid_terms: sys.exit("No valid terms found")
+    seen_ids, seen_slugs = {}, {}
+    for source, record in records:
+        label = f"{source}::{record.get('id') or record.get('term_fa') or '?'}"
 
-    terms_dir = Path("docs/terms")
-    terms_dir.mkdir(parents=True, exist_ok=True)
-    for old_file in terms_dir.glob("*.md"): old_file.unlink()
+        for err in validator.iter_errors(record):
+            errors.append(f"{label}: schema: {'/'.join(str(p) for p in err.path) or '<root>'}: {err.message}")
 
-    slug_to_file = {t["slug"]: f"{t['slug']}.md" for t in valid_terms}
-    slug_to_term_fa = {t["slug"]: t["term_fa"] for t in valid_terms}
+        rid, slug = record.get("id"), record.get("slug")
+        if rid:
+            if rid in seen_ids:
+                errors.append(f"{label}: duplicate id '{rid}' (also in {seen_ids[rid]})")
+            seen_ids[rid] = source
+        if slug:
+            if slug in seen_slugs:
+                errors.append(f"{label}: duplicate slug '{slug}' (also in {seen_slugs[slug]})")
+            seen_slugs[slug] = source
+            if rid and slug != rid:
+                errors.append(f"{label}: slug '{slug}' must equal id '{rid}' (stable URLs)")
 
-    for term in valid_terms:
-        slug, term_fa = term["slug"], term["term_fa"]
-        term_en = str(term.get("term_en") or "—").strip() or "—"
-        term_fr = str(term.get("term_fr") or "—").strip() or "—"
-        term_de = str(term.get("term_de") or "—").strip() or "—"
-        term_ar = str(term.get("term_ar") or "—").strip() or "—"
-        category = str(term.get("category") or "عمومی").strip()
-        definition = str(term.get("definition") or "تعریفی ثبت نشده است.").strip()
-        references = term.get("references") or []
-        if isinstance(references, str): references = [references]
-        related_terms = term.get("related_terms") or []
-        if isinstance(related_terms, str): related_terms = [related_terms]
-        standards, source = term.get("standards") or "", term.get("source") or ""
-        featured_book = term.get("featured_book", False)
+        for domain in record.get("domain") or []:
+            if domain not in known_domains:
+                errors.append(f"{label}: unknown domain '{domain}' (not in _meta.yaml)")
 
-        page = f"---\ntitle: {term_fa}\ndescription: تعریف و معادل‌های واژه {term_fa}\nslug: {slug}\n---\n\n# {term_fa}\n"
-        if featured_book: page += '\n!!! note "از کتاب آزمایشات فناوری بتن"\n    این واژه در کتاب آزمایشات فناوری بتن آورده شده است.\n'
+        definition = (record.get("definition_fa") or "").strip()
+        if len(definition) < DEFINITION_TARGET_LENGTH:
+            warnings.append(f"{label}: definition_fa has {len(definition)} chars (target >= {DEFINITION_TARGET_LENGTH})")
+
+    for source, record in records:
+        label = f"{source}::{record.get('id') or '?'}"
+        for related in record.get("related_terms") or []:
+            if related not in seen_ids:
+                errors.append(f"{label}: related_terms references unknown id '{related}'")
+
+    return errors, warnings
+
+
+def render_pages(records, meta):
+    domain_titles = {d["id"]: d.get("title_fa", d["id"]) for d in meta["domains"]}
+    terms = [record for _, record in records]
+    slug_to_term_fa = {t["slug"]: normalize_persian(t["term_fa"]) for t in terms}
+
+    DOCS_TERMS_DIR.mkdir(parents=True, exist_ok=True)
+    for old_file in DOCS_TERMS_DIR.glob("*.md"):
+        old_file.unlink()
+
+    for record in terms:
+        term_fa = normalize_persian(record["term_fa"])
+        slug = record["slug"]
+        term_en = str(record.get("term_en") or "—").strip() or "—"
+        term_fr = str(record.get("term_fr") or "—").strip() or "—"
+        term_de = str(record.get("term_de") or "—").strip() or "—"
+        term_ar = str(record.get("term_ar") or "—").strip() or "—"
+        definition = str(record.get("definition_fa") or "").strip() or "تعریفی ثبت نشده است."
+        domains = [domain_titles.get(d, d) for d in record.get("domain") or []] or ["عمومی"]
+        pos_fa = POS_FA.get(record.get("pos"), record.get("pos"))
+        status = record.get("status", "draft")
+        references = record.get("references") or []
+        related = record.get("related_terms") or []
+
+        page = (
+            f"---\ntitle: {term_fa}\n"
+            f"description: تعریف و معادل‌های واژه {term_fa}\n"
+            f"slug: {slug}\n---\n\n# {term_fa}\n"
+        )
+
+        if status == "draft":
+            page += '\n!!! warning "وضعیت: پیش‌نویس"\n    این مدخل هنوز بازبینی تخصصی نشده است.\n'
+        elif status == "reviewed":
+            reviewer = record.get("reviewed_by") or ""
+            page += f'\n!!! success "وضعیت: بازبینی‌شده"\n    بازبینی تخصصی انجام شده است.{(" — " + reviewer) if reviewer else ""}\n'
+        elif status == "published":
+            page += '\n!!! success "وضعیت: منتشرشده"\n'
+
+        book_refs = [r for r in references if isinstance(r, dict) and r.get("type") == "book" and "آزمایشات فناوری بتن" in str(r.get("code", ""))]
+        if book_refs:
+            page += '\n!!! note "از کتاب آزمایشات فناوری بتن"\n    این واژه در کتاب آزمایشات فناوری بتن آورده شده است.\n'
 
         page += f"""
 <div class="term-card">
@@ -83,37 +176,67 @@ def main():
 ## تعریف
 {definition}
 ## دسته‌بندی
-**{category}**
+**{"، ".join(domains)}** • نوع واژه: {pos_fa}
 """
-        if standards: page += f"\n## استانداردهای مرتبط\n{standards}\n"
 
         page += "\n## منابع\n"
         if references:
-            for ref in references: page += f"- {ref}\n"
-        elif source: page += f"- {source}\n"
-        else: page += "منبعی ثبت نشده است.\n"
+            for ref in references:
+                if isinstance(ref, dict):
+                    kind = REF_TYPE_FA.get(ref.get("type"), "سایر")
+                    edition = f"، ویرایش {ref['edition']}" if ref.get("edition") else ""
+                    page += f"- {ref.get('code', '—')} ({kind}{edition})\n"
+                else:
+                    page += f"- {ref}\n"
+        else:
+            page += "منبعی ثبت نشده است.\n"
 
         page += '\n## واژه‌های مرتبط\n<div class="related-terms">\n'
-        valid_related = [f'<a href="./{slug_to_file[r]}">{slug_to_term_fa[r]}</a>' for r in related_terms if r in slug_to_file]
+        valid_related = [
+            f'<a href="./{rid}.md">{slug_to_term_fa[rid]}</a>'
+            for rid in related
+            if rid in slug_to_term_fa
+        ]
         page += ("\n".join(valid_related) + "\n" if valid_related else "واژه مرتبطی ثبت نشده است.\n")
         page += "\n</div>\n\n---\n\nبازگشت به فهرست\n"
 
-        (terms_dir / f"{slug}.md").write_text(page, encoding="utf-8")
+        (DOCS_TERMS_DIR / f"{slug}.md").write_text(page, encoding="utf-8")
 
+    # alphabetical index
     terms_by_letter = {}
-    for term in valid_terms:
-        letter = normalize_persian(term["term_fa"])[0]
-        terms_by_letter.setdefault(letter, []).append((term["term_fa"], term["slug"]))
+    for record in terms:
+        term_fa = normalize_persian(record["term_fa"])
+        letter = term_fa[0]
+        terms_by_letter.setdefault(letter, []).append((term_fa, record["slug"], str(record.get("term_en") or "").strip()))
 
     index_content = "---\ntitle: فهرست واژگان\n---\n\n# فهرست واژگان\n\n## فهرست الفبایی\n\n"
     persian_alphabet = "آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی"
     for letter in sorted(terms_by_letter.keys(), key=lambda l: persian_alphabet.find(l) if l in persian_alphabet else 999):
         index_content += f"\n### حرف {letter}\n\n"
-        for term_fa, slug in sorted(terms_by_letter[letter]):
-            index_content += f"- [{term_fa}](./{slug}.md)\n"
+        for term_fa, slug, term_en in sorted(terms_by_letter[letter]):
+            suffix = f" — {term_en}" if term_en else ""
+            index_content += f"- [{term_fa}](./{slug}.md){suffix}\n"
 
-    (terms_dir / "index.md").write_text(index_content, encoding="utf-8")
-    print(f"✅ {len(valid_terms)} صفحه تولید شد")
+    (DOCS_TERMS_DIR / "index.md").write_text(index_content, encoding="utf-8")
+
+
+def main():
+    meta = load_meta()
+    records = load_all_terms()
+    errors, warnings = validate_terms(records, meta)
+
+    for warning in warnings:
+        print(f"WARNING: {warning}")
+
+    if errors:
+        for error in errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        print(f"\n✗ build aborted: {len(errors)} validation error(s) across {len(records)} records", file=sys.stderr)
+        sys.exit(1)
+
+    render_pages(records, meta)
+    print(f"✅ {len(records)} صفحه تولید شد ({len(warnings)} هشدار کیفیت تعریف)")
+
 
 if __name__ == "__main__":
     main()

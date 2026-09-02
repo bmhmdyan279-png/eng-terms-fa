@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit machine-translated English equivalents in data/terms.yaml.
+"""Audit machine-translated English equivalents in the sharded data files (data/terms/*.yaml).
 
 Flags suspicious ``term_en`` values that look like raw machine translation:
 
@@ -34,10 +34,10 @@ FORBIDDEN_PHRASES = (
 )
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA_FILE = ROOT / "data" / "terms.yaml"
+DATA_DIR = ROOT / "data" / "terms"
 OUTPUT_FILE = ROOT / "translation_alerts.csv"
 
-CSV_FIELDS = ["term_fa", "term_en", "category", "slug", "reasons"]
+CSV_FIELDS = ["term_fa", "term_en", "domain", "slug", "source_file", "reasons"]
 
 
 def find_problems(term_en):
@@ -72,23 +72,31 @@ def main():
     )
     args = parser.parse_args()
 
-    if not DATA_FILE.exists():
-        print(f"error: data file not found: {DATA_FILE}", file=sys.stderr)
+    if not DATA_DIR.exists():
+        print(f"error: data directory not found: {DATA_DIR}", file=sys.stderr)
         return 2
 
-    with open(DATA_FILE, encoding="utf-8") as f:
-        terms = yaml.safe_load(f) or []
+    terms = []
+    for path in sorted(DATA_DIR.glob("*.yaml")):
+        if path.name.startswith("_"):
+            continue
+        doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        for record in doc.get("terms") or []:
+            record["_source_file"] = path.name
+            terms.append(record)
 
     alerts = []
     for index, term in enumerate(terms, start=1):
         problems = find_problems(term.get("term_en"))
         if problems:
+            domain = term.get("domain") or []
             alerts.append(
                 {
                     "term_fa": term.get("term_fa") or f"<entry #{index}>",
                     "term_en": (term.get("term_en") or "").strip(),
-                    "category": term.get("category", ""),
+                    "domain": ", ".join(domain) if isinstance(domain, list) else str(domain),
                     "slug": term.get("slug", ""),
+                    "source_file": term.get("_source_file", ""),
                     "reasons": "; ".join(problems),
                 }
             )

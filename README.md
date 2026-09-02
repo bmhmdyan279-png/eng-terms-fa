@@ -70,54 +70,58 @@ mkdocs serve
 
 ```
 eng-terms-fa/
-├── .github/workflows/    # CI/CD (خودکار)
+├── .github/workflows/        # CI/CD (خودکار)
 ├── data/
-│   └── terms.yaml        # تمام واژگان در این فایل (YAML)
-├── docs/                 # سایت MkDocs
-│   ├── assets/           # CSS, JS
-│   └── terms/            # صفحات واژگان (خودکار ساخته می‌شود)
+│   └── terms/                # داده‌های ماژولار (هر فایل یک حوزه)
+│       ├── _meta.yaml        # فراداده: دامنه‌ها و فایل‌های موضوعی
+│       ├── concrete.yaml     # بتن، سیمان و سازه‌های بتنی
+│       ├── construction.yaml # اصطلاحات ساختمانی و کارگاهی
+│       ├── academy.yaml      # واژگان مصوب فرهنگستان
+│       └── mechanical.yaml   # واژگان مکانیک
+├── docs/                     # سایت MkDocs
+│   ├── assets/               # CSS, JS
+│   └── terms/                # صفحات واژگان (تولید خودکار؛ در گیت نگهداری نمی‌شود)
+├── schemas/
+│   └── term-v1.schema.json   # اسکیمای هر مدخل (بیلد روی رکورد نامعتبر شکست می‌خورد)
 ├── scripts/
-│   ├── build_pages.py    # تبدیل terms.yaml به Markdown
-│   ├── cleanup_terms.py  # پاکسازی داده‌ها
-│   └── fix_old_links.py  # اصلاح لینک‌های قدیمی
-├── tests/                # تست‌های واحد
-├── mkdocs.yml            # تنظیمات اصلی
-└── requirements.txt      # وابستگی‌های پایتون
+│   ├── build_pages.py        # تولید صفحات + اعتبارسنجی اسکما
+│   ├── audit_translations.py # پایش کیفیت ترجمه‌های انگلیسی
+│   ├── cleanup_terms.py      # پاکسازی داده‌ها
+│   └── fix_old_links.py      # اصلاح لینک‌های قدیمی
+├── tests/                    # تست‌های واحد
+├── mkdocs.yml                # تنظیمات اصلی
+└── requirements.txt          # وابستگی‌های پایتون
 ```
 
 ## ✍️ نحوهٔ افزودن واژهٔ جدید
 
-۱. فایل `data/terms.yaml` را باز کنید.
+۱. فایل موضوعی مناسب را در `data/terms/` باز کنید (مثلاً `construction.yaml`).
 
-۲. یک واژهٔ جدید به این شکل اضافه کنید:
+۲. یک واژهٔ جدید به این شکل اضافه کنید (باید با `schemas/term-v1.schema.json` سازگار باشد):
 
 ```yaml
-- term_fa: واژهٔ فارسی
+- id: slug-unique
+  term_fa: واژهٔ فارسی
   term_en: English Word
-  term_fr: Mot français
+  term_fr: Mot français    # اگر هنوز بازبینی نشده، از مقدار خالی استفاده نکنید؛ فیلد را حذف کنید
   term_de: Deutsches Wort
   term_ar: کلمة عربیة
-  category: دسته‌بندی (مثلاً: مصالح ساختمانی، سازه‌های بتنی، مکانیک)
-  definition: |
+  pos: noun                # یکی از: noun | verb | adjective | phrase
+  domain: [construction]   # باید در فهرست دامنه‌های data/terms/_meta.yaml باشد
+  definition_fa: |
     تعریف تخصصی و دقیق واژه با جزئیات فنی.
     باید حداقل ۲-۳ خط باشد و شامل کاربردهای مهندسی باشد.
     از عبارات عمومی مانند "برابر مصوب فرهنگستان" خودداری کنید.
   references:
-    - استاندارد یا کتاب مرجع (مثلاً: ACI 318-19، ASTM C136)
-    - منبع دوم (اختیاری)
-  slug: slug-unique
-  featured_book: true  # اگر در کتاب تخصصی شما وجود دارد
+    - type: standard       # یکی از: standard | book | other
+      code: ACI 318-19
+  related_terms:           # فقط شناسهٔ واژه‌های موجود (نه متن آزاد)
+    - slug-واژه-مرتبط
+  status: draft            # draft | reviewed | published
+  slug: slug-unique        # باید با id یکسان و یکتا باشد
 ```
 
-<!-- موقتاً حذف شد — اسکریپت `validate_data.py` وجود ندارد:
-۳. اعتبارسنجی کنید:
-
-```bash
-python scripts/validate_data.py
-```
--->
-
-۳. صفحات را بازسازی کنید:
+۳. صفحات را بازسازی کنید (این اسکریپت همهٔ رکوردها را با اسکما اعتبارسنجی می‌کند و در صورت نامعتبر بودن حتی یک رکورد، شکست می‌خورد):
 
 ```bash
 python scripts/build_pages.py

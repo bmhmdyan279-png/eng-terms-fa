@@ -1,0 +1,61 @@
+# واژگان بتن، سیمان و سازه‌های بتنی — برداشت‌شده از data/terms.yaml سابق (شکل‌بندی جدید از نسخهٔ ۰٫۲)
+# هر رکورد باید با schemas/term-v1.schema.json معتبر باشد.
+schema: term-v1
+terms:
+- id: beton
+  term_fa: بتن
+  term_en: concrete
+  term_fr: béton
+  term_de: Beton
+  term_ar: خرسانة
+  pos: noun
+  domain:
+  - construction
+  - materials
+  definition_fa: مصالح ساختمانی مرکب از سیمان، آب، سنگدانه‌ها و مواد افزودنی که پس از اختلاط و گذشت زمان، سخت و مقاوم می‌شود.
+  status: draft
+  slug: beton
+  references:
+  - type: standard
+    code: استاندارد ملی ایران شماره ۶۶۴
+  - type: standard
+    code: ACI 318-19
+  related_terms:
+  - siman
+  - armator
+- id: siman
+  term_fa: سیمان
+  term_en: cement
+  term_fr: ciment
+  term_de: Zement
+  term_ar: أسمنت
+  pos: noun
+  domain:
+  - construction
+  - materials
+  definition_fa: ماده چسباننده‌ای که از پختن سنگ آهک و خاک رس به دست می‌آید و در ترکیب با آب، خاصیت سخت‌شوندگی دارد.
+  status: draft
+  slug: siman
+  references:
+  - type: standard
+    code: استاندارد ملی ایران شماره ۳۸۹
+  related_terms:
+  - beton
+- id: armator
+  term_fa: آرماتور
+  term_en: rebar
+  term_fr: armature
+  term_de: Bewehrung
+  term_ar: حديد التسليح
+  pos: noun
+  domain:
+  - concrete
+  - structures
+  definition_fa: میلگرد فولادی که در بتن قرار داده می‌شود تا مقاومت کششی سازه را افزایش دهد.
+  status: draft
+  slug: armator
+  references:
+  - type: standard
+    code: مبحث نهم مقررات ملی ساختمان
+  related_terms:
+  - beton

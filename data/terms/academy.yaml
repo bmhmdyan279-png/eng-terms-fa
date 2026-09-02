@@ -1,0 +1,260 @@
+# واژگان مصوب فرهنگستان (کتاب آزمایشات فناوری بتن) — برداشت‌شده از data/terms.yaml سابق (شکل‌بندی جدید از نسخهٔ ۰٫۲)
+# هر رکورد باید با schemas/term-v1.schema.json معتبر باشد.
+schema: term-v1
+terms:
+- id: digital
+  term_fa: رقمی
+  term_en: Digital
+  term_fr: Numérique
+  term_de: Digital
+  term_ar: رقمي
+  pos: adjective
+  domain:
+  - concrete
+  - testing
+  definition_fa: در فناوری بتن، به حسگرها و ابزارهای اندازه‌گیری دیجیتال (مانند دماسنج‌ها و رطوبت‌سنج‌های دیجیتال) اطلاق می‌شود که برای پایش دقیق و لحظه‌ای شرایط عمل‌آوری و ثبت داده‌های آزمایشگاهی به‌کار می‌روند. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: digital
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: oven
+  term_fa: تاوَن
+  term_en: Oven
+  term_fr: Four
+  term_de: Ofen
+  term_ar: فرن
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: کوره یا اجاق آزمایشگاهی با قابلیت تنظیم دقیق دما (معمولاً ۱۱۰ درجه سانتی‌گراد) که برای خشک کردن نمونه‌های سنگدانه و بتن جهت تعیین رطوبت و وزن مخصوص در آزمایش‌های استاندارد فناوری بتن استفاده می‌شود. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: oven
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: mesh-sieve-size
+  term_fa: اندازه غربالی
+  term_en: Mesh / Sieve size
+  term_fr: Taille de tamis
+  term_de: Maschenweite
+  term_ar: حجم المنخل
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: اندازه چشمه‌های الک یا غربال استاندارد که برای دانه‌بندی و تعیین توزیع ابعادی سنگدانه‌های بتن بر اساس استانداردهایی مانند ASTM C136 به کار می‌رود. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: mesh-sieve-size
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: calibration
+  term_fa: واسنجیدن
+  term_en: Calibration
+  term_fr: Étalonnage
+  term_de: Kalibrierung
+  term_ar: معايرة
+  pos: verb
+  domain:
+  - concrete
+  - testing
+  definition_fa: فرآیند تنظیم و تأیید دقت دستگاه‌های آزمایشگاهی (مانند دستگاه فشار بتن و تراژک) با استفاده از استانداردهای مرجع، جهت اطمینان از صحت نتایج آزمایش‌های فناوری بتن. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: calibration
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: depot
+  term_fa: آمادگاه
+  term_en: Depot
+  term_fr: Dépôt
+  term_de: Depot
+  term_ar: مستودع
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: محل یا انبار استاندارد نگهداری مصالح (سیمان، سنگدانه و افزودنی‌ها) پیش از مصرف در بچینگ یا آزمایشگاه، که شرایط محیطی آن برای جلوگیری از افت کیفیت مصالح کنترل می‌شود. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: depot
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: jig-jigging
+  term_fa: جیک
+  term_en: Jig / Jigging
+  term_fr: Gabarit / Compactage
+  term_de: Vorrichtung / Verdichtung
+  term_ar: دمك / قالب
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: عمل متراکم‌سازی نمونه بتن یا خاک در قالب با استفاده از ضربات متناوب، بلند کردن و کوبیدن پیمانه، جهت خروج هوای محبوس و رسیدن به چگالی مطلوب در آزمایش‌های تراکم.
+  status: draft
+  slug: jig-jigging
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: cement-matrix
+  term_fa: آژند
+  term_en: Cement / Matrix
+  term_fr: Matrice / Ciment
+  term_de: Matrix / Zement
+  term_ar: مصفوفة / أسمنت
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: ماده چسباننده یا خمیر سیمانی که در بتن، فضاهای خالی میان سنگدانه‌ها را پر کرده و با هیدراتاسیون، یکپارچگی و مقاومت مکانیکی سنگ مصنوعی را تأمین می‌کند. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: cement-matrix
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: control
+  term_fa: واپایش
+  term_en: Control
+  term_fr: Contrôle
+  term_de: Kontrolle
+  term_ar: مراقبة
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: مجموعه اقدامات نظارتی و آزمایشگاهی (Quality Control) برای بررسی انطباق ویژگی‌های بتن تازه و سخت‌شده با مشخصات فنی و استانداردهای طراحی. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: control
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: protocol
+  term_fa: تشریفات
+  term_en: Protocol
+  term_fr: Protocole
+  term_de: Protokoll
+  term_ar: بروتوكول
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: دستورالعمل یا پروتکل استاندارد انجام یک آزمایش خاص (مانند پروتکل آزمایش مقاومت فشاری یا اسلامپ) که توالی دقیق مراحل، شرایط محیطی و تجهیزات مورد نیاز را دیکته می‌کند. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: protocol
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: batch
+  term_fa: دسته
+  term_en: Batch
+  term_fr: Lot / Gâchée
+  term_de: Charge
+  term_ar: دفعة
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: مقدار معینی از بتن که در یک زمان مشخص و با ترکیب مصالح یکسان در میکسر یا بچینگ تولید می‌شود و مبنای نمونه‌گیری و آزمایش‌های کنترل کیفیت است. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: batch
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: batching
+  term_fa: مخلوط ساز
+  term_en: Batching
+  term_fr: Dosage / Batchage
+  term_de: Dosierung / Mischen
+  term_ar: تجميع / خلط
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: فرآیند یا تأسیسات (بچینگ پلانت) توزین دقیق و ترکیب اجزای بتن (سیمان، آب، سنگدانه و افزودنی) بر اساس طرح اختلاط برای تولید بتن یکنواخت. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: batching
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: tolerance
+  term_fa: رواداری و تحمل
+  term_en: Tolerance
+  term_fr: Tolérance
+  term_de: Toleranz
+  term_ar: تسامح / تفاوت مسموح
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: محدوده مجاز انحراف از مقادیر هدف در طرح اختلاط، ابعاد قالب‌ها یا نتایج آزمایشگاهی (مانند تلورانس دانه‌بندی سنگدانه یا افت اسلامپ) که در استانداردها تعریف شده است. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: tolerance
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: frequency
+  term_fa: بسامد
+  term_en: Frequency
+  term_fr: Fréquence
+  term_de: Frequenz
+  term_ar: تردد
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: تعداد نوسانات در واحد زمان (هرتز) در ویبراتورها یا میزهای لرزاننده که برای تراکم مناسب بتن، خروج حباب‌های هوا و جلوگیری از جداشدگی دانه‌ها تنظیم می‌شود. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: frequency
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: vibrator
+  term_fa: لرزاننده
+  term_en: Vibrator
+  term_fr: Vibreur
+  term_de: Rüttler / Vibrator
+  term_ar: هزاز
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: تجهیزات مکانیکی (مانند ویبراتور داخلی یا خارجی) که با اعمال ارتعاشات با بسامد و دامنه مشخص، باعث روان‌شدگی و تراکم بتن تازه در قالب‌ها و حوالی آرماتورها می‌شود. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: vibrator
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: gallery
+  term_fa: تالار
+  term_en: Gallery
+  term_fr: Galerie
+  term_de: Galerie
+  term_ar: معرض / رواق
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: در سازه‌های بتنی عظیم مانند سدها، به راهروها یا فضاهای توخالی درون بدنه بتن اطلاق می‌شود که برای بازرسی، زهکشی آب‌های نفوذی و نصب تجهیزات پایش به کار می‌روند. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: gallery
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
+- id: pycnometer
+  term_fa: بطری چگالی
+  term_en: Pycnometer
+  term_fr: Pycnomètre
+  term_de: Pyknometer
+  term_ar: مكثاف / بيكنومتر
+  pos: noun
+  domain:
+  - concrete
+  - testing
+  definition_fa: ظرف شیشه‌ای کالیبره با درب مخصوص که در آزمایشگاه فناوری بتن برای تعیین وزن مخصوص (چگالی) و جذب آب سنگدانه‌های ریز و درشت بر اساس استاندارد ASTM C128 استفاده می‌شود. (معادل مصوب فرهنگستان)
+  status: draft
+  slug: pycnometer
+  references:
+  - type: book
+    code: کتاب آزمایشات فناوری بتن
