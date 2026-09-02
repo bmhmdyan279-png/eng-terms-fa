@@ -3,3 +3,4 @@ mkdocs-material==9.5.49
 pyyaml==6.0.2
 pytest>=7.0.0
 jsonschema>=4.21.0
+pagefind==1.5.2

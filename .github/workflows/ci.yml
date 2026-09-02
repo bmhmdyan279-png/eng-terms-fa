@@ -33,5 +33,13 @@ jobs:
       - name: Build site (strict)
         run: mkdocs build --strict
 
+      - name: Setup Node (Pagefind)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build Pagefind search index
+        run: npx --yes pagefind --site site/
+
       - name: pre-commit
         uses: pre-commit/action@v3.0.1

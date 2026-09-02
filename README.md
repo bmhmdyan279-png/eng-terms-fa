@@ -9,7 +9,7 @@
 - ✅ CI/CD pipeline
 - ⚠️  Content review in progress
 - ⚠️  Translation quality check ongoing
-- 🚧 Search: MkDocs default (Pagefind coming soon)
+- 🚧 Search: Pagefind indexed in CI (no Persian stemming yet)
 
 ### ویژگی‌ها
 
@@ -17,9 +17,7 @@
 - 🌐 **نسخهٔ وب PWA** – قابل نصب روی گوشی، کارکرد آفلاین
 -->
 - 📱 **واکنش‌گرا (Responsive)** – بهینه برای موبایل و تبلت
-<!-- موقتاً غیرفعال شد — Pagefind در `mkdocs.yml` فعال نیست و ایندکس آن در CI ساخته نمی‌شود:
-- 🔍 **جستجوی پیشرفتهٔ فارسی** – با پشتیبانی از Pagefind
--->
+- 🔍 **جستجوی پیشرفته** – با نمایهٔ Pagefind که در هر بیلد CI ساخته می‌شود
 - 🌍 **معادل‌های چندزبانه**: انگلیسی، فرانسوی، آلمانی، عربی
 - 📚 **اتصال به منابع تخصصی** – شامل واژگان کتاب «آزمایشات فناوری بتن»
 - ✅ **اعتبارسنجی خودکار داده‌ها** – اسکیمای JSON Schema، یکتایی شناسه‌ها و تغییرناپذیری URLها در هر بیلد
@@ -61,6 +59,13 @@ mkdocs serve
 ```
 
 حالا مرورگر را روی `http://localhost:8000` باز کنید.
+
+برای تست جستجوی Pagefind به‌صورت محلی (اختیاری — در سایت مستقرشده خودکار است):
+
+```bash
+mkdocs build
+npx pagefind --site site/   # نیازمند Node.js
+```
 
 ## 📂 ساختار پروژه
 

@@ -32,6 +32,7 @@ DEFINITION_TARGET_LENGTH = 50
 
 POS_FA = {"noun": "اسم", "verb": "فعل", "adjective": "صفت", "phrase": "عبارت"}
 REF_TYPE_FA = {"standard": "استاندارد", "book": "کتاب", "other": "سایر"}
+STATUS_FA = {"draft": "پیش‌نویس", "reviewed": "بازبینی‌شده", "published": "منتشرشده"}
 
 
 def normalize_persian(text: str) -> str:
@@ -202,22 +203,77 @@ def render_pages(records, meta):
 
         (DOCS_TERMS_DIR / f"{slug}.md").write_text(page, encoding="utf-8")
 
-    # alphabetical index
-    terms_by_letter = {}
-    for record in terms:
-        term_fa = normalize_persian(record["term_fa"])
-        letter = term_fa[0]
-        terms_by_letter.setdefault(letter, []).append((term_fa, record["slug"], str(record.get("term_en") or "").strip()))
+    (DOCS_TERMS_DIR / "index.md").write_text(render_index(records, meta), encoding="utf-8")
 
-    index_content = "---\ntitle: فهرست واژگان\n---\n\n# فهرست واژگان\n\n## فهرست الفبایی\n\n"
-    persian_alphabet = "آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی"
-    for letter in sorted(terms_by_letter.keys(), key=lambda l: persian_alphabet.find(l) if l in persian_alphabet else 999):
-        index_content += f"\n### حرف {letter}\n\n"
-        for term_fa, slug, term_en in sorted(terms_by_letter[letter]):
-            suffix = f" — {term_en}" if term_en else ""
-            index_content += f"- [{term_fa}](./{slug}.md){suffix}\n"
 
-    (DOCS_TERMS_DIR / "index.md").write_text(index_content, encoding="utf-8")
+def render_index(records, meta):
+    """Generate docs/terms/index.md with client-side faceted filters."""
+    import html as _html
+
+    terms = [record for _, record in records]
+    domain_titles = {d["id"]: d.get("title_fa", d["id"]) for d in meta.get("domains", [])}
+    domain_order = [d["id"] for d in meta.get("domains", [])]
+    present_domains = [
+        d for d in domain_order
+        if any(d in (t.get("domain") or []) for t in terms)
+    ]
+
+    def esc(value):
+        return _html.escape(str(value), quote=True)
+
+    out = []
+    out.append("---\ntitle: فهرست واژگان\ndescription: فهرست واژگان با فیلتر حوزه، وضعیت و ترجمه‌ها\n---\n")
+    out.append("# فهرست واژگان")
+    out.append("")
+    out.append('<div class="term-filters" markdown="0">')
+    out.append('  <div class="filter-group"><label for="filter-domain">حوزه:</label>'
+               ' <select id="filter-domain"><option value="">همه</option>')
+    for d in present_domains:
+        out.append(f'    <option value="{esc(d)}">{esc(domain_titles.get(d, d))}</option>')
+    out.append('  </select></div>')
+    out.append('  <div class="filter-group"><label for="filter-status">وضعیت:</label>'
+               ' <select id="filter-status"><option value="">همه</option>')
+    for status, label in STATUS_FA.items():
+        out.append(f'    <option value="{status}">{label}</option>')
+    out.append('  </select></div>')
+    out.append('  <div class="filter-group"><label for="filter-langs">دست‌کم دارای:</label>'
+               ' <select id="filter-langs"><option value="">همهٔ زبان‌ها</option>'
+               '<option value="en">انگلیسی</option>'
+               '<option value="fr">فرانسوی</option>'
+               '<option value="de">آلمانی</option>'
+               '<option value="ar">عربی</option></select></div>')
+    out.append('  <div class="filter-group"><label for="filter-sort">مرتب‌سازی:</label>'
+               ' <select id="filter-sort"><option value="fa">فارسی (الفبایی)</option>'
+               '<option value="en">انگلیسی (الفبایی)</option></select></div>')
+    out.append('  <span id="terms-count" class="terms-count"></span>')
+    out.append('</div>')
+    out.append("")
+    out.append('<ul id="terms-list" class="terms-list">')
+    for record in sorted(terms, key=lambda t: normalize_persian(t["term_fa"])):
+        fa = normalize_persian(record["term_fa"])
+        en = str(record.get("term_en") or "").strip()
+        status = record.get("status", "draft")
+        status_label = STATUS_FA.get(status, status)
+        domains = record.get("domain") or []
+        langs = ["en"] if en else []
+        for code in ("fr", "de", "ar"):
+            if str(record.get(f"term_{code}") or "").strip():
+                langs.append(code)
+        domain_labels = "، ".join(domain_titles.get(d, d) for d in domains)
+        out.append(
+            '  <li class="term-row"'
+            f' data-domain="{esc(" ".join(domains))}"'
+            f' data-status="{esc(status)}"'
+            f' data-langs="{esc(" ".join(langs))}"'
+            f' data-fa="{esc(fa)}" data-en="{esc(en)}">'
+            f'<a href="./{esc(record["slug"])}.md">{esc(fa)}</a>'
+            f' <span class="term-en">{esc(en)}</span>'
+            f' <span class="term-domain">{esc(domain_labels)}</span>'
+            f' <span class="term-status term-status-{esc(status)}">{esc(status_label)}</span>'
+            "</li>"
+        )
+    out.append("</ul>")
+    return "\n".join(out) + "\n"
 
 
 def main():
