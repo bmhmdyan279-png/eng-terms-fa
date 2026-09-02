@@ -12,14 +12,14 @@ body:
     id: term_fa
     attributes:
       label: واژهٔ فارسی
-      placeholder: مثلاً: ویبره
+      placeholder: "مثلاً: ویبره"
     validations:
       required: true
   - type: input
     id: term_en
     attributes:
       label: معادل انگلیسی (در صورت اطمینان)
-      placeholder: مثلاً: vibration / compaction by vibrator
+      placeholder: "مثلاً: vibration / compaction by vibrator"
     validations:
       required: false
   - type: dropdown
@@ -44,6 +44,6 @@ body:
     id: source
     attributes:
       label: منبع (استاندارد/کتاب/تجربهٔ کارگاهی)
-      placeholder: مثلاً: ACI 318-19 یا تجربهٔ اجرایی
+      placeholder: "مثلاً: ACI 318-19 یا تجربهٔ اجرایی"
     validations:
       required: false
