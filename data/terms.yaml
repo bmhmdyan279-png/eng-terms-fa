@@ -262,13 +262,14 @@
   term_de: Versiegelung
   term_ar: ختم
 - term_fa: آب چین
-  term_en: Chinese water
+  term_en: pointing mortar
   category: اصطلاحات ساختمانی
   definition: دوغاب ریزی آجرکاری‌ها با ملات ماسه و سیمان یا مانند آن
   references: []
   term_fr: Eau chinoise
   term_de: Chinesisches Wasser
   term_ar: المياه الصينية
+  status: draft
 - term_fa: آجر چهارگوش
   term_en: Square brick
   category: اصطلاحات ساختمانی
@@ -286,37 +287,41 @@
   term_de: Dreistöckiger Ziegelstein
   term_ar: الطوب بثلاثة ارتفاعات
 - term_fa: آجر فارسی بُر
-  term_en: Bor Persian brick
+  term_en: bullnose brick
   category: اصطلاحات ساختمانی
   definition: آجر لب پخ
   references: []
   term_fr: Brique persane Bor
   term_de: Bor persischer Ziegelstein
   term_ar: بور الطوب الفارسي
+  status: draft
 - term_fa: آجر نبشی
-  term_en: Do not brick
+  term_en: corner brick
   category: اصطلاحات ساختمانی
   definition: آجر که در نبش دیوار به کار می رود
   references: []
   term_fr: Ne pas briquer
   term_de: Nicht mauern
   term_ar: لا لبنة
+  status: draft
 - term_fa: آجر نره
-  term_en: Don't be a brick
+  term_en: header brick
   category: اصطلاحات ساختمانی
   definition: آجرهایی که طول یا عرض عمودی و افقی پهلوی یکدیگر قرار گیرند
   references: []
   term_fr: Ne sois pas une brique
   term_de: Sei kein Ziegelstein
   term_ar: لا تكن لبنة
+  status: draft
 - term_fa: آچار F
-  term_en: Pickle F
+  term_en: F-bar bender
   category: اصطلاحات ساختمانی
   definition: وسیله ای به شکل F برای خم کردن میلگرد (آرماتوربندی)
   references: []
   term_fr: Cornichon F
   term_de: Pickle F
   term_ar: مخلل ف
+  status: draft
 - term_fa: آسفالت
   term_en: asphalt
   category: اصطلاحات ساختمانی
@@ -334,13 +339,14 @@
   term_de: Verbrannter Asphalt
   term_ar: الأسفلت المحروق
 - term_fa: آلوئک
-  term_en: Aloy
+  term_en: lime bloom
   category: اصطلاحات ساختمانی
   definition: لب پر شدن آجر به وسیله آهک
   references: []
   term_fr: Aloy
   term_de: Aloy
   term_ar: ألوي
+  status: draft
 - term_fa: آویز
   term_en: pendant
   category: اصطلاحات ساختمانی
@@ -350,13 +356,14 @@
   term_de: Anhänger
   term_ar: قلادة
 - term_fa: آهن گُم
-  term_en: are lost
+  term_en: embedded steel
   category: اصطلاحات ساختمانی
   definition: آهن سقف که روی آنها با آجر پوشانده اند
   references: []
   term_fr: sont perdus
   term_de: sind verloren
   term_ar: ضائعة
+  status: draft
 - term_fa: اسپر
   term_en: Spur
   category: اصطلاحات ساختمانی
