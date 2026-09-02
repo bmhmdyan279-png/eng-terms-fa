@@ -1,3 +1,2 @@
 term_fa,term_en,domain,slug,source_file,reasons
 اندازه غربالی,Mesh / Sieve size,"concrete, testing",mesh-sieve-size,academy.yaml,too long (4 > 3 words)
-دج,DJ,construction,dj,construction.yaml,too short (2 < 3 chars)

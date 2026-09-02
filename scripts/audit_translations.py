@@ -102,7 +102,7 @@ def main():
             )
 
     with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=CSV_FIELDS)
+        writer = csv.DictWriter(f, fieldnames=CSV_FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(alerts)
 

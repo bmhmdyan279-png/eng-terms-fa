@@ -1,0 +1,15 @@
+# حداقل تنظیمات برای اجرای یکپارچه در CI (pre-commit/action)
+# فعلاً فقط هوک‌های «بررسی» (بدون تغییر خودکار فایل‌ها) فعال‌اند تا
+# با محتوای موجود تداخل ایجاد نکنند.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-yaml
+        # mkdocs.yml از تگ‌های !!python/name قالب Material استفاده می‌کند
+        # که با پارسر امن سازگار نیست؛ بیلد واقعی آن را جداگانه می‌سنجد.
+        exclude: ^mkdocs\.yml$
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-added-large-files

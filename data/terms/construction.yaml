@@ -233,8 +233,8 @@ terms:
 - id: orlip
   term_fa: اورلپ
   term_en: Orlip
-  term_fr: Orlip
-  term_de: Orlip
+  term_fr: null
+  term_de: null
   term_ar: أورليب
   pos: noun
   domain:
@@ -629,8 +629,8 @@ terms:
 - id: tizon
   term_fa: تیزون
   term_en: Tizon
-  term_fr: Tizon
-  term_de: Tizon
+  term_fr: null
+  term_de: null
   term_ar: تيزون
   pos: noun
   domain:
@@ -674,18 +674,18 @@ terms:
   definition_fa: عدم خوردگی گچ
   status: draft
   slug: john-is-plastered
-- id: jerez
+- id: pier
   term_fa: جرز
-  term_en: Jerez
-  term_fr: Xérès
-  term_de: Jerez
+  term_en: pier
+  term_fr: null
+  term_de: null
   term_ar: خيريز
   pos: noun
   domain:
   - construction
   definition_fa: دیوار یا پایه ضخیمی است که باربر باشد
   status: draft
-  slug: jerez
+  slug: pier
 - id: zigzag-brickwork
   term_fa: جُوَک
   term_en: zigzag brickwork
@@ -842,18 +842,18 @@ terms:
   definition_fa: ارتفاع قوس
   status: draft
   slug: rise-up
-- id: dj
+- id: hard-ground
   term_fa: دج
-  term_en: DJ
-  term_fr: DJ
-  term_de: DJ
+  term_en: hard ground
+  term_fr: null
+  term_de: null
   term_ar: دي جي
   pos: noun
   domain:
   - construction
   definition_fa: زمین سخت
   status: draft
-  slug: dj
+  slug: hard-ground
 - id: cap
   term_fa: درپوش
   term_en: cap
@@ -926,18 +926,18 @@ terms:
   definition_fa: کانال عمودی
   status: draft
   slug: riser
-- id: raj-bana
+- id: masonry-course
   term_fa: رج بنا
-  term_en: Raj Bana
-  term_fr: Raj Bana
-  term_de: Raj Bana
+  term_en: masonry course
+  term_fr: null
+  term_de: null
   term_ar: راج بانا
   pos: noun
   domain:
   - construction
   definition_fa: ردیف های آجر کاری
   status: draft
-  slug: raj-bana
+  slug: masonry-course
 - id: facing
   term_fa: روکار
   term_en: facing
@@ -950,18 +950,18 @@ terms:
   definition_fa: نمای ساختمان
   status: draft
   slug: facing
-- id: romi
+- id: semicircular-arch
   term_fa: رومی
-  term_en: Romi
-  term_fr: Romi
-  term_de: Romi
+  term_en: semicircular arch
+  term_fr: null
+  term_de: null
   term_ar: الرومي
   pos: noun
   domain:
   - construction
   definition_fa: قوس نیم دایره بالای درگاه
   status: draft
-  slug: romi
+  slug: semicircular-arch
 - id: hit-the-ground
   term_fa: زمین زِد
   term_en: hit the ground

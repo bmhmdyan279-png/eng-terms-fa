@@ -1,126 +1,102 @@
 #!/usr/bin/env python3
-"""
-اصلاح لینک‌های فارسی قدیمی در book-vocab.md و construction-terms.md
+"""Relink legacy list pages (docs/book-vocab.md, docs/construction-terms.md)
+to the current term ids.
+
+Links have the form ``[متن فارسی](terms/slug.md)``. When the target slug no
+longer exists among the current ids, the Persian link text is resolved
+against the data (data/terms/*.yaml) and the link is rewritten to the
+current id. Unresolvable links are reported and fail the script — nothing
+is silently degraded.
+
+Usage:
+    python scripts/fix_old_links.py
 """
 
 import re
-import yaml
+import sys
+import unicodedata
 from pathlib import Path
+
+import yaml
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT / "data" / "terms"
+TARGET_FILES = [ROOT / "docs" / "book-vocab.md", ROOT / "docs" / "construction-terms.md"]
+
+LINK_PATTERN = re.compile(r"\[([^\]]+)\]\(terms/([^)]+\.md)\)")
 
 
 def normalize_persian(text: str) -> str:
     if not text:
-        return text
-    text = text.replace('ي', 'ی').replace('ك', 'ک')
-    return text
+        return ""
+    text = text.replace("ي", "ی").replace("ك", "ک")
+    return unicodedata.normalize("NFKC", text)
 
 
-def build_mapping():
-    """ساخت نگاشت از واژه فارسی به slug انگلیسی"""
-    data_file = Path("data/terms.yaml")
-    with open(data_file, "r", encoding="utf-8") as f:
-        terms = yaml.safe_load(f)
-    
-    mapping = {}
-    seen_slugs = set()
-    
-    for term in terms:
-        if not isinstance(term, dict):
+def load_terms():
+    terms = []
+    for path in sorted(DATA_DIR.glob("*.yaml")):
+        if path.name.startswith("_"):
             continue
-        
-        term_fa = term.get('term_fa', '').strip()
-        if not term_fa:
-            continue
-        
-        term_fa = normalize_persian(term_fa)
-        
-        # تولید slug
-        slug = term.get('slug', '').strip()
-        if not slug:
-            term_en = term.get('term_en', '').strip()
-            if term_en:
-                slug = re.sub(r'[^a-z0-9\s-]', '', term_en.lower())
-                slug = re.sub(r'[\s]+', '-', slug.strip())
-            else:
-                # slugify فارسی ساده
-                fa_to_en = {
-                    'آ': 'a', 'ا': 'a', 'ب': 'b', 'پ': 'p', 'ت': 't', 'ث': 's',
-                    'ج': 'j', 'چ': 'ch', 'ح': 'h', 'خ': 'kh', 'د': 'd', 'ذ': 'z',
-                    'ر': 'r', 'ز': 'z', 'ژ': 'zh', 'س': 's', 'ش': 'sh', 'ص': 's',
-                    'ض': 'z', 'ط': 't', 'ظ': 'z', 'ع': 'a', 'غ': 'gh', 'ف': 'f',
-                    'ق': 'gh', 'ک': 'k', 'گ': 'g', 'ل': 'l', 'م': 'm', 'ن': 'n',
-                    'و': 'v', 'ه': 'h', 'ی': 'y',
-                }
-                slug = ''.join(fa_to_en.get(c, '') for c in term_fa)
-                slug = re.sub(r'[^a-z0-9\-]', '', slug.lower())
-        
-        # یکتا کردن
-        base_slug = slug
-        counter = 1
-        while slug in seen_slugs:
-            slug = f"{base_slug}-{counter}"
-            counter += 1
-        
-        mapping[term_fa] = slug
-        seen_slugs.add(slug)
-    
-    return mapping
-
-
-def fix_file(filepath: Path, mapping: dict):
-    """اصلاح لینک‌ها در یک فایل"""
-    if not filepath.exists():
-        print(f"⚠️ فایل {filepath} یافت نشد")
-        return
-    
-    content = filepath.read_text(encoding='utf-8')
-    original = content
-    
-    # پیدا کردن تمام لینک‌های فارسی
-    # الگو: [متن](terms/واژه-فارسی.md)
-    pattern = r'\[([^\]]+)\]\(terms/([^)]+\.md)\)'
-    
-    def replace_link(match):
-        link_text = match.group(1)
-        filename = match.group(2)
-        
-        # حذف .md و تبدیل به واژه فارسی
-        term_fa = filename.replace('.md', '')
-        term_fa_normalized = normalize_persian(term_fa)
-        
-        # پیدا کردن slug جدید
-        if term_fa_normalized in mapping:
-            new_slug = mapping[term_fa_normalized]
-            return f'[{link_text}](terms/{new_slug}.md)'
-        else:
-            # اگر پیدا نشد، لینک را حذف کن
-            return f'~~{link_text}~~'
-    
-    content = re.sub(pattern, replace_link, content)
-    
-    if content != original:
-        filepath.write_text(content, encoding='utf-8')
-        print(f"✅ {filepath} اصلاح شد")
-    else:
-        print(f"ℹ️ {filepath} تغییری نکرد")
+        doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        terms.extend(doc.get("terms") or [])
+    return terms
 
 
 def main():
-    print("🔍 ساخت نگاشت واژه‌ها...")
-    mapping = build_mapping()
-    print(f"📚 {len(mapping)} واژه نگاشت شد")
-    
-    # اصلاح فایل‌های مشکل‌دار
-    files_to_fix = [
-        Path("docs/book-vocab.md"),
-        Path("docs/construction-terms.md"),
-    ]
-    
-    for filepath in files_to_fix:
-        fix_file(filepath, mapping)
-    
-    print("🎉 اصلاح لینک‌ها کامل شد")
+    terms = load_terms()
+    if not terms:
+        print(f"error: no terms found in {DATA_DIR}", file=sys.stderr)
+        return 2
+
+    current_ids = {t["id"] for t in terms if "id" in t}
+    by_term_fa = {}
+    for term in terms:
+        key = normalize_persian((term.get("term_fa") or "").strip())
+        if key:
+            by_term_fa.setdefault(key, term)
+
+    total_kept = total_relinked = 0
+    unresolved = []
+
+    for target_file in TARGET_FILES:
+        if not target_file.exists():
+            print(f"warning: {target_file} not found, skipping")
+            continue
+
+        text = target_file.read_text(encoding="utf-8")
+        kept = relinked = 0
+
+        def replace(match):
+            nonlocal kept, relinked
+            link_text, filename = match.group(1), match.group(2)
+            slug = filename[:-3]
+            if slug in current_ids:
+                kept += 1
+                return match.group(0)
+            term = by_term_fa.get(normalize_persian(link_text.strip()))
+            if term:
+                relinked += 1
+                return f"[{link_text}](terms/{term['id']}.md)"
+            unresolved.append((target_file.name, link_text, filename))
+            return match.group(0)
+
+        new_text = LINK_PATTERN.sub(replace, text)
+        if new_text != text:
+            target_file.write_text(new_text, encoding="utf-8")
+            print(f"✅ {target_file.name}: {relinked} link(s) relinked, {kept} already valid")
+        else:
+            print(f"ℹ️ {target_file.name}: no changes needed ({kept} links valid)")
+        total_kept += kept
+        total_relinked += relinked
+
+    print(f"\nsummary: {total_kept} valid, {total_relinked} relinked, {len(unresolved)} unresolved")
+    if unresolved:
+        for file_name, link_text, filename in unresolved:
+            print(f"  ✗ {file_name}: [{link_text}](terms/{filename}) matches no current term", file=sys.stderr)
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
