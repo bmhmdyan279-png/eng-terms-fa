@@ -17,3 +17,7 @@ node_modules/
 venv/
 .env
 .idea/
+
+# Generated API + exports
+docs/data/
+output/

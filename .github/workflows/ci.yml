@@ -30,6 +30,9 @@ jobs:
       - name: Build pages
         run: python scripts/build_pages.py
 
+      - name: Generate JSON API
+        run: python scripts/generate_api.py
+
       - name: Build site (strict)
         run: mkdocs build --strict
 
@@ -40,6 +43,15 @@ jobs:
 
       - name: Build Pagefind search index
         run: npx --yes pagefind --site site/
+
+      - name: Generate exports (Anki/CSV/PDF)
+        run: python scripts/generate_exports.py
+
+      - name: Upload export artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dictionary-exports
+          path: output/
 
       - name: Lighthouse audit (min 90)
         run: |

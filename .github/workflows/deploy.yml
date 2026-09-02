@@ -39,6 +39,9 @@ jobs:
       - name: Build pages
         run: python scripts/build_pages.py
 
+      - name: Generate JSON API
+        run: python scripts/generate_api.py
+
       - name: Run tests
         run: pytest tests/
 
@@ -52,6 +55,12 @@ jobs:
 
       - name: Build Pagefind search index
         run: npx --yes pagefind --site site/
+
+      - name: Generate exports and publish downloads
+        run: |
+          python scripts/generate_exports.py
+          mkdir -p site/downloads
+          cp output/anki.apkg output/terms.csv output/terms.pdf site/downloads/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

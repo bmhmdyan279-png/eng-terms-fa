@@ -63,6 +63,7 @@ extra_javascript:
   - assets/js/search-init.js
   - assets/js/term-filters.js
   - assets/js/pwa-register.js
+  - assets/js/totd.js
 
 extra:
   manifest: manifest.webmanifest

@@ -9,7 +9,7 @@ description: فرهنگ واژگان تخصصی مهندسی — معادل دق
 
 *عمران • بتن • ساختمان • مکانیک*
 
-<!--stats:start--><!--stats:end-->
+<div id="live-stats"></div>
 
 <div class="hero-cta" markdown>
 
@@ -18,6 +18,10 @@ description: فرهنگ واژگان تخصصی مهندسی — معادل دق
 [🤝 مشارکت در پروژه](contribute.md){ .md-button }
 
 </div>
+
+## واژهٔ روز
+
+<div id="totd-slot"></div>
 
 ## جستجوی واژه { #search }
 

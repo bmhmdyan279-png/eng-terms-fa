@@ -160,3 +160,30 @@ ul.terms-list li.term-row {
 @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; animation: none !important; }
 }
+
+/* ============ واژهٔ روز ============ */
+.totd-card {
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-inline-start: 0.25rem solid var(--md-primary-fg-color);
+    border-radius: 0.6rem;
+    background: var(--md-code-bg-color);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.totd-label {
+    font-size: 0.75rem;
+    color: var(--md-primary-fg-color);
+    font-weight: 700;
+}
+.totd-term {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--md-default-fg-color);
+    text-decoration: none;
+}
+.totd-term:hover { color: var(--md-accent-fg-color); }
+.totd-en { color: var(--md-default-fg-color--light); }
+.totd-def { color: var(--md-default-fg-color--light); font-size: 0.92rem; margin: 0.3rem 0 0; }

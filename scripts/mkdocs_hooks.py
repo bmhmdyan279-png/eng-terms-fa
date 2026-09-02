@@ -11,6 +11,7 @@
 """
 
 import re
+import sys
 import unicodedata
 from pathlib import Path
 
@@ -19,7 +20,11 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "terms"
 
-STATS_MARKERS = re.compile(r"<!--\s*stats:start\s*-->.*?<!--\s*stats:end\s*-->", re.DOTALL)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import totd as _totd  # noqa: E402
+
+STATS_SLOT = '<div id="live-stats"></div>'
+TOTD_SLOT = '<div id="totd-slot"></div>'
 
 LANGUAGE_COUNT = 5  # FA, EN, FR, DE, AR
 
@@ -53,6 +58,48 @@ def compute_stats(terms) -> dict:
     }
 
 
+def render_totd_html(terms, day=None) -> str:
+    """Render the deterministic term-of-the-day card for `day`."""
+    import html as _html
+
+    if not terms:
+        return '<div id="totd"></div>'
+    index = _totd.pick_index(len(terms), day)
+    term = terms[index]
+    fa = _html.escape(str(term.get("term_fa", "")))
+    en = _html.escape(str(term.get("term_en", "")))
+    slug = _html.escape(str(term.get("slug", "")))
+    definition = str(term.get("definition_fa", "")).strip()
+    if len(definition) > 140:
+        definition = definition[:140] + "…"
+    definition = _html.escape(definition)
+    card = (
+        '<div class="totd-card">\n'
+        '  <span class="totd-label">واژهٔ روز</span>\n'
+        f'  <a class="totd-term" href="terms/{slug}/">{fa}</a>\n'
+        f'  <span class="totd-en" dir="ltr" lang="en">{en}</span>\n'
+        f'  <p class="totd-def">{definition}</p>\n'
+        "</div>"
+    )
+    payload = [
+        [
+            str(t.get("slug", "")),
+            str(t.get("term_fa", "")),
+            str(t.get("term_en", "")),
+            str(t.get("definition_fa", "")),
+        ]
+        for t in terms
+    ]
+    import json as _json
+
+    data_script = (
+        '<script id="totd-data" type="application/json">'
+        + _json.dumps(payload, ensure_ascii=False)
+        + "</script>"
+    )
+    return f'<div id="totd">{card}</div>\n{data_script}'
+
+
 def render_stats_html(terms) -> str:
     stats = compute_stats(terms)
     return (
@@ -66,9 +113,12 @@ def render_stats_html(terms) -> str:
 
 
 def on_page_content(html, page, config, files):
+    # NOTE: HTML comments are re-ordered by the markdown renderer, so we use
+    # stable <div> slots in index.md instead of comment markers.
     if page.file.src_path == "index.md":
-        stats_html = render_stats_html(_load_terms())
-        html = STATS_MARKERS.sub(stats_html, html)
+        terms = _load_terms()
+        html = html.replace(STATS_SLOT, render_stats_html(terms))
+        html = html.replace(TOTD_SLOT, render_totd_html(terms))
     return f'<div data-pagefind-body>{html}</div>'
 
 
