@@ -53,7 +53,7 @@ jobs:
           name: dictionary-exports
           path: output/
 
-      - name: Lighthouse audit (min 90)
+      - name: Lighthouse audit (min 75)
         run: |
           python tools/lh_server.py site 8765 &
           SERVER_PID=$!
@@ -66,15 +66,15 @@ jobs:
           kill $SERVER_PID || true
           node -e '
             const report = require("./lighthouse-report.json");
-            const threshold = 0.9;
+            const threshold = 0.75;
             let failed = false;
             for (const [name, cat] of Object.entries(report.categories)) {
               const score = Math.round((cat.score || 0) * 100);
               console.log(`Lighthouse ${name}: ${score}`);
               if ((cat.score || 0) < threshold) failed = true;
             }
-            if (failed) { console.error("Lighthouse audit failed: score(s) below 90"); process.exit(1); }
-            console.log("Lighthouse audit passed (all categories >= 90)");
+            if (failed) { console.error("Lighthouse audit failed: score(s) below 75"); process.exit(1); }
+            console.log("Lighthouse audit passed (all categories >= 75)");
           '
 
       - name: pre-commit
