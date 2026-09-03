@@ -1,5 +1,5 @@
 # 🏗️ دیکشنری تخصصی مهندسی
-
+[![GitHub release](https://img.shields.io/github/v/release/bmhmdyan279-png/eng-terms-fa)](https://github.com/bmhmdyan279-png/eng-terms-fa/releases)
 ## 📖 دربارهٔ پروژه
 
 این پروژه یک **دیکشنری تخصصی مهندسی** با تمرکز بر واژگان فنی و علمی در حوزه‌های **عمران، مکانیک، معماری و فناوری بتن** است.
