@@ -17,3 +17,204 @@ terms:
   references:
   - type: book
     code: کتاب مکانیک تحلیلی
+- id: force
+  term_fa: نیرو
+  term_en: force
+  term_fr: force
+  term_de: Kraft
+  term_ar: قوة
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: کمیتی برداری که موجب تغییر حرکت، تغییر شکل یا ایجاد شتاب در جسم می‌شود؛ یکای آن در دستگاه بین‌المللی یکاها نیوتن است.
+  status: draft
+  slug: force
+  related_terms:
+  - acceleration
+  - mass
+- id: friction
+  term_fa: اصطکاک
+  term_en: friction
+  term_fr: frottement
+  term_de: Reibung
+  term_ar: احتكاك
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: نیروی مقاومتی که در سطح تماس دو جسم، در برابر حرکت نسبی آن‌ها ایجاد می‌شود و به جنس سطح‌ها و بار عمودی وارد بر آن‌ها بستگی دارد.
+  status: draft
+  slug: friction
+  related_terms:
+  - force
+- id: acceleration
+  term_fa: شتاب
+  term_en: acceleration
+  term_fr: accélération
+  term_de: Beschleunigung
+  term_ar: تسارع
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: نرخ تغییرات سرعت نسبت به زمان؛ کمیتی برداری با یکای متر بر مجذور ثانیه که در دینامیک سازه‌ها در محاسبهٔ نیروی زلزله نقش اساسی دارد.
+  status: draft
+  slug: acceleration
+  related_terms:
+  - force
+  - velocity
+- id: mass
+  term_fa: جرم
+  term_en: mass
+  term_fr: masse
+  term_de: Masse
+  term_ar: كتلة
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: مقدار مادهٔ تشکیل‌دهندهٔ یک جسم و معیار مقاومت آن در برابر شتاب‌گیری؛ یکای آن کیلوگرم است و با وزن، که نیرویی وابسته به گرانش است، تفاوت دارد.
+  status: draft
+  slug: mass
+  related_terms:
+  - weight
+  - inertia
+- id: velocity
+  term_fa: سرعت
+  term_en: velocity
+  term_fr: vitesse
+  term_de: Geschwindigkeit
+  term_ar: سرعة
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: نرخ جابه‌جایی جسم نسبت به زمان؛ کمیتی برداری با یکای متر بر ثانیه که به اندازهٔ آن تندی گفته می‌شود.
+  status: draft
+  slug: velocity
+  related_terms:
+  - acceleration
+- id: inertia
+  term_fa: اینرسی
+  term_en: inertia
+  term_fr: inertie
+  term_de: Trägheit
+  term_ar: قصور ذاتي
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: خاصیت مقاومت جسم در برابر تغییر وضعیت سکون یا حرکت یکنواخت خود؛ هرچه جرم جسم بیشتر باشد اینرسی آن بیشتر است.
+  status: draft
+  slug: inertia
+  related_terms:
+  - mass
+- id: momentum
+  term_fa: تکانه
+  term_en: momentum
+  term_fr: quantité de mouvement
+  term_de: Impuls
+  term_ar: كمية الحركة
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: حاصل‌ضرب جرم جسم در سرعت آن؛ کمیتی برداری که در تحلیل برخوردها و بارهای ضربه‌ای پایسته می‌ماند و به آن اندازهٔ حرکت نیز می‌گویند.
+  status: draft
+  slug: momentum
+  related_terms:
+  - mass
+  - velocity
+- id: center-of-gravity
+  term_fa: مرکز ثقل
+  term_en: center of gravity
+  term_fr: centre de gravité
+  term_de: Schwerpunkt
+  term_ar: مركز الثقل
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: نقطه‌ای که برآیند نیروهای وزن اجزای جسم در آن متمرکز فرض می‌شود؛ در اجسام همگن و متقارن بر مرکز هندسی منطبق است و در پایداری سازه‌ها نقش کلیدی دارد.
+  status: draft
+  slug: center-of-gravity
+  related_terms:
+  - mass
+- id: bending-moment
+  term_fa: لنگر خمشی
+  term_en: bending moment
+  term_fr: moment de flexion
+  term_de: Biegemoment
+  term_ar: عزم الانحناء
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: اثر چرخشی نیروهای داخلی یک مقطع در برابر خمش؛ حاصل‌ضرب نیرو در فاصلهٔ عمودی آن تا مقطع است و یکای آن نیوتن‌متر است.
+  status: draft
+  slug: bending-moment
+  related_terms:
+  - shear
+  - gashtavar
+- id: shear
+  term_fa: برش
+  term_en: shear
+  term_fr: cisaillement
+  term_de: Scherung
+  term_ar: قص
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: تنش یا نیرویی موازی با سطح مقطع که تمایل به بریدن یا لغزاندن لایه‌های جسم نسبت به یکدیگر دارد؛ در تیرهای بتنی با خاموت مهار می‌شود.
+  status: draft
+  slug: shear
+  related_terms:
+  - bending-moment
+- id: fatigue
+  term_fa: خستگی
+  term_en: fatigue
+  term_fr: fatigue
+  term_de: Ermüdung
+  term_ar: كلال
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: کاهش تدریجی مقاومت ماده زیر بارهای تکراری و متناوبی که از حد مقاومت ایستا کمترند؛ عامل اصلی شکست در ماشین‌آلات و سازه‌های تحت بار چرخه‌ای است.
+  status: draft
+  slug: fatigue
+- id: modulus-of-elasticity
+  term_fa: مدول الاستیسیته
+  term_en: modulus of elasticity
+  term_fr: module d'élasticité
+  term_de: Elastizitätsmodul
+  term_ar: معامل المرونة
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: نسبت تنش به کرنش در ناحیهٔ کشسان ماده و معیار سختی آن؛ برای فولاد ساختمانی حدود ۲۰۰ گیگاپاسکال و برای بتن معمولی حدود ۲۵ تا ۳۰ گیگاپاسکال است.
+  status: draft
+  slug: modulus-of-elasticity
+  related_terms:
+  - strain
+  - elasticity
+- id: strain
+  term_fa: کرنش
+  term_en: strain
+  term_fr: déformation
+  term_de: Dehnung
+  term_ar: انفعال
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: تغییر شکل نسبی جسم نسبت به ابعاد اولیهٔ آن تحت اثر تنش؛ کمیتی بدون یکا که در ناحیهٔ کشسان با تنش نسبت مستقیم دارد (قانون هوک).
+  status: draft
+  slug: strain
+  related_terms:
+  - modulus-of-elasticity
+  - tension
+- id: weight
+  term_fa: وزن
+  term_en: weight
+  term_fr: poids
+  term_de: Gewicht
+  term_ar: وزن
+  pos: noun
+  domain:
+  - mechanical
+  definition_fa: نیروی وارد بر جسم از سوی میدان گرانش زمین؛ حاصل‌ضرب جرم در شتاب گرانش است و یکای آن نیوتن است.
+  status: draft
+  slug: weight
+  related_terms:
+  - mass

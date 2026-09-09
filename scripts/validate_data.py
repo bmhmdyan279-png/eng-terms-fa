@@ -49,7 +49,7 @@ LAZY_TRANSLATION_FIELDS = ("term_fr", "term_de", "term_ar")
 COGNATE_ALLOWLIST = {
     # flagged by the data today (genuine cognates)
     "asphalt", "digital", "depot", "traverse", "tension", "affiliation",
-    "cumin", "zigzag",
+    "cumin", "zigzag", "parapet", "force", "fatigue",
     # common international technical terms (same spelling across languages)
     "protocol", "batch", "tolerance", "frequency", "vibrator", "gallery",
     "pycnometer", "oven", "control", "jig", "calibration", "diesel",

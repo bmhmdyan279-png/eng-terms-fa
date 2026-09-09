@@ -5,97 +5,97 @@ terms:
 - id: sealing
   term_fa: آب بندی
   term_en: sealing
-  term_fr: scellage
-  term_de: Versiegelung
-  term_ar: ختم
+  term_fr: étanchéité
+  term_de: Abdichtung
+  term_ar: عزل مائي
   pos: noun
   domain:
   - construction
-  definition_fa: جلوگیری از نفوذ آب یا رطوبت
+  definition_fa: عملیات جلوگیری از نفوذ آب یا رطوبت به درون سازه یا فضاهای داخلی ساختمان، که با استفاده از مواد عایق (نظیر قیر، ایزوگام و غشاهای پلیمری) و رعایت جزئیات اجرایی در نقاط حساس مانند پی، پشت‌بام و سرویس‌های بهداشتی انجام می‌شود. اجرای نادرست آن به زنگ‌زدگی آرماتور، رشد قارچ و کاهش عمر مفید سازه می‌انجامد.
   status: draft
   slug: sealing
 - id: pointing-mortar
   term_fa: آب چین
   term_en: pointing mortar
-  term_fr: Eau chinoise
-  term_de: Chinesisches Wasser
-  term_ar: المياه الصينية
+  term_fr: mortier de jointoiement
+  term_de: Fugenmörtel
+  term_ar: مونة اللحامات
   pos: noun
   domain:
   - construction
-  definition_fa: دوغاب ریزی آجرکاری‌ها با ملات ماسه و سیمان یا مانند آن
+  definition_fa: دوغاب‌ریزی بند آجرکاری‌ها با ملات ماسه و سیمان یا مانند آن که سطح بند را آب‌بند و یکنواخت می‌کند.
   status: draft
   slug: pointing-mortar
 - id: square-brick
   term_fa: آجر چهارگوش
   term_en: Square brick
   term_fr: Brique carrée
-  term_de: Quadratischer Ziegelstein
+  term_de: quadratischer Ziegel
   term_ar: لبنة مربعة
   pos: noun
   domain:
   - construction
-  definition_fa: آجر مربع شکل
+  definition_fa: آجر مربع‌شکل با ابعاد یکسان در طول و پهنا که در کف‌سازی، نماسازی و چیدمان‌های منظم بنایی استفاده می‌شود.
   status: draft
   slug: square-brick
 - id: three-quarter-brick
   term_fa: آجر سه قدی
   term_en: three-quarter brick
-  term_fr: Brique à trois hauteurs
-  term_de: Dreistöckiger Ziegelstein
-  term_ar: الطوب بثلاثة ارتفاعات
+  term_fr: brique trois quarts
+  term_de:
+  term_ar: لبنة ثلاثة أرباع
   pos: noun
   domain:
   - construction
-  definition_fa: 3/4 آجر قزاقی
+  definition_fa: قطعه‌ای برابر سه‌چهارم آجر قزاقی که برای تکمیل چیدمان رج و پر کردن فاصله‌های بنایی به کار می‌رود.
   status: draft
   slug: three-quarter-brick
 - id: bullnose-brick
   term_fa: آجر فارسی بُر
   term_en: bullnose brick
-  term_fr: Brique persane Bor
-  term_de: Bor persischer Ziegelstein
-  term_ar: بور الطوب الفارسي
+  term_fr: brique à nez rond
+  term_de:
+  term_ar: لبنة مستديرة الحافة
   pos: noun
   domain:
   - construction
-  definition_fa: آجر لب پخ
+  definition_fa: آجر لب‌پخ که یک یا چند لبهٔ آن گرد یا پخ شده است و در لبهٔ دیوارها، پنجره‌ها و نماسازی تزئینی به کار می‌رود.
   status: draft
   slug: bullnose-brick
 - id: corner-brick
   term_fa: آجر نبشی
   term_en: corner brick
-  term_fr: Ne pas briquer
-  term_de: Nicht mauern
-  term_ar: لا لبنة
+  term_fr: brique d'angle
+  term_de:
+  term_ar: لبنة زاوية
   pos: noun
   domain:
   - construction
-  definition_fa: آجر که در نبش دیوار به کار می رود
+  definition_fa: آجری که در نبش و گوشهٔ دیوار به کار می‌رود تا چیدمان رج‌ها در زاویه به‌درستی به یکدیگر پیوند بخورند.
   status: draft
   slug: corner-brick
 - id: header-brick
   term_fa: آجر نره
   term_en: header brick
-  term_fr: Ne sois pas une brique
-  term_de: Sei kein Ziegelstein
-  term_ar: لا تكن لبنة
+  term_fr: brique de bout
+  term_de:
+  term_ar: لبنة رأسية
   pos: noun
   domain:
   - construction
-  definition_fa: آجرهایی که طول یا عرض عمودی و افقی پهلوی یکدیگر قرار گیرند
+  definition_fa: آجرهایی که به‌صورت عمود بر سطح دیوار (با سطح کوچک رو به بیرون) چیده می‌شوند و طول یا عرض آن‌ها در ضخامت دیوار قرار می‌گیرد.
   status: draft
   slug: header-brick
 - id: f-bar-bender
   term_fa: آچار F
   term_en: F-bar bender
-  term_fr: Cornichon F
-  term_de: Pickle F
-  term_ar: مخلل ف
+  term_fr: cintreuse en F
+  term_de:
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: وسیله ای به شکل F برای خم کردن میلگرد (آرماتوربندی)
+  definition_fa: وسیله‌ای به شکل F برای خم کردن میلگرد در آرماتوربندی که با اهرم و قرقرهٔ ثابت، میلگرد را در زاویهٔ دلخواه خم می‌کند.
   status: draft
   slug: f-bar-bender
 - id: asphalt
@@ -107,67 +107,67 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: شن و ماسه و قیر پخته شده
+  definition_fa: مخلوط شن و ماسه و قیر پخته‌شده که برای روسازی راه، حیاط و بام به کار می‌رود و سطحی نفوذناپذیر و مقاوم ایجاد می‌کند.
   status: draft
   slug: asphalt
 - id: burnt-asphalt
   term_fa: آسفالت سوخته
   term_en: Burnt asphalt
-  term_fr: Asphalte brûlé
-  term_de: Verbrannter Asphalt
-  term_ar: الأسفلت المحروق
+  term_fr: asphalte brûlé
+  term_de: verbrannter Asphalt
+  term_ar: إسفلت محروق
   pos: noun
   domain:
   - construction
-  definition_fa: آسفالت بدون چسبندگی
+  definition_fa: آسفالتی که به‌دلیل حرارت بیش از حد یا پخت نامناسب، خاصیت چسبندگی خود را از دست داده و در اجرا پوسته شده و از هم می‌پاشد.
   status: draft
   slug: burnt-asphalt
 - id: lime-bloom
   term_fa: آلوئک
   term_en: lime bloom
-  term_fr: Aloy
-  term_de: Aloy
-  term_ar: ألوي
+  term_fr: efflorescence
+  term_de: Ausblühung
+  term_ar: تزهير
   pos: noun
   domain:
   - construction
-  definition_fa: لب پر شدن آجر به وسیله آهک
+  definition_fa: شوره یا سفیدک آهکی که بر اثر نفوذ آب و مهاجرت نمک‌های محلول به سطح آجر یا ملات پدید می‌آید و موجب لب‌پر شدن و پوسته‌شدن سطح می‌شود.
   status: draft
   slug: lime-bloom
 - id: pendant
   term_fa: آویز
-  term_en: pendant
-  term_fr: pendentif
-  term_de: Anhänger
-  term_ar: قلادة
+  term_en: hanger
+  term_fr: suspente
+  term_de: Abhänger
+  term_ar: معلق
   pos: noun
   domain:
   - construction
-  definition_fa: در سقف تيرچه بلوك
+  definition_fa: قطعهٔ آویز در سقف تیرچه و بلوک که برای مهار یا تعلیق اجزای سقف و تأسیسات به کار می‌رود و بار را به اعضای بالادستی منتقل می‌کند.
   status: draft
   slug: pendant
 - id: embedded-steel
   term_fa: آهن گُم
   term_en: embedded steel
-  term_fr: sont perdus
-  term_de: sind verloren
-  term_ar: ضائعة
+  term_fr: acier noyé
+  term_de: einbetonierter Stahl
+  term_ar: حديد مدفون
   pos: noun
   domain:
   - construction
-  definition_fa: آهن سقف که روی آنها با آجر پوشانده اند
+  definition_fa: آهن سقف که روی آن را با آجر یا بتن پوشانده‌اند؛ فولاد دفن‌شده در سازه که با پوشش مناسب از خوردگی محافظت می‌شود.
   status: draft
   slug: embedded-steel
 - id: spur
   term_fa: اسپر
-  term_en: Spur
-  term_fr: Éperon
-  term_de: Sporn
-  term_ar: حفز
+  term_en: abutment
+  term_fr:
+  term_de: Bogenpfeiler
+  term_ar: دعامة القوس
   pos: noun
   domain:
   - construction
-  definition_fa: جرزهای طرفین یک تاقی یا قوس بالای در
+  definition_fa: جرز یا پایهٔ طرفین طاق و قوس بالای درگاه که بار و رانش قوس را تحمل می‌کند و از گسترش جانبی آن جلوگیری می‌کند.
   status: draft
   slug: spur
 - id: elasticity
@@ -179,67 +179,67 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: کشسانی ، لَم
+  definition_fa: خاصیت ماده در بازگشت به شکل و ابعاد اولیهٔ خود پس از برداشتن بارِ تغییرشکل‌دهنده. در محدودهٔ کشسان، تنش با کرنش نسبت مستقیم دارد و ضریب این تناسب، مدول الاستیسیته نامیده می‌شود.
   status: draft
   slug: elasticity
 - id: cramp
   term_fa: اسکوپ
   term_en: cramp
-  term_fr: Scoop
-  term_de: Scoop
-  term_ar: مغرفة
+  term_fr: crampon
+  term_de: Klammer
+  term_ar: مشبك معدني
   pos: noun
   domain:
   - construction
-  definition_fa: میخ سر کج
+  definition_fa: میخ سرکج، دوسر یا سه‌سر فلزی که برای بستن و اتصال قطعات سنگ، آجر یا چوب به یکدیگر به کار می‌رود و از جابه‌جایی آن‌ها جلوگیری می‌کند.
   status: draft
   slug: cramp
 - id: aspel
   term_fa: اشپیل
-  term_en: Aspel
-  term_fr: Tremble
-  term_de: Espe
-  term_ar: أسبن
+  term_en: through rod
+  term_fr: barre traversante
+  term_de: Durchsteckstange
+  term_ar: قضيب اختراق
   pos: noun
   domain:
   - construction
-  definition_fa: میله ای که از شکاف عبور می کند
+  definition_fa: میلهٔ فلزی که از شکاف یا سوراخ قطعات عبور می‌کند و برای مهار، اتصال یا جابه‌جایی اجزای بنایی به کار می‌رود.
   status: draft
   slug: aspel
 - id: drop
   term_fa: افت
-  term_en: drop
-  term_fr: baisse
-  term_de: fallen
-  term_ar: يسقط
+  term_en: settlement
+  term_fr: affaissement
+  term_de: Setzung
+  term_ar: هبوط
   pos: noun
   domain:
   - construction
-  definition_fa: نشست
+  definition_fa: کاهش تراز یا جابه‌جایی عمودی یک عضو یا سطح نسبت به حالت اولیه؛ نشست پی، افت سطح بتن تازه یا جابه‌جایی تیر زیر بار از نمونه‌های آن است.
   status: draft
   slug: drop
 - id: exposure
   term_fa: اکسپوزه
-  term_en: Exposure
-  term_fr: Exposition
-  term_de: Belichtung
-  term_ar: التعرض
-  pos: noun
+  term_en: exposed
+  term_fr: exposé
+  term_de: freigelegt
+  term_ar: مكشوف
+  pos: adjective
   domain:
   - construction
-  definition_fa: فرم ، نمایش ، حالت
+  definition_fa: وضعیت سطح یا عضوی که بدون پوشش در معرض دید یا در تماس با عوامل جوی قرار دارد؛ مانند بتن اکسپوزه که سطح آن بدون نازک‌کاری رها می‌شود و هم‌زمان نقش سازه‌ای و معماری دارد.
   status: draft
   slug: exposure
 - id: orlip
   term_fa: اورلپ
-  term_en: Orlip
-  term_fr: null
-  term_de: null
-  term_ar: أورليب
+  term_en: overlap
+  term_fr: recouvrement
+  term_de: Überlappung
+  term_ar: تراكب
   pos: noun
   domain:
   - construction
-  definition_fa: پوشش
+  definition_fa: هم‌پوشانی دو عضو در محل اتصال، به‌ویژه روی‌هم‌افتادگی میلگردها در وصلهٔ پوششی؛ طول اورلپ باید دست‌کم برابر مقدار محاسبه‌شدهٔ وصله باشد تا انتقال نیرو به‌درستی انجام شود.
   status: draft
   slug: orlip
 - id: isolation
@@ -251,7 +251,7 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: عایق ، آب بندی
+  definition_fa: عمل جدا کردن یک عضو یا فضا از محیط اطراف به‌وسیلهٔ مواد عایق؛ شامل عایق‌بندی رطوبتی، حرارتی و صوتی است و از نفوذ آب و اتلاف انرژی جلوگیری می‌کند.
   status: draft
   slug: isolation
 - id: isolated
@@ -263,175 +263,175 @@ terms:
   pos: adjective
   domain:
   - construction
-  definition_fa: عایق
+  definition_fa: جدا یا عایق‌شده؛ قطعه یا عضوی که به‌وسیلهٔ عایق از محیط اطراف جدا شده باشد، مانند سطح عایق‌بندی‌شده در برابر رطوبت یا حرارت.
   status: draft
   slug: isolated
 - id: pillow
   term_fa: بالشتک
-  term_en: pillow
-  term_fr: oreiller
-  term_de: Kissen
-  term_ar: وسادة
+  term_en: bearing pad
+  term_fr: coussinet
+  term_de: Auflagerplatte
+  term_ar: وسادة ارتكاز
   pos: noun
   domain:
   - construction
-  definition_fa: آجر یا قطعه بتنی که زیر سر تیر آهن با مصالح پوششی دیگر قرار می دهند
+  definition_fa: آجر یا قطعهٔ بتنی که زیر سر تیر آهن قرار داده می‌شود تا بار را روی تکیه‌گاه پخش کند و از تمرکز تنش و آسیب به مصالح پوششی جلوگیری شود.
   status: draft
   slug: pillow
 - id: blockage
   term_fa: بلوکاژ
-  term_en: Blockage
-  term_fr: Obstruction
-  term_de: Blockierung
-  term_ar: انسداد
+  term_en: stone bedding
+  term_fr: blocage
+  term_de: Steinschicht
+  term_ar: دبش
   pos: noun
   domain:
   - construction
-  definition_fa: مراحل کف سازی
+  definition_fa: لایهٔ زیرین از قطعات خرد سنگ یا مصالح دانه‌ای که به‌عنوان بستر کف‌سازی پهن و متراکم می‌شود تا سطحی یکنواخت و با ظرفیت باربری مناسب ایجاد کند.
   status: draft
   slug: blockage
 - id: brick-block
   term_fa: بند آجر
-  term_en: Brick block
-  term_fr: Bloc de brique
-  term_de: Ziegelblock
-  term_ar: كتلة من الطوب
+  term_en: infill brick
+  term_fr: brique de remplissage
+  term_de: Füllziegel
+  term_ar: لبنة ملء
   pos: noun
   domain:
   - construction
-  definition_fa: قطعه آجری که فاصله دو آجر را در سقف پُر می کند
+  definition_fa: قطعهٔ آجری که فاصلهٔ میان دو آجر یا دو تیرچه را در سقف پر می‌کند و باعث یکنواختی سطح و توزیع بار در کف‌سازی می‌شود.
   status: draft
   slug: brick-block
 - id: clavicle-strap
   term_fa: بند کلوکی
-  term_en: Clavicle strap
-  term_fr: Sangle de clavicule
-  term_de: Schlüsselbeinband
-  term_ar: حزام الترقوة
+  term_en: tie brick
+  term_fr: brique de liaison
+  term_de: Verbandziegel
+  term_ar: لبنة ربط
   pos: noun
   domain:
   - construction
-  definition_fa: قطعه آجری است به اندازه کلوک
+  definition_fa: قطعهٔ آجری به اندازهٔ «کلوک» که برای پر کردن فاصله‌ها، ایجاد پیوستگی و اتصال رج‌ها در بنایی به کار می‌رود.
   status: draft
   slug: clavicle-strap
 - id: springing
   term_fa: پاتاق
   term_en: springing
-  term_fr: Pagode
-  term_de: Pagode
-  term_ar: باغودا
+  term_fr: naissance de voûte
+  term_de: Bogenansatz
+  term_ar: بداية القوس
   pos: noun
   domain:
   - construction
-  definition_fa: شروع تاق از روی پایه با دیوار
+  definition_fa: رج یا نقطهٔ آغازین قوس که بر پایه یا تکیه‌گاه قرار می‌گیرد و طاق از آنجا به‌سمت بالا ساخته می‌شود؛ محل انتقال بار قوس به پایه است.
   status: draft
   slug: springing
 - id: broken-brick
   term_fa: پاره آجر
   term_en: broken brick
   term_fr: brique cassée
-  term_de: gebrochener Ziegelstein
+  term_de: gebrochener Ziegel
   term_ar: الطوب المكسور
   pos: noun
   domain:
   - construction
-  definition_fa: قطعات مختلف آجر یا آجرهای شکسته
+  definition_fa: قطعات مختلف آجر یا آجرهای شکسته که برای پر کردن فاصله‌ها یا استفاده در ملات خرد شده به کار می‌روند.
   status: draft
   slug: broken-brick
 - id: passing
   term_fa: پاسنگ
-  term_en: Passing
-  term_fr: Passage
-  term_de: Vorbeigehen
-  term_ar: تمرير
+  term_en: base course
+  term_fr: assise de base
+  term_de: Sockellage
+  term_ar: صف القاعدة
   pos: noun
   domain:
   - construction
-  definition_fa: پاخوری پای در یا دیوار
+  definition_fa: رج پایینی دیوار یا پاخور پایین در و دیوار که بر سطح پی یا کف‌سازی می‌نشیند و تراز شروع بنایی را تعیین می‌کند.
   status: draft
   slug: passing
 - id: pakar
   term_fa: پاکار
-  term_en: Pakar
-  term_fr: Expert
-  term_de: Experte
-  term_ar: خبير
+  term_en: pier head
+  term_fr: sommet de pile
+  term_de: Widerlagerkopf
+  term_ar: أعلى الدعامة
   pos: noun
   domain:
   - construction
-  definition_fa: محل شروع قوس
+  definition_fa: محل شروع قوس در بالای پایه یا تکیه‌گاه؛ نقطه‌ای که انحنای قوس از آن آغاز می‌شود و نیروها از آن به تکیه‌گاه منتقل می‌گردند.
   status: draft
   slug: pakar
 - id: care
   term_fa: پالانه
-  term_en: care
-  term_fr: soins
-  term_de: Pflege
-  term_ar: رعاية
+  term_en: brick paving
+  term_fr: pavage de briques
+  term_de: Ziegelpflaster
+  term_ar: رصف بالآجر
   pos: noun
   domain:
   - construction
-  definition_fa: آجر کاری که مانند فرش آجر بعد از ساختن سقف انجام می شود
+  definition_fa: آجرکاری کف که پس از ساخت سقف، به‌شیوهٔ فرش آجر و با ملات مناسب روی سطح اجرا می‌شود و نقش پوشش نهایی بام یا کف حیاط را دارد.
   status: draft
   slug: care
 - id: chamfer
   term_fa: پخ
   term_en: chamfer
-  term_fr: chanfreiner
+  term_fr: chanfrein
   term_de: Fase
-  term_ar: الشطب
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: گوشه از آجر را فارسی بُر کردن یا در زاویه دیوارها ماهیچه بکاربردن
+  definition_fa: پخ یا گوشهٔ بریده‌شدهٔ آجر یا سنگ که به‌جای لبهٔ تیز، سطحی مورب ایجاد می‌کند؛ هم برای زیبایی و هم برای کاهش لب‌پریدگی به کار می‌رود.
   status: draft
   slug: chamfer
 - id: behind-the-arm
   term_fa: پشت بغل
   term_en: behind the arm
-  term_fr: derrière le bras
-  term_de: hinter dem Arm
-  term_ar: خلف الذراع
+  term_fr: écoinçon
+  term_de: Bogenzwickel
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: لچکی بالای قوس
+  definition_fa: لچکی یا گوشهٔ پرکنندهٔ بالای قوس که فضای میان انحنای قوس و قاب مستطیلی اطراف آن را پر می‌کند و بار را به کناره‌ها منتقل می‌سازد.
   status: draft
   slug: behind-the-arm
 - id: back-strap
   term_fa: پشت بند
   term_en: back strap
-  term_fr: sangle arrière
-  term_de: Rückengurt
-  term_ar: حزام الظهر
+  term_fr:
+  term_de:
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: قطعات که پشت تخته های قاب میخ می کنند
+  definition_fa: قطعات چوبی یا فلزی که پشت تخته‌های قاب قالب میخ می‌شوند تا از تغییر شکل و شکم‌دادن قالب در هنگام بتن‌ریزی جلوگیری کنند.
   status: draft
   slug: back-strap
 - id: ripe
   term_fa: پکافته
-  term_en: ripe
-  term_fr: mûr
-  term_de: reif
-  term_ar: ناضجة
+  term_en: adjoining partition wall
+  term_fr: cloison adossée
+  term_de: Anschlusswand
+  term_ar: جدار ملاصق
   pos: noun
   domain:
   - construction
-  definition_fa: دیوار تیغه ای که به دیوار اصلی چسبیده است
+  definition_fa: دیوار تیغه‌ای نازک که به دیوار اصلی چسبیده و به آن متصل است؛ این دیوار باربر نیست و برای جدا کردن فضاها یا پوشش تأسیسات به کار می‌رود.
   status: draft
   slug: ripe
 - id: plate
   term_fa: پلیت
   term_en: plate
-  term_fr: plaque
+  term_fr: platine
   term_de: Platte
-  term_ar: طبق
+  term_ar: لوح
   pos: noun
   domain:
   - construction
-  definition_fa: ورق
+  definition_fa: قطعهٔ تخت فولادی یا غیرفلزی با ضخامت یکنواخت که برای توزیع بار، اتصال اعضا یا پوشش سطح به کار می‌رود؛ پلیت زیر ستون و ورق‌های تقویتی از نمونه‌های رایج آن‌اند.
   status: draft
   slug: plate
 - id: to-pump
@@ -439,71 +439,71 @@ terms:
   term_en: to pump
   term_fr: pomper
   term_de: pumpen
-  term_ar: لضخ
+  term_ar: ضخ
   pos: verb
   domain:
   - construction
-  definition_fa: با فشار حرکت دادن
+  definition_fa: جابه‌جا کردن مصالح سیال یا دوغاب با فشار، به‌ویژه پمپاژ بتن تازه از دستگاه به محل قالب‌بندی از طریق لوله و بوم.
   status: draft
   slug: to-pump
 - id: concrete-beam
   term_fa: پوتر
   term_en: concrete beam
-  term_fr: potier
-  term_de: Töpfer
-  term_ar: الخزاف
+  term_fr: poutre en béton
+  term_de: Betonbalken
+  term_ar: جسر خرساني
   pos: noun
   domain:
   - construction
-  definition_fa: تیر بتنی
+  definition_fa: تیر بتنی؛ عضوی سازه‌ای از بتن مسلح که بارهای وارده از سقف را به تکیه‌گاه‌ها (ستون یا دیوار) منتقل می‌کند و در اسکلت‌های بتنی پرکاربرد است.
   status: draft
   slug: concrete-beam
 - id: sap-skin
   term_fa: پوست ساپ
-  term_en: sap skin
-  term_fr: peau de sève
-  term_de: Safthaut
-  term_ar: جلد النسغ
+  term_en: sandpaper
+  term_fr: papier abrasif
+  term_de: Schleifpapier
+  term_ar: ورق صنفرة
   pos: noun
   domain:
   - construction
-  definition_fa: سمباده
+  definition_fa: سمباده؛ ورق یا پوستهٔ ساینده‌ای که برای صاف و پرداخت‌کردن سطوح چوبی، فلزی یا گچی به کار می‌رود.
   status: draft
   slug: sap-skin
 - id: shell
   term_fa: پوسته
   term_en: shell
-  term_fr: coquille
-  term_de: Hülse
-  term_ar: صدَفَة
+  term_fr: coque
+  term_de: Schale
+  term_ar: قشرة
   pos: noun
   domain:
   - construction
-  definition_fa: روکشی است که روی آجر کاری ها یا در جاهای مختلف ساختمان بکار می رود
+  definition_fa: روکش نازکی که روی آجرکاری یا سطوح مختلف ساختمان اجرا می‌شود و به‌عنوان پوشش محافظ یا سطح نهایی عمل می‌کند.
   status: draft
   slug: shell
 - id: pistol
   term_fa: پیستوله
-  term_en: pistol
-  term_fr: pistolet
-  term_de: Pistole
-  term_ar: مسدس
+  term_en: spray gun
+  term_fr: pistolet à peinture
+  term_de: Spritzgerät
+  term_ar: مسدس رش
   pos: noun
   domain:
   - construction
-  definition_fa: دستگاه پاشنده مواد
+  definition_fa: دستگاه پاشندهٔ مواد مانند رنگ، ملات یا بتن پاششی که با فشار هوا مصالح را بر سطح می‌پاشد و برای پوشش‌دهی سریع سطوح بزرگ به کار می‌رود.
   status: draft
   slug: pistol
 - id: arch-crown
   term_fa: تاج قوس
-  term_en: Arch crown
-  term_fr: Couronne en arc
-  term_de: Bogenkrone
+  term_en: crown
+  term_fr:
+  term_de: Scheitel
   term_ar: تاج القوس
   pos: noun
   domain:
   - construction
-  definition_fa: بالای قوس
+  definition_fa: بالاترین نقطهٔ قوس یا طاق که در میانهٔ دهانه قرار دارد و بیشترین ضخامت را دارد؛ بارهای وارده از آنجا به دو سمت قوس منتقل می‌شوند.
   status: draft
   slug: arch-crown
 - id: to-darken
@@ -511,59 +511,59 @@ terms:
   term_en: to darken
   term_fr: assombrir
   term_de: verdunkeln
-  term_ar: لتغميق
+  term_ar: تغميق
   pos: verb
   domain:
   - construction
-  definition_fa: آجر کاری سقف را به اتمام رساندن
+  definition_fa: پایان دادن به آجرکاری سقف یا سطح بنایی؛ مرحلهٔ آخر اجرا که با تکمیل رج‌ها و پر کردن فاصله‌ها کار به اتمام می‌رسد.
   status: draft
   slug: to-darken
 - id: boarding
   term_fa: تخته شدن
-  term_en: Boarding
-  term_fr: Embarquement
-  term_de: Einsteigen
-  term_ar: الصعود
+  term_en: wall completion
+  term_fr: achèvement du mur
+  term_de: Wandabschluss
+  term_ar: إنهاء الجدار
   pos: verb
   domain:
   - construction
-  definition_fa: به انتها رساندن دیوار ، پایان دیوار چینی
+  definition_fa: به پایان رساندن دیوارچینی و تکمیل رج‌های بالایی دیوار؛ مرحلهٔ اختتام بنایی که با تراز کردن آخرین رج انجام می‌شود.
   status: draft
   slug: boarding
 - id: tamper
   term_fa: تخماق
   term_en: tamper
-  term_fr: Toxique
-  term_de: Giftig
-  term_ar: سامة
+  term_fr: dame
+  term_de: Stampfer
+  term_ar: مدق
   pos: noun
   domain:
   - construction
-  definition_fa: کوبه سنگین
+  definition_fa: کوبهٔ سنگین دستی یا مکانیکی برای متراکم کردن خاک، شن یا بتن تازه که با ضربات پی‌درپی موجب فشردگی مصالح می‌شود.
   status: draft
   slug: tamper
 - id: traverse
   term_fa: تراورس
   term_en: traverse
-  term_fr: traverser
+  term_fr: traverse
   term_de: Traverse
-  term_ar: اجتياز
+  term_ar: عارضة
   pos: noun
   domain:
   - construction
-  definition_fa: تخته های قطور و عریض
+  definition_fa: تخته‌های قطور و عریض که به‌صورت افقی روی تکیه‌گاه‌ها قرار می‌گیرند و برای پل کردن فاصله، توزیع بار یا ساخت سطح کارگاه استفاده می‌شوند.
   status: draft
   slug: traverse
 - id: contact-him
   term_fa: تماسه
-  term_en: Contact him
-  term_fr: Contactez-le
-  term_de: Kontaktieren Sie ihn
-  term_ar: اتصل به
+  term_en: bonding tool
+  term_fr:
+  term_de:
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: وسیله اجرای دیوار کله راسته
+  definition_fa: وسیلهٔ اجرای دیوار با چیدمان کله‌راسته که در آن آجرها به‌طور متناوب با سطح کوچک و بزرگ به سمت بیرون چیده می‌شوند تا پیوستگی دیوار تأمین شود.
   status: draft
   slug: contact-him
 - id: tension
@@ -571,191 +571,191 @@ terms:
   term_en: tension
   term_fr: tension
   term_de: Spannung
-  term_ar: توتر
+  term_ar: شد
   pos: noun
   domain:
   - construction
-  definition_fa: تنیدن
+  definition_fa: نیروی کششی وارد بر واحد سطح مقطع یک عضو؛ تنش کششی که میلگردها در بتن عمدتاً آن را تحمل می‌کنند، زیرا مقاومت کششی خود بتن ناچیز است.
   status: draft
   slug: tension
 - id: get-stuck
   term_fa: تنگ افتادن
-  term_en: get stuck
-  term_fr: rester coincé
-  term_de: stecken bleiben
-  term_ar: تتعثر
+  term_en: to get stuck
+  term_fr: se coincer
+  term_de: einklemmen
+  term_ar: يعلق
   pos: verb
   domain:
   - construction
-  definition_fa: درگیر شدن ، مهار شدن
+  definition_fa: درگیر شدن و مهار شدن یک عضو در برابر حرکت؛ در اجرا به گیر کردن قالب یا قطعه در ملات و در رفتار سازه‌ای به مهار جانبی عضو گفته می‌شود.
   status: draft
   slug: get-stuck
 - id: a-ball
   term_fa: توپی
-  term_en: a ball
-  term_fr: une balle
-  term_de: ein Ball
+  term_en: ball
+  term_fr: boule
+  term_de: Kugel
   term_ar: كرة
   pos: noun
   domain:
   - construction
-  definition_fa: شی کروی پلاستیک
+  definition_fa: قطعهٔ کروی پلاستیکی یا فلزی که به‌عنوان فاصله‌نگهدار، مهارکننده یا بخشی از اتصالات به کار می‌رود.
   status: draft
   slug: a-ball
 - id: fancy-lace
   term_fa: توری فنسی
-  term_en: fancy lace
-  term_fr: dentelle fantaisie
-  term_de: ausgefallene Spitze
-  term_ar: الدانتيل يتوهم
+  term_en: diamond wire mesh
+  term_fr: grillage en losange
+  term_de: Rautendrahtgeflecht
+  term_ar: شبكة سلكية معينية
   pos: noun
   domain:
   - construction
-  definition_fa: کلاف بندی مشبک از مفتول های 2 و 3 میلیمتری نرم که در حصارکشی بین وادار پروفیل به کار می رود
+  definition_fa: کلاف‌بندی مشبک از مفتول‌های نازک نرم (۲ و ۳ میلی‌متری) که در حصارکشی، نگهداری مصالح و تقویت سبک سطوح به کار می‌رود.
   status: draft
   slug: fancy-lace
 - id: index-arrow
   term_fa: تیر شاخص
-  term_en: Index arrow
-  term_fr: Flèche d'index
-  term_de: Indexpfeil
-  term_ar: سهم الفهرس
+  term_en: king post
+  term_fr: poteau central
+  term_de:
+  term_ar: عمود الجملون
   pos: noun
   domain:
   - construction
-  definition_fa: تیر عمودی وسط خرپا
+  definition_fa: تیر شاخص؛ عضو عمودی میانهٔ خرپا که از گره بالایی به گره پایینی می‌رسد و بار را به تیر پایین منتقل می‌کند.
   status: draft
   slug: index-arrow
 - id: tizon
   term_fa: تیزون
-  term_en: Tizon
-  term_fr: null
-  term_de: null
-  term_ar: تيزون
+  term_en: quick-setting
+  term_fr:
+  term_de:
+  term_ar: شديد التصلب
   pos: noun
   domain:
   - construction
-  definition_fa: پرگیر ، زودگیر
+  definition_fa: مواد یا افزودنی پرگیر و زودگیر که زمان گرفتن ملات یا بتن را کوتاه می‌کند و برای کارهای ترمیمی و اجرا در هوای سرد به کار می‌رود.
   status: draft
   slug: tizon
 - id: blade
   term_fa: تیغه
-  term_en: blade
-  term_fr: lame
-  term_de: Klinge
-  term_ar: شفرة
+  term_en: partition wall
+  term_fr: cloison
+  term_de: Trennwand
+  term_ar: جدار فاصل
   pos: noun
   domain:
   - construction
-  definition_fa: دیوارهای جدا کننده
+  definition_fa: تیغه؛ دیوار نازک جداکننده که باربر نیست و برای تقسیم فضاها به کار می‌رود؛ معمولاً از آجر تیغه‌ای یا پانل‌های پیش‌ساخته ساخته می‌شود.
   status: draft
   slug: blade
 - id: jan-panah
   term_fa: جان پناه
-  term_en: Jan Panah
-  term_fr: Jan Flèche
-  term_de: Jan Arrow
-  term_ar: جان آرو
+  term_en: parapet
+  term_fr: parapet
+  term_de: Brüstung
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: دیوار جلوی بالکن یا دیوار اطراف بام
+  definition_fa: دیوارک محافظ جلوی بالکن یا اطراف بام که از سقوط افراد جلوگیری می‌کند و حداقل ارتفاع آن در مقررات ملی ساختمان تعیین شده است.
   status: draft
   slug: jan-panah
 - id: john-is-plastered
   term_fa: جان گچ گرفته شده
-  term_en: John is plastered
-  term_fr: John est plâtré
-  term_de: John ist verputzt
-  term_ar: جون مجصص
+  term_en: gypsum-coated iron
+  term_fr:
+  term_de:
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: عدم خوردگی گچ
+  definition_fa: عضو فلزی (جان) که با گچ پوشانده شده است؛ پوشش گچ از خوردگی و تماس مستقیم آهن با عوامل مخرب جلوگیری می‌کند.
   status: draft
   slug: john-is-plastered
 - id: pier
   term_fa: جرز
   term_en: pier
-  term_fr: null
-  term_de: null
-  term_ar: خيريز
+  term_fr:
+  term_de: Pfeiler
+  term_ar: دعامة
   pos: noun
   domain:
   - construction
-  definition_fa: دیوار یا پایه ضخیمی است که باربر باشد
+  definition_fa: جرز؛ دیوار یا پایهٔ ضخیم باربری که بار طبقات یا طاق را به پی منتقل می‌کند و معمولاً در دو سمت درگاه‌ها و دهانه‌ها قرار دارد.
   status: draft
   slug: pier
 - id: zigzag-brickwork
   term_fa: جُوَک
   term_en: zigzag brickwork
-  term_fr: Votre ambiance
-  term_de: Ihre Atmosphäre
-  term_ar: الجو الخاص بك
+  term_fr: appareillage en zigzag
+  term_de: Zickzack-Mauerwerk
+  term_ar: بناء متعرج
   pos: noun
   domain:
   - construction
-  definition_fa: نوعی آجر کاری زیگزاگ
+  definition_fa: نوعی آجرکاری که رج‌ها یا قطعات به‌صورت کنگره‌ای و زیگزاگ چیده می‌شوند و علاوه بر نقش معماری، پیوستگی و قفل‌شدگی بهتری میان آجرها ایجاد می‌کند.
   status: draft
   slug: zigzag-brickwork
 - id: quarter
   term_fa: چارک
-  term_en: quarter
-  term_fr: quart
-  term_de: Quartal
-  term_ar: ربع
+  term_en: quarter brick
+  term_fr: quart de brique
+  term_de: Viertelziegel
+  term_ar: ربع لبنة
   pos: noun
   domain:
   - construction
-  definition_fa: 1/4 آجر چهار گوش و 1/2 آجر قزاقی
+  definition_fa: قطعه‌ای برابر یک‌چهارم آجر چهارگوش یا نصف آجر قزاقی که برای پر کردن فاصله‌ها و تنظیم چیدمان رج در بنایی استفاده می‌شود.
   status: draft
   slug: quarter
 - id: blind-well
   term_fa: چاه کور
   term_en: blind well
-  term_fr: aveugle bien
-  term_de: blind gut
-  term_ar: أعمى جيدا
+  term_fr: puits aveugle
+  term_de: blinder Schacht
+  term_ar: بئر مطمورة
   pos: noun
   domain:
   - construction
-  definition_fa: مشخص نبودن محل چاه در سطح زیر بنا و حوالی پی ها
+  definition_fa: چاهی که محل آن در سطح زیر بنا و اطراف پی مشخص نیست و به‌دلیل پوشیده شدن، خطر نشست موضعی پی را ایجاد می‌کند؛ شناسایی و پر کردن آن پیش از اجرا الزامی است.
   status: draft
   slug: blind-well
 - id: the-well
   term_fa: چاهک
-  term_en: the well
-  term_fr: le puits
-  term_de: der Brunnen
-  term_ar: البئر
+  term_en: shaft
+  term_fr: puits
+  term_de: Schacht
+  term_ar: بئر
   pos: noun
   domain:
   - construction
-  definition_fa: چاهی به ارتفاع 1.5 الی 2.5 متر
+  definition_fa: چاهک یا محفظهٔ عمودی با ارتفاع محدود که برای دسترسی به تأسیسات، زهکشی یا بازرسی در زیر بنا یا حیاط ساخته می‌شود.
   status: draft
   slug: the-well
 - id: wheel-well
   term_fa: چرخ چاه
-  term_en: wheel well
-  term_fr: passage de roue
-  term_de: Radkasten
-  term_ar: عجلة جيدا
+  term_en: well windlass
+  term_fr: treuil de puits
+  term_de: Brunnenwinde
+  term_ar: محالة البئر
   pos: noun
   domain:
   - construction
-  definition_fa: وسیله چوبی و یا فلزی که به چرخش درون خزانه در پایه چرخ چاه و یا بلبرینگ سبب جابجایی مصالح به درون چاه و یا خارج آن می شود
+  definition_fa: سازهٔ چرخشی در پایهٔ چاه که با چرخاندن آن آب از خزانه بالا کشیده می‌شود؛ از قطعات چوبی یا فلزی ساخته می‌شد و برای انتقال آب به کار می‌رفت.
   status: draft
   slug: wheel-well
 - id: four-dang
   term_fa: چهار دنگ
   term_en: four dang
-  term_fr: quatre heures
-  term_de: vier verdammt
-  term_ar: أربعة دانغ
+  term_fr:
+  term_de:
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: 3/4 آجر چهار گوش
+  definition_fa: قطعه‌ای برابر سه‌چهارم آجر چهارگوش که برای پر کردن فاصله‌ها و تکمیل چیدمان رج در بنایی به کار می‌رود؛ «دنگ» یکای سنتی تقسیم آجر است.
   status: draft
   slug: four-dang
 - id: affiliation
@@ -767,139 +767,139 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: وصل
+  definition_fa: پیوستگی و اتصال یک عضو یا سطح به عضو دیگر؛ در بنایی به چسبیدن دیوار تیغه‌ای به دیوار اصلی یا اتصال بخش الحاقی به بدنهٔ سازه گفته می‌شود.
   status: draft
   slug: affiliation
 - id: brackish-soil
   term_fa: خاک شوره
   term_en: brackish soil
-  term_fr: sol saumâtre
-  term_de: brackiger Boden
-  term_ar: التربة قليلة الملوحة
+  term_fr: sol salin
+  term_de: Salzboden
+  term_ar: تربة مالحة
   pos: noun
   domain:
   - construction
-  definition_fa: خاکهای نمکی
+  definition_fa: خاک‌های نمکی و شور که به‌دلیل وجود املاح محلول برای پی‌سازی مشکل‌سازند و در تماس با بتن و فولاد می‌توانند موجب خوردگی و تخریب تدریجی سازه شوند.
   status: draft
   slug: brackish-soil
 - id: shriveled
   term_fa: خرپشته
-  term_en: shriveled
-  term_fr: ratatiné
-  term_de: geschrumpft
-  term_ar: ذابل
+  term_en: stair parapet
+  term_fr: acrotère d'escalier
+  term_de: Treppenaufsatz
+  term_ar: حاجز الدرج
   pos: noun
   domain:
   - construction
-  definition_fa: سر پناه پله روی بام
+  definition_fa: سرپناه یا دیوارک روی پلهٔ بام که از سقوط افراد جلوگیری می‌کند و هم‌زمان پوشش خروجی راه‌پله در پشت‌بام است.
   status: draft
   slug: shriveled
 - id: the-vault
   term_fa: خرک
-  term_en: the vault
-  term_fr: le coffre-fort
-  term_de: der Tresor
-  term_ar: القبو
+  term_en: rebar spacer
+  term_fr: écarteur d'armature
+  term_de: Abstandhalter
+  term_ar: مباعد حديد التسليح
   pos: noun
   domain:
   - construction
-  definition_fa: برای نگه داشتن میلگردهای مش فوقانی فونداسیون که خود با میلگرد درست می شود
+  definition_fa: خرک؛ قطعهٔ فاصله‌نگهدار که برای نگه‌داشتن میلگردهای مش فوقانی فونداسیون در ارتفاع مشخص به کار می‌رود و خود با میلگرد ساخته می‌شود.
   status: draft
   slug: the-vault
 - id: draw-a-line
   term_fa: خط کردن
-  term_en: draw a line
+  term_en: to mark out
   term_fr: tracer une ligne
-  term_de: Zeichne eine Linie
-  term_ar: ارسم خطا
+  term_de: Linie ziehen
+  term_ar: تحديد بخط
   pos: verb
   domain:
   - construction
-  definition_fa: نشان کردن
+  definition_fa: خط کردن؛ نشان‌گذاری سطح با ریسمان رنگی یا خط‌کش برای تعیین تراز، راستای دیوار یا محل چیدن رج‌ها پیش از شروع بنایی.
   status: draft
   slug: draw-a-line
 - id: bending
   term_fa: خمش
   term_en: bending
   term_fr: flexion
-  term_de: Biegen
-  term_ar: الانحناء
+  term_de: Biegung
+  term_ar: انعطاف
   pos: noun
   domain:
   - construction
-  definition_fa: ممان ، سینه کردن
+  definition_fa: تغییر شکل عضو سازه‌ای تحت اثر لنگر خمشی که موجب کوتاهش الیاف یک سمت و کشیدگی الیاف سمت دیگر می‌شود؛ خمش اصلی‌ترین حالت باربری در تیرها و دال‌ها است.
   status: draft
   slug: bending
 - id: rise-up
   term_fa: خیز
-  term_en: rise up
-  term_fr: se soulever
-  term_de: aufstehen
-  term_ar: ترتفع
+  term_en: rise
+  term_fr: flèche
+  term_de: Bogenstich
+  term_ar: ارتفاع القوس
   pos: noun
   domain:
   - construction
-  definition_fa: ارتفاع قوس
+  definition_fa: خیز یا ارتفاع قوس؛ فاصلهٔ عمودی میان تراز شروع قوس و بالاترین نقطهٔ آن که نسبت آن به دهانه، نوع قوس را تعیین می‌کند.
   status: draft
   slug: rise-up
 - id: hard-ground
   term_fa: دج
   term_en: hard ground
-  term_fr: null
-  term_de: null
-  term_ar: دي جي
+  term_fr:
+  term_de:
+  term_ar: أرض صلبة
   pos: noun
   domain:
   - construction
-  definition_fa: زمین سخت
+  definition_fa: زمین سخت و متراکم با ظرفیت باربری مناسب که نیاز به تقویت یا تعویض خاک ندارد و می‌توان پی را مستقیماً روی آن اجرا کرد.
   status: draft
   slug: hard-ground
 - id: cap
   term_fa: درپوش
-  term_en: cap
-  term_fr: capuchon
-  term_de: Kappe
-  term_ar: كاب
+  term_en: coping
+  term_fr: couverture
+  term_de: Abdeckung
+  term_ar: غطاء
   pos: noun
   domain:
   - construction
-  definition_fa: قسمتی از روی دیوار آجری با دیوارهای دیگر می سازند
+  definition_fa: پوشش بالایی دیوار آجری که از نفوذ آب به بدنهٔ دیوار جلوگیری می‌کند و با ملات یا قطعات پیش‌ساخته روی رج آخر اجرا می‌شود.
   status: draft
   slug: cap
 - id: reasoning
   term_fa: دلیل گذاری
-  term_en: reasoning
-  term_fr: raisonnement
-  term_de: Argumentation
-  term_ar: المنطق
+  term_en: reference course
+  term_fr: assise de référence
+  term_de: Richtlage
+  term_ar: صف مرجعي
   pos: noun
   domain:
   - construction
-  definition_fa: رج استاد ، رج اصولی
+  definition_fa: رج استاد یا رج اصولی که به‌عنوان مرجع تراز و راستایی برای چیدن رج‌های بعدی دیوار اجرا می‌شود و دقت بنایی را تضمین می‌کند.
   status: draft
   slug: reasoning
 - id: two-piece
   term_fa: دوپوش
-  term_en: two-piece
-  term_fr: deux pièces
-  term_de: zweiteilig
-  term_ar: قطعتين
+  term_en: double shell
+  term_fr: double coque
+  term_de: Doppelschale
+  term_ar: قبة مزدوجة
   pos: noun
   domain:
   - construction
-  definition_fa: گنبدی که با یک سقف اضافه پوشش شده باشد
+  definition_fa: گنبد یا پوششی که با یک سقف یا پوستهٔ اضافه پوشانده شده باشد؛ ساختاری دوپوسته که فضای میانی آن نقش عایق را ایفا می‌کند.
   status: draft
   slug: two-piece
 - id: countries
   term_fa: دول
-  term_en: Countries
-  term_fr: Pays
-  term_de: Länder
-  term_ar: بلدان
+  term_en: mortar bucket
+  term_fr: seau de maçon
+  term_de: Mörtelkübel
+  term_ar: دلو البناء
   pos: noun
   domain:
   - construction
-  definition_fa: سطل بنایی
+  definition_fa: سطل بنایی که برای حمل ملات، آب یا مصالح به کار می‌رود و معمولاً فلزی یا پلاستیکی با دستهٔ محکم است.
   status: draft
   slug: countries
 - id: retaining-wall
@@ -911,91 +911,91 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: دیوار واسطه باربر
+  definition_fa: دیوار حائل؛ سازه‌ای که برای نگه‌داشتن خاک یا مصالح پشت خود در برابر نیروی جانبی آن‌ها طراحی می‌شود و در گودبرداری‌ها، شیب‌ها و اطراف ساختمان کاربرد دارد.
   status: draft
   slug: retaining-wall
 - id: riser
   term_fa: رایزر
   term_en: Riser
-  term_fr: Contremarche
-  term_de: Steigleitung
-  term_ar: الناهض
+  term_fr: gaine verticale
+  term_de: Steigstrang
+  term_ar: عمود صاعد
   pos: noun
   domain:
   - construction
-  definition_fa: کانال عمودی
+  definition_fa: کانال یا لولهٔ عمودی تأسیسات که طبقات را به هم پیوند می‌دهد و برای عبور آب، فاضلاب یا کابل‌ها از کف تا بام ساختمان به کار می‌رود.
   status: draft
   slug: riser
 - id: masonry-course
   term_fa: رج بنا
   term_en: masonry course
-  term_fr: null
-  term_de: null
-  term_ar: راج بانا
+  term_fr: assise
+  term_de:
+  term_ar: صف بناء
   pos: noun
   domain:
   - construction
-  definition_fa: ردیف های آجر کاری
+  definition_fa: رج بنا؛ هر ردیف افقی از آجر یا سنگ که با ملات روی هم چیده می‌شود و دیوار بنایی از تکرار منظم آن‌ها ساخته می‌شود.
   status: draft
   slug: masonry-course
 - id: facing
   term_fa: روکار
   term_en: facing
   term_fr: parement
-  term_de: gegenüber
-  term_ar: تواجه
+  term_de: Fassade
+  term_ar: واجهة
   pos: adjective
   domain:
   - construction
-  definition_fa: نمای ساختمان
+  definition_fa: روکار یا نمای ساختمان؛ لایهٔ بیرونی پوشش دیوار که نقش محافظ و تزئینی دارد و می‌تواند از آجر، سنگ، کاشی یا بتن نماسازی اجرا شود.
   status: draft
   slug: facing
 - id: semicircular-arch
   term_fa: رومی
   term_en: semicircular arch
-  term_fr: null
-  term_de: null
-  term_ar: الرومي
+  term_fr: arc en plein cintre
+  term_de: Rundbogen
+  term_ar: قوس نصف دائري
   pos: noun
   domain:
   - construction
-  definition_fa: قوس نیم دایره بالای درگاه
+  definition_fa: قوس نیم‌دایره که دهانهٔ آن به‌صورت نیم‌دایرهٔ کامل طاق می‌شود؛ از رایج‌ترین انواع قوس در معماری سنتی ایران و بناهای طاق‌دار است.
   status: draft
   slug: semicircular-arch
 - id: hit-the-ground
   term_fa: زمین زِد
-  term_en: hit the ground
-  term_fr: toucher le sol
-  term_de: auf den Boden fallen
-  term_ar: ضرب الأرض
+  term_en: compacted ground
+  term_fr: sol battu
+  term_de: verdichteter Boden
+  term_ar: أرض مدكوكة
   pos: noun
   domain:
   - construction
-  definition_fa: زمین سخت که مقاومت و فشردگی دانه ترکیبی آن در حد کمتر از دج است
+  definition_fa: زمین سختی که مقاومت و فشردگی دانه‌های ترکیبی آن کمتر از «دج» است و برای اجرای پی نیاز به بررسی ظرفیت باربری دارد.
   status: draft
   slug: hit-the-ground
 - id: ginger
   term_fa: زنجاب
-  term_en: Ginger
-  term_fr: Gingembre
-  term_de: Ingwer
-  term_ar: زنجبيل
+  term_en: pre-wetted brick
+  term_fr: brique mouillée
+  term_de: vorgenässter Ziegel
+  term_ar: طوب مبلل
   pos: noun
   domain:
   - construction
-  definition_fa: آبخور
+  definition_fa: آبخور؛ عمل تر کردن یا خیساندن آجر پیش از بنایی تا آب ملات را جذب نکند و پیوستگی میان آجر و ملات به‌درستی برقرار شود.
   status: draft
   slug: ginger
 - id: cumin
   term_fa: زیره
-  term_en: cumin
-  term_fr: cumin
-  term_de: Kreuzkümmel
-  term_ar: كمون
+  term_en: base layer
+  term_fr: couche de base
+  term_de: Tragschicht
+  term_ar: طبقة أساس
   pos: noun
   domain:
   - construction
-  definition_fa: دانه های خشن
+  definition_fa: لایهٔ زیرین از دانه‌های خشن که به‌عنوان بستر یا زیرسازی برای پخش بار و زهکشی در کف‌سازی و روسازی به کار می‌رود.
   status: draft
   slug: cumin
 - id: zigzag
@@ -1007,103 +1007,91 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: حرکت کنگره ای (چپ و راست)
+  definition_fa: چیدمان یا حرکت کنگره‌ای که در آن مسیر به‌طور متناوب به چپ و راست منحرف می‌شود؛ در بنایی به نوعی آجرکاری و در سقف تیرچه به میلگردهای زیگزاگی خرپا گفته می‌شود.
   status: draft
   slug: zigzag
-- id: zigzag-1
-  term_fa: زیگزال
-  term_en: zigzag
-  term_fr: zigzag
-  term_de: Zickzack
-  term_ar: متعرج
-  pos: noun
-  domain:
-  - construction
-  definition_fa: میلگرد های خرپایی تیرچه
-  status: draft
-  slug: zigzag-1
 - id: a-basket
   term_fa: سبدی
-  term_en: a basket
-  term_fr: un panier
-  term_de: ein Korb
-  term_ar: سلة
+  term_en: cage reinforcement
+  term_fr: armature en panier
+  term_de: Korbbewehrung
+  term_ar: تسليح سلة
   pos: noun
   domain:
   - construction
-  definition_fa: میلگرد بافته شده برای بالا و پایین شناژ فونداسیون
+  definition_fa: میلگرد بافته‌شدهٔ سبدی که برای بالا و پایین شناژ فونداسیون ساخته می‌شود و شبکهٔ تسلیح آن را تشکیل می‌دهد.
   status: draft
   slug: a-basket
 - id: septic-tank
   term_fa: سپتیک تانک
-  term_en: Septic tank
+  term_en: septic tank
   term_fr: Fosse septique
   term_de: Klärgrube
   term_ar: خزان الصرف الصحي
   pos: noun
   domain:
   - construction
-  definition_fa: مخزن بزرگ فاضلاب (منابع و فضولات)
+  definition_fa: مخزن بزرگ فاضلاب که پسماند جامد و مایع را با ته‌نشینی و تجزیهٔ بی‌هوازی جدا می‌کند و در ساختمان‌های بدون اتصال به شبکهٔ فاضلاب به کار می‌رود.
   status: draft
   slug: septic-tank
 - id: stiff-head
   term_fa: سر سفت
-  term_en: stiff head
-  term_fr: tête raide
-  term_de: steifer Kopf
-  term_ar: رأس متصلب
+  term_en: overhanging
+  term_fr: en saillie
+  term_de: vorstehend
+  term_ar: بارز
   pos: noun
   domain:
   - construction
-  definition_fa: نسبت به خط قائم جلوتر باشد
+  definition_fa: وضعیت عضوی که نسبت به خط قائم جلوتر باشد و به بیرون متمایل شده باشد؛ انحرافی که در بنایی ناشی از اجرای نادرست رج‌ها است.
   status: draft
   slug: stiff-head
 - id: to-wander
   term_fa: سرگرداندن
-  term_en: to wander
-  term_fr: errer
-  term_de: wandern
-  term_ar: للتجول
+  term_en: to turn over
+  term_fr: retourner
+  term_de: umdrehen
+  term_ar: قلب
   pos: verb
   domain:
   - construction
-  definition_fa: سرو ته کردن
+  definition_fa: سروته کردن قطعه یا عضو بنایی؛ جابه‌جا کردن سر و ته یک قطعه برای تنظیم تراز یا جهت چیدمان در اجرا.
   status: draft
   slug: to-wander
 - id: overwhelmed
   term_fa: سروا افتاده
-  term_en: Overwhelmed
-  term_fr: Accablé
-  term_de: Überwältigt
-  term_ar: مُثقل
+  term_en: receding
+  term_fr: en retrait
+  term_de: zurückliegend
+  term_ar: متراجع
   pos: noun
   domain:
   - construction
-  definition_fa: نسبت به خط قائم عقب تر باشد
+  definition_fa: وضعیت عضوی که نسبت به خط قائم عقب‌تر باشد و به داخل متمایل شده باشد؛ انحرافی که در بنایی ناشی از اجرای نادرست رج‌ها است.
   status: draft
   slug: overwhelmed
 - id: basket
   term_fa: سِله
-  term_en: basket
-  term_fr: panier
-  term_de: Korb
-  term_ar: سلة
+  term_en: corbel
+  term_fr: encorbellement
+  term_de: Kragstück
+  term_ar: نتوء
   pos: noun
   domain:
   - construction
-  definition_fa: پیش آمده
+  definition_fa: جزء پیش‌آمدهٔ بنایی که از سطح دیوار بیرون زده است و برای تکیه‌دادن یا ایجاد پیش‌آمدگی در نما به کار می‌رود.
   status: draft
   slug: basket
 - id: pin
   term_fa: سنجاقی
   term_en: pin
-  term_fr: épingle
-  term_de: Stift
-  term_ar: دبوس
+  term_fr: goujon
+  term_de: Dorn
+  term_ar:
   pos: noun
   domain:
   - construction
-  definition_fa: میلگرد های برش گیر فونداسیون
+  definition_fa: میلگردهای برش‌گیر فونداسیون که برای مهار نیروهای برشی و اتصال اجزای بتنی در محل پی و فونداسیون کار گذاشته می‌شوند.
   status: draft
   slug: pin
 - id: gravel
@@ -1115,55 +1103,55 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: سنگ های ریز
+  definition_fa: دانه‌های خُرد سنگ با ابعاد درشت‌تر از ماسه که از الک‌شدن مصالح رودخانه‌ای یا شکستن سنگ به دست می‌آید؛ در بتن، زیرسازی راه و لایه‌های زهکشی به کار می‌رود.
   status: draft
   slug: gravel
 - id: cesspool-tank
   term_fa: سیسپول تانک
-  term_en: Cesspool tank
-  term_fr: Réservoir de puisard
+  term_en: cesspool tank
+  term_fr: fosse d'aisance
   term_de: Senkgrube
   term_ar: خزان بالوعة
   pos: noun
   domain:
   - construction
-  definition_fa: مخزن بزرگ فاضلاب (مایع)
+  definition_fa: مخزن بزرگ جمع‌آوری فاضلاب مایع که در نبود شبکهٔ فاضلاب شهری، پساب را نگهداری می‌کند و باید به‌طور دوره‌ای تخلیه شود.
   status: draft
   slug: cesspool-tank
 - id: silt
   term_fa: سیلت
   term_en: Silt
   term_fr: Limon
-  term_de: Schlick
+  term_de: Schluff
   term_ar: الطمي
   pos: noun
   domain:
   - construction
-  definition_fa: لای
+  definition_fa: دانه‌های بسیار ریز خاک با ابعادی بین رس و ماسه که در مهندسی خاک به‌دلیل ظرفیت زهکشی پایین و حساسیت به آب اهمیت دارد و لای نامیده می‌شود.
   status: draft
   slug: silt
 - id: sailor
   term_fa: سیلر
-  term_en: Sailor
-  term_fr: Marin
-  term_de: Seemann
-  term_ar: بحار
+  term_en: sealer
+  term_fr: vernis d'étanchéité
+  term_de: Versiegelungsmittel
+  term_ar: مادة عزل
   pos: noun
   domain:
   - construction
-  definition_fa: رنگ ثابت کننده
+  definition_fa: سیلر؛ مادهٔ پوششی تثبیت‌کنندهٔ رنگ و سطح که نفوذپذیری را کاهش می‌دهد و از پودر شدن یا جذب رطوبت لایهٔ زیرین جلوگیری می‌کند.
   status: draft
   slug: sailor
 - id: wire-reinforcement
   term_fa: سیم آرماتور بندی
-  term_en: Wire reinforcement
-  term_fr: Renfort de fil
-  term_de: Drahtverstärkung
+  term_en: wire reinforcement
+  term_fr: armature en fil
+  term_de: Drahtbewehrung
   term_ar: تعزيز الأسلاك
   pos: noun
   domain:
   - construction
-  definition_fa: سیم با قطر 1.5
+  definition_fa: سیم آرماتوربندی با قطر حدود ۱٫۵ میلی‌متر که برای بستن و مهار میلگردها در شبکهٔ تسلیح به کار می‌رود.
   status: draft
   slug: wire-reinforcement
 - id: stone-cement
@@ -1175,7 +1163,7 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: پودر سیمان فشرده
+  definition_fa: پودر سیمان فشرده یا سیمان سنگ‌شده که به‌عنوان مادهٔ چسباننده در ملات‌های خاص و ترمیم سطوح بتنی استفاده می‌شود.
   status: draft
   slug: stone-cement
 - id: vertical
@@ -1187,6 +1175,6 @@ terms:
   pos: adjective
   domain:
   - construction
-  definition_fa: قائم بودن
+  definition_fa: هم‌تراز بودن یک عضو یا سطح با خط شاقول؛ وضعیت قائم که با شاقول، تراز لیزری یا توتال استیشن کنترل می‌شود و انحراف از آن در بنایی «ناشاقولی» نامیده می‌گردد.
   status: draft
   slug: vertical
