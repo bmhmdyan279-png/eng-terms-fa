@@ -20,7 +20,7 @@ import genanki
 from bidi.algorithm import get_display
 from fpdf import FPDF
 
-from build_pages import ROOT, SITE_URL, load_all_terms
+from build_pages import ROOT, SITE_URL, load_all_terms, load_meta
 
 DEFAULT_OUT = ROOT / "output"
 FONT_DIR = ROOT / "tools" / "fonts"
@@ -147,8 +147,11 @@ def write_pdf(terms, out_dir: Path) -> Path:
 
     # terms
     pdf.add_page()
+    domain_titles = {d["id"]: d.get("title_fa", d["id"]) for d in load_meta().get("domains", [])}
+    pos_fa = {"noun": "اسم", "verb": "فعل", "adjective": "صفت", "phrase": "عبارت"}
+    status_fa = {"draft": "پیش‌نویس", "reviewed": "بازبینی‌شده", "published": "منتشرشده"}
     for t in terms:
-        if pdf.get_y() > 250:
+        if pdf.get_y() > 245:
             pdf.add_page()
         pdf.set_font("Vazir", "B", 13)
         pdf.cell(0, 8, fa_display(t.get("term_fa", "")), new_x="LMARGIN", new_y="NEXT", align="R")
@@ -156,7 +159,44 @@ def write_pdf(terms, out_dir: Path) -> Path:
         en = str(t.get("term_en") or "")
         if en:
             pdf.cell(0, 6, en, new_x="LMARGIN", new_y="NEXT", align="R")
-        pdf.multi_cell(0, 6, fa_display(t.get("definition_fa", "")), align="R")
+
+        # other languages (only verified/non-null values make it this far).
+        # FR/DE use the core Helvetica font: the subsetted Vazirmatn lacks
+        # accented Latin glyphs (é, ô, ü, ß ...). Arabic needs Vazirmatn.
+        others = []
+        for label, field in (("FR", "term_fr"), ("DE", "term_de")):
+            value = str(t.get(field) or "").strip()
+            if value:
+                others.append(f"{label}: {value}")
+        if others:
+            pdf.set_font("Helvetica", "", 9)
+            pdf.multi_cell(0, 6, "  |  ".join(others), new_x="LMARGIN", new_y="NEXT", align="R")
+            pdf.set_font("Vazir", "", 10)
+        ar_value = str(t.get("term_ar") or "").strip()
+        if ar_value:
+            pdf.cell(0, 6, "AR: " + fa_display(ar_value), new_x="LMARGIN", new_y="NEXT", align="R")
+
+        # domain • pos • status
+        domains = "، ".join(domain_titles.get(d, d) for d in t.get("domain") or []) or "عمومی"
+        meta_line = f"{domains} • {pos_fa.get(t.get('pos'), t.get('pos') or '')} • {status_fa.get(t.get('status'), t.get('status') or '')}"
+        pdf.set_font("Vazir", "", 8)
+        pdf.cell(0, 5, fa_display(meta_line), new_x="LMARGIN", new_y="NEXT", align="R")
+
+        pdf.set_font("Vazir", "", 10)
+        pdf.multi_cell(0, 6, fa_display(t.get("definition_fa", "")), new_x="LMARGIN", new_y="NEXT", align="R")
+
+        # references
+        refs = t.get("references") or []
+        if refs:
+            pdf.set_font("Vazir", "", 8)
+            ref_texts = []
+            for ref in refs:
+                if isinstance(ref, dict):
+                    edition = f"، ویرایش {ref['edition']}" if ref.get("edition") else ""
+                    ref_texts.append(f"{ref.get('code', '')}{edition}")
+                else:
+                    ref_texts.append(str(ref))
+            pdf.multi_cell(0, 5, fa_display("منابع: " + "؛ ".join(ref_texts)), new_x="LMARGIN", new_y="NEXT", align="R")
         pdf.ln(3)
 
     path = out_dir / "terms.pdf"
