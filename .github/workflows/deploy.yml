@@ -39,6 +39,9 @@ jobs:
       - name: Build pages
         run: python scripts/build_pages.py
 
+      - name: Audit translations (multilingual smoke test)
+        run: python scripts/audit_translations.py --strict
+
       - name: Generate JSON API
         run: python scripts/generate_api.py
 

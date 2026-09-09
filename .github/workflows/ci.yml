@@ -30,6 +30,15 @@ jobs:
       - name: Build pages
         run: python scripts/build_pages.py
 
+      - name: Generated list pages are up to date
+        run: git diff --exit-code docs/construction-terms.md docs/book-vocab.md
+
+      - name: Audit translations (multilingual smoke test)
+        run: python scripts/audit_translations.py --strict
+
+      - name: Translation alerts CSV is up to date
+        run: git diff --exit-code translation_alerts.csv
+
       - name: Generate JSON API
         run: python scripts/generate_api.py
 
