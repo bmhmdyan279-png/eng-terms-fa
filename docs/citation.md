@@ -4,10 +4,10 @@
 
 - **نام پروژه:** فرهنگ واژگان تخصصی مهندسی
 - **نگهدارنده:** bmhmdyan279-png (سازمان: eng-terms-fa Project)
-- **نسخهٔ مرجع:** v1.0.0 (انتشار زیرساخت؛ بازبینی محتوا در جریان)
+- **نسخهٔ داده (محتوا):** v0.1 — در حال توسعه؛ همهٔ مدخل‌ها `draft` (نسخهٔ زیرساخت نرم‌افزار: 1.0.0)
 - **نشانی:** <https://bmhmdyan279-png.github.io/eng-terms-fa/>
 - **مجوز محتوا:** CC BY-SA 4.0
-- **DOI:** در حال حاضر ثبت نشده است — جای‌گیرنده: `10.5281/zenodo.XXXXXXX` (پس از ثبت در Zenodo جایگزین می‌شود)
+- **DOI:** ثبت نشده است. پس از ثبت در Zenodo، شناسهٔ واقعی اینجا و در BibTeX درج می‌شود (تا آن زمان هیچ DOI نمایش داده نمی‌شود).
 
 !!! note "نسخهٔ مورد استناد"
     چون فرهنگ در حال توسعه است، هنگام استناد حتماً **نسخه و تاریخ بازدید** را ذکر کنید.
@@ -21,20 +21,20 @@
   title        = {فرهنگ واژگان تخصصی مهندسی (Persian Engineering Terminology Dictionary)},
   organization = {eng-terms-fa Project},
   year         = {2026},
-  version      = {1.0.0},
+  version      = {0.1},
   url          = {https://bmhmdyan279-png.github.io/eng-terms-fa/},
-  note         = {DOI placeholder: 10.5281/zenodo.XXXXXXX — محتوا تحت مجوز CC BY-SA 4.0},
+  note         = {نسخهٔ داده 0.1 — محتوا تحت مجوز CC BY-SA 4.0؛ بازبینی تخصصی مدخل‌ها در جریان است},
   license      = {CC BY-SA 4.0}
 }
 ```
 
 ## APA (نسخهٔ ۷)
 
-> bmhmdyan279-png. (2026). *فرهنگ واژگان تخصصی مهندسی* (نسخهٔ 1.0.0) [فرهنگ واژگان وب‌بنیان]. eng-terms-fa Project. https://bmhmdyan279-png.github.io/eng-terms-fa/
+> bmhmdyan279-png. (2026). *فرهنگ واژگان تخصصی مهندسی* (نسخهٔ دادهٔ 0.1) [فرهنگ واژگان وب‌بنیان]. eng-terms-fa Project. https://bmhmdyan279-png.github.io/eng-terms-fa/
 
 ## MLA (نسخهٔ ۹)
 
-> bmhmdyan279-png. *فرهنگ واژگان تخصصی مهندسی*. نسخهٔ 1.0.0, eng-terms-fa Project, 2026, bmhmdyan279-png.github.io/eng-terms-fa/. تاریخ بازدید را اضافه کنید.
+> bmhmdyan279-png. *فرهنگ واژگان تخصصی مهندسی*. نسخهٔ دادهٔ 0.1, eng-terms-fa Project, 2026, bmhmdyan279-png.github.io/eng-terms-fa/. تاریخ بازدید را اضافه کنید.
 
 ## شیوهٔ ارجاع درون‌متنی (فارسی)
 
