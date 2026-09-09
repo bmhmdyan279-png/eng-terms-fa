@@ -17,6 +17,7 @@ fail the build.
 import json
 import sys
 import unicodedata
+from html import escape as html_escape
 from pathlib import Path
 
 import yaml
@@ -27,6 +28,16 @@ DATA_DIR = ROOT / "data" / "terms"
 META_FILE = DATA_DIR / "_meta.yaml"
 SCHEMA_FILE = ROOT / "schemas" / "term-v1.schema.json"
 DOCS_TERMS_DIR = ROOT / "docs" / "terms"
+
+# Legacy list pages — regenerated from the data on every build so they can
+# never drift away from the single source of truth (data/terms/*.yaml).
+CONSTRUCTION_LIST_FILE = ROOT / "docs" / "construction-terms.md"
+BOOK_VOCAB_FILE = ROOT / "docs" / "book-vocab.md"
+BOOK_SOURCE_FILE = "academy.yaml"
+GENERATED_BANNER = (
+    "<!-- این صفحه به‌صورت خودکار از data/terms/*.yaml توسط scripts/build_pages.py "
+    "تولید می‌شود — آن را دستی ویرایش نکنید. -->"
+)
 
 DEFINITION_TARGET_LENGTH = 50
 
@@ -151,6 +162,21 @@ def validate_terms(records, meta):
     return errors, warnings
 
 
+def _esc(value) -> str:
+    """HTML-escape any value interpolated into a generated page.
+
+    Every field that originates from the YAML data MUST pass through this
+    before it reaches the Markdown/HTML output — a malicious pull request
+    must never be able to inject raw markup or <script> tags.
+    """
+    return html_escape(str(value), quote=True)
+
+
+def _yaml_str(value) -> str:
+    """Render a value as a safely quoted YAML/JSON scalar for frontmatter."""
+    return json.dumps(str(value), ensure_ascii=False)
+
+
 def render_pages(records, meta):
     domain_titles = {d["id"]: d.get("title_fa", d["id"]) for d in meta["domains"]}
     terms = [record for _, record in records]
@@ -158,26 +184,29 @@ def render_pages(records, meta):
 
     DOCS_TERMS_DIR.mkdir(parents=True, exist_ok=True)
     for old_file in DOCS_TERMS_DIR.glob("*.md"):
-        old_file.unlink()
+        try:
+            old_file.unlink()
+        except OSError as exc:  # locked by an editor/antivirus: don't kill the build
+            print(f"WARNING: could not remove stale page {old_file}: {exc}", file=sys.stderr)
 
     for record in terms:
         term_fa = normalize_persian(record["term_fa"])
         slug = record["slug"]
-        term_en = str(record.get("term_en") or "—").strip() or "—"
-        term_fr = str(record.get("term_fr") or "—").strip() or "—"
-        term_de = str(record.get("term_de") or "—").strip() or "—"
-        term_ar = str(record.get("term_ar") or "—").strip() or "—"
-        definition = str(record.get("definition_fa") or "").strip() or "تعریفی ثبت نشده است."
-        domains = [domain_titles.get(d, d) for d in record.get("domain") or []] or ["عمومی"]
-        pos_fa = POS_FA.get(record.get("pos"), record.get("pos"))
+        term_en = _esc(str(record.get("term_en") or "—").strip() or "—")
+        term_fr = _esc(str(record.get("term_fr") or "—").strip() or "—")
+        term_de = _esc(str(record.get("term_de") or "—").strip() or "—")
+        term_ar = _esc(str(record.get("term_ar") or "—").strip() or "—")
+        definition = _esc(str(record.get("definition_fa") or "").strip() or "تعریفی ثبت نشده است.")
+        domains = [_esc(domain_titles.get(d, d)) for d in record.get("domain") or []] or ["عمومی"]
+        pos_fa = _esc(POS_FA.get(record.get("pos"), record.get("pos") or ""))
         status = record.get("status", "draft")
         references = record.get("references") or []
         related = record.get("related_terms") or []
 
         page = (
-            f"---\ntitle: {term_fa}\n"
-            f"description: تعریف و معادل‌های واژه {term_fa}\n"
-            f"slug: {slug}\n---\n\n# {term_fa}\n"
+            f"---\ntitle: {_yaml_str(term_fa)}\n"
+            f"description: {_yaml_str('تعریف و معادل‌های واژه ' + term_fa)}\n"
+            f"slug: {_yaml_str(slug)}\n---\n\n# {_esc(term_fa)}\n"
         )
 
         page += render_jsonld(record)
@@ -185,7 +214,7 @@ def render_pages(records, meta):
         if status == "draft":
             page += '\n!!! warning "وضعیت: پیش‌نویس"\n    این مدخل هنوز بازبینی تخصصی نشده است.\n'
         elif status == "reviewed":
-            reviewer = record.get("reviewed_by") or ""
+            reviewer = _esc(record.get("reviewed_by") or "")
             page += f'\n!!! success "وضعیت: بازبینی‌شده"\n    بازبینی تخصصی انجام شده است.{(" — " + reviewer) if reviewer else ""}\n'
         elif status == "published":
             page += '\n!!! success "وضعیت: منتشرشده"\n'
@@ -214,20 +243,27 @@ def render_pages(records, meta):
         if references:
             for ref in references:
                 if isinstance(ref, dict):
-                    kind = REF_TYPE_FA.get(ref.get("type"), "سایر")
-                    edition = f"، ویرایش {ref['edition']}" if ref.get("edition") else ""
-                    page += f"- {ref.get('code', '—')} ({kind}{edition})\n"
+                    kind = _esc(REF_TYPE_FA.get(ref.get("type"), "سایر"))
+                    edition = f"، ویرایش {_esc(ref['edition'])}" if ref.get("edition") else ""
+                    page += f"- {_esc(ref.get('code', '—'))} ({kind}{edition})\n"
                 else:
-                    page += f"- {ref}\n"
+                    page += f"- {_esc(ref)}\n"
         else:
             page += "منبعی ثبت نشده است.\n"
 
         page += '\n## واژه‌های مرتبط\n<div class="related-terms">\n'
-        valid_related = [
-            f'<a href="./{rid}.md">{slug_to_term_fa[rid]}</a>'
-            for rid in related
-            if rid in slug_to_term_fa
-        ]
+        valid_related = []
+        for rid in related:
+            if rid in slug_to_term_fa:
+                valid_related.append(f'<a href="./{_esc(rid)}.md">{_esc(slug_to_term_fa[rid])}</a>')
+            else:
+                # validate_terms() already fails the build on unknown ids;
+                # this warning is defence in depth so nothing is ever
+                # dropped silently if the gate is bypassed.
+                print(
+                    f"WARNING: {slug}: related_terms references unknown id '{rid}' — link dropped",
+                    file=sys.stderr,
+                )
         page += ("\n".join(valid_related) + "\n" if valid_related else "واژه مرتبطی ثبت نشده است.\n")
         page += "\n</div>\n\n---\n\nبازگشت به فهرست\n"
 
@@ -275,7 +311,7 @@ def render_index(records, meta):
     out.append('  <div class="filter-group"><label for="filter-sort">مرتب‌سازی:</label>'
                ' <select id="filter-sort"><option value="fa">فارسی (الفبایی)</option>'
                '<option value="en">انگلیسی (الفبایی)</option></select></div>')
-    out.append('  <span id="terms-count" class="terms-count"></span>')
+    out.append('  <span id="terms-count" class="terms-count" aria-live="polite"></span>')
     out.append('</div>')
     out.append("")
     out.append('<ul id="terms-list" class="terms-list">')
@@ -306,6 +342,62 @@ def render_index(records, meta):
     return "\n".join(out) + "\n"
 
 
+def _definition_teaser(record, limit=100):
+    """First line of the definition, trimmed — for the generated list pages."""
+    text = " ".join(str(record.get("definition_fa") or "").split())
+    if len(text) > limit:
+        text = text[: limit - 1].rstrip() + "…"
+    return text or "—"
+
+
+def render_list_pages(records, meta):
+    """Regenerate docs/construction-terms.md and docs/book-vocab.md.
+
+    These pages used to be hand-maintained lists that drifted away from the
+    data (duplicate entries, dead links). They are now derived from
+    data/terms/*.yaml on every build — one single source of truth.
+    """
+
+    def entry(record):
+        fa = _esc(normalize_persian(record["term_fa"]))
+        slug = _esc(record["slug"])
+        en = _esc(str(record.get("term_en") or "").strip())
+        teaser = _esc(_definition_teaser(record))
+        return f"- **[{fa}](terms/{slug}.md)** ({en}): {teaser}"
+
+    construction = sorted(
+        (r for _, r in records if "construction" in (r.get("domain") or [])),
+        key=lambda r: normalize_persian(r["term_fa"]),
+    )
+    book = sorted(
+        (r for source, r in records if source == BOOK_SOURCE_FILE),
+        key=lambda r: normalize_persian(r["term_fa"]),
+    )
+
+    construction_page = (
+        "# 🏗️ اصطلاحات ساختمانی\n\n"
+        f"{GENERATED_BANNER}\n\n"
+        "واژگان تخصصی و پرکاربرد در حوزهٔ ساختمان و اجرا.\n"
+        "برای فیلتر بر پایهٔ حوزه، وضعیت و زبان‌ها به "
+        "[فهرست واژگان](terms/index.md) بروید.\n\n"
+        + "\n".join(entry(r) for r in construction)
+        + "\n"
+    )
+    CONSTRUCTION_LIST_FILE.write_text(construction_page, encoding="utf-8")
+
+    book_page = (
+        "# 📖 واژگان اختصاصی کتاب آزمایشات فناوری بتن\n\n"
+        f"{GENERATED_BANNER}\n\n"
+        "واژگان مصوب فرهنگستان زبان و ادب فارسی که در کتاب «آزمایشات فناوری بتن» "
+        "به کار رفته‌اند، همراه با تعریف تخصصی هر واژه.\n\n"
+        + "\n".join(entry(r) for r in book)
+        + "\n"
+    )
+    BOOK_VOCAB_FILE.write_text(book_page, encoding="utf-8")
+
+    return len(construction), len(book)
+
+
 def main():
     meta = load_meta()
     records = load_all_terms()
@@ -321,7 +413,11 @@ def main():
         sys.exit(1)
 
     render_pages(records, meta)
-    print(f"✅ {len(records)} صفحه تولید شد ({len(warnings)} هشدار کیفیت تعریف)")
+    n_construction, n_book = render_list_pages(records, meta)
+    print(
+        f"✅ {len(records)} صفحه تولید شد ({len(warnings)} هشدار کیفیت تعریف) + "
+        f"construction-terms.md ({n_construction}) و book-vocab.md ({n_book}) بازتولید شدند"
+    )
 
 
 if __name__ == "__main__":
