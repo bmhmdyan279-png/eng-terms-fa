@@ -3,15 +3,25 @@
  * Each <li class="term-row"> carries:
  *   data-domain  : space separated domain ids (e.g. "construction materials")
  *   data-status  : draft | reviewed | published
- *   data-langs   : complete | partial (FR/DE/AR availability)
+ *   data-langs   : space separated available language codes (e.g. "en fr de")
  *   data-fa      : Persian term (sort key)
  *   data-en      : English equivalent (alternate sort key)
+ *
+ * The filter state is mirrored into the URL (?domain=…&status=…&langs=…&sort=…)
+ * so a filtered view can be shared as a link and survives reload/back.
  */
 (function () {
   "use strict";
 
   var faCollator = typeof Intl !== "undefined" ? new Intl.Collator("fa") : null;
   var enCollator = typeof Intl !== "undefined" ? new Intl.Collator("en") : null;
+
+  var PARAM_OF = {
+    domain: "filter-domain",
+    status: "filter-status",
+    langs: "filter-langs",
+    sort: "filter-sort"
+  };
 
   function init() {
     var list = document.getElementById("terms-list");
@@ -23,8 +33,42 @@
     var langsSelect = document.getElementById("filter-langs");
     var sortSelect = document.getElementById("filter-sort");
     var counter = document.getElementById("terms-count");
+    var selects = {
+      domain: domainSelect,
+      status: statusSelect,
+      langs: langsSelect,
+      sort: sortSelect
+    };
 
     var rows = Array.prototype.slice.call(list.querySelectorAll("li.term-row"));
+
+    // --- restore filter state from the URL (shared links / reload / back) ---
+    function readURL() {
+      if (typeof URLSearchParams === "undefined" || !window.location.search) return;
+      var params = new URLSearchParams(window.location.search);
+      Object.keys(PARAM_OF).forEach(function (key) {
+        var el = selects[key];
+        var value = params.get(key);
+        if (el && value !== null) {
+          // only accept values that exist as options (ignore junk in the URL)
+          for (var i = 0; i < el.options.length; i++) {
+            if (el.options[i].value === value) { el.value = value; break; }
+          }
+        }
+      });
+    }
+
+    function writeURL() {
+      if (typeof URLSearchParams === "undefined" || !window.history || !window.history.replaceState) return;
+      var params = new URLSearchParams();
+      Object.keys(PARAM_OF).forEach(function (key) {
+        var el = selects[key];
+        if (el && el.value) params.set(key, el.value);
+      });
+      var query = params.toString();
+      var url = window.location.pathname + (query ? "?" + query : "") + window.location.hash;
+      window.history.replaceState(null, "", url);
+    }
 
     function apply() {
       var domain = domainSelect ? domainSelect.value : "";
@@ -59,6 +103,8 @@
       if (counter) {
         counter.textContent = "نمایش " + toFaDigits(visible) + " از " + toFaDigits(rows.length) + " واژه";
       }
+
+      writeURL();
     }
 
     function toFaDigits(n) {
@@ -71,6 +117,7 @@
       if (el) el.addEventListener("change", apply);
     });
 
+    readURL();
     apply();
   }
 

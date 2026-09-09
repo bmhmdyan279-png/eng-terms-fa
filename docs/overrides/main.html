@@ -3,6 +3,12 @@
 {% block extrahead %}
   {{ super() }}
 
+  {# ---- امنیت: Content Security Policy ----
+     Material به اسکریپت/استایل inline نیاز دارد، ولی هیچ منبع خارجی
+     بارگذاری نمی‌شود (فونت‌ها self-hosted و Pagefind هم‌origin است).
+     در صورت بروز هر XSS احتمالی، این سیاست آسیب را محدود می‌کند. #}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
+
   {# ---- جهت سند برای <html> (قالب متریال فقط روی body می‌گذارد) ---- #}
   <script>document.documentElement.setAttribute("dir", "rtl");</script>
 
