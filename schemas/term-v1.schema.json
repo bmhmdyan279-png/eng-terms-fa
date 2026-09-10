@@ -4,7 +4,16 @@
   "title": "Engineering Term (v1, rev. 2)",
   "description": "A single entry in the Persian engineering terminology dictionary. Uniqueness of id/slug and referential integrity of related_terms are enforced by scripts/build_pages.py at build time. rev. 2 (2026-09-10) adds optional etymology/root, plural, alias, translation-note and review-level fields and richer reference objects; every new field is optional, so rev. 1 records stay valid.",
   "type": "object",
-  "required": ["id", "term_fa", "term_en", "pos", "domain", "definition_fa", "status", "slug"],
+  "required": [
+    "id",
+    "term_fa",
+    "term_en",
+    "pos",
+    "domain",
+    "definition_fa",
+    "status",
+    "slug"
+  ],
   "additionalProperties": false,
   "properties": {
     "id": {
@@ -23,24 +32,41 @@
       "description": "The English equivalent."
     },
     "term_fr": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "French equivalent (unverified translations must stay null)."
     },
     "term_de": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "German equivalent (unverified translations must stay null)."
     },
     "term_ar": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Arabic equivalent (unverified translations must stay null)."
     },
     "pos": {
-      "enum": ["noun", "verb", "adjective", "phrase"],
+      "enum": [
+        "noun",
+        "verb",
+        "adjective",
+        "phrase"
+      ],
       "description": "Part of speech of the Persian term."
     },
     "domain": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1 },
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
       "minItems": 1,
       "uniqueItems": true,
       "description": "Engineering domains; every value must exist in data/terms/_meta.yaml."
@@ -52,28 +78,42 @@
     },
     "synonyms": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1 },
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
       "uniqueItems": true,
       "description": "Persian (or established loanword) synonyms that must also match this entry in search."
     },
     "antonyms": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1 },
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
       "uniqueItems": true
     },
     "usage_examples": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1 },
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
       "description": "Short Persian sentences showing the term in real technical use (spec/report/site register)."
     },
     "references": {
       "type": "array",
-      "items": { "$ref": "#/$defs/reference" },
+      "items": {
+        "$ref": "#/$defs/reference"
+      },
       "description": "Sources backing the definition (standards, books, ...). Every code must exist in data/standards.yaml — an unverifiable citation fails the content gate."
     },
     "related_terms": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1 },
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
       "uniqueItems": true,
       "description": "Ids of related terms; every value must reference an existing term id."
     },
@@ -83,9 +123,12 @@
       "description": "Persian base/root the term is built from (e.g. 'بند' for آب‌بندی and بندکشی). Powers root-based search and the 'هم‌ریشه‌ها' (same-root) grouping on every page."
     },
     "root_ar": {
-      "type": ["string", "null"],
-      "pattern": "^$|^[ء-يآأإؤئٱ](\\u066D[ء-يآأإؤئٱ]){1,3}$|^[ء-يآأإؤئٱ]{2,4}(-[ء-يآأإؤئٱ]){1,3}$",
-      "description": "Radical (triliteral or longer) Arabic root of a loanword, e.g. 'ق-و-م' for مقاومت. Meaningful only when origin_lang is ar."
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^$|^[\\u0621-\\u063a\\u0641-\\u064a](?:-[\\u0621-\\u063a\\u0641-\\u064a]){1,4}$|^[\\u0621-\\u063a\\u0641-\\u064a](?:\\u066d[\\u0621-\\u063a\\u0641-\\u064a]){1,4}$|^[\\u0621-\\u063a\\u0641-\\u064a]{2,5}$",
+      "description": "Arabic radical (root letters) of a loanword or of an Arabic base inside a Persian derivative, e.g. 'ق-و-م' for مقاومت, 'ر-ق-م' for رقمی. Write it either hyphen- or tatweel-separated. Meaningful for Arabic-derived vocabulary only."
     },
     "etymology_fa": {
       "type": "string",
@@ -93,7 +136,22 @@
       "description": "Human-readable Persian etymology note: origin language, morphological formation, loan-word or trade-jargon history."
     },
     "origin_lang": {
-      "enum": ["fa", "ar", "tr", "fr", "en", "de", "la", "el", "ru", "es", "it", "hy", "mn", "other"],
+      "enum": [
+        "fa",
+        "ar",
+        "tr",
+        "fr",
+        "en",
+        "de",
+        "la",
+        "el",
+        "ru",
+        "es",
+        "it",
+        "hy",
+        "mn",
+        "other"
+      ],
       "description": "Language the headword itself was borrowed from (fa = native Persian)."
     },
     "plural_fa": {
@@ -108,22 +166,43 @@
     },
     "search_aliases": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1 },
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
       "uniqueItems": true,
       "description": "Extra spellings, transliterations or colloquial/site forms that must match this entry in search, beyond synonyms."
     },
     "translation_notes": {
       "type": "object",
-      "propertyNames": { "enum": ["en", "fr", "de", "ar"] },
-      "additionalProperties": { "type": "string", "minLength": 1 },
+      "propertyNames": {
+        "enum": [
+          "en",
+          "fr",
+          "de",
+          "ar"
+        ]
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      },
       "description": "Per-language editorial note. Required whenever a translation is a descriptive coinage rather than an attested headword: 'unknown' must stay null and 'uncertain' must be declared here."
     },
     "status": {
-      "enum": ["draft", "reviewed", "published"],
+      "enum": [
+        "draft",
+        "reviewed",
+        "published"
+      ],
       "description": "Editorial status. draft = not yet reviewed. reviewed = passed the automated content gates plus a documented review (see review_level). published = human specialist sign-off with stable wording."
     },
     "review_level": {
-      "enum": ["ai-assisted", "expert", "committee"],
+      "enum": [
+        "ai-assisted",
+        "expert",
+        "committee"
+      ],
       "default": "ai-assisted",
       "description": "Who performed the review. ai-assisted = model-assisted and validated by automated gates, no human sign-off yet; expert = a named human specialist; committee = a terminology committee. status published requires expert or committee."
     },
@@ -146,25 +225,44 @@
   "allOf": [
     {
       "$comment": "published means a human signed off — an AI-assisted review can never claim it.",
-      "if": { "properties": { "status": { "const": "published" } } },
-      "then": { "properties": { "review_level": { "enum": ["expert", "committee"] } }, "required": ["review_level"] }
-    },
-    {
-      "$comment": "root_ar only makes sense for Arabic loanwords.",
       "if": {
-        "properties": { "root_ar": { "type": "string", "minLength": 1 } },
-        "required": ["root_ar"]
+        "properties": {
+          "status": {
+            "const": "published"
+          }
+        }
       },
-      "then": { "properties": { "origin_lang": { "const": "ar" } }, "required": ["origin_lang"] }
+      "then": {
+        "properties": {
+          "review_level": {
+            "enum": [
+              "expert",
+              "committee"
+            ]
+          }
+        },
+        "required": [
+          "review_level"
+        ]
+      }
     }
   ],
   "$defs": {
     "reference": {
       "type": "object",
-      "required": ["type", "code"],
+      "required": [
+        "type",
+        "code"
+      ],
       "additionalProperties": false,
       "properties": {
-        "type": { "enum": ["standard", "book", "other"] },
+        "type": {
+          "enum": [
+            "standard",
+            "book",
+            "other"
+          ]
+        },
         "code": {
           "type": "string",
           "minLength": 1,
@@ -175,7 +273,9 @@
           "minLength": 1,
           "description": "Issuing body, e.g. 'ACI', 'ASTM', 'INSO', 'فرهنگستان زبان و ادب فارسی'."
         },
-        "edition": { "type": "string" },
+        "edition": {
+          "type": "string"
+        },
         "section": {
           "type": "string",
           "minLength": 1,

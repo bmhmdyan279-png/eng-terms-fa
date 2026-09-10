@@ -4,7 +4,7 @@ schema: term-v1
 terms:
 - id: digital
   term_fa: رقمی
-  term_en: Digital
+  term_en: digital
   term_fr: Numérique
   term_de: Digital
   term_ar: رقمي
@@ -13,14 +13,36 @@ terms:
   - concrete
   - testing
   definition_fa: در فناوری بتن، به حسگرها و ابزارهای اندازه‌گیری دیجیتال (مانند دماسنج‌ها و رطوبت‌سنج‌های دیجیتال) اطلاق می‌شود که برای پایش دقیق و لحظه‌ای شرایط عمل‌آوری و ثبت داده‌های آزمایشگاهی به‌کار می‌روند. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: digital
+  synonyms:
+  - دیجیتالی
+  - عددی
+  search_aliases:
+  - دیجیتال
+  usage_examples:
+  - دماسنج دیجیتال نمونه‌ها را در بازهٔ عمل‌آوری به‌صورت پیوسته ثبت می‌کند.
+  root_fa: رقم
+  root_ar: ر-ق-م
+  etymology_fa: واژه‌ای فارسی بر پایهٔ «رقم» (نشانه، عدد) — که خود وام‌واژه‌ای عربی از ریشهٔ «ر-ق-م» است — و معادل مصوب فرهنگستان برای digital؛ وام‌واژهٔ «دیجیتال» از numérique/digital در گفتار کارگاهی رایج‌تر است.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: book
+    code: فرهنگ واژه‌های مصوب فرهنگستان
+    note: منبع معادل فارسی مصوب فرهنگستان.
+  related_terms:
+  - calibration
+  - control
+  - protocol
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: digital
 - id: oven
   term_fa: تاوَن
-  term_en: Oven
+  term_en: oven
   term_fr: Four
   term_de: Ofen
   term_ar: فرن
@@ -29,14 +51,37 @@ terms:
   - concrete
   - testing
   definition_fa: کوره یا اجاق آزمایشگاهی با قابلیت تنظیم دقیق دما (معمولاً ۱۱۰ درجه سانتی‌گراد) که برای خشک کردن نمونه‌های سنگدانه و بتن جهت تعیین رطوبت و وزن مخصوص در آزمایش‌های استاندارد فناوری بتن استفاده می‌شود. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: oven
+  synonyms:
+  - کورهٔ خشک‌کن
+  - فرن
+  search_aliases:
+  - اون
+  - فر آزمایشگاهی
+  - کوره
+  usage_examples:
+  - نمونه‌های سنگدانه تا رسیدن به وزن ثابت در تاوَن ۱۱۰ درجهٔ سانتی‌گراد خشک می‌شوند.
+  root_fa: تاوَن
+  etymology_fa: «تاوَن» معادل مصوب فرهنگستان برای oven است و در فارسی به کوره/اجاق پخت نان هم گفته می‌شود؛ در آزمایشگاه فناوری بتن به کورهٔ خشک‌کن با کنترل دقیق دما اطلاق می‌گردد.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: book
+    code: فرهنگ واژه‌های مصوب فرهنگستان
+    note: منبع معادل فارسی مصوب فرهنگستان.
+  related_terms:
+  - calibration
+  - protocol
+  - pycnometer
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: oven
 - id: mesh-sieve-size
   term_fa: اندازه غربالی
-  term_en: Mesh / Sieve size
+  term_en: mesh / sieve size
   term_fr: Taille de tamis
   term_de: Maschenweite
   term_ar: حجم المنخل
@@ -45,14 +90,47 @@ terms:
   - concrete
   - testing
   definition_fa: اندازه چشمه‌های الک یا غربال استاندارد که برای دانه‌بندی و تعیین توزیع ابعادی سنگدانه‌های بتن بر اساس استانداردهایی مانند ASTM C136 به کار می‌رود. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: mesh-sieve-size
+  synonyms:
+  - شمارهٔ الک
+  - اندازهٔ الک
+  search_aliases:
+  - مش
+  - الک
+  - غربال
+  - سایز الک
+  - دانه‌بندی
+  usage_examples:
+  - دانه‌بندی سنگدانه با مجموعه‌ای از الک‌های استاندارد و گزارش درصد عبوری انجام می‌شود.
+  root_fa: غربال
+  etymology_fa: «غربال» وام‌واژه‌ای کهن به معنای الک است؛ «اندازهٔ غربالی» معادل مصوب فرهنگستان برای mesh/sieve size است و به گشادگی چشمهٔ الک اشاره دارد.
+  origin_lang: fa
+  plural_fa: اندازه‌های غربالی
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: book
+    code: فرهنگ واژه‌های مصوب فرهنگستان
+    note: منبع معادل فارسی مصوب فرهنگستان.
+  - type: standard
+    code: ASTM C136
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C33
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - blockage
+  - cumin
+  - gravel
+  - silt
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: mesh-sieve-size
 - id: calibration
   term_fa: واسنجیدن
-  term_en: Calibration
+  term_en: calibration
   term_fr: Étalonnage
   term_de: Kalibrierung
   term_ar: معايرة
@@ -61,14 +139,39 @@ terms:
   - concrete
   - testing
   definition_fa: فرآیند تنظیم و تأیید دقت دستگاه‌های آزمایشگاهی (مانند دستگاه فشار بتن و تراژک) با استفاده از استانداردهای مرجع، جهت اطمینان از صحت نتایج آزمایش‌های فناوری بتن. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: calibration
+  synonyms:
+  - کالیبراسیون
+  - درجه‌بندی
+  search_aliases:
+  - کالیبره
+  - کالیبره کردن
+  usage_examples:
+  - واسنجیدن دستگاه فشار بتن باید در بازه‌های زمانی تعیین‌شده و با نمونهٔ مرجع انجام شود.
+  - پس از جابه‌جایی تراز آزمایشگاهی، واسنجیدن آن پیش از نخستین آزمون الزامی است.
+  root_fa: سنجیدن
+  etymology_fa: «واسنجیدن» معادل مصوب فرهنگستان برای calibration است؛ وام‌واژهٔ «کالیبراسیون» از فرانسوی calibration در کارگاه و آزمایشگاه رایج‌تر است.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: book
+    code: فرهنگ واژه‌های مصوب فرهنگستان
+    note: منبع معادل فارسی مصوب فرهنگستان.
+  related_terms:
+  - control
+  - oven
+  - tolerance
+  - digital
+  - protocol
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: calibration
 - id: depot
   term_fa: آمادگاه
-  term_en: Depot
+  term_en: depot
   term_fr: Dépôt
   term_de: Depot
   term_ar: مستودع
@@ -77,14 +180,36 @@ terms:
   - concrete
   - testing
   definition_fa: محل یا انبار استاندارد نگهداری مصالح (سیمان، سنگدانه و افزودنی‌ها) پیش از مصرف در بچینگ یا آزمایشگاه، که شرایط محیطی آن برای جلوگیری از افت کیفیت مصالح کنترل می‌شود. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: depot
+  synonyms:
+  - انبار مصالح
+  search_aliases:
+  - دپو
+  - انبار
+  usage_examples:
+  - آمادگاه سنگدانه باید طوری پوشیده شود که رطوبت آن در بازهٔ مصرف تغییر نکند.
+  root_fa: آماد
+  etymology_fa: «آمادگاه» از «آماد» (آمادگی) و پسوند مکان «ـگاه» ساخته شده و معادل مصوب فرهنگستان برای depot است؛ وام‌واژهٔ «دپو» از فرانسوی dépôt در کارگاه‌ها رایج است.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: book
+    code: فرهنگ واژه‌های مصوب فرهنگستان
+    note: منبع معادل فارسی مصوب فرهنگستان.
+  related_terms:
+  - batching
+  - control
+  - gravel
+  - batch
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: depot
 - id: jig-jigging
   term_fa: جیک
-  term_en: Jig / Jigging
+  term_en: jig / jigging
   term_fr: Gabarit / Compactage
   term_de: Vorrichtung / Verdichtung
   term_ar: دمك / قالب
@@ -93,14 +218,38 @@ terms:
   - concrete
   - testing
   definition_fa: عمل متراکم‌سازی نمونه بتن یا خاک در قالب با استفاده از ضربات متناوب، بلند کردن و کوبیدن پیمانه، جهت خروج هوای محبوس و رسیدن به چگالی مطلوب در آزمایش‌های تراکم.
-  status: draft
-  slug: jig-jigging
+  synonyms:
+  - جیک‌جیک
+  - میله‌کوبی
+  search_aliases:
+  - جیگ
+  - جیگینگ
+  - تراکم دستی
+  usage_examples:
+  - متراکم‌سازی نمونهٔ بتن در قالب با سیخ‌کوبی یا جیک روی میز لرزان انجام می‌شود.
+  root_fa: جیک
+  etymology_fa: «جیک» صورت فارسی‌شدهٔ jig است و به عمل کوبیدن و متناوب لرزاندن برای خروج هوای محبوس گفته می‌شود؛ در متون فارسی «میله‌کوبی» و «سیخ‌زدن» هم به کار می‌رود.
+  origin_lang: en
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: standard
+    code: ASTM C192
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - frequency
+  - tamper
+  - to-pump
+  - vibrator
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: jig-jigging
 - id: cement-matrix
   term_fa: آژند
-  term_en: Cement / Matrix
+  term_en: cement paste / matrix
   term_fr: Matrice / Ciment
   term_de: Matrix / Zement
   term_ar: مصفوفة / أسمنت
@@ -109,14 +258,40 @@ terms:
   - concrete
   - testing
   definition_fa: ماده چسباننده یا خمیر سیمانی که در بتن، فضاهای خالی میان سنگدانه‌ها را پر کرده و با هیدراتاسیون، یکپارچگی و مقاومت مکانیکی سنگ مصنوعی را تأمین می‌کند. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: cement-matrix
+  synonyms:
+  - ماتریس سیمانی
+  - خمیر سیمان
+  search_aliases:
+  - آژند سیمانی
+  - ماتریس
+  usage_examples:
+  - کیفیت آژند سیمانی، به‌ویژه نسبت آب به سیمان، دوام بتن را تعیین می‌کند.
+  root_fa: آژند
+  etymology_fa: «آژند» واژه‌ای فارسی به معنای پیوند و لایهٔ پرکننده است که فرهنگستان آن را برای matrix/cement paste برگزیده؛ در متون مهندسی «ماتریس» و «خمیر سیمان» نیز رایج است.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: book
+    code: فرهنگ واژه‌های مصوب فرهنگستان
+    note: منبع معادل فارسی مصوب فرهنگستان.
+  - type: standard
+    code: ACI 116R
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  related_terms:
+  - beton
+  - sealing
+  - siman
+  - stone-cement
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: cement-matrix
 - id: control
   term_fa: واپایش
-  term_en: Control
+  term_en: control
   term_fr: Contrôle
   term_de: Kontrolle
   term_ar: مراقبة
@@ -125,14 +300,43 @@ terms:
   - concrete
   - testing
   definition_fa: مجموعه اقدامات نظارتی و آزمایشگاهی (Quality Control) برای بررسی انطباق ویژگی‌های بتن تازه و سخت‌شده با مشخصات فنی و استانداردهای طراحی. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: control
+  synonyms:
+  - کنترل
+  - واپایی
+  search_aliases:
+  - کنترل کیفیت
+  - QC
+  usage_examples:
+  - واپایش کیفیت بتن تازه شامل اسلامپ، دما و هوای بتن پیش از تخلیه در قالب است.
+  root_fa: پاییدن
+  etymology_fa: «واپایش» معادل مصوب فرهنگستان برای control است، از «پاییدن» (نگاه داشتن و نگریستن)؛ وام‌واژهٔ «کنترل» از فرانسوی contrôle در متون اجرایی غالب است.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: book
+    code: فرهنگ واژه‌های مصوب فرهنگستان
+    note: منبع معادل فارسی مصوب فرهنگستان.
+  - type: standard
+    code: ACI 301
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - batch
+  - calibration
+  - protocol
+  - tolerance
+  - depot
+  - digital
+  - tizon
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: control
 - id: protocol
   term_fa: تشریفات
-  term_en: Protocol
+  term_en: protocol
   term_fr: Protocole
   term_de: Protokoll
   term_ar: بروتوكول
@@ -141,14 +345,37 @@ terms:
   - concrete
   - testing
   definition_fa: دستورالعمل یا پروتکل استاندارد انجام یک آزمایش خاص (مانند پروتکل آزمایش مقاومت فشاری یا اسلامپ) که توالی دقیق مراحل، شرایط محیطی و تجهیزات مورد نیاز را دیکته می‌کند. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: protocol
+  synonyms:
+  - شیوه‌نامهٔ آزمایش
+  search_aliases:
+  - پروتکل
+  usage_examples:
+  - تشریفات آزمون مقاومت فشاری، سرعت بارگذاری و ابعاد آزمونه را تعیین می‌کند.
+  root_fa: تشریفات
+  etymology_fa: «تشریفات» معادل مصوب فرهنگستان برای protocol در معنای آیین‌اجرایی است؛ وام‌واژهٔ «پروتکل» از فرانسوی protocole در متون آزمایشگاهی رایج‌تر است.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: standard
+    code: ASTM C192
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - batch
+  - calibration
+  - control
+  - tolerance
+  - digital
+  - oven
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: protocol
 - id: batch
   term_fa: دسته
-  term_en: Batch
+  term_en: batch
   term_fr: Lot / Gâchée
   term_de: Charge
   term_ar: دفعة
@@ -157,14 +384,41 @@ terms:
   - concrete
   - testing
   definition_fa: مقدار معینی از بتن که در یک زمان مشخص و با ترکیب مصالح یکسان در میکسر یا بچینگ تولید می‌شود و مبنای نمونه‌گیری و آزمایش‌های کنترل کیفیت است. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: batch
+  synonyms:
+  - دستهٔ بتن
+  - پیمانه
+  search_aliases:
+  - بچ
+  usage_examples:
+  - برای هر ۵۰ متر مکعب بتن یا هر دسته، دست‌کم یک مجموعه آزمونه گرفته می‌شود.
+  root_fa: دسته
+  etymology_fa: «دسته» معادل مصوب فرهنگستان برای batch است؛ در کارگاه وام‌واژهٔ «بچ» و ترکیب «بچینگ» (batching plant) رایج است.
+  origin_lang: fa
+  plural_fa: دسته‌ها
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: standard
+    code: ASTM C94
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ACI 304R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - batching
+  - control
+  - depot
+  - tolerance
+  - protocol
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: batch
 - id: batching
   term_fa: مخلوط ساز
-  term_en: Batching
+  term_en: batching
   term_fr: Dosage / Batchage
   term_de: Dosierung / Mischen
   term_ar: تجميع / خلط
@@ -173,14 +427,46 @@ terms:
   - concrete
   - testing
   definition_fa: فرآیند یا تأسیسات (بچینگ پلانت) توزین دقیق و ترکیب اجزای بتن (سیمان، آب، سنگدانه و افزودنی) بر اساس طرح اختلاط برای تولید بتن یکنواخت. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: batching
+  synonyms:
+  - پیمانه‌گیری
+  - توزین مصالح
+  search_aliases:
+  - بچینگ
+  - بچینگ پلانت
+  - کارخانهٔ بتن
+  usage_examples:
+  - در بچینگ، مصالح بر پایهٔ وزن توزین می‌شوند، نه حجم؛ تلورانس توزین در استاندارد تعیین شده است.
+  root_fa: مخلوط
+  etymology_fa: «مخلوط‌ساز» معادل مصوب فرهنگستان برای batching است؛ در گفتار اجرایی «بچینگ» و «بچینگ پلانت» به کار می‌رود.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: standard
+    code: ACI 211.1
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ACI 304R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C94
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - batch
+  - depot
+  - siman
+  - tolerance
+  - tizon
+  - to-pump
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: batching
 - id: tolerance
   term_fa: رواداری و تحمل
-  term_en: Tolerance
+  term_en: tolerance
   term_fr: Tolérance
   term_de: Toleranz
   term_ar: تسامح / تفاوت مسموح
@@ -189,14 +475,42 @@ terms:
   - concrete
   - testing
   definition_fa: محدوده مجاز انحراف از مقادیر هدف در طرح اختلاط، ابعاد قالب‌ها یا نتایج آزمایشگاهی (مانند تلورانس دانه‌بندی سنگدانه یا افت اسلامپ) که در استانداردها تعریف شده است. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: tolerance
+  synonyms:
+  - رواداری
+  - حد مجاز انحراف
+  search_aliases:
+  - تلورانس
+  - تلرانس
+  usage_examples:
+  - رواداری افت اسلامپ در تحویل بتن و رواداری ابعاد قالب باید در مشخصات ذکر شود.
+  root_fa: رواداری
+  etymology_fa: «رواداری» معادل مصوب فرهنگستان برای tolerance است؛ «تحمل» و وام‌واژهٔ «تلورانس» نیز در متون اجرایی دیده می‌شود.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: standard
+    code: ACI 301
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C94
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - batch
+  - calibration
+  - control
+  - drop
+  - batching
+  - protocol
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: tolerance
 - id: frequency
   term_fa: بسامد
-  term_en: Frequency
+  term_en: frequency
   term_fr: Fréquence
   term_de: Frequenz
   term_ar: تردد
@@ -205,14 +519,35 @@ terms:
   - concrete
   - testing
   definition_fa: تعداد نوسانات در واحد زمان (هرتز) در ویبراتورها یا میزهای لرزاننده که برای تراکم مناسب بتن، خروج حباب‌های هوا و جلوگیری از جداشدگی دانه‌ها تنظیم می‌شود. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: frequency
+  synonyms:
+  - فرکانس
+  - بسامد نوسان
+  search_aliases:
+  - فرکانس
+  usage_examples:
+  - بسامد ویبرهٔ داخلی معمولاً در بازهٔ ۱۰۰ تا ۱۵۰ هرتز انتخاب می‌شود.
+  root_fa: بسامد
+  etymology_fa: «بسامد» معادل مصوب فرهنگستان برای frequency است (از «بس» + «آمدن» = بسامدِ آمد و شد)؛ وام‌واژهٔ «فرکانس» در گفتار مهندسی رایج‌تر است.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: standard
+    code: ACI 309R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - jig-jigging
+  - tamper
+  - vibrator
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: frequency
 - id: vibrator
   term_fa: لرزاننده
-  term_en: Vibrator
+  term_en: vibrator
   term_fr: Vibreur
   term_de: Rüttler / Vibrator
   term_ar: هزاز
@@ -221,14 +556,42 @@ terms:
   - concrete
   - testing
   definition_fa: تجهیزات مکانیکی (مانند ویبراتور داخلی یا خارجی) که با اعمال ارتعاشات با بسامد و دامنه مشخص، باعث روان‌شدگی و تراکم بتن تازه در قالب‌ها و حوالی آرماتورها می‌شود. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: vibrator
+  synonyms:
+  - لرزانندهٔ بتن
+  search_aliases:
+  - ویبره
+  - ویبراتور
+  - ویبراتو
+  - شیلنگ ویبره
+  usage_examples:
+  - ویبره باید عمودی در بتن فرو برود و تا خروج حباب‌های هوا و برق‌افتادن سطح ادامه یابد.
+  - ویبره‌زدن بیش از حد باعث جداشدگی دانه‌ها و تجمع شیرهٔ سیمان در سطح می‌شود.
+  root_fa: لرز
+  etymology_fa: «لرزاننده» معادل مصوب فرهنگستان برای vibrator است (از «لرزیدن»)؛ در کارگاه وام‌واژهٔ «ویبره» و «ویبراتور» از فرانسوی vibreur غالب است.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: standard
+    code: ACI 309R
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: ASTM C192
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - frequency
+  - jig-jigging
+  - tamper
+  - to-pump
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: vibrator
 - id: gallery
   term_fa: تالار
-  term_en: Gallery
+  term_en: gallery
   term_fr: Galerie
   term_de: Galerie
   term_ar: معرض / رواق
@@ -237,14 +600,35 @@ terms:
   - concrete
   - testing
   definition_fa: در سازه‌های بتنی عظیم مانند سدها، به راهروها یا فضاهای توخالی درون بدنه بتن اطلاق می‌شود که برای بازرسی، زهکشی آب‌های نفوذی و نصب تجهیزات پایش به کار می‌روند. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: gallery
+  synonyms:
+  - راهروی بازرسی
+  search_aliases:
+  - گالری
+  usage_examples:
+  - در بدنهٔ سد، تالارها برای زهکشی آب نفوذی و نصب تجهیزات پایش به کار می‌روند.
+  root_fa: تالار
+  etymology_fa: «تالار» واژه‌ای فارسی به معنای تالار و راهروی سرپوشیده است که فرهنگستان آن را برای gallery برگزیده؛ وام‌واژهٔ «گالری» در متون سدسازی نیز دیده می‌شود.
+  origin_lang: fa
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: book
+    code: فرهنگ واژه‌های مصوب فرهنگستان
+    note: منبع معادل فارسی مصوب فرهنگستان.
+  related_terms:
+  - sealing
+  - shell
+  - the-well
+  - riser
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: gallery
 - id: pycnometer
   term_fa: بطری چگالی
-  term_en: Pycnometer
+  term_en: pycnometer
   term_fr: Pycnomètre
   term_de: Pyknometer
   term_ar: مكثاف / بيكنومتر
@@ -253,8 +637,33 @@ terms:
   - concrete
   - testing
   definition_fa: ظرف شیشه‌ای کالیبره با درب مخصوص که در آزمایشگاه فناوری بتن برای تعیین وزن مخصوص (چگالی) و جذب آب سنگدانه‌های ریز و درشت بر اساس استاندارد ASTM C128 استفاده می‌شود. (معادل مصوب فرهنگستان)
-  status: draft
-  slug: pycnometer
+  synonyms:
+  - چگالی‌سنج
+  search_aliases:
+  - پیکومتر
+  - پیکونومتر
+  - بالن چگالی
+  usage_examples:
+  - وزن مخصوص سنگدانهٔ ریز با بطری چگالی و بر پایهٔ ASTM C128 تعیین می‌شود.
+  root_fa: چگالی
+  etymology_fa: «بطری چگالی» معادل مصوب فرهنگستان برای pycnometer است؛ این واژه از یونانی pyknos (چگال، فشرده) و metron (سنجش) ساخته شده است.
+  origin_lang: el
   references:
   - type: book
     code: کتاب آزمایشات فناوری بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
+  - type: standard
+    code: ASTM C128
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C127
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - gravel
+  - oven
+  - silt
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: pycnometer

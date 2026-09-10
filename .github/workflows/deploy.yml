@@ -33,17 +33,31 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # ------------------------------------------------ دروازه‌ها (همان قواعد CI)
       - name: Validate data
         run: python scripts/validate_data.py
 
+      - name: Validate content (citations, review honesty, orthography, graph)
+        run: python scripts/validate_content.py
+
+      - name: Audit translations
+        run: python scripts/audit_translations.py --strict
+
+      # ------------------------------------------------------------- تولید داده
       - name: Build pages
         run: python scripts/build_pages.py
 
-      - name: Audit translations (multilingual smoke test)
-        run: python scripts/audit_translations.py --strict
+      - name: Export morphology tables to JS
+        run: python scripts/generate_stem_data.py
+
+      - name: Build Persian search index
+        run: python scripts/build_search_index.py
 
       - name: Generate JSON API
         run: python scripts/generate_api.py
+
+      - name: Generate open data bundle
+        run: python scripts/generate_opendata.py
 
       - name: Run tests
         run: pytest tests/
@@ -59,14 +73,20 @@ jobs:
       - name: Build Pagefind search index
         run: npx --yes pagefind --site site/
 
-      - name: Generate exports and publish downloads
+      - name: Generate exports and publish downloads + open data
         run: |
           python scripts/generate_exports.py
           mkdir -p site/downloads
           cp output/anki.apkg output/terms.csv output/terms.pdf site/downloads/
+          cp translation_gaps.csv site/downloads/
+          # بستهٔ دادهٔ باز: هم تک‌تک فایل‌ها، هم یک zip برای دانلود یکجا
+          cp docs/data/open/terms.ttl site/downloads/skos.ttl
+          cp docs/data/open/terms.ndjson site/downloads/terms.ndjson
+          cp docs/data/open/datapackage.json site/downloads/datapackage.json
+          (cd docs/data/open && zip -qr "$OLDPWD/site/downloads/open-data.zip" .)
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./site
 

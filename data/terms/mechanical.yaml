@@ -11,12 +11,31 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: کمیت فیزیکی که تمایل یک نیرو به چرخاندن جسم حول یک محور را نشان می‌دهد.
-  status: draft
-  slug: gashtavar
+  definition_fa: کمیتی برداری که تمایل یک نیرو به چرخاندن جسم حول یک محور یا نقطه را می‌سنجد و برابر است با حاصل‌ضرب خارجی بردار مکان (از محور تا نقطهٔ اثر نیرو) در بردار نیرو؛ اندازهٔ آن حاصل‌ضرب نیرو در بازوی عمودی آن است و یکای آن در دستگاه بین‌المللی نیوتن‌متر است.
+  synonyms:
+  - لنگر پیچشی
+  - ممان پیچش
+  usage_examples:
+  - گشتاور مجاز پیچ‌های اتصال باید با آچار کالیبره اعمال و کنترل شود.
+  root_fa: گشت
+  etymology_fa: ساختهٔ فرهنگستان از «گشت» (چرخش) و پسوند «ـاور»؛ در متون فنی قدیمی‌تر «لنگر پیچشی» یا وام‌واژهٔ «تورک» (torque) به کار می‌رفت.
+  origin_lang: fa
   references:
   - type: book
-    code: کتاب مکانیک تحلیلی
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: مبحث دهم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  related_terms:
+  - bending-moment
+  - force
+  - shear
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: gashtavar
 - id: force
   term_fa: نیرو
   term_en: force
@@ -26,12 +45,36 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: کمیتی برداری که موجب تغییر حرکت، تغییر شکل یا ایجاد شتاب در جسم می‌شود؛ یکای آن در دستگاه بین‌المللی یکاها نیوتن است.
-  status: draft
-  slug: force
+  definition_fa: کمیتی برداری که موجب تغییر حرکت، تغییر شکل یا ایجاد شتاب در جسم می‌شود و با قانون دوم نیوتن (F=ma) تعریف عملیاتی می‌یابد؛ یکای آن در دستگاه بین‌المللی نیوتن است. در مهندسی ساختمان، بارهای مرده، زنده، باد و زلزله به‌صورت نیرو یا لنگر بر اعضا اثر می‌کنند.
+  synonyms:
+  - قوه
+  usage_examples:
+  - برآیند نیروهای وارد بر هر گرهٔ خرپا در حالت تعادل باید صفر باشد.
+  root_fa: نیرو
+  etymology_fa: فارسی اصیل به معنای توان و زور؛ در متون قدیمی‌تر معادل عربی «قوه» رایج بود.
+  origin_lang: fa
+  plural_fa: نیروها
+  references:
+  - type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: مبحث ششم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
   related_terms:
   - acceleration
+  - bending-moment
+  - gashtavar
   - mass
+  - tension
+  - friction
+  - momentum
+  - weight
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: force
 - id: friction
   term_fa: اصطکاک
   term_en: friction
@@ -41,11 +84,30 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: نیروی مقاومتی که در سطح تماس دو جسم، در برابر حرکت نسبی آن‌ها ایجاد می‌شود و به جنس سطح‌ها و بار عمودی وارد بر آن‌ها بستگی دارد.
-  status: draft
-  slug: friction
+  definition_fa: نیروی مقاومتی که در سطح تماس دو جسم و در برابر حرکت نسبی آن‌ها ایجاد می‌شود؛ به جنس و زبری سطح‌ها و نیروی عمودی وارد بر آن‌ها بستگی دارد و با ضریب اصطکاک بیان می‌شود. در مهندسی خاک، بخشی از مقاومت برشی و ظرفیت باربری پی از اصطکاک جانبی خاک تأمین می‌شود.
+  synonyms:
+  - سایش
+  usage_examples:
+  - اصطکاک میان خاک و سطح جانبی پی، بخشی از ظرفیت باربری را تأمین می‌کند.
+  root_fa: اصطکاک
+  etymology_fa: وام‌واژهٔ عربی از باب افتعال به معنای ساییده‌شدن دو چیز بر یکدیگر.
+  origin_lang: ar
+  references:
+  - type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: مبحث هفتم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
   related_terms:
   - force
+  - tension
+  - weight
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: friction
 - id: acceleration
   term_fa: شتاب
   term_en: acceleration
@@ -55,12 +117,37 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: نرخ تغییرات سرعت نسبت به زمان؛ کمیتی برداری با یکای متر بر مجذور ثانیه که در دینامیک سازه‌ها در محاسبهٔ نیروی زلزله نقش اساسی دارد.
-  status: draft
-  slug: acceleration
+  definition_fa: نرخ تغییرات سرعت نسبت به زمان؛ کمیتی برداری با یکای متر بر مجذور ثانیه. در دینامیک سازه‌ها شتاب مبنای محاسبهٔ نیروی زلزله است و معمولاً به‌صورت بخشی از شتاب گرانش (g) بیان می‌شود.
+  synonyms:
+  - شتاب‌گیری
+  - تعجیل
+  search_aliases:
+  - شتاب زمین
+  - شتاب گرانش
+  usage_examples:
+  - شتاب مبنای طرح لرزه‌ای بر حسب بخشی از شتاب گرانش (g) بیان می‌شود.
+  root_fa: شتاب
+  etymology_fa: فارسی اصیل؛ معادل مصوب فرهنگستان برای acceleration که در متون قدیمی‌تر «تعجیل» خوانده می‌شد.
+  origin_lang: fa
+  plural_fa: شتاب‌ها
+  references:
+  - &id001
+    type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: مبحث ششم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
   related_terms:
   - force
+  - inertia
+  - mass
   - velocity
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: acceleration
 - id: mass
   term_fa: جرم
   term_en: mass
@@ -70,12 +157,34 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: مقدار مادهٔ تشکیل‌دهندهٔ یک جسم و معیار مقاومت آن در برابر شتاب‌گیری؛ یکای آن کیلوگرم است و با وزن، که نیرویی وابسته به گرانش است، تفاوت دارد.
-  status: draft
-  slug: mass
+  definition_fa: مقدار مادهٔ تشکیل‌دهندهٔ یک جسم و معیار مقاومت آن در برابر شتاب‌گیری؛ یکای آن کیلوگرم است. جرم خاصیتی ذاتی و مستقل از مکان است، در حالی که وزن نیرویی وابسته به میدان گرانش است — تفاوتی که در زبان روزمره اغلب نادیده گرفته می‌شود.
+  synonyms:
+  - جرم جسم
+  antonyms:
+  - بی‌وزنی
+  search_aliases:
+  - کتله
+  usage_examples:
+  - جرم با یکای کیلوگرم سنجیده می‌شود و برخلاف وزن، به مکان جسم وابسته نیست.
+  root_fa: جرم
+  root_ar: ج-ر-م
+  etymology_fa: وام‌واژهٔ عربی به معنای جسم و تن؛ در فارسی روزمره به‌اشتباه به‌جای «وزن» به کار می‌رود.
+  origin_lang: ar
+  plural_fa: جرم‌ها
+  references:
+  - *id001
   related_terms:
-  - weight
+  - center-of-gravity
   - inertia
+  - momentum
+  - weight
+  - acceleration
+  - force
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: mass
 - id: velocity
   term_fa: سرعت
   term_en: velocity
@@ -85,11 +194,28 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: نرخ جابه‌جایی جسم نسبت به زمان؛ کمیتی برداری با یکای متر بر ثانیه که به اندازهٔ آن تندی گفته می‌شود.
-  status: draft
-  slug: velocity
+  definition_fa: نرخ جابه‌جایی جسم نسبت به زمان؛ کمیتی برداری با یکای متر بر ثانیه که به اندازهٔ آن «تندی» گفته می‌شود. در مکانیک سیال‌ها و پمپاژ بتن، سرعت جریان بر افت فشار و خطر جداشدگی دانه‌ها اثر مستقیم دارد.
+  synonyms:
+  - تندی
+  usage_examples:
+  - سرعت جریان بتن در لولهٔ پمپ نباید از حدی بیشتر شود که جداشدگی دانه‌ها رخ دهد.
+  root_fa: سرعت
+  root_ar: س-ر-ع
+  etymology_fa: وام‌واژهٔ عربی؛ در متون فنی میان «سرعت» (برداری) و «تندی» (اسکالر) تمایز گذاشته می‌شود.
+  origin_lang: ar
+  plural_fa: سرعت‌ها
+  references:
+  - type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
   related_terms:
   - acceleration
+  - momentum
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: velocity
 - id: inertia
   term_fa: اینرسی
   term_en: inertia
@@ -99,11 +225,27 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: خاصیت مقاومت جسم در برابر تغییر وضعیت سکون یا حرکت یکنواخت خود؛ هرچه جرم جسم بیشتر باشد اینرسی آن بیشتر است.
-  status: draft
-  slug: inertia
+  definition_fa: خاصیت مقاومت جسم در برابر تغییر وضعیت سکون یا حرکت یکنواخت خود؛ هرچه جرم جسم بیشتر باشد اینرسی آن بیشتر است. در تحلیل لرزه‌ای، نیروی زلزله از شتاب‌دادن به جرم (لختی) سازه پدید می‌آید.
+  synonyms:
+  - لختی
+  - قصور ذاتی
+  usage_examples:
+  - نیروی زلزله از شتاب‌دادن به جرم سازه پدید می‌آید، پس اینرسی نقش تعیین‌کننده دارد.
+  root_fa: اینرسی
+  etymology_fa: وام‌واژه از لاتین inertia (بی‌حرکتی)؛ معادل مصوب فرهنگستان «لَختی» است و در متن‌های قدیمی‌تر «قصور ذاتی» به کار می‌رفته است.
+  origin_lang: la
+  references:
+  - type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
   related_terms:
+  - acceleration
   - mass
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: inertia
 - id: momentum
   term_fa: تکانه
   term_en: momentum
@@ -113,12 +255,28 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: حاصل‌ضرب جرم جسم در سرعت آن؛ کمیتی برداری که در تحلیل برخوردها و بارهای ضربه‌ای پایسته می‌ماند و به آن اندازهٔ حرکت نیز می‌گویند.
-  status: draft
-  slug: momentum
+  definition_fa: حاصل‌ضرب جرم جسم در سرعت آن؛ کمیتی برداری که در تحلیل برخوردها و بارهای ضربه‌ای پایسته می‌ماند. یکای آن کیلوگرم‌متر بر ثانیه است و تغییر آن نسبت به زمان برابر با نیروی برآیند وارد بر جسم است.
+  synonyms:
+  - اندازهٔ حرکت
+  - کمیت حرکت
+  usage_examples:
+  - در تحلیل بار ضربه‌ای، تغییر تکانه در واحد زمان برابر با نیروی وارد بر عضو است.
+  root_fa: تکانه
+  etymology_fa: «تکانه» معادل مصوب فرهنگستان است؛ پیش از آن «اندازهٔ حرکت» و وام‌واژهٔ «ممنتوم» رایج بود.
+  origin_lang: fa
+  references:
+  - type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
   related_terms:
+  - force
   - mass
   - velocity
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: momentum
 - id: center-of-gravity
   term_fa: مرکز ثقل
   term_en: center of gravity
@@ -128,11 +286,29 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: نقطه‌ای که برآیند نیروهای وزن اجزای جسم در آن متمرکز فرض می‌شود؛ در اجسام همگن و متقارن بر مرکز هندسی منطبق است و در پایداری سازه‌ها نقش کلیدی دارد.
-  status: draft
-  slug: center-of-gravity
+  definition_fa: نقطه‌ای که برآیند نیروهای وزن اجزای جسم در آن متمرکز فرض می‌شود؛ در اجسام همگن و متقارن بر مرکز هندسی منطبق است. موقعیت آن نسبت به سطح اتکا، پایداری سازه و تجهیزاتی مانند جرثقیل و قالب را تعیین می‌کند.
+  synonyms:
+  - گرانیگاه
+  - نقطهٔ ثقل
+  usage_examples:
+  - محل مرکز ثقل بارِ بلندشده با جرثقیل باید در امتداد قلاب باشد تا بار کج نشود.
+  root_fa: ثقل
+  root_ar: ث-ق-ل
+  etymology_fa: «ثقل» وام‌واژهٔ عربی به معنای سنگینی است؛ معادل فارسی مصوب فرهنگستان «گرانیگاه» است.
+  origin_lang: ar
+  references:
+  - type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
   related_terms:
   - mass
+  - pendant
+  - weight
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: center-of-gravity
 - id: bending-moment
   term_fa: لنگر خمشی
   term_en: bending moment
@@ -142,12 +318,39 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: اثر چرخشی نیروهای داخلی یک مقطع در برابر خمش؛ حاصل‌ضرب نیرو در فاصلهٔ عمودی آن تا مقطع است و یکای آن نیوتن‌متر است.
-  status: draft
-  slug: bending-moment
+  definition_fa: اثر چرخشی نیروهای داخلی یک مقطع در برابر خمش؛ برابر با حاصل‌ضرب نیرو در فاصلهٔ عمودی آن تا مقطع است و یکای آن نیوتن‌متر است. نمودار لنگر خمشی در تیرها محل بحرانی طراحی را مشخص می‌کند و در بتن مسلح، آرماتور کششی برای مقابله با آن جای می‌گیرد.
+  synonyms:
+  - ممان خمشی
+  - لنگر خمش
+  usage_examples:
+  - لنگر خمشی بحرانی تیر دوسرگیر در تکیه‌گاه‌ها و صفر در نقطهٔ عکس‌العمل است.
+  root_fa: لنگر
+  etymology_fa: «لنگر» در فارسی فنی برای moment به کار می‌رود؛ «لنگر خمشی» معادل bending moment است و «ممان خمشی» نیز رایج است. با «لنگر» به معنای anchor هم‌شکل ولی متفاوت است.
+  origin_lang: fa
+  abbrev_en: M
+  references:
+  - type: book
+    code: بیِر و جانستون — مقاومت مصالح
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: مبحث نهم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
   related_terms:
-  - shear
+  - bending
+  - concrete-beam
   - gashtavar
+  - shear
+  - strain
+  - tension
+  - fatigue
+  - force
+  - index-arrow
+  - modulus-of-elasticity
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: bending-moment
 - id: shear
   term_fa: برش
   term_en: shear
@@ -157,11 +360,37 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: تنش یا نیرویی موازی با سطح مقطع که تمایل به بریدن یا لغزاندن لایه‌های جسم نسبت به یکدیگر دارد؛ در تیرهای بتنی با خاموت مهار می‌شود.
-  status: draft
-  slug: shear
+  definition_fa: تنش یا نیرویی موازی با سطح مقطع که تمایل به بریدن یا لغزاندن لایه‌های جسم نسبت به یکدیگر دارد. در تیرهای بتنی با خاموت و در دیوارهای برشی با جان عضو مهار می‌شود و معمولاً شکست آن ترد و بدون اخطار قبلی است، پس در طراحی مقدم بر خمش کنترل می‌شود.
+  synonyms:
+  - تنش برشی
+  search_aliases:
+  - برش
+  - خاموت برشی
+  - تنش برشی
+  usage_examples:
+  - برش بحرانی تیر در فاصلهٔ مؤثر از وجه تکیه‌گاه کنترل و با خاموت تأمین شد.
+  root_fa: برش
+  etymology_fa: اسم مصدر از «بریدن»؛ در مقاومت مصالح برای shear و در کارگاه برای عمل برش فولاد به کار می‌رود.
+  origin_lang: fa
+  references:
+  - type: book
+    code: بیِر و جانستون — مقاومت مصالح
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: مبحث نهم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
   related_terms:
   - bending-moment
+  - gashtavar
+  - tension
+  - zigzag
+  - bending
+  - concrete-beam
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: shear
 - id: fatigue
   term_fa: خستگی
   term_en: fatigue
@@ -171,8 +400,30 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: کاهش تدریجی مقاومت ماده زیر بارهای تکراری و متناوبی که از حد مقاومت ایستا کمترند؛ عامل اصلی شکست در ماشین‌آلات و سازه‌های تحت بار چرخه‌ای است.
-  status: draft
+  definition_fa: کاهش تدریجی مقاومت ماده زیر بارهای تکراری و متناوبی که هر یک از حد مقاومت ایستا کمترند؛ شکست خستگی معمولاً از یک عیب ریز یا تمرکز تنش آغاز می‌شود و با رشد ترک پیش می‌رود. عامل اصلی شکست در ماشین‌آلات، پل‌ها و سازه‌های تحت بار چرخه‌ای است.
+  synonyms:
+  - کلال
+  - خستگی مصالح
+  usage_examples:
+  - خستگی در سازه‌های تحت بار چرخه‌ای از یک عیب ریز آغاز و با رشد ترک پیش می‌رود.
+  root_fa: خستگی
+  etymology_fa: فارسی اصیل؛ معادل عربی آن «کَلال» است که در متن‌های تخصصی هم دیده می‌شود.
+  origin_lang: fa
+  references:
+  - type: book
+    code: بیِر و جانستون — مقاومت مصالح
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: EN 1992-1-1
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - bending-moment
+  - strain
+  - tension
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: fatigue
 - id: modulus-of-elasticity
   term_fa: مدول الاستیسیته
@@ -183,12 +434,37 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: نسبت تنش به کرنش در ناحیهٔ کشسان ماده و معیار سختی آن؛ برای فولاد ساختمانی حدود ۲۰۰ گیگاپاسکال و برای بتن معمولی حدود ۲۵ تا ۳۰ گیگاپاسکال است.
-  status: draft
-  slug: modulus-of-elasticity
+  definition_fa: نسبت تنش به کرنش در ناحیهٔ کشسان ماده و معیار سختی آن؛ برای فولاد ساختمانی حدود ۲۰۰ گیگاپاسکال و برای بتن معمولی حدود ۲۵ تا ۳۰ گیگاپاسکال است. مدول الاستیسیتهٔ بتن به مقاومت فشاری، نوع سنگدانه و سن بتن بستگی دارد و با آزمون بارگذاری ایستا اندازه‌گیری می‌شود.
+  synonyms:
+  - مدول یانگ
+  - مدول ارتجاعی
+  - مدول کشسانی
+  usage_examples:
+  - مدول الاستیسیتهٔ بتن با آزمون بارگذاری ایستا و ثبت منحنی تنش–کرنش تعیین شد.
+  root_fa: الاستیسیته
+  etymology_fa: «الاستیسیته» وام‌واژه از فرانسوی élasticité است؛ معادل مصوب فرهنگستان «کشسانی» است، پس «مدول الاستیسیته» = «مدول کشسانی» = «مدول یانگ».
+  origin_lang: fr
+  abbrev_en: E
+  references:
+  - type: book
+    code: بیِر و جانستون — مقاومت مصالح
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: ASTM C469
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: book
+    code: نویل — خواص بتن
+    note: واژه و روش آزمایش از این منبع برداشت شده است.
   related_terms:
-  - strain
+  - bending-moment
   - elasticity
+  - strain
+  - tension
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: modulus-of-elasticity
 - id: strain
   term_fa: کرنش
   term_en: strain
@@ -198,12 +474,39 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: تغییر شکل نسبی جسم نسبت به ابعاد اولیهٔ آن تحت اثر تنش؛ کمیتی بدون یکا که در ناحیهٔ کشسان با تنش نسبت مستقیم دارد (قانون هوک).
-  status: draft
-  slug: strain
+  definition_fa: تغییر شکل نسبی جسم نسبت به ابعاد اولیهٔ آن تحت اثر تنش؛ کمیتی بی‌بعد که در ناحیهٔ کشسان با تنش نسبت مستقیم دارد (قانون هوک). کرنش کششی باعث طویل‌شدن و کرنش فشاری باعث کوتاهش الیاف می‌شود و در بتن، کرنش جمع‌شدگی و خزش نیز بدون بار خارجی پدید می‌آید.
+  synonyms:
+  - تغییرشکل نسبی
+  - کرنش نسبی
+  antonyms:
+  - تنش
+  usage_examples:
+  - کرنش فشاری بتن در محاسبهٔ ظرفیت خمشی مقطع، به حد نهایی آیین‌نامه محدود می‌شود.
+  root_fa: کرنش
+  etymology_fa: '«کرنش» در برابر «تنش» (stress) ساخته شده است: تنش نیرو بر واحد سطح است و کرنش تغییر طول نسبی و بی‌بعد.'
+  origin_lang: fa
+  references:
+  - type: book
+    code: بیِر و جانستون — مقاومت مصالح
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: ASTM C469
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C157
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
   related_terms:
+  - bending
+  - elasticity
   - modulus-of-elasticity
   - tension
+  - bending-moment
+  - fatigue
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: strain
 - id: weight
   term_fa: وزن
   term_en: weight
@@ -213,8 +516,32 @@ terms:
   pos: noun
   domain:
   - mechanical
-  definition_fa: نیروی وارد بر جسم از سوی میدان گرانش زمین؛ حاصل‌ضرب جرم در شتاب گرانش است و یکای آن نیوتن است.
-  status: draft
-  slug: weight
+  definition_fa: نیروی وارد بر جسم از سوی میدان گرانش؛ حاصل‌ضرب جرم در شتاب گرانش است و یکای آن نیوتن است. در ساختمان، «وزن مرده» شامل وزن اعضای سازه‌ای و پوشش‌ها و «وزن زنده» شامل بارهای متحرک بهره‌برداری می‌شود.
+  synonyms:
+  - سنگینی
+  antonyms:
+  - بی‌وزنی
+  - سبکی
+  usage_examples:
+  - وزن مردهٔ سقف شامل وزن تیرچه، بلوک، بتن رویه و لایهٔ کف‌سازی است.
+  root_fa: وزن
+  root_ar: و-ز-ن
+  etymology_fa: وام‌واژهٔ عربی از ریشهٔ «و-ز-ن» (سنجیدن)؛ در فارسی هم برای جرم و هم برای وزن به کار می‌رود، ولی در مکانیک این دو متفاوت‌اند.
+  origin_lang: ar
+  references:
+  - type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: مبحث ششم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
   related_terms:
+  - center-of-gravity
+  - force
   - mass
+  - friction
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  slug: weight

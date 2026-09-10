@@ -77,7 +77,9 @@ DIGIT_RE = re.compile(r"[0-9۰-۹٠-٩]+")
 # the word — «ساختمان،» instead of «ساختمان». U+200C (نیم‌فاصله) is not a \w
 # character and must be excluded from the separators, otherwise «آب‌بندی»
 # would be split before tokenize() ever sees the compound.
-WORD_SPLIT_RE = re.compile(r"[^\w\u200c]+", re.UNICODE)
+# The hyphen stays inside a token so «self-consolidating» and «ACI 318-19»
+# survive as units; tokenize() then also emits their parts.
+WORD_SPLIT_RE = re.compile(r"[^\w\u200c\-]+", re.UNICODE)
 
 # --------------------------------------------------------------------------- #
 # Affix tables — order matters (longest / most specific first)
@@ -102,20 +104,24 @@ GUARDED_SUFFIXES = (
     "هایشان", "هایتان", "هایمان", "هایم",
     "یشان", "شان", "تان", "مان",
     "گانی", "گان", "یانی", "یان",
-    "اتان", "اتی", "ات",
+    # NOTE: the enclitics «ام/ات/اش» and the sound-plural «ات» are deliberately
+    # absent. Persian is full of words that merely end in those letters
+    # (اندام، تمام، پیام، حیات، نبات، ثابت، احکام، انجام) and stripping them
+    # produced «اند» from «اندام». Arabic sound plurals that matter are listed
+    # explicitly in BROKEN_PLURALS instead.
     "ینان", "ین", "ونات", "ون",
     "ان",
     "ندگی", "ایی", "گی", "گری",
     "مند", "وار", "ناک", "آسا", "گون",
     "زار", "کده", "گاه", "ستان", "دان",
-    "ام", "اش", "ای", "یی", "ی",
+    "ای", "یی", "ی",
 )
 
 #: Verbal / negative / quantifier prefixes. Always lexicon-guarded: Persian is
 #: full of monosyllables that would be mangled otherwise («نازک» → «زک»).
 PREFIXES = (
     "نمی", "می", "همی",
-    "نا", "بی", "با", "هم", "هر", "هیچ", "خود",
+    "نا", "وا", "بی", "با", "هم", "هر", "هیچ", "خود",
     "پر", "کم", "نیم", "خوش", "بد",
     "دو", "سه", "چهار", "پنج", "شش", "هفت", "هشت", "نه", "ده",
 )
@@ -128,6 +134,9 @@ MIN_PART_LENGTH = 3
 
 #: Longest string for which a space-free variant is indexed (see index_forms).
 MAX_COLLAPSED_LENGTH = 60
+
+#: More vowel marks than this in one Persian string means pasted Arabic text.
+DIACRITIC_LIMIT = 4
 
 # --------------------------------------------------------------------------- #
 # Lexicons
@@ -143,6 +152,7 @@ STOPWORDS = frozenset(
     طبق براساس بر اساس درباره درمورد راجع به هنگام موقع بین میان مقابل جلوی
     پشت بالای زیر کنار نزد پیش تمام کل هرگونه هیچ هیچگونه دیگر سایر بقیه
     صورت طور حالت جهت سمت طرف مورد موارد بخش قسم قسمت
+    ای ها یی های هایِ تر ترین
     """
     .split()
 )
@@ -227,9 +237,10 @@ for _inf, (_past, _present) in VERB_STEMS.items():
 
 #: Arabic broken plurals (جمع مکسر) common in Persian technical writing.
 #: These cannot be produced by suffix rules; they need an explicit map.
+#: Only *genuine* reductions belong here: a self-map or a plural that the
+#: generic «ها» rule already handles would just add noise (tests enforce it).
 BROKEN_PLURALS: dict[str, str] = {
     "مشخصات": "مشخصه",
-    "مصالح": "مصالح",       # treated as its own lemma in Persian usage
     "ابعاد": "بعد",
     "انواع": "نوع",
     "اجزا": "جزء",
@@ -240,50 +251,25 @@ BROKEN_PLURALS: dict[str, str] = {
     "اسناد": "سند",
     "اوراق": "ورق",
     "اطلاعات": "اطلاع",
-    "مقاومت": "مقاومت",
-    "مقایسه": "مقایسه",
     "محاسبات": "محاسبه",
-    "ملاحظه": "ملاحظه",
     "تجهیزات": "تجهیز",
     "وسایل": "وسیله",
     "موارد": "مورد",
     "مراحل": "مرحله",
     "مزایا": "مزیت",
     "معایب": "عیب",
-    "حفره": "حفره",
     "حفرات": "حفره",
-    "لایه‌ها": "لایه",
-    "ستون‌ها": "ستون",
-    "ستونها": "ستون",
     "مقاطع": "مقطع",
     "منابع": "منبع",
     "مصارف": "مصرف",
     "محصولات": "محصول",
-    "فرآورده‌ها": "فرآورده",
     "ضوابط": "ضابطه",
     "الزامات": "الزام",
     "مشاهدات": "مشاهده",
-    "اندازه‌گیری‌ها": "اندازه‌گیری",
-    "آزمایش‌ها": "آزمایش",
     "آزمایشات": "آزمایش",
-    "تکنیک‌ها": "تکنیک",
-    "روش‌ها": "روش",
-    "انواع بتن": "نوع بتن",
-    "قوس‌ها": "قوس",
-    "طاق‌ها": "طاق",
-    "رج‌ها": "رج",
-    "بناها": "بنا",
-    "سازه‌ها": "سازه",
-    "سازه‌های": "سازه",
-    "دانه‌ها": "دانه",
-    "دانه‌بندی": "دانه‌بندی",
-    "حباب‌ها": "حباب",
-    "ترک‌ها": "ترک",
-    "درزها": "درز",
-    "درز‌ها": "درز",
-    "پی‌ها": "پی",
-    "لغزش": "لغزش",
+    "مصالح": "مصالح",  # treated as its own lemma in Persian usage
 }
+
 
 #: Surface forms that must never be reduced.
 #:
@@ -320,7 +306,14 @@ _CHAR_MAP = {
     TATWEEL: "",
     ZWJ: "",
     SUPERSCRIPT_ALEF: "",
-    "أ": "آ",
+    # NFKC decomposes «هٔ» (U+06C3) into ه + U+0654, so the standalone hamza
+    # marks must be removed *after* normalization or «خانهٔ» keeps its tail.
+    "\u0654": "",
+    "\u0655": "",
+    # Folding أ/إ/ٱ to a bare alef is the standard Arabic-search normalization.
+    # Folding them to «آ» would be wrong: آ is a distinct *Persian* letter
+    # (آب، آجر) and must survive.
+    "أ": "ا",
     "إ": "ا",
     "ٱ": "ا",
     "ى": PERSIAN_YEH,
@@ -397,7 +390,8 @@ def tokenize(text: str) -> list[str]:
 
     def push(token: str) -> None:
         token = token.strip()
-        if token and token not in seen:
+        # keeping "-" as a word character means a stray dash becomes a token
+        if token and any(c.isalnum() for c in token) and token not in seen:
             seen.add(token)
             tokens.append(token)
 
@@ -486,9 +480,11 @@ def build_protected(records: Iterable[dict] | None = None) -> set[str]:
     for record in records or []:
         if not isinstance(record, dict):
             continue
+        # term_fa and synonyms are *terms*; search_aliases are spelling and
+        # loanword variants («شاقولی»، «کالیبراسیون») which must stay reducible,
+        # otherwise morphology stops working exactly where users need it.
         candidates = [record.get("term_fa")]
-        for field in ("synonyms", "search_aliases"):
-            candidates.extend(record.get(field) or [])
+        candidates.extend(record.get("synonyms") or [])
         for value in candidates:
             if not isinstance(value, str) or not value.strip():
                 continue
@@ -589,6 +585,12 @@ def stem(token: str, lexicon: frozenset[str] | set[str] | None = None,
         if reduced == current:
             break
         current = reduced
+        # Reduction may *land on* a headword («سیمانی» → «سیمان»، «بتنی» → «بتن»)،
+        # but must never continue past it: a second round used to take the
+        # headword «سیمان» down to «سیم» + «ان» and drag a cementitious adjective
+        # into the wire family.
+        if fold(current) in protected:
+            break
     return current
 
 
@@ -681,8 +683,12 @@ def record_roots(record: dict, lexicon: frozenset[str] | set[str] | None = None,
     protected = protected if protected is not None else set()
     roots: list[str] = []
     sources = [record.get("root_fa"), record.get("term_fa")]
-    for field in ("synonyms", "search_aliases"):
-        sources.extend(str(v) for v in (record.get(field) or []) if v)
+    # Only semantic variants feed the root graph. search_aliases hold alternate
+    # spellings and loanwords («شیلنگ ویبره»، «کالیبراسیون») which are indexed
+    # for matching but must not create false morphological families.
+    for value in record.get("synonyms") or []:
+        if value:
+            sources.append(str(value))
 
     for source in sources:
         if not source:
@@ -859,30 +865,61 @@ def highlight(text: str, query_tokens: Iterable[str]) -> str:
 # Reporting helper (used by the audit scripts and tests)
 # --------------------------------------------------------------------------- #
 
-def orthography_warnings(text: str) -> list[str]:
-    """Persian orthography lint for authored content (half-space, ی/ک, digits).
+def orthography_warnings(text: str, allow_diacritics: bool = False,
+                         allow_foreign_script: bool = False) -> list[str]:
+    """Persian orthography lint for authored content.
 
-    The dictionary teaches spelling, so its own text must be exemplary.
+    The dictionary teaches spelling, so its own text must be exemplary — but the
+    rules have to be *unambiguous*, or the linter cries wolf and gets ignored.
+    Each rule below only fires on a form that is certainly wrong:
+
+    * Arabic ی/ک/ة in Persian text (always a typing mistake)
+    * Arabic-Indic digits ٠-٩ (Persian digits ۰-۹ ARE the house style in prose)
+    * «می » / «نمی » with a full space — the verbal prefix needs a half-space.
+      The *joined* form («میشود») is deliberately NOT flagged: it is
+      indistinguishable from real words such as «میلگرد» or «میزان».
+    * «کتاب ها» — the plural suffix needs a half-space, not a full space. The
+      joined form («کتابها») is not flagged either: «راهکار» and «شاهکار»
+      would be false positives.
+    * a half-space adjacent to a space or to punctuation (آب‌ بندی)
+    * double spaces, stray leading/trailing space, doubled periods
+
+    ``allow_diacritics`` raises the vowel-mark threshold to unlimited: it is for
+    etymology and radical fields, where full Arabic vocalization is correct
+    (اِصْتِکاک، کَلال، لَختی).
     """
     problems: list[str] = []
     if not text:
         return problems
-    if ARABIC_YEH in text:
-        problems.append("استفاده از «ي» عربی به‌جای «ی» فارسی")
-    if ARABIC_KAF in text:
-        problems.append("استفاده از «ك» عربی به‌جای «ک» فارسی")
-    if TEH_MARBUTA in text:
-        problems.append("«ة» عربی در متن فارسی")
-    if any(c in text for c in HARAKAT):
-        problems.append("اعراب‌گذاری عربی در متن فارسی")
-    if any(c in text for c in ARABIC_DIGITS + PERSIAN_DIGITS):
-        problems.append("رقم فارسی/عربی — در داده‌ها از رقم لاتین استفاده کنید")
-    if re.search(r"می(?=[^\s\u200c])", text):
-        problems.append("«می» چسبیده — باید «می‌» با نیم‌فاصله باشد")
-    if re.search(r"نمی(?=[^\s\u200c])", text):
-        problems.append("«نمی» چسبیده — باید «نمی‌» با نیم‌فاصله باشد")
-    if re.search(r"ها(?=[\u0621-\u06ff])", text):
-        problems.append("«ها»ی جمع چسبیده به واژهٔ بعد — باید نیم‌فاصله باشد")
+    # A note *about* an Arabic equivalent legitimately quotes Arabic script
+    # («عارضة الشدة»، «درابزين»); those fields opt out of the ی/ک/ة rules.
+    if not allow_foreign_script:
+        if ARABIC_YEH in text:
+            problems.append("«ي» عربی به‌جای «ی» فارسی")
+        if ARABIC_KAF in text:
+            problems.append("«ك» عربی به‌جای «ک» فارسی")
+        if TEH_MARBUTA in text:
+            problems.append("«ة» عربی در متن فارسی")
+    # Vowel marks are legitimate Persian scholarship in a dictionary: «تاوَن»،
+    # «فارسی بُر»، «آهن گُم»، «سرِسفت» and the tanwin of «کاملاً» all disambiguate
+    # pronunciation. Only a *dense* cluster of harakat means Arabic text was
+    # pasted in by mistake, so the threshold — not the presence — is the signal.
+    if not allow_diacritics:
+        marks = sum(1 for c in text if c in HARAKAT)
+        if marks > DIACRITIC_LIMIT:
+            problems.append(
+                f"{marks} اعراب عربی در یک متن فارسی — نشانهٔ متن عربیِ جای‌گذاری‌شده"
+            )
+    if any(c in text for c in ARABIC_DIGITS):
+        problems.append("رقم عربی ٠-٩ — در متن فارسی از رقم ۰-۹ یا لاتین استفاده کنید")
+    if re.search(r"(?:^|\s)می\s", text) or re.search(r"(?:^|\s)نمی\s", text):
+        problems.append("«می » با فاصلهٔ کامل — باید «می‌» با نیم‌فاصله باشد")
+    if re.search(r"[\u0621-\u06ff]\s+ها(?=\s|$|[\u0621-\u06ff])", text):
+        problems.append("«ها»ی جمع با فاصلهٔ کامل — باید نیم‌فاصله باشد")
+    if re.search(r"\s" + ZWNJ + r"|" + ZWNJ + r"\s", text):
+        problems.append("نیم‌فاصلهٔ مجاور فاصله (آب‌ بندی)")
+    if re.search(ZWNJ + r"[،؛:.!?)" + '"' + r"]", text):
+        problems.append("نیم‌فاصلهٔ چسبیده به نشانهٔ نگارشی")
     if re.search(r"\s{2,}", text):
         problems.append("فاصلهٔ دوبل")
     if text != text.strip():

@@ -30,6 +30,7 @@ from persian_text import (  # noqa: E402
     normalize as persian_normalize,
     record_roots,
 )
+from standards import resolve as resolve_source  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "terms"
@@ -68,6 +69,10 @@ ORIGIN_FA = {
 
 #: How many same-root neighbours a term page lists at most.
 MAX_ROOT_NEIGHBOURS = 8
+
+#: How many related-term chips a page renders. The data graph stays complete and
+#: mutual; showing fifteen chips on one page is noise, not information.
+MAX_RENDERED_RELATED = 10
 
 
 def normalize_persian(text: str) -> str:
@@ -383,21 +388,31 @@ def render_pages(records, meta):
         if references:
             for ref in references:
                 if isinstance(ref, dict):
-                    kind = _esc(REF_TYPE_FA.get(ref.get("type"), "سایر"))
+                    code = str(ref.get("code") or "—")
+                    # everything beyond the code comes from the registry, so the
+                    # data files can never contradict it (and an unregistered
+                    # citation fails validate_content.py).
+                    source = resolve_source(code) or {}
+                    kind = _esc(REF_TYPE_FA.get(ref.get("type") or source.get("type"), "سایر"))
                     bits = [kind]
-                    if ref.get("org"):
-                        bits.append(_esc(ref["org"]))
-                    if ref.get("edition"):
-                        bits.append(f"ویرایش {_esc(ref['edition'])}")
+                    org = ref.get("org") or source.get("org")
+                    if org:
+                        bits.append(_esc(org))
+                    edition = ref.get("edition") or source.get("edition")
+                    if edition:
+                        bits.append(f"ویرایش {_esc(edition)}")
                     if ref.get("section"):
                         bits.append(f"بخش {_esc(ref['section'])}")
-                    title = _esc(ref.get("code", "—"))
-                    url = str(ref.get("url") or "").strip()
-                    if url and url.lower().startswith(("http://", "https://")):
-                        title = f'<a href="{_esc(url)}" rel="noopener">{title}</a>'
-                    page += f"- {title} ({'، '.join(bits)})\n"
+                    label = _esc(code)
+                    full_title = source.get("title")
+                    if full_title and full_title != code:
+                        label += f" — {_esc(full_title)}"
+                    url = str(ref.get("url") or source.get("url") or "").strip()
+                    if url.lower().startswith(("http://", "https://")):
+                        label = f'<a href="{_esc(url)}" rel="noopener">{label}</a>'
+                    page += f"- {label} ({'، '.join(bits)})\n"
                     if ref.get("note"):
-                        page += f"    - {_esc(normalize_persian(ref['note']))}\n"
+                        page += f"    - {_esc(persian_normalize(ref['note']))}\n"
                 else:
                     page += f"- {_esc(ref)}\n"
         else:
@@ -405,7 +420,7 @@ def render_pages(records, meta):
 
         page += '\n## واژه‌های مرتبط\n<div class="related-terms">\n'
         valid_related = []
-        for rid in related:
+        for rid in related[:MAX_RENDERED_RELATED]:
             if rid in slug_to_term_fa:
                 valid_related.append(f'<a href="./{_esc(rid)}.md">{_esc(slug_to_term_fa[rid])}</a>')
             else:
@@ -417,6 +432,9 @@ def render_pages(records, meta):
                     file=sys.stderr,
                 )
         page += ("\n".join(valid_related) + "\n" if valid_related else "واژه مرتبطی ثبت نشده است.\n")
+        hidden = len(related) - len(valid_related)
+        if hidden > 0:
+            page += f"\nو {hidden} واژهٔ مرتبط دیگر…\n"
         page += "\n</div>\n\n---\n\nبازگشت به فهرست\n"
 
         (DOCS_TERMS_DIR / f"{slug}.md").write_text(page, encoding="utf-8")

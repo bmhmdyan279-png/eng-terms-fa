@@ -79,7 +79,10 @@
     /* \w in Python's re covers Unicode letters/digits/underscore. JS \w is
      * ASCII-only, so Unicode property escapes are required. Harakat are not
      * word characters in either engine and are removed by normalize() anyway. */
-    var WORD_SPLIT_RE = /[^\p{L}\p{N}_\u200c]+/gu;
+    /* The hyphen stays inside a token so "self-consolidating" and "ACI 318-19"
+     * survive as units; tokenize() then also emits their parts. (The trailing
+     * "-" is literal inside a character class.) */
+    var WORD_SPLIT_RE = /[^\p{L}\p{N}_\u200c-]+/gu;
     var DIGIT_RE = /^[0-9\u06f0-\u06f9\u0660-\u0669]+$/;
 
     /* ---- helpers --------------------------------------------------------- */
@@ -130,7 +133,8 @@
 
       function push(token) {
         token = token.trim();
-        if (token && !hasOwn(seen, token)) {
+        /* keeping "-" as a word character means a stray dash becomes a token */
+        if (token && /[\p{L}\p{N}]/u.test(token) && !hasOwn(seen, token)) {
           seen[token] = true;
           tokens.push(token);
         }
@@ -230,6 +234,8 @@
         var reduced = stripSuffix(current, lexicon);
         if (reduced === current) { break; }
         current = reduced;
+        /* may land on a headword, but never continue past it (see persian_text.py) */
+        if (isProtected(current, protectedSet)) { break; }
       }
       return current;
     }
