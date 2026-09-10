@@ -74,7 +74,7 @@ FORBIDDEN = {
         "contact him", "john", "ginger", "sailor", "countries", "pickle",
         "chinese", "do not", "don't", "pagoda", "potter", "the vault",
         "shriveled", "overwhelmed", "reasoning", "clavicle", "cornichon",
-        "töpfer", 
+        "töpfer",
     ],
     "fr": [
         "ne pas", "ne sois", "cornichon", "pagode", "potier", "sont perdus",
