@@ -13,3 +13,41 @@ repos:
       - id: check-merge-conflict
       - id: check-case-conflict
       - id: check-added-large-files
+      - id: end-of-file-fixer
+        # فایل‌های تولیدشده را دست نزن؛ خودِ مولد آن‌ها را می‌سازد
+        exclude: ^(docs/terms/|site/|output/|docs/data/|translation_alerts\.csv$|translation_gaps\.csv$)
+      - id: trailing-whitespace
+        exclude: ^(docs/terms/|site/|output/|docs/data/|translation_alerts\.csv$|translation_gaps\.csv$)
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+        exclude: ^(docs/terms/|site/|output/|docs/data/)
+
+  # دروازه‌های خودِ پروژه — همان‌هایی که CI اجرا می‌کند.
+  # با `language: system` از پایتونِ محیط استفاده می‌کنند، پس پیش از نصب
+  # requirements.txt کار نمی‌کنند (راهنما در CONTRIBUTING.md هست).
+  - repo: local
+    hooks:
+      - id: data-gate
+        name: دروازهٔ داده (اسکما، یکتایی، تغییرناپذیری slug)
+        entry: python scripts/validate_data.py
+        language: system
+        always_run: true
+        pass_filenames: false
+      - id: content-gate
+        name: دروازهٔ محتوا (استناد راستی‌آزمایی‌شده، صداقت بازبینی، نگارش، گراف)
+        entry: python scripts/validate_content.py
+        language: system
+        always_run: true
+        pass_filenames: false
+      - id: translation-gate
+        name: دروازهٔ ترجمه (دودِ تست چندزبانه)
+        entry: python scripts/audit_translations.py --strict
+        language: system
+        always_run: true
+        pass_filenames: false
+      - id: stem-data-fresh
+        name: تازگی جدول‌های صرفی صادرشده به JS
+        entry: bash -c 'python scripts/generate_stem_data.py && git diff --exit-code docs/assets/js/persian-stem-data.js'
+        language: system
+        always_run: true
+        pass_filenames: false

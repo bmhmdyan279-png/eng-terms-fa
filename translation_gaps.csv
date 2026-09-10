@@ -1,0 +1,19 @@
+slug,term_fa,language,state,value,reason,source_file
+bullnose-brick,آجر فارسی بُر,de,descriptive,Formstein mit Rundkante,معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.,construction.yaml
+f-bar-bender,آچار F,de,missing,,عمداً تهی: معادل راستی‌آزمایی‌شده‌ای در این زبان یافت نشد (سیاست «نداریم بهتر از غلط است»),construction.yaml
+f-bar-bender,آچار F,ar,missing,,عمداً تهی: معادل راستی‌آزمایی‌شده‌ای در این زبان یافت نشد (سیاست «نداریم بهتر از غلط است»),construction.yaml
+chamfer,پخ,ar,descriptive,زاوية مشطوفة,معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.,construction.yaml
+behind-the-arm,پشت بغل,ar,missing,,عمداً تهی: معادل راستی‌آزمایی‌شده‌ای در این زبان یافت نشد (سیاست «نداریم بهتر از غلط است»),construction.yaml
+back-strap,پشت بند,de,descriptive,Schalungsriegel,معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.,construction.yaml
+back-strap,پشت بند,ar,descriptive,عارضة الشدة,«عارضة الشدة» معادل توصیفی رایج در متون عربی برای عضو افقی مهارکنندهٔ قالب است.,construction.yaml
+index-arrow,تیر شاخص,de,missing,,عمداً تهی: معادل راستی‌آزمایی‌شده‌ای در این زبان یافت نشد (سیاست «نداریم بهتر از غلط است»),construction.yaml
+jan-panah,جان پناه,ar,descriptive,سترة,«سترة» معادل متداول عربی برای جان‌پناه/حفاظ بام است؛ در متون عربی «حاجز» و «درابزين» هم به کار می‌رود.,construction.yaml
+john-is-plastered,جان گچ گرفته شده,fr,descriptive,acier enrobé de plâtre,معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.,construction.yaml
+john-is-plastered,جان گچ گرفته شده,de,descriptive,gipsummantelter Stahl,معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.,construction.yaml
+john-is-plastered,جان گچ گرفته شده,ar,descriptive,حديد مكسو بالجبس,معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.,construction.yaml
+four-dang,چهار دنگ,fr,missing,,عمداً تهی: معادل راستی‌آزمایی‌شده‌ای در این زبان یافت نشد (سیاست «نداریم بهتر از غلط است»),construction.yaml
+four-dang,چهار دنگ,de,missing,,عمداً تهی: معادل راستی‌آزمایی‌شده‌ای در این زبان یافت نشد (سیاست «نداریم بهتر از غلط است»),construction.yaml
+four-dang,چهار دنگ,ar,missing,,عمداً تهی: معادل راستی‌آزمایی‌شده‌ای در این زبان یافت نشد (سیاست «نداریم بهتر از غلط است»),construction.yaml
+hard-ground,دج,fr,descriptive,sol dur,معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.,construction.yaml
+hard-ground,دج,de,descriptive,fester Untergrund,معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.,construction.yaml
+pin,سنجاقی,ar,descriptive,دبوس,«دبوس» معادل متداول عربی برای پین/سنجاق فلزی در سازه است.,construction.yaml

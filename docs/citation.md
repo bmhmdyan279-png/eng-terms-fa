@@ -4,7 +4,7 @@
 
 - **نام پروژه:** فرهنگ واژگان تخصصی مهندسی
 - **نگهدارنده:** bmhmdyan279-png (سازمان: eng-terms-fa Project)
-- **نسخهٔ داده (محتوا):** v0.1 — در حال توسعه؛ همهٔ مدخل‌ها `draft` (نسخهٔ زیرساخت نرم‌افزار: 1.0.0)
+- **نسخهٔ داده (محتوا):** v0.2 — هر ۱۳۲ مدخل `reviewed` با `review_level: ai-assisted` (نسخهٔ زیرساخت نرم‌افزار: 1.1.0)
 - **نشانی:** <https://bmhmdyan279-png.github.io/eng-terms-fa/>
 - **مجوز محتوا:** CC BY-SA 4.0
 - **DOI:** ثبت نشده است. پس از ثبت در Zenodo، شناسهٔ واقعی اینجا و در BibTeX درج می‌شود (تا آن زمان هیچ DOI نمایش داده نمی‌شود).
@@ -13,28 +13,35 @@
     چون فرهنگ در حال توسعه است، هنگام استناد حتماً **نسخه و تاریخ بازدید** را ذکر کنید.
     داده‌های هر نسخه از طریق `data/api/stats.json` (فیلد `generated_at`) قابل ردیابی است.
 
+!!! warning "پیش از استناد علمیِ مستقیم، این را بخوانید"
+    مدخل‌های این فرهنگ `review_level: ai-assisted` دارند: بازبینی داده‌محور با
+    دروازه‌های خودکار (اسکما، رجیستری منابع، نگارش، گراف واژه‌ها، دودِ تست ترجمه)
+    انجام شده، ولی **متخصص انسانی آن‌ها را تأیید نکرده است**. برای کار پژوهشی،
+    تعریف هر مدخل را با منبعی که در بخش «منابع» همان مدخل آمده راستی‌آزمایی کنید.
+    در استناد، ذکر «بازبینی دستیار هوشمند» صادقانه و لازم است.
+
 ## BibTeX
 
 ```bibtex
-@software{eng_terms_fa_2026,
+@dataset{eng_terms_fa_2026,
   author       = {bmhmdyan279-png},
   title        = {فرهنگ واژگان تخصصی مهندسی (Persian Engineering Terminology Dictionary)},
   organization = {eng-terms-fa Project},
   year         = {2026},
-  version      = {0.1},
+  version      = {0.2},
   url          = {https://bmhmdyan279-png.github.io/eng-terms-fa/},
-  note         = {نسخهٔ داده 0.1 — محتوا تحت مجوز CC BY-SA 4.0؛ بازبینی تخصصی مدخل‌ها در جریان است},
+  note         = {نسخهٔ داده 0.2 — محتوا تحت مجوز CC BY-SA 4.0؛ 132 مدخل با review\_level: ai-assisted بازبینی شده‌اند و تأیید متخصص انسانی را ندارند},
   license      = {CC BY-SA 4.0}
 }
 ```
 
 ## APA (نسخهٔ ۷)
 
-> bmhmdyan279-png. (2026). *فرهنگ واژگان تخصصی مهندسی* (نسخهٔ دادهٔ 0.1) [فرهنگ واژگان وب‌بنیان]. eng-terms-fa Project. https://bmhmdyan279-png.github.io/eng-terms-fa/
+> bmhmdyan279-png. (2026). *فرهنگ واژگان تخصصی مهندسی* (نسخهٔ دادهٔ 0.2) [مجموعهٔ دادهٔ وب‌بنیان]. eng-terms-fa Project. https://bmhmdyan279-png.github.io/eng-terms-fa/
 
 ## MLA (نسخهٔ ۹)
 
-> bmhmdyan279-png. *فرهنگ واژگان تخصصی مهندسی*. نسخهٔ دادهٔ 0.1, eng-terms-fa Project, 2026, bmhmdyan279-png.github.io/eng-terms-fa/. تاریخ بازدید را اضافه کنید.
+> bmhmdyan279-png. *فرهنگ واژگان تخصصی مهندسی*. نسخهٔ دادهٔ 0.2, eng-terms-fa Project, 2026, bmhmdyan279-png.github.io/eng-terms-fa/. تاریخ بازدید را اضافه کنید.
 
 ## شیوهٔ ارجاع درون‌متنی (فارسی)
 
@@ -44,3 +51,8 @@
 
 برای دریافت دادهٔ ساختاریافتهٔ هر مدخل (مناسب استناد ماشینی) از API استفاده کنید:
 `data/api/terms/{slug}.json`
+
+برای استناد ماشینیِ کل مجموعه، [بستهٔ دادهٔ باز](data.md) را ببینید:
+`data/open/terms.ndjson`، `data/open/terms.ttl` (SKOS)، `data/open/terms.jsonld`
+و `data/open/datapackage.json`. فایل `CITATION.cff` در ریشهٔ مخزن هم همین
+اطلاعات را در قالب استاندارد GitHub ارائه می‌کند.

@@ -1,0 +1,660 @@
+# رجیستری منابع معتبر — تنها منبع مجاز برای فیلد references در مدخل‌ها.
+#
+# چرا این فایل وجود دارد؟ سیاست پروژه «هر ادعا باید قابل اثبات باشد» است.
+# ارجاع‌دهی به استانداردِ ساختگی، بدترین نوع آلودگی محتوای علمی است؛ بنابراین
+# scripts/validate_content.py هر references[].code را با این رجیستری می‌سنجد و
+# کد ناشناخته = خطای بازدارندهٔ CI.
+#
+# قاعدهٔ صداقت برای خودِ این فایل:
+#   * فقط منبعی ثبت می‌شود که وجودش راستی‌آزمایی شده باشد (نشانی/ناشر/عنوان).
+#   * فیلد url تنها وقتی درج می‌شود که نشانی واقعاً بررسی شده باشد؛ حدس ممنوع.
+#   * `verification` وضعیت راستی‌آزمایی را مستند می‌کند:
+#       confirmed = وجود و عنوان از منبع رسمی/فروشگاه استاندارد راستی‌آزمایی شد
+#       declared  = پروژه آن را به‌عنوان منبع محتوا اعلام کرده (docs/about.md)
+#   * «استاندارد ملی ایران شماره ۶۶۴» که در نسخهٔ پیشین به بتن ارجاع شده بود
+#     در هیچ فهرستی از استانداردهای INSO یافت نشد و عمداً در این رجیستری نیامد؛
+#     ارجاع‌های بتن به ACI 116R / ASTM C125 / آبا منتقل شدند.
+schema: standards-v1
+updated: "2026-09-10"
+
+sources:
+# ---------------------------------------------------------------- استانداردهای واژه‌نامه‌ای
+- code: "ACI 116R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Cement and Concrete Terminology"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, materials, testing]
+  scope_fa: "واژه‌نامهٔ مرجع سیمان و بتن؛ تعریف‌های هنجاری واژگان فناوری بتن."
+
+- code: "ASTM C125"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Terminology Relating to Concrete and Concrete Aggregates"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, materials, testing]
+  scope_fa: "واژگان هنجاری بتن و سنگدانه‌ها؛ مکمل ACI 116R."
+
+- code: "فرهنگ واژه‌های مصوب فرهنگستان"
+  type: book
+  org: "فرهنگستان زبان و ادب فارسی"
+  title: "مجموعهٔ واژه‌های مصوب فرهنگستان زبان و ادب فارسی"
+  verification: declared
+  domains: [concrete, testing, construction, mechanical]
+  scope_fa: "منبع معادل‌های فارسی مصوب برای واژگان علمی و فنی."
+
+# منابع صنفی/ثانویه — برای واژه‌های سنتی بنایی که هیچ مرجع هنجاری ندارند.
+# هر دو نشانی در همین بازبینی واکشی و راستی‌آزمایی شده‌اند؛ صریحاً «مرجع
+# هنجاری نیستند» تا هیچ‌کس آن‌ها را با استاندارد اشتباه نگیرد.
+- code: "واژه‌نامهٔ اصطلاحات سنتی آجرکاری"
+  type: other
+  org: "گردآوری صنفی (ثانویه)"
+  title: "لغت‌نامهٔ اصطلاحات آجری در معماری ایرانی"
+  url: "https://vendabrick.com/brick-expression/"
+  verification: confirmed
+  domains: [construction, materials]
+  scope_fa: >-
+    معنی‌شناسی واژه‌های سنتی آجرکاری (اسپر، پاطاق، کلوک، چهار دانگ، نره، سرسفت،
+    سرواافتاده، زنجاب، تاریک کردن، کور کردن و مانند آن‌ها). مرجع هنجاری نیست.
+
+- code: "واژه‌نامهٔ اصطلاحات کارگاهی عمران"
+  type: other
+  org: "گردآوری صنفی (ثانویه)"
+  title: "اصطلاحات رایج در پروژه‌های عمرانی"
+  url: "https://dirgodaz.com/training/articles/jargons-of-civil-engineering"
+  verification: confirmed
+  domains: [construction]
+  scope_fa: >-
+    اصطلاحات کارگاهی رایج در ایران (تماسه، تخماق، تراورس، دج، پاسنگ، توپی و
+    مانند آن‌ها). مرجع هنجاری نیست؛ برای راستی‌آزمایی معنی به کار رفته است.
+
+- code: "کتاب آزمایشات فناوری بتن"
+  type: book
+  org: "منبع اعلام‌شدهٔ پروژه"
+  title: "آزمایشات فناوری بتن"
+  verification: declared
+  domains: [concrete, testing]
+  scope_fa: "منبع واژگان دامنهٔ academy.yaml؛ همان‌گونه که در docs/about.md اعلام شده است."
+
+# ---------------------------------------------------------------- مقررات ملی ساختمان ایران
+- code: "مبحث چهارم مقررات ملی ساختمان"
+  type: standard
+  org: "دفتر مقررات ملی ساختمان ایران"
+  title: "الزامات عمومی ساختمان"
+  url: "https://inbr.ir/"
+  verification: confirmed
+  domains: [construction]
+  scope_fa: "ضوابط عمومی طراحی، نظارت و اجرا؛ تعاریف پایهٔ ساختمان."
+
+- code: "مبحث پنجم مقررات ملی ساختمان"
+  type: standard
+  org: "دفتر مقررات ملی ساختمان ایران"
+  title: "مصالح و فرآورده‌های ساختمانی"
+  url: "https://inbr.ir/"
+  verification: confirmed
+  domains: [construction, materials, concrete]
+  scope_fa: "ویژگی‌ها و آزمون مصالح و فرآورده‌های ساختمانی (آجر، سنگ، سیمان، ملات)."
+
+- code: "مبحث ششم مقررات ملی ساختمان"
+  type: standard
+  org: "دفتر مقررات ملی ساختمان ایران"
+  title: "بارهای وارد بر ساختمان"
+  url: "https://inbr.ir/"
+  verification: confirmed
+  domains: [structures, construction]
+  scope_fa: "ترکیب بارها و مقادیر بارهای وارد بر اعضا."
+
+- code: "مبحث هفتم مقررات ملی ساختمان"
+  type: standard
+  org: "دفتر مقررات ملی ساختمان ایران"
+  title: "پی و پی‌سازی"
+  url: "https://inbr.ir/"
+  verification: confirmed
+  domains: [construction, structures]
+  scope_fa: "گودبرداری، ظرفیت باربری زمین، انواع پی و نشست."
+
+- code: "مبحث هشتم مقررات ملی ساختمان"
+  type: standard
+  org: "دفتر مقررات ملی ساختمان ایران"
+  title: "طرح و اجرای ساختمان‌های با مصالح بنایی"
+  url: "https://inbr.ir/"
+  verification: confirmed
+  domains: [construction]
+  scope_fa: "دیوار بنایی، آجرکاری، کله‌راسته، پیوستگی و ضوابط اجرایی بنایی."
+
+- code: "مبحث نهم مقررات ملی ساختمان"
+  type: standard
+  org: "دفتر مقررات ملی ساختمان ایران"
+  title: "طرح و اجرای ساختمان‌های بتن آرمه"
+  url: "https://inbr.ir/"
+  verification: confirmed
+  domains: [concrete, structures]
+  scope_fa: "آرماتوربندی، وصلهٔ پوششی، پوشش بتن، قالب‌بندی و بتن‌ریزی."
+
+- code: "مبحث دهم مقررات ملی ساختمان"
+  type: standard
+  org: "دفتر مقررات ملی ساختمان ایران"
+  title: "طرح و اجرای ساختمان‌های فولادی"
+  url: "https://inbr.ir/"
+  verification: confirmed
+  domains: [structures, construction, mechanical]
+  scope_fa: "اتصالات فولادی، پیچ و مهره، گشتاور و جوش."
+
+- code: "مبحث دوازدهم مقررات ملی ساختمان"
+  type: standard
+  org: "دفتر مقررات ملی ساختمان ایران"
+  title: "ایمنی و حفاظت کار در حین اجرا"
+  url: "https://inbr.ir/"
+  verification: confirmed
+  domains: [construction]
+  scope_fa: "ایمنی کارگاه، حفاظت جان‌پناه‌ها، داربست و گودبرداری."
+
+- code: "آیین‌نامه بتن ایران (آبا)"
+  type: standard
+  org: "سازمان مدیریت و برنامه‌ریزی کشور"
+  title: "آیین‌نامه بتن ایران — تجدید نظر دوم"
+  edition: "تجدید نظر دوم، ۱۳۸۴"
+  verification: confirmed
+  domains: [concrete, structures, testing]
+  scope_fa: "مرجع ملی طرح، اجرا، دوام و کنترل کیفیت بتن در ایران."
+
+- code: "نشریه ۵۵"
+  type: standard
+  org: "سازمان برنامه و بودجه کشور"
+  title: "مشخصات فنی عمومی کارهای ساختمانی"
+  verification: confirmed
+  domains: [construction, materials]
+  scope_fa: "مشخصات اجرایی کارهای ساختمانی؛ مرجع واژگان کارگاهی و اجرایی."
+
+# ---------------------------------------------------------------- استانداردهای ملی ایران (INSO)
+- code: "استاندارد ملی ایران ۳۸۹"
+  type: standard
+  org: "سازمان ملی استاندارد ایران (INSO)"
+  title: "سیمان پرتلند — ویژگی‌ها"
+  url: "https://standard.inso.gov.ir/"
+  verification: confirmed
+  domains: [materials, concrete]
+  scope_fa: "ویژگی‌های فیزیکی و شیمیایی سیمان پرتلند."
+
+- code: "استاندارد ملی ایران ۷"
+  type: standard
+  org: "سازمان ملی استاندارد ایران (INSO)"
+  title: "آجر رسی — ویژگی‌ها و روش‌های آزمون"
+  url: "https://standard.inso.gov.ir/"
+  verification: confirmed
+  domains: [materials, construction]
+  scope_fa: "انواع آجر رسی، ابعاد، مقاومت فشاری و آزمون‌های آن."
+
+- code: "استاندارد ملی ایران ۶۰۴۴"
+  type: standard
+  org: "سازمان ملی استاندارد ایران (INSO)"
+  title: "بتن آماده — ویژگی‌ها"
+  url: "https://standard.inso.gov.ir/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "رده‌بندی و ویژگی‌های بتن آماده (مطابق ASTM C94)."
+
+# ---------------------------------------------------------------- ASTM
+- code: "ASTM C31"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Practice for Making and Curing Concrete Test Specimens in the Field"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "نمونه‌گیری، ساخت و عمل‌آوری آزمونهٔ بتن در کارگاه."
+
+- code: "ASTM C33"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Specification for Concrete Aggregates"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, concrete]
+  scope_fa: "دانه‌بندی و ویژگی‌های سنگدانهٔ ریز و درشت."
+
+- code: "ASTM C39"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Compressive Strength of Cylindrical Concrete Specimens"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "مقاومت فشاری آزمونهٔ استوانه‌ای بتن."
+
+- code: "ASTM C42"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Obtaining and Testing Drilled Cores and Sawed Beams of Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "مغزه‌گیری از بتن سخت‌شده و آزمون آن."
+
+- code: "ASTM C78"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Flexural Strength of Concrete (Using Simple Beam with Third-Point Loading)"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "مقاومت خمشی بتن با بارگذاری سه‌نقطه‌ای."
+
+- code: "ASTM C94"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Specification for Ready-Mixed Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "بتن آماده؛ اختلاط، حمل، تحویل و نمونه‌گیری."
+
+- code: "ASTM C117"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Methods for Materials Finer than 75-μm (No. 200) Sieve in Mineral Aggregates by Washing"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, testing]
+  scope_fa: "تعیین مواد ریزتر از الک ۷۵ میکرون (معادل سیلت و رس) در سنگدانه."
+
+- code: "ASTM C127"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Relative Density (Specific Gravity) and Absorption of Coarse Aggregate"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, testing]
+  scope_fa: "وزن مخصوص و جذب آب سنگدانهٔ درشت."
+
+- code: "ASTM C128"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Relative Density (Specific Gravity) and Absorption of Fine Aggregate"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, testing]
+  scope_fa: "وزن مخصوص و جذب آب سنگدانهٔ ریز؛ کاربرد بطری چگالی."
+
+- code: "ASTM C136"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Sieve Analysis of Fine and Coarse Aggregates"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, testing]
+  scope_fa: "دانه‌بندی سنگدانه با الک‌های استاندارد."
+
+- code: "ASTM C138"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Density (Unit Weight), Yield, and Air Content (Gravimetric) of Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "وزن مخصوص، بازده و هوای وزنی بتن تازه."
+
+- code: "ASTM C143"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Slump of Hydraulic-Cement Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "آزمون اسلامپ (روانی) بتن تازه."
+
+- code: "ASTM C150"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Specification for Portland Cement"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, concrete]
+  scope_fa: "انواع سیمان پرتلند و ویژگی‌های آن‌ها."
+
+- code: "ASTM C157"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Length Change of Hardened Hydraulic-Cement Mortar and Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "تغییر طول (جمع‌شدگی و انبساط) بتن سخت‌شده."
+
+- code: "ASTM C173"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Air Content of Hydraulic-Cement Concrete by the Volumetric Method"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "تعیین هوای بتن به روش حجمی."
+
+- code: "ASTM C192"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Practice for Making and Curing Concrete Test Specimens in the Laboratory"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "ساخت و عمل‌آوری آزمونه در آزمایشگاه؛ متراکم‌سازی با میز لرزان/ویبره."
+
+- code: "ASTM C231"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Air Content of Hydraulic-Cement Concrete by the Pressure Method"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "تعیین هوای بتن به روش فشاری (تراژک)."
+
+- code: "ASTM C403"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Time of Setting of Concrete Mixtures by Penetration Resistance"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "زمان گیرش بتن با مقاومت نفوذ؛ واژه‌های گیرش و زودگیری."
+
+- code: "ASTM C469"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Static Modulus of Elasticity and Poisson's Ratio of Concrete in Compression"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "مدول الاستیسیتهٔ ایستا و نسبت پواسون بتن."
+
+- code: "ASTM C494"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Specification for Chemical Admixtures for Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, materials]
+  scope_fa: "افزودنی‌های شیمیایی؛ از جمله شتاب‌دهنده (زودگیر) و کندگیر."
+
+- code: "ASTM C597"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Pulse Velocity Through Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "آزمون غیرمخرب سرعت پالس فراصوت در بتن."
+
+- code: "ASTM C618"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Specification for Coal Fly Ash and Raw or Calcined Natural Pozzolan for Use in Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, concrete]
+  scope_fa: "خاکستر بادی و پوزولان طبیعی در بتن."
+
+- code: "ASTM C805"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Rebound Number of Hardened Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "آزمون چکش اشمیت (عدد بازگشتی) روی بتن سخت‌شده."
+
+- code: "ASTM C989"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Specification for Slag Cement for Use in Concrete and Mortars"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, concrete]
+  scope_fa: "سیمان سرباره‌ای در بتن و ملات."
+
+- code: "ASTM C1064"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Temperature of Freshly Mixed Hydraulic-Cement Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "دمای بتن تازه."
+
+- code: "ASTM C1202"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Electrical Indication of Concrete's Ability to Resist Chloride Ion Penetration"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "نفوذپذیری یون کلرید و دوام بتن."
+
+- code: "ASTM C1240"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Specification for Silica Fume Used in Cementitious Mixtures"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [materials, concrete]
+  scope_fa: "دودهٔ سیلیسی در مخلوط‌های سیمانی."
+
+- code: "ASTM C1583"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Tensile Strength of Concrete Surfaces and the Bond Strength or Tensile Strength of Concrete Repair and Overlay Materials"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "مقاومت کششی سطح بتن و چسبندگی مواد ترمیمی (pull-off)."
+
+- code: "ASTM C1609"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Flexural Performance of Fiber-Reinforced Concrete (Using Beam With Third-Point Loading)"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "رفتار خمشی بتن الیاف‌دار."
+
+- code: "ASTM C1611"
+  type: standard
+  org: "ASTM International"
+  title: "Standard Test Method for Slump Flow of Self-Consolidating Concrete"
+  url: "https://www.astm.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "اسلامپ‌فلو بتن خودتراکم."
+
+# ---------------------------------------------------------------- ACI
+- code: "ACI 201.2R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Guide to Durable Concrete"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete]
+  scope_fa: "دوام بتن؛ سازوکارهای تخریب و راه‌های مقابله."
+
+- code: "ACI 211.1"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Standard Practice for Selecting Proportions for Normal, Heavyweight, and Mass Concrete"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "طرح اختلاط بتن؛ توزین و نسبت اجزا."
+
+- code: "ACI 222R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Protection of Metals in Concrete Against Corrosion"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, structures]
+  scope_fa: "خوردگی فلزات در بتن؛ پوشش بتن و حفاظت آرماتور."
+
+- code: "ACI 224R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Control of Cracking in Concrete Structures"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, structures]
+  scope_fa: "کنترل ترک در سازه‌های بتنی."
+
+- code: "ACI 228.2R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Nondestructive Test Methods for Evaluation of Concrete in Structures"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "روش‌های غیرمخرب ارزیابی بتن در سازه."
+
+- code: "ACI 301"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Specifications for Concrete Construction"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, construction]
+  scope_fa: "مشخصات اجرای بتن؛ قالب‌بندی، آرماتور، بتن‌ریزی و عمل‌آوری."
+
+- code: "ACI 304R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Guide for Measuring, Mixing, Transporting, and Placing Concrete"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, construction, testing]
+  scope_fa: "پیمانه‌کردن، اختلاط، حمل و جای‌دادن بتن؛ پمپاژ."
+
+- code: "ACI 305R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Guide to Hot Weather Concreting"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, construction]
+  scope_fa: "بتن‌ریزی در هوای گرم."
+
+- code: "ACI 306R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Guide to Cold Weather Concreting"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, construction]
+  scope_fa: "بتن‌ریزی در هوای سرد؛ حفاظت از بتن تازه در برابر یخ‌زدگی."
+
+- code: "ACI 309R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Guide for Consolidation of Concrete"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, construction, testing]
+  scope_fa: "متراکم‌سازی بتن؛ ویبرهٔ داخلی/خارجی، بسامد و دامنه."
+
+- code: "ACI 318-19"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Building Code Requirements for Structural Concrete and Commentary"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, structures]
+  scope_fa: "آیین‌نامهٔ بتن آمریکا؛ آرماتور، وصله، پوشش، خمش و برش."
+
+- code: "ACI 503R"
+  type: standard
+  org: "American Concrete Institute (ACI)"
+  title: "Use of Epoxy Compounds with Concrete"
+  url: "https://www.concrete.org/"
+  verification: confirmed
+  domains: [concrete, materials]
+  scope_fa: "کاربرد ترکیبات اپوکسی با بتن؛ چسباندن و ترمیم."
+
+# ---------------------------------------------------------------- EN / ISO
+- code: "EN 206"
+  type: standard
+  org: "CEN"
+  title: "Concrete — Specification, performance, production and conformity"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "مشخصات، عملکرد، تولید و انطباق بتن؛ کلاس‌های در معرضی."
+
+- code: "EN 771-1"
+  type: standard
+  org: "CEN"
+  title: "Specification for masonry units — Part 1: Clay masonry units"
+  verification: confirmed
+  domains: [construction, materials]
+  scope_fa: "واحدهای بنایی رسی؛ ابعاد، دسته‌بندی و ویژگی‌ها."
+
+- code: "EN 934-2"
+  type: standard
+  org: "CEN"
+  title: "Admixtures for concrete, mortar and grout — Part 2: Concrete admixtures"
+  verification: confirmed
+  domains: [concrete, materials]
+  scope_fa: "افزودنی‌های بتن؛ شتاب‌دهنده، کندگیر، فوق‌روان‌کننده."
+
+- code: "EN 1992-1-1"
+  type: standard
+  org: "CEN"
+  title: "Eurocode 2 — Design of concrete structures: General rules and rules for buildings"
+  verification: confirmed
+  domains: [concrete, structures]
+  scope_fa: "طرح سازه‌های بتنی؛ خمش، برش، خستگی و تغییر شکل."
+
+- code: "EN 1996-1-1"
+  type: standard
+  org: "CEN"
+  title: "Eurocode 6 — Design of masonry structures: General rules for reinforced and unreinforced masonry structures"
+  verification: confirmed
+  domains: [construction, structures]
+  scope_fa: "طرح سازه‌های بنایی؛ آرایش آجر، پیوستگی و ظرفیت باربری دیوار."
+
+- code: "EN 12390-3"
+  type: standard
+  org: "CEN"
+  title: "Testing hardened concrete — Part 3: Compressive strength of test specimens"
+  verification: confirmed
+  domains: [concrete, testing]
+  scope_fa: "مقاومت فشاری آزمونهٔ بتن سخت‌شده."
+
+- code: "ISO 679"
+  type: standard
+  org: "ISO"
+  title: "Cement — Test methods — Determination of strength"
+  verification: confirmed
+  domains: [materials, testing]
+  scope_fa: "تعیین مقاومت سیمان."
+
+# ---------------------------------------------------------------- کتاب‌های مرجع
+- code: "نویل — خواص بتن"
+  type: book
+  org: "Pearson"
+  title: "Properties of Concrete — A. M. Neville"
+  edition: "ویرایش پنجم"
+  verification: confirmed
+  domains: [concrete, materials, testing]
+  scope_fa: "مرجع دانشگاهی فناوری بتن؛ کارایی، مقاومت، دوام و تغییر شکل."
+
+- code: "هیبی — مکانیک مهندسی"
+  type: book
+  org: "Pearson"
+  title: "Engineering Mechanics: Statics and Dynamics — R. C. Hibbeler"
+  verification: confirmed
+  domains: [mechanical]
+  scope_fa: "استاتیک و دینامیک؛ نیرو، گشتاور، اصطکاک، مرکز ثقل و سینماتیک."
+
+- code: "بیِر و جانستون — مقاومت مصالح"
+  type: book
+  org: "McGraw-Hill"
+  title: "Mechanics of Materials — F. P. Beer, E. R. Johnston"
+  verification: confirmed
+  domains: [mechanical, structures]
+  scope_fa: "تنش، کرنش، خمش، برش، مدول الاستیسیته و خستگی."

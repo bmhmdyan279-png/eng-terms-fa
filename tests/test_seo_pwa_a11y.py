@@ -98,6 +98,9 @@ def test_status_badge_contrast_meets_wcag_aa():
         ("#ffd75e", "#1e1e1e"),  # draft, dark
         ("#81c784", "#1e1e1e"),  # reviewed, dark
         ("#64b5f6", "#1e1e1e"),  # published, dark
+        # جستجوی ریشه‌محور (.ps-badge-*) از همان پالت استفاده می‌کند
+        ("#37474f", "#ffffff"),  # near-miss, light
+        ("#cfd8dc", "#1e1e1e"),  # near-miss, dark
     ]
     for fg, bg in pairs:
         ratio = _contrast(fg, bg)

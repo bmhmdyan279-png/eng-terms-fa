@@ -208,3 +208,151 @@ ul.terms-list li.term-row {
   --md-code-font: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
 }
 body { font-family: var(--md-text-font); }
+
+/* ============ جستجوی ریشه‌محور فارسی (persian-search.js) ============ */
+/* همهٔ رنگ‌ها از متغیرهای قالب Material گرفته می‌شوند تا حالت روز/شب خودکار
+   سازگار بماند و کنتراست نشان‌ها با آزمون AA در tests/ قفل شده باشد. */
+.ps-form {
+    margin: 1rem 0 1.5rem;
+    background: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 10px;
+    padding: 0.9rem 1rem 1rem;
+}
+.ps-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--md-default-fg-color--light);
+    margin-bottom: 0.4rem;
+}
+.ps-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6rem 0.8rem;
+    font-family: var(--md-text-font);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--md-default-fg-color);
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lighter);
+    border-radius: 8px;
+}
+.ps-input::placeholder { color: var(--md-default-fg-color--lighter); }
+.ps-help {
+    margin: 0.45rem 0 0;
+    font-size: 0.78rem;
+    color: var(--md-default-fg-color--light);
+}
+.ps-status {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--md-default-fg-color--light);
+    min-height: 1.2em;
+}
+ul.ps-results {
+    list-style: none;
+    margin: 0.6rem 0 0;
+    padding: 0;
+}
+li.ps-result {
+    padding: 0.55rem 0.4rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+li.ps-result.ps-active,
+li.ps-result:hover {
+    background: var(--md-default-fg-color--lightest);
+    border-radius: 6px;
+}
+li.ps-near { opacity: 0.86; }
+.ps-result-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+a.ps-term {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--md-typeset-a-color);
+    text-decoration: none;
+}
+a.ps-term:hover { text-decoration: underline; }
+.ps-en {
+    direction: ltr;
+    unicode-bidi: isolate;
+    font-size: 0.85rem;
+    color: var(--md-default-fg-color--light);
+}
+.ps-result-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+}
+.ps-badge {
+    font-size: 0.7rem;
+    border-radius: 999px;
+    padding: 0.1rem 0.55rem;
+}
+/* کنتراست این سه رنگ در tests/test_seo_pwa_a11y.py برابر WCAG AA اثبات می‌شود */
+.ps-badge-draft { background: rgba(255, 193, 7, 0.16); color: #664d00; }
+.ps-badge-reviewed { background: rgba(76, 175, 80, 0.16); color: #1b5e20; }
+.ps-badge-published { background: rgba(33, 150, 243, 0.16); color: #0d47a1; }
+.ps-badge-near { background: rgba(158, 158, 158, 0.18); color: #37474f; }
+[data-md-color-scheme="slate"] .ps-badge-draft { color: #ffd75e; }
+[data-md-color-scheme="slate"] .ps-badge-reviewed { color: #81c784; }
+[data-md-color-scheme="slate"] .ps-badge-published { color: #64b5f6; }
+[data-md-color-scheme="slate"] .ps-badge-near { color: #cfd8dc; }
+.ps-domain {
+    font-size: 0.72rem;
+    color: var(--md-default-fg-color--lighter);
+}
+button.ps-chip {
+    font-family: var(--md-text-font);
+    font-size: 0.74rem;
+    line-height: 1.6;
+    padding: 0.05rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--md-default-fg-color--lighter);
+    background: var(--md-default-bg-color);
+    color: var(--md-default-fg-color);
+    cursor: pointer;
+}
+button.ps-chip:hover { border-color: var(--md-accent-fg-color); color: var(--md-accent-fg-color); }
+button.ps-root::before { content: "ریشه: "; color: var(--md-default-fg-color--lighter); }
+.ps-def {
+    margin: 0.3rem 0 0;
+    font-size: 0.88rem;
+    color: var(--md-default-fg-color--light);
+    line-height: 1.85;
+}
+.ps-mark {
+    background: rgba(255, 213, 79, 0.45);
+    color: inherit;
+    border-radius: 3px;
+    padding: 0 0.1rem;
+}
+[data-md-color-scheme="slate"] .ps-mark { background: rgba(255, 213, 79, 0.28); color: #fff8e1; }
+li.ps-empty { padding: 0.6rem 0.2rem; font-size: 0.92rem; }
+li.ps-empty p { margin: 0.2rem 0; }
+.ps-suggest { color: var(--md-default-fg-color--light); }
+.ps-hint { color: var(--md-default-fg-color--lighter); font-size: 0.8rem; }
+
+/* ساخت‌واژه و ریشه در صفحهٔ هر واژه */
+.term-morphology ul { margin-block: 0.2rem 0.6rem; }
+.term-morphology ul ul { margin-block: 0.15rem; }
+.term-morphology a { font-weight: 400; }
+.translation-note {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--md-default-fg-color--light);
+    border-inline-start: 2px solid var(--md-default-fg-color--lightest);
+    padding-inline-start: 0.4rem;
+    margin-inline-start: 0.4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ps-input, li.ps-result, button.ps-chip { transition: none; }
+}

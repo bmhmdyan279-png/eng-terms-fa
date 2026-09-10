@@ -20,11 +20,30 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "terms"
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+SCRIPTS_DIR = str(Path(__file__).resolve().parent)
+
+
+def _ensure_scripts_on_path() -> None:
+    """Keep ``scripts/`` importable during build events.
+
+    MkDocs loads hooks with a *temporary* sys.path modification that it restores
+    right afterwards. A module-level ``sys.path.insert`` therefore works while
+    the hook file is being imported (which is why ``import totd`` succeeds) but
+    NOT later, when ``on_page_content`` runs — any lazy import inside an event
+    handler dies with ModuleNotFoundError under a plain ``mkdocs build``.
+    Re-asserting the path at event time is what makes lazy imports reliable,
+    and it is why the site builds without needing PYTHONPATH set.
+    """
+    if SCRIPTS_DIR not in sys.path:
+        sys.path.insert(0, SCRIPTS_DIR)
+
+
+_ensure_scripts_on_path()
 import totd as _totd  # noqa: E402
 
 STATS_SLOT = '<div id="live-stats"></div>'
 TOTD_SLOT = '<div id="totd-slot"></div>'
+OPENDATA_SLOT = '<div id="opendata-slot"></div>'
 
 LANGUAGE_COUNT = 5  # FA, EN, FR, DE, AR
 
@@ -112,13 +131,71 @@ def render_stats_html(terms) -> str:
     )
 
 
+def render_dataset_jsonld(terms) -> str:
+    """schema.org Dataset block for the home page (crawler discovery).
+
+    Generated from the live data on every build, so it can never claim a term
+    count or a review status that the YAML does not support.
+    """
+    import json as _json
+
+    _ensure_scripts_on_path()
+    from generate_opendata import (
+        DATASET_IRI,
+        LICENSE_CONTENT,
+        PUBLISHER,
+        REPO_URL,
+        SITE_URL as OD_SITE_URL,
+        DATA_VERSION,
+        now_iso,
+    )
+
+    reviewed = sum(1 for t in terms if t.get("status") in ("reviewed", "published"))
+    payload = {
+        "@context": {"@vocab": "https://schema.org/"},
+        "@type": "Dataset",
+        "@id": DATASET_IRI,
+        "name": "فرهنگ واژگان تخصصی مهندسی",
+        "alternateName": "Persian Engineering Terminology Dictionary",
+        "description": (
+            "مجموعهٔ واژگان چندزبانهٔ مهندسی (FA/EN/FR/DE/AR) با تعریف تخصصی، "
+            "ریشه‌شناسی، نمونهٔ کاربرد و استناد راستی‌آزمایی‌شده."
+        ),
+        "url": OD_SITE_URL,
+        "version": DATA_VERSION,
+        "dateModified": now_iso(),
+        "inLanguage": ["fa", "en", "fr", "de", "ar"],
+        "license": LICENSE_CONTENT,
+        "isAccessibleForFree": True,
+        "creator": {"@type": "Organization", "name": PUBLISHER, "url": REPO_URL},
+        "distribution": [
+            {"@type": "DataDownload", "encodingFormat": fmt,
+             "contentUrl": f"{OD_SITE_URL}data/open/{name}"}
+            for fmt, name in (
+                ("application/x-ndjson", "terms.ndjson"),
+                ("text/turtle", "terms.ttl"),
+                ("application/ld+json", "terms.jsonld"),
+                ("text/csv", "terms.csv"),
+                ("application/json", "datapackage.json"),
+            )
+        ],
+        "variableMeasured": ["term_fa", "term_en", "definition_fa", "etymology_fa", "references"],
+    }
+    # honest, verifiable counts — a crawler sees exactly what the data holds
+    payload["comment"] = f"{len(terms)} terms; {reviewed} reviewed (ai-assisted)"
+    body = _json.dumps(payload, ensure_ascii=False, indent=2).replace("</", "<\\/")
+    return f'<script type="application/ld+json">\n{body}\n</script>\n'
+
+
 def on_page_content(html, page, config, files):
+    _ensure_scripts_on_path()
     # NOTE: HTML comments are re-ordered by the markdown renderer, so we use
     # stable <div> slots in index.md instead of comment markers.
     if page.file.src_path == "index.md":
         terms = _load_terms()
         html = html.replace(STATS_SLOT, render_stats_html(terms))
         html = html.replace(TOTD_SLOT, render_totd_html(terms))
+        html = html.replace(OPENDATA_SLOT, render_dataset_jsonld(terms))
     return f'<div data-pagefind-body>{html}</div>'
 
 
@@ -175,6 +252,7 @@ def write_sitemap(site_dir: Path, site_url: str) -> Path:
 
 
 def on_post_build(config, **kwargs):
+    _ensure_scripts_on_path()
     site_dir = Path(config["site_dir"])
     site_url = (config.get("site_url") or "").rstrip("/") + "/"
     sitemap = write_sitemap(site_dir, site_url)

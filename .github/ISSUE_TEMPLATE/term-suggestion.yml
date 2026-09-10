@@ -33,6 +33,26 @@ body:
         - سایر
     validations:
       required: true
+  - type: input
+    id: synonyms
+    attributes:
+      label: مترادف‌ها یا شکل‌های گفتاری (اختیاری)
+      description: >-
+        واژه‌هایی که یک متخصص یا کارگر کارگاه به‌جای این اصطلاح به کار می‌برد —
+        این‌ها مستقیماً کیفیت جستجو را بالا می‌برند.
+      placeholder: "مثلاً: ویبره، ویبراتور (برای «لرزاننده»)"
+    validations:
+      required: false
+  - type: input
+    id: source
+    attributes:
+      label: منبع (اختیاری ولی تعیین‌کننده)
+      description: >-
+        استاندارد، کتاب یا واژه‌نامه‌ای که این اصطلاح را با این معنی دیده‌اید.
+        منبع باید در `data/standards.yaml` ثبت شود تا قابل استناد باشد.
+      placeholder: "مثلاً: ACI 116R یا مبحث هشتم مقررات ملی ساختمان"
+    validations:
+      required: false
   - type: textarea
     id: definition
     attributes:

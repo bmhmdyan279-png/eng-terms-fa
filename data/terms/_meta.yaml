@@ -2,7 +2,7 @@
 # scripts/build_pages.py دامنه‌های هر رکورد را با این فهرست اعتبارسنجی می‌کند.
 schema: meta-v1
 project: فرهنگ واژگان تخصصی مهندسی
-version: v0.1
+version: v0.2
 domains:
 - id: construction
   title_fa: اصطلاحات ساختمانی

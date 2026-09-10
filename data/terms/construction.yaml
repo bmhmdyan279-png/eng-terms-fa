@@ -12,7 +12,53 @@ terms:
   domain:
   - construction
   definition_fa: عملیات جلوگیری از نفوذ آب یا رطوبت به درون سازه یا فضاهای داخلی ساختمان، که با استفاده از مواد عایق (نظیر قیر، ایزوگام و غشاهای پلیمری) و رعایت جزئیات اجرایی در نقاط حساس مانند پی، پشت‌بام و سرویس‌های بهداشتی انجام می‌شود. اجرای نادرست آن به زنگ‌زدگی آرماتور، رشد قارچ و کاهش عمر مفید سازه می‌انجامد.
-  status: draft
+  synonyms:
+  - آب‌بندی
+  - عایق‌کاری رطوبتی
+  search_aliases:
+  - واترپروف
+  - ایزوگام
+  - قیرگونی
+  - آب‌بندی
+  usage_examples:
+  - آب‌بندی پشت‌بام با قیر و غشای پلیمری اجرا و سپس با آزمون غرقابی کنترل شد.
+  - در سرویس‌های بهداشتی، آب‌بندی کف پیش از کاشی‌کاری الزامی است.
+  root_fa: بند
+  etymology_fa: 'ترکیب «آب» و «بندی» از «بستن» (بن مضارع: بند)؛ در فارسی فنی به نفوذناپذیرکردن سطح گفته می‌شود. نوشتن آن با نیم‌فاصله (آب‌بندی) رایج‌تر است و هر دو شکل در جستجو یکسان‌اند.'
+  origin_lang: fa
+  plural_fa: آب‌بندی‌ها
+  references:
+  - &id006
+    type: standard
+    code: نشریه ۵۵
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  - type: standard
+    code: ACI 201.2R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - &id012
+    type: other
+    code: واژه‌نامهٔ اصطلاحات کارگاهی عمران
+    note: منبع اصطلاح کارگاهی؛ مرجع هنجاری نیست.
+  related_terms:
+  - blind-well
+  - cap
+  - cement-matrix
+  - isolated
+  - isolation
+  - sailor
+  - affiliation
+  - asphalt
+  - care
+  - gallery
+  - lime-bloom
+  - pistol
+  - pointing-mortar
+  - shell
+  - tizon
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: sealing
 - id: pointing-mortar
   term_fa: آب چین
@@ -24,11 +70,48 @@ terms:
   domain:
   - construction
   definition_fa: دوغاب‌ریزی بند آجرکاری‌ها با ملات ماسه و سیمان یا مانند آن که سطح بند را آب‌بند و یکنواخت می‌کند.
-  status: draft
+  synonyms:
+  - بندکشی
+  - دوغاب‌ریزی بند
+  search_aliases:
+  - آب‌چین
+  - ملات بندکشی
+  - بندکشی آجر
+  usage_examples:
+  - بند آجرکاری با ملات ماسه و سیمان دوغاب‌ریزی شد تا سطح بند آب‌بند و یکنواخت گردد.
+  root_fa: چین
+  etymology_fa: '«چین» از «چیدن». واژه‌نامهٔ اصطلاحات آجری «آب‌چین» را چنین تعریف می‌کند: «دوغاب‌ریزی آجرکاری‌ها با ملات ماسه و سیمان یا مانند آن». امروزه همین عملیات بیشتر «بندکشی» نامیده می‌شود.'
+  origin_lang: fa
+  references:
+  - &id002
+    type: standard
+    code: مبحث هشتم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  - &id001
+    type: standard
+    code: استاندارد ملی ایران ۷
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - &id003
+    type: other
+    code: واژه‌نامهٔ اصطلاحات سنتی آجرکاری
+    note: منبع معنی‌شناسی این واژهٔ سنتی؛ مرجع هنجاری نیست.
+  related_terms:
+  - brick-block
+  - clavicle-strap
+  - lime-bloom
+  - masonry-course
+  - sealing
+  - countries
+  - ginger
+  - stone-cement
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: pointing-mortar
 - id: square-brick
   term_fa: آجر چهارگوش
-  term_en: Square brick
+  term_en: square brick
   term_fr: Brique carrée
   term_de: quadratischer Ziegel
   term_ar: لبنة مربعة
@@ -36,55 +119,188 @@ terms:
   domain:
   - construction
   definition_fa: آجر مربع‌شکل با ابعاد یکسان در طول و پهنا که در کف‌سازی، نماسازی و چیدمان‌های منظم بنایی استفاده می‌شود.
-  status: draft
+  synonyms:
+  - آجر سلاتی
+  - آجر مربع
+  search_aliases:
+  - آجر فشاری
+  - آجر ایرانی
+  - آجر سلاتی
+  - آجر چهارگوش ۲۵
+  usage_examples:
+  - کف‌سازی حیاط با آجر چهارگوش و ملات ماسه‌سیمان اجرا شد.
+  root_fa: آجر
+  etymology_fa: «چهارگوش» = چهار + گوشه. واژه‌نامهٔ اصطلاحات آجری «آجر سلاتی» را آجر چهارگوش قرمز رنگ تعریف می‌کند؛ ابعاد رایج سنتی ۲۵ در ۲۵ سانتی‌متر است.
+  origin_lang: fa
+  plural_fa: آجرهای چهارگوش
+  references:
+  - *id001
+  - *id002
+  - &id004
+    type: standard
+    code: EN 771-1
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id003
+  related_terms:
+  - broken-brick
+  - care
+  - masonry-course
+  - quarter
+  - three-quarter-brick
+  - bullnose-brick
+  - chamfer
+  - corner-brick
+  - four-dang
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: square-brick
 - id: three-quarter-brick
   term_fa: آجر سه قدی
   term_en: three-quarter brick
   term_fr: brique trois quarts
-  term_de:
+  term_de: Dreiviertelziegel
   term_ar: لبنة ثلاثة أرباع
   pos: noun
   domain:
   - construction
   definition_fa: قطعه‌ای برابر سه‌چهارم آجر قزاقی که برای تکمیل چیدمان رج و پر کردن فاصله‌های بنایی به کار می‌رود.
-  status: draft
+  synonyms:
+  - سه‌قدی
+  - آجر سه‌چهارم
+  usage_examples:
+  - برای تکمیل رج، فاصلهٔ باقی‌مانده با آجر سه قدی پر شد.
+  root_fa: آجر
+  etymology_fa: «قدی» در اصطلاح بنایی به تقسیم طولی آجر اشاره دارد؛ «آجر سه قدی» برابر سه‌چهارم آجر کامل است و برای تنظیم رج‌چینی و پرکردن فاصله‌ها به کار می‌رود.
+  origin_lang: fa
+  references:
+  - *id001
+  - *id002
+  - *id003
+  related_terms:
+  - broken-brick
+  - four-dang
+  - quarter
+  - square-brick
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: three-quarter-brick
 - id: bullnose-brick
   term_fa: آجر فارسی بُر
   term_en: bullnose brick
   term_fr: brique à nez rond
-  term_de:
+  term_de: Formstein mit Rundkante
   term_ar: لبنة مستديرة الحافة
   pos: noun
   domain:
   - construction
   definition_fa: آجر لب‌پخ که یک یا چند لبهٔ آن گرد یا پخ شده است و در لبهٔ دیوارها، پنجره‌ها و نماسازی تزئینی به کار می‌رود.
-  status: draft
+  synonyms:
+  - لب‌شتری
+  - فتیله
+  - نیم‌گرد
+  search_aliases:
+  - آجر فارسی‌بر
+  usage_examples:
+  - لبهٔ جان‌پناه با آجر فارسی‌بُر اجرا شد تا تیزی لبه گرفته و لب‌پریدگی کاهش یابد.
+  root_fa: آجر
+  etymology_fa: «فارسی‌بُر» به معنای اریب‌بریده است. واژه‌نامهٔ اصطلاحات آجری «فتیله»، «غوطه‌ای» و «نیم‌گرد یا لب‌شتری» را گردکردن لبهٔ آجر تعریف می‌کند که همان bullnose است.
+  origin_lang: fa
+  references:
+  - *id001
+  - *id004
+  - *id003
+  related_terms:
+  - cap
+  - chamfer
+  - corner-brick
+  - square-brick
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  translation_notes:
+    de: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
   slug: bullnose-brick
 - id: corner-brick
   term_fa: آجر نبشی
   term_en: corner brick
   term_fr: brique d'angle
-  term_de:
+  term_de: Eckstein
   term_ar: لبنة زاوية
   pos: noun
   domain:
   - construction
   definition_fa: آجری که در نبش و گوشهٔ دیوار به کار می‌رود تا چیدمان رج‌ها در زاویه به‌درستی به یکدیگر پیوند بخورند.
-  status: draft
+  synonyms:
+  - آجر کنج
+  - آجر گوشه
+  antonyms:
+  - آجر نره
+  usage_examples:
+  - نبش دیوار با آجر نبشی چیده شد تا راستای رج‌ها در زاویه نشکند.
+  root_fa: آجر
+  etymology_fa: «نبش» در اصطلاح بنایی زاویهٔ خارجی دیوار است و در برابر آن «کنج» (زاویهٔ داخلی) قرار دارد؛ «آجر نبشی» برای ساخت درست این زاویه به کار می‌رود.
+  origin_lang: fa
+  references:
+  - *id001
+  - *id002
+  - &id005
+    type: standard
+    code: EN 1996-1-1
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id003
+  related_terms:
+  - header-brick
+  - masonry-course
+  - pier
+  - square-brick
+  - bullnose-brick
+  - chamfer
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: corner-brick
 - id: header-brick
   term_fa: آجر نره
   term_en: header brick
   term_fr: brique de bout
-  term_de:
+  term_de: Binder
   term_ar: لبنة رأسية
   pos: noun
   domain:
   - construction
   definition_fa: آجرهایی که به‌صورت عمود بر سطح دیوار (با سطح کوچک رو به بیرون) چیده می‌شوند و طول یا عرض آن‌ها در ضخامت دیوار قرار می‌گیرد.
-  status: draft
+  synonyms:
+  - نره
+  - کله
+  - نره‌چین
+  antonyms:
+  - راسته
+  - تماسه
+  usage_examples:
+  - در چیدمان کله‌راسته، رج‌های نره و راسته یکی در میان اجرا می‌شوند.
+  root_fa: نره
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «نره» را آجرهایی تعریف می‌کند که از ضخامت پهلو هم قرار گرفته‌اند، و «کَلّه» بخش عرضی یا باریک آجر است که در نماچینی دیده می‌شود. معادل انگلیسی آن header و معادل آلمانی Binder است (در برابر Läufer = راسته).
+  origin_lang: fa
+  references:
+  - *id001
+  - *id002
+  - *id005
+  - *id003
+  related_terms:
+  - clavicle-strap
+  - contact-him
+  - corner-brick
+  - masonry-course
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: header-brick
 - id: f-bar-bender
   term_fa: آچار F
@@ -96,7 +312,36 @@ terms:
   domain:
   - construction
   definition_fa: وسیله‌ای به شکل F برای خم کردن میلگرد در آرماتوربندی که با اهرم و قرقرهٔ ثابت، میلگرد را در زاویهٔ دلخواه خم می‌کند.
-  status: draft
+  synonyms:
+  - آچار آرماتوربندی
+  - آچار خم‌کن میلگرد
+  search_aliases:
+  - آچار اف
+  usage_examples:
+  - خم میلگرد با آچار F و با زاویه و قطر خم مطابق جدول آیین‌نامه انجام شد.
+  root_fa: آچار
+  etymology_fa: «آچار» واژه‌ای فارسی برای ابزار است؛ این آچار به دلیل شکل Fمانند بدنه و اهرمش چنین نامیده می‌شود و برای خم‌کردن میلگرد در آرماتوربندی به کار می‌رود.
+  origin_lang: fa
+  references:
+  - &id008
+    type: standard
+    code: مبحث نهم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  - &id010
+    type: standard
+    code: ACI 318-19
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id006
+  related_terms:
+  - a-basket
+  - armator
+  - orlip
+  - the-vault
+  - wire-reinforcement
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: f-bar-bender
 - id: asphalt
   term_fa: آسفالت
@@ -107,20 +352,62 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: مخلوط شن و ماسه و قیر پخته‌شده که برای روسازی راه، حیاط و بام به کار می‌رود و سطحی نفوذناپذیر و مقاوم ایجاد می‌کند.
-  status: draft
+  definition_fa: مخلوط سنگدانه (شن و ماسه) و قیر که در دمای مشخص تولید و پخش می‌شود و پس از تراکم و خنک‌شدن، سطحی نفوذناپذیر، یکپارچه و مقاوم در برابر سایش ایجاد می‌کند؛ در روسازی راه، کف حیاط و بام به کار می‌رود.
+  synonyms:
+  - قیر و آسفالت
+  - آسفالت گرم
+  search_aliases:
+  - آسفالت‌کاری
+  usage_examples:
+  - آسفالت باید در دمای مجاز پخش و بی‌درنگ با غلتک متراکم شود.
+  root_fa: آسفالت
+  etymology_fa: وام‌واژه از فرانسوی asphalte یا انگلیسی asphalt، از یونانی ásphaltos به معنای قیر طبیعی؛ در ایران به مخلوط سنگدانه و قیر برای روسازی گفته می‌شود.
+  origin_lang: fr
+  references:
+  - *id006
+  - &id007
+    type: standard
+    code: مبحث پنجم مقررات ملی ساختمان
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - blockage
+  - burnt-asphalt
+  - care
+  - cumin
+  - sealing
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: asphalt
 - id: burnt-asphalt
   term_fa: آسفالت سوخته
-  term_en: Burnt asphalt
+  term_en: burnt asphalt
   term_fr: asphalte brûlé
   term_de: verbrannter Asphalt
   term_ar: إسفلت محروق
   pos: noun
   domain:
   - construction
-  definition_fa: آسفالتی که به‌دلیل حرارت بیش از حد یا پخت نامناسب، خاصیت چسبندگی خود را از دست داده و در اجرا پوسته شده و از هم می‌پاشد.
-  status: draft
+  definition_fa: آسفالتی که به‌دلیل حرارت بیش از حد یا نگهداری طولانی در دمای بالا، قیر آن خاصیت چسبندگی و شکل‌پذیری خود را از دست داده است؛ در اجرا پوسته می‌شود، از هم می‌پاشد و باید برداشته و جایگزین گردد.
+  synonyms:
+  - آسفالت سوخته‌شده
+  usage_examples:
+  - لکه‌های پوسته‌شدهٔ آسفالت سوخته برداشته و با آسفالت نو جایگزین شد.
+  root_fa: آسفالت
+  etymology_fa: «سوخته» اشاره به عبور قیر از دمای مجاز دارد که باعث اکسیدشدن و شکنندگی آسفالت می‌شود.
+  origin_lang: fr
+  references:
+  - *id006
+  - *id007
+  related_terms:
+  - asphalt
+  - blockage
+  - cumin
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: burnt-asphalt
 - id: lime-bloom
   term_fa: آلوئک
@@ -132,7 +419,36 @@ terms:
   domain:
   - construction
   definition_fa: شوره یا سفیدک آهکی که بر اثر نفوذ آب و مهاجرت نمک‌های محلول به سطح آجر یا ملات پدید می‌آید و موجب لب‌پر شدن و پوسته‌شدن سطح می‌شود.
-  status: draft
+  synonyms:
+  - شوره
+  - سفیدک
+  - شورهٔ آهکی
+  search_aliases:
+  - افلوئورسانس
+  - شوره زدن
+  usage_examples:
+  - ظهور شورهٔ آهکی روی نمای آجری نشانهٔ نفوذ رطوبت و وجود نمک‌های محلول در ملات است.
+  root_fa: آلوئک
+  etymology_fa: «آلوئک» واژه‌ای صنفی در بنایی سنتی برای شورهٔ آهکی است؛ معادل علمی آن efflorescence است و به مهاجرت نمک‌های محلول به سطح و تبلور آن‌ها پس از تبخیر آب گفته می‌شود.
+  origin_lang: other
+  references:
+  - &id009
+    type: standard
+    code: ACI 201.2R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id001
+  - *id007
+  related_terms:
+  - brackish-soil
+  - cap
+  - ginger
+  - pointing-mortar
+  - sealing
+  - facing
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: lime-bloom
 - id: pendant
   term_fa: آویز
@@ -144,7 +460,27 @@ terms:
   domain:
   - construction
   definition_fa: قطعهٔ آویز در سقف تیرچه و بلوک که برای مهار یا تعلیق اجزای سقف و تأسیسات به کار می‌رود و بار را به اعضای بالادستی منتقل می‌کند.
-  status: draft
+  synonyms:
+  - آویز سقف
+  - قطعهٔ تعلیق
+  usage_examples:
+  - آویزهای سقف تیرچه و بلوک، بار تأسیسات را به تیرچه منتقل می‌کنند.
+  root_fa: آویز
+  etymology_fa: «آویز» از «آویختن»؛ قطعه‌ای که بار را به عضو بالادستی منتقل می‌کند یا اجزای سقف و تأسیسات را معلق نگه می‌دارد.
+  origin_lang: fa
+  references:
+  - *id008
+  - *id006
+  related_terms:
+  - back-strap
+  - center-of-gravity
+  - concrete-beam
+  - plate
+  - traverse
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: pendant
 - id: embedded-steel
   term_fa: آهن گُم
@@ -155,20 +491,68 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: آهن سقف که روی آن را با آجر یا بتن پوشانده‌اند؛ فولاد دفن‌شده در سازه که با پوشش مناسب از خوردگی محافظت می‌شود.
-  status: draft
+  definition_fa: فولادی که در ملات، آجر یا بتن پوشانده و از دید پنهان شده است؛ واژه‌نامهٔ اصطلاحات آجری «آهن گُم» را آهن سقفی تعریف می‌کند که روی آن با آجر پوشیده شده باشد. پوشش مناسب، محافظت در برابر خوردگی و آتش را بر عهده دارد.
+  synonyms:
+  - فولاد مدفون
+  - آهن پوشیده
+  search_aliases:
+  - آهن گم
+  usage_examples:
+  - پوشش بتن روی آهن گُم باید حداقل مقدار آیین‌نامه‌ای باشد تا از خوردگی جلوگیری شود.
+  root_fa: آهن
+  etymology_fa: «گُم» به معنای ناپیدا و گمشده است؛ «آهن گُم» فولادی است که در بافت بنا پنهان شده باشد.
+  origin_lang: fa
+  references:
+  - *id008
+  - type: standard
+    code: ACI 222R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id003
+  related_terms:
+  - armator
+  - concrete-beam
+  - john-is-plastered
+  - pillow
+  - cramp
+  - plate
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: embedded-steel
 - id: spur
   term_fa: اسپر
   term_en: abutment
-  term_fr:
+  term_fr: pied-droit
   term_de: Bogenpfeiler
   term_ar: دعامة القوس
   pos: noun
   domain:
   - construction
   definition_fa: جرز یا پایهٔ طرفین طاق و قوس بالای درگاه که بار و رانش قوس را تحمل می‌کند و از گسترش جانبی آن جلوگیری می‌کند.
-  status: draft
+  synonyms:
+  - جرز طاق‌نما
+  - تکیه‌گاه قوس
+  usage_examples:
+  - اسپر (جرز دو طرف طاق‌نما) رانش جانبی قوس را تحمل می‌کند.
+  root_fa: اسپر
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «اسپر» را «جرزهای طرفین یک طاق‌نما» تعریف می‌کند؛ این جرز بار و رانش جانبی قوس را تحمل می‌کند.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id005
+  - *id003
+  related_terms:
+  - arch-crown
+  - pakar
+  - pier
+  - rise-up
+  - springing
+  - clavicle-strap
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: spur
 - id: elasticity
   term_fa: الاستیسیته
@@ -180,7 +564,35 @@ terms:
   domain:
   - construction
   definition_fa: خاصیت ماده در بازگشت به شکل و ابعاد اولیهٔ خود پس از برداشتن بارِ تغییرشکل‌دهنده. در محدودهٔ کشسان، تنش با کرنش نسبت مستقیم دارد و ضریب این تناسب، مدول الاستیسیته نامیده می‌شود.
-  status: draft
+  synonyms:
+  - کشسانی
+  - ارتجاع
+  antonyms:
+  - خمیری‌شدگی
+  - شکنندگی
+  usage_examples:
+  - در محدودهٔ الاستیسیته (کشسان)، با برداشتن بار، تغییر شکل عضو کاملاً بازمی‌گردد.
+  - پس از عبور از حد الاستیسیته، تغییر شکل ماندگار در فولاد باقی می‌ماند.
+  root_fa: الاستیسیته
+  etymology_fa: وام‌واژه از فرانسوی élasticité، از یونانی elásein (راندن، کشیدن)؛ معادل مصوب فرهنگستان «کشسانی» است.
+  origin_lang: fr
+  references:
+  - &id014
+    type: book
+    code: بیِر و جانستون — مقاومت مصالح
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: ASTM C469
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - bending
+  - modulus-of-elasticity
+  - strain
+  - tension
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: elasticity
 - id: cramp
   term_fa: اسکوپ
@@ -192,7 +604,30 @@ terms:
   domain:
   - construction
   definition_fa: میخ سرکج، دوسر یا سه‌سر فلزی که برای بستن و اتصال قطعات سنگ، آجر یا چوب به یکدیگر به کار می‌رود و از جابه‌جایی آن‌ها جلوگیری می‌کند.
-  status: draft
+  synonyms:
+  - میخ سرکج
+  - بست فلزی
+  - کرامپ
+  usage_examples:
+  - قطعات سنگ با اسکوپ فلزی و ملات به یکدیگر پیوند شدند.
+  root_fa: اسکوپ
+  etymology_fa: «اسکوپ» واژه‌ای صنفی در بنایی و سنگ‌کاری سنتی برای بست یا میلهٔ فلزی است که قطعات سنگ، آجر یا چوب را به هم پیوند می‌دهد؛ معادل انگلیسی آن cramp و فرانویسی crampon است.
+  origin_lang: other
+  references:
+  - *id005
+  - *id002
+  - *id006
+  related_terms:
+  - aspel
+  - embedded-steel
+  - pillow
+  - pin
+  - back-strap
+  - plate
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: cramp
 - id: aspel
   term_fa: اشپیل
@@ -204,19 +639,70 @@ terms:
   domain:
   - construction
   definition_fa: میلهٔ فلزی که از شکاف یا سوراخ قطعات عبور می‌کند و برای مهار، اتصال یا جابه‌جایی اجزای بنایی به کار می‌رود.
-  status: draft
+  synonyms:
+  - میلهٔ عبوری
+  - اشپل
+  usage_examples:
+  - اشپیل از سوراخ دو قطعه عبور داده و با مهره مهار شد.
+  root_fa: اشپیل
+  etymology_fa: واژه‌ای صنفی در بنایی سنتی برای میلهٔ فلزی که از شکاف یا سوراخ قطعات عبور می‌کند و برای مهار، اتصال یا جابه‌جایی اجزای بنایی به کار می‌رود؛ ریشهٔ زبانی آن راستی‌آزمایی نشده است.
+  origin_lang: other
+  references:
+  - *id002
+  - *id006
+  related_terms:
+  - back-strap
+  - cramp
+  - pin
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: aspel
 - id: drop
   term_fa: افت
-  term_en: settlement
+  term_en: drop
   term_fr: affaissement
   term_de: Setzung
   term_ar: هبوط
   pos: noun
   domain:
   - construction
-  definition_fa: کاهش تراز یا جابه‌جایی عمودی یک عضو یا سطح نسبت به حالت اولیه؛ نشست پی، افت سطح بتن تازه یا جابه‌جایی تیر زیر بار از نمونه‌های آن است.
-  status: draft
+  definition_fa: 'کاهش تراز یا مقدار یک کمیت نسبت به حالت اولیه؛ این واژه چند حس فنی دارد: نشست پی (settlement)، افت سطح بتن تازه پیش از گیرش (plastic settlement)، افت اسلامپ میان کارخانه و محل مصرف (slump loss) و جابه‌جایی عمودی تیر زیر بار (deflection).'
+  synonyms:
+  - نشست
+  - افتادگی
+  - افت سطح
+  search_aliases:
+  - افت اسلامپ
+  - نشست پی
+  - خیز تیر
+  usage_examples:
+  - افت اسلامپ میان کارخانهٔ بتن و محل مصرف نباید از حد مجاز بیشتر شود.
+  - نشست پی باید از مقدار مجاز آیین‌نامه کمتر بماند.
+  root_fa: افت
+  etymology_fa: اسم مصدر از «افتادن». چون این واژه چندمعنایی است، حس‌های آن در تعریف جدا شده‌اند؛ معادل انگلیسی هر حس متفاوت است (settlement، slump loss، deflection).
+  origin_lang: fa
+  references:
+  - &id011
+    type: standard
+    code: مبحث هفتم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  - type: standard
+    code: ASTM C143
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id009
+  related_terms:
+  - bending
+  - blind-well
+  - hard-ground
+  - rise-up
+  - tolerance
+  - retaining-wall
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: drop
 - id: exposure
   term_fa: اکسپوزه
@@ -228,7 +714,36 @@ terms:
   domain:
   - construction
   definition_fa: وضعیت سطح یا عضوی که بدون پوشش در معرض دید یا در تماس با عوامل جوی قرار دارد؛ مانند بتن اکسپوزه که سطح آن بدون نازک‌کاری رها می‌شود و هم‌زمان نقش سازه‌ای و معماری دارد.
-  status: draft
+  synonyms:
+  - نمایان
+  - بدون پوشش
+  search_aliases:
+  - اکسپوز
+  - بتن اکسپوز
+  usage_examples:
+  - دیوار بتنی این پروژه به‌صورت اکسپوزه و بدون نازک‌کاری اجرا شد.
+  root_fa: اکسپوزه
+  etymology_fa: وام‌واژه از فرانسوی exposé (آشکار، در معرض)؛ در معماری ایران به سطحی گفته می‌شود که بدون نازک‌کاری رها شده باشد. در استانداردهای بتن، «ردهٔ در معرضی» (exposure class) شدت عوامل مخرب محیطی را دسته‌بندی می‌کند.
+  origin_lang: fr
+  references:
+  - type: standard
+    code: EN 206
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - &id017
+    type: standard
+    code: مبحث چهارم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  - *id006
+  related_terms:
+  - brackish-soil
+  - cap
+  - facing
+  - isolated
+  - shell
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: exposure
 - id: orlip
   term_fa: اورلپ
@@ -240,11 +755,39 @@ terms:
   domain:
   - construction
   definition_fa: هم‌پوشانی دو عضو در محل اتصال، به‌ویژه روی‌هم‌افتادگی میلگردها در وصلهٔ پوششی؛ طول اورلپ باید دست‌کم برابر مقدار محاسبه‌شدهٔ وصله باشد تا انتقال نیرو به‌درستی انجام شود.
-  status: draft
+  synonyms:
+  - وصلهٔ پوششی
+  - روی‌هم‌افتادگی
+  search_aliases:
+  - اورلپ آرماتور
+  - طول وصله
+  usage_examples:
+  - طول اورلپ میلگردهای طولی باید دست‌کم برابر مقدار محاسبه‌شدهٔ وصله در آیین‌نامه باشد.
+  root_fa: اورلپ
+  etymology_fa: وام‌واژه از انگلیسی overlap (روی‌هم‌افتادگی)؛ در آرماتوربندی به طول هم‌پوشانی دو میلگرد در وصلهٔ پوششی گفته می‌شود که نیرو از راه چسبندگی میان آن‌ها منتقل می‌شود.
+  origin_lang: en
+  references:
+  - *id008
+  - *id010
+  - &id018
+    type: standard
+    code: آیین‌نامه بتن ایران (آبا)
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  related_terms:
+  - armator
+  - f-bar-bender
+  - pin
+  - the-vault
+  - wire-reinforcement
+  - concrete-beam
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: orlip
 - id: isolation
   term_fa: ایزولاسیون
-  term_en: Isolation
+  term_en: isolation
   term_fr: Isolement
   term_de: Isolierung
   term_ar: عزل
@@ -252,7 +795,29 @@ terms:
   domain:
   - construction
   definition_fa: عمل جدا کردن یک عضو یا فضا از محیط اطراف به‌وسیلهٔ مواد عایق؛ شامل عایق‌بندی رطوبتی، حرارتی و صوتی است و از نفوذ آب و اتلاف انرژی جلوگیری می‌کند.
-  status: draft
+  synonyms:
+  - عایق‌بندی
+  - جداکردگی
+  search_aliases:
+  - ایزوله‌سازی
+  usage_examples:
+  - ایزولاسیون حرارتی بام و دیوار خارجی، بار سرمایش و گرمایش ساختمان را کاهش می‌دهد.
+  root_fa: ایزوله
+  etymology_fa: وام‌واژه از فرانسوی isolation، از ایتالیایی isolare (جزیره کردن، از لاتین insula = جزیره)؛ معادل فارسی آن «عایق‌بندی» و «جداکردگی» است و سه نوع رطوبتی، حرارتی و صوتی دارد.
+  origin_lang: fr
+  references:
+  - *id006
+  - *id007
+  related_terms:
+  - blind-well
+  - isolated
+  - sailor
+  - sealing
+  - sap-skin
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: isolation
 - id: isolated
   term_fa: ایزوله
@@ -264,7 +829,29 @@ terms:
   domain:
   - construction
   definition_fa: جدا یا عایق‌شده؛ قطعه یا عضوی که به‌وسیلهٔ عایق از محیط اطراف جدا شده باشد، مانند سطح عایق‌بندی‌شده در برابر رطوبت یا حرارت.
-  status: draft
+  synonyms:
+  - عایق‌شده
+  - جداشده
+  antonyms:
+  - پیوسته
+  - متصل
+  usage_examples:
+  - لولهٔ آب گرم در داکت، ایزوله و با پوشش حرارتی محافظت شد.
+  root_fa: ایزوله
+  etymology_fa: صفت مفعولی از «ایزوله کردن»؛ برای عضو یا فضایی به کار می‌رود که با عایق از محیط اطراف جدا شده باشد.
+  origin_lang: fr
+  references:
+  - *id006
+  - *id007
+  related_terms:
+  - exposure
+  - isolation
+  - sealing
+  - affiliation
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: isolated
 - id: pillow
   term_fa: بالشتک
@@ -276,7 +863,34 @@ terms:
   domain:
   - construction
   definition_fa: آجر یا قطعهٔ بتنی که زیر سر تیر آهن قرار داده می‌شود تا بار را روی تکیه‌گاه پخش کند و از تمرکز تنش و آسیب به مصالح پوششی جلوگیری شود.
-  status: draft
+  synonyms:
+  - قطعهٔ توزیع بار
+  usage_examples:
+  - زیر سر تیرآهن بالشتک سیمانی اجرا شد تا بار به‌طور یکنواخت به دیوار بنایی منتقل شود.
+  root_fa: بالش
+  etymology_fa: از «بالش» و پسوند «ـک». واژه‌نامهٔ اصطلاحات آجری آن را «آجر یا قطعهٔ بتنی که زیر سر تیرآهن با مصالح پوششی دیگر قرار می‌دهند» تعریف می‌کند.
+  origin_lang: fa
+  references:
+  - &id013
+    type: standard
+    code: مبحث دهم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  - *id002
+  - *id003
+  related_terms:
+  - concrete-beam
+  - passing
+  - pier
+  - plate
+  - a-ball
+  - countries
+  - cramp
+  - embedded-steel
+  - traverse
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: pillow
 - id: blockage
   term_fa: بلوکاژ
@@ -288,7 +902,36 @@ terms:
   domain:
   - construction
   definition_fa: لایهٔ زیرین از قطعات خرد سنگ یا مصالح دانه‌ای که به‌عنوان بستر کف‌سازی پهن و متراکم می‌شود تا سطحی یکنواخت و با ظرفیت باربری مناسب ایجاد کند.
-  status: draft
+  synonyms:
+  - قلوه‌سنگ متراکم
+  - بستر سنگی
+  search_aliases:
+  - بلوکاژ
+  - قلوه‌سنگ کف
+  usage_examples:
+  - بلوکاژ با قلوه‌سنگ و ملات آهک پخش و با تخماق کوبیده شد.
+  root_fa: بلوکاژ
+  etymology_fa: وام‌واژه از فرانسوی blocage (پرکردن با سنگ و ملات)؛ در ایران به لایهٔ زیرین از قلوه‌سنگ یا مصالح دانه‌ای گفته می‌شود که کوبیده و متراکم می‌شود تا بستر یکنواختی برای کف‌سازی ایجاد کند.
+  origin_lang: fr
+  references:
+  - *id006
+  - *id011
+  related_terms:
+  - cumin
+  - gravel
+  - hard-ground
+  - passing
+  - tamper
+  - asphalt
+  - broken-brick
+  - burnt-asphalt
+  - care
+  - hit-the-ground
+  - mesh-sieve-size
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: blockage
 - id: brick-block
   term_fa: بند آجر
@@ -300,11 +943,34 @@ terms:
   domain:
   - construction
   definition_fa: قطعهٔ آجری که فاصلهٔ میان دو آجر یا دو تیرچه را در سقف پر می‌کند و باعث یکنواختی سطح و توزیع بار در کف‌سازی می‌شود.
-  status: draft
+  synonyms:
+  - بندآجری
+  - آجر پرکننده
+  usage_examples:
+  - فاصلهٔ میان دو تیرچه در سقف با بند آجر پر و سطح آن یکنواخت شد.
+  root_fa: بند
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «بندآجری» را قطعهٔ آجری تعریف می‌کند که فاصلهٔ دو آجر را در سقف پر می‌کند. «بند» در بنایی هم به فاصلهٔ میان دو آجر (بند ملات) و هم به قطعهٔ پرکننده گفته می‌شود.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id008
+  - *id003
+  related_terms:
+  - a-basket
+  - care
+  - clavicle-strap
+  - concrete-beam
+  - masonry-course
+  - contact-him
+  - pointing-mortar
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: brick-block
 - id: clavicle-strap
   term_fa: بند کلوکی
-  term_en: tie brick
+  term_en: arch joint filler
   term_fr: brique de liaison
   term_de: Verbandziegel
   term_ar: لبنة ربط
@@ -312,7 +978,32 @@ terms:
   domain:
   - construction
   definition_fa: قطعهٔ آجری به اندازهٔ «کلوک» که برای پر کردن فاصله‌ها، ایجاد پیوستگی و اتصال رج‌ها در بنایی به کار می‌رود.
-  status: draft
+  synonyms:
+  - بندکلوکی
+  - کلوک
+  usage_examples:
+  - بند آجرهای قوس با قطعات کلوک پر شد تا درزها یکنواخت و پیوستگی رج‌ها تأمین گردد.
+  root_fa: کلوک
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «کلوک» را یک‌چهارم آجر و «بندکلوکی» را قطعهٔ آجری به اندازهٔ کلوک تعریف می‌کند که لای بند آجرهای قوس به کار می‌رود.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id001
+  - *id003
+  related_terms:
+  - arch-crown
+  - brick-block
+  - quarter
+  - springing
+  - spur
+  - header-brick
+  - pointing-mortar
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  translation_notes:
+    en: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
   slug: clavicle-strap
 - id: springing
   term_fa: پاتاق
@@ -324,7 +1015,35 @@ terms:
   domain:
   - construction
   definition_fa: رج یا نقطهٔ آغازین قوس که بر پایه یا تکیه‌گاه قرار می‌گیرد و طاق از آنجا به‌سمت بالا ساخته می‌شود؛ محل انتقال بار قوس به پایه است.
-  status: draft
+  synonyms:
+  - پاطاق
+  - خط آغاز طاق
+  search_aliases:
+  - پاطاق
+  - بالنج
+  - خط آغاز قوس
+  usage_examples:
+  - پاتاق قوس پیش از شروع طاق‌چینی تراز و کنترل شد.
+  root_fa: پاتاق
+  etymology_fa: «پاطاق» از «پا» و «طاق». واژه‌نامهٔ اصطلاحات آجری آن را «شروع طاق از روی پایه یا دیوار» تعریف می‌کند و «بالنج» را کمانی بالاتر از پاطاق می‌داند.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id005
+  - *id003
+  related_terms:
+  - arch-crown
+  - behind-the-arm
+  - pakar
+  - rise-up
+  - semicircular-arch
+  - spur
+  - clavicle-strap
+  - pier
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: springing
 - id: broken-brick
   term_fa: پاره آجر
@@ -336,11 +1055,32 @@ terms:
   domain:
   - construction
   definition_fa: قطعات مختلف آجر یا آجرهای شکسته که برای پر کردن فاصله‌ها یا استفاده در ملات خرد شده به کار می‌روند.
-  status: draft
+  synonyms:
+  - قطعات آجر
+  - شکستهٔ آجر
+  usage_examples:
+  - پاره آجرهای سالم برای پرکردن لایهٔ بلوکاژ جدا و دسته‌بندی شدند.
+  root_fa: آجر
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری آن را «قطعات مختلف آجر» تعریف می‌کند.
+  origin_lang: fa
+  references:
+  - *id001
+  - *id003
+  related_terms:
+  - blockage
+  - quarter
+  - square-brick
+  - three-quarter-brick
+  - four-dang
+  - ginger
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: broken-brick
 - id: passing
   term_fa: پاسنگ
-  term_en: base course
+  term_en: wall base course
   term_fr: assise de base
   term_de: Sockellage
   term_ar: صف القاعدة
@@ -348,11 +1088,30 @@ terms:
   domain:
   - construction
   definition_fa: رج پایینی دیوار یا پاخور پایین در و دیوار که بر سطح پی یا کف‌سازی می‌نشیند و تراز شروع بنایی را تعیین می‌کند.
-  status: draft
+  synonyms:
+  - پاخور
+  - رج پایینی
+  usage_examples:
+  - پاسنگ دیوار پیش از شروع رج‌چینی روی کرسی تراز شد.
+  root_fa: پاسنگ
+  etymology_fa: «پاسنگ» از «پا» و «سنگ». واژه‌نامهٔ اصطلاحات کارگاهی آن را «پاخوری پای در یا دیوار» تعریف می‌کند؛ رج پایینی که بر سطح پی یا کف‌سازی می‌نشیند و تراز شروع بنایی را تعیین می‌کند.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id012
+  related_terms:
+  - blockage
+  - masonry-course
+  - pillow
+  - reasoning
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: passing
 - id: pakar
   term_fa: پاکار
-  term_en: pier head
+  term_en: springing point
   term_fr: sommet de pile
   term_de: Widerlagerkopf
   term_ar: أعلى الدعامة
@@ -360,7 +1119,27 @@ terms:
   domain:
   - construction
   definition_fa: محل شروع قوس در بالای پایه یا تکیه‌گاه؛ نقطه‌ای که انحنای قوس از آن آغاز می‌شود و نیروها از آن به تکیه‌گاه منتقل می‌گردند.
-  status: draft
+  synonyms:
+  - پاکار قوس
+  - پاطاق
+  usage_examples:
+  - پاکار قوس محل اتکای دو سر طاق بر جرزهای جانبی است.
+  root_fa: پاکار
+  etymology_fa: 'واژه‌نامهٔ اصطلاحات آجری «پاکار قوس» را هم‌معنی «پاطاق» می‌داند: «جایی که طاق از بالای پایه شروع می‌شود؛ محل اتکای هر یک از دو سر قوس بر پایه‌های جانبی».'
+  origin_lang: fa
+  references:
+  - *id002
+  - *id003
+  related_terms:
+  - arch-crown
+  - pier
+  - rise-up
+  - springing
+  - spur
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: pakar
 - id: care
   term_fa: پالانه
@@ -372,23 +1151,70 @@ terms:
   domain:
   - construction
   definition_fa: آجرکاری کف که پس از ساخت سقف، به‌شیوهٔ فرش آجر و با ملات مناسب روی سطح اجرا می‌شود و نقش پوشش نهایی بام یا کف حیاط را دارد.
-  status: draft
+  synonyms:
+  - فرش آجر
+  - فرش کف
+  - آجر فرش
+  usage_examples:
+  - پس از ساخت سقف تیغه‌ای، آجرکاری کف به شیوهٔ فرش آجر اجرا شد.
+  root_fa: پالانه
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «پالانه» را «آجرکاری که مانند فرش آجر بعد از ساختن سقف انجام می‌شود (سقف‌های تیغه‌ای)» تعریف می‌کند و «فرش کف» را آجرکاری کف بنا می‌داند.
+  origin_lang: fa
+  references:
+  - *id006
+  - *id002
+  - *id003
+  related_terms:
+  - asphalt
+  - blockage
+  - cumin
+  - sealing
+  - square-brick
+  - brick-block
+  - to-darken
+  - traverse
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: care
 - id: chamfer
   term_fa: پخ
   term_en: chamfer
   term_fr: chanfrein
   term_de: Fase
-  term_ar:
+  term_ar: زاوية مشطوفة
   pos: noun
   domain:
   - construction
   definition_fa: پخ یا گوشهٔ بریده‌شدهٔ آجر یا سنگ که به‌جای لبهٔ تیز، سطحی مورب ایجاد می‌کند؛ هم برای زیبایی و هم برای کاهش لب‌پریدگی به کار می‌رود.
-  status: draft
+  synonyms:
+  - فارسی‌بُر
+  - لب‌پخ
+  - ماهیچه
+  usage_examples:
+  - گوشهٔ آجرها فارسی‌بُر (پخ) شد تا لبهٔ تیز نما از بین برود.
+  root_fa: پخ
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «پخ» را «گوشه‌ای از آجر را فارسی‌بر کردن یا در زاویهٔ دیوارها ماهیچه ساختن» و «لب‌پخ» را فارسی‌برکردن ضخامت آجر تعریف می‌کند.
+  origin_lang: fa
+  references:
+  - *id001
+  - *id004
+  - *id003
+  related_terms:
+  - bullnose-brick
+  - corner-brick
+  - square-brick
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  translation_notes:
+    ar: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
   slug: chamfer
 - id: behind-the-arm
   term_fa: پشت بغل
-  term_en: behind the arm
+  term_en: spandrel
   term_fr: écoinçon
   term_de: Bogenzwickel
   term_ar:
@@ -396,19 +1222,73 @@ terms:
   domain:
   - construction
   definition_fa: لچکی یا گوشهٔ پرکنندهٔ بالای قوس که فضای میان انحنای قوس و قاب مستطیلی اطراف آن را پر می‌کند و بار را به کناره‌ها منتقل می‌سازد.
-  status: draft
+  synonyms:
+  - لچکی
+  - گوشهٔ قوس
+  usage_examples:
+  - فضای پشت بغل با لچکی آجری پر شد تا بار قوس به کناره‌ها منتقل گردد.
+  root_fa: بغل
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «پشت بغل» را «دو طرف قوس که عمودی ساخته شده است» تعریف می‌کند و «لچکی» را سه‌گوشهٔ به‌وجودآمده میان دو قوس و گنبد می‌داند؛ معادل علمی آن در انگلیسی spandrel و در فرانویسی écoinçon است.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id005
+  - *id003
+  related_terms:
+  - arch-crown
+  - semicircular-arch
+  - springing
+  - two-piece
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: behind-the-arm
 - id: back-strap
   term_fa: پشت بند
-  term_en: back strap
-  term_fr:
-  term_de:
-  term_ar:
+  term_en: waler
+  term_fr: moise de coffrage
+  term_de: Schalungsriegel
+  term_ar: عارضة الشدة
   pos: noun
   domain:
   - construction
   definition_fa: قطعات چوبی یا فلزی که پشت تخته‌های قاب قالب میخ می‌شوند تا از تغییر شکل و شکم‌دادن قالب در هنگام بتن‌ریزی جلوگیری کنند.
-  status: draft
+  synonyms:
+  - پشت‌بند قالب
+  - شمعهٔ قالب
+  - والِر
+  search_aliases:
+  - پشت‌تخته‌ای
+  - قالب بتن
+  - شمعه قالب
+  usage_examples:
+  - فاصلهٔ پشت‌بندها بر پایهٔ فشار جانبی بتن تازه و ارتفاع بتن‌ریزی تعیین شد.
+  root_fa: بند
+  etymology_fa: «پشت‌بند» از «پشت» و «بند»؛ قطعات چوبی یا فلزی که پشت تخته‌های قالب بسته می‌شوند تا از شکم‌دادن قالب در هنگام بتن‌ریزی جلوگیری کنند. معادل انگلیسی آن waler و فرانویسی moise است.
+  origin_lang: fa
+  references:
+  - type: standard
+    code: ACI 301
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id008
+  - *id006
+  related_terms:
+  - cramp
+  - pendant
+  - plate
+  - to-pump
+  - traverse
+  - aspel
+  - get-stuck
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  translation_notes:
+    en: waler معادل مصوب انگلیسی عضو افقی مهارکنندهٔ قالب است.
+    de: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
+    ar: «عارضة الشدة» معادل توصیفی رایج در متون عربی برای عضو افقی مهارکنندهٔ قالب است.
   slug: back-strap
 - id: ripe
   term_fa: پکافته
@@ -420,7 +1300,25 @@ terms:
   domain:
   - construction
   definition_fa: دیوار تیغه‌ای نازک که به دیوار اصلی چسبیده و به آن متصل است؛ این دیوار باربر نیست و برای جدا کردن فضاها یا پوشش تأسیسات به کار می‌رود.
-  status: draft
+  synonyms:
+  - دیوار چسبیده
+  - تیغهٔ الحاقی
+  usage_examples:
+  - دیوار پکافته به دیوار اصلی چسبیده و به آن مهار شده است.
+  root_fa: پکافته
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «پکافته» را «دیوار تیغه‌ای که به دیوار اصلی چسبیده است» تعریف می‌کند؛ این دیوار باربر نیست و برای جداکردن فضاها یا پوشش تأسیسات به کار می‌رود.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id003
+  related_terms:
+  - affiliation
+  - blade
+  - pier
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: ripe
 - id: plate
   term_fa: پلیت
@@ -432,7 +1330,33 @@ terms:
   domain:
   - construction
   definition_fa: قطعهٔ تخت فولادی یا غیرفلزی با ضخامت یکنواخت که برای توزیع بار، اتصال اعضا یا پوشش سطح به کار می‌رود؛ پلیت زیر ستون و ورق‌های تقویتی از نمونه‌های رایج آن‌اند.
-  status: draft
+  synonyms:
+  - صفحه
+  - ورق فولادی
+  search_aliases:
+  - بیس پلیت
+  - پلیت زیر ستون
+  usage_examples:
+  - پلیت زیر ستون باید کاملاً با سطح تکیه‌گاه تماس داشته باشد و فضای خالی آن با دوغاب پر شود.
+  root_fa: پلیت
+  etymology_fa: وام‌واژه از انگلیسی plate، از فرانویسی قدیم plate (صفحهٔ فلزی) و یونانی platys (پهن)؛ در ایران بیشتر برای صفحهٔ زیر ستون (base plate) و ورق‌های تقویتی به کار می‌رود.
+  origin_lang: en
+  references:
+  - *id013
+  - *id010
+  related_terms:
+  - cramp
+  - embedded-steel
+  - pillow
+  - pin
+  - traverse
+  - back-strap
+  - john-is-plastered
+  - pendant
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: plate
 - id: to-pump
   term_fa: پمپ کردن
@@ -444,7 +1368,40 @@ terms:
   domain:
   - construction
   definition_fa: جابه‌جا کردن مصالح سیال یا دوغاب با فشار، به‌ویژه پمپاژ بتن تازه از دستگاه به محل قالب‌بندی از طریق لوله و بوم.
-  status: draft
+  synonyms:
+  - پمپاژ
+  - بوم‌ریزی
+  search_aliases:
+  - پمپاژ بتن
+  - بوم بتن
+  usage_examples:
+  - پمپ کردن بتن باید پیوسته انجام شود تا از گیرش بتن درون لوله جلوگیری گردد.
+  - پس از پایان پمپ کردن بتن، لولهٔ بوم با توپی پاک‌کننده تمیز شد.
+  root_fa: پمپ
+  etymology_fa: «پمپ» وام‌واژه از فرانسوی pompe و انگلیسی pump، از لاتین pompa؛ «پمپاژ بتن» انتقال بتن تازه با فشار از طریق لوله و بوم به محل قالب‌بندی است.
+  origin_lang: fr
+  references:
+  - &id015
+    type: standard
+    code: ACI 304R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C94
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ACI 309R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - a-ball
+  - back-strap
+  - batching
+  - concrete-beam
+  - vibrator
+  - jig-jigging
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: to-pump
 - id: concrete-beam
   term_fa: پوتر
@@ -456,7 +1413,43 @@ terms:
   domain:
   - construction
   definition_fa: تیر بتنی؛ عضوی سازه‌ای از بتن مسلح که بارهای وارده از سقف را به تکیه‌گاه‌ها (ستون یا دیوار) منتقل می‌کند و در اسکلت‌های بتنی پرکاربرد است.
-  status: draft
+  synonyms:
+  - تیر بتنی
+  - پوتیر
+  search_aliases:
+  - پوتر
+  - شاه‌تیر بتنی
+  usage_examples:
+  - لنگر خمشی بحرانی پوتر در میانهٔ دهانه و برش بحرانی در نزدیکی تکیه‌گاه است.
+  root_fa: پوتر
+  etymology_fa: «پوتر» وام‌واژه از فرانسوی poutre (تیر، شاه‌تیر) است که در فارسی فنی برای تیر بتنی یا فولادی به کار می‌رود؛ شکل «پوتیر» نیز دیده می‌شود.
+  origin_lang: fr
+  plural_fa: پوترها
+  references:
+  - *id008
+  - *id010
+  - type: standard
+    code: EN 1992-1-1
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id014
+  related_terms:
+  - armator
+  - bending
+  - bending-moment
+  - orlip
+  - pendant
+  - shear
+  - brick-block
+  - embedded-steel
+  - index-arrow
+  - john-is-plastered
+  - pillow
+  - to-pump
+  - zigzag
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: concrete-beam
 - id: sap-skin
   term_fa: پوست ساپ
@@ -468,7 +1461,29 @@ terms:
   domain:
   - construction
   definition_fa: سمباده؛ ورق یا پوستهٔ ساینده‌ای که برای صاف و پرداخت‌کردن سطوح چوبی، فلزی یا گچی به کار می‌رود.
-  status: draft
+  synonyms:
+  - سمباده
+  - کاغذ ساینده
+  search_aliases:
+  - پوست ساپ
+  - سنباده
+  usage_examples:
+  - سطح گچی پیش از رنگ‌آمیزی با سمبادهٔ شمارهٔ مناسب پرداخت شد.
+  root_fa: ساپ
+  etymology_fa: «ساپ» صورت کوتاه‌شدهٔ «سندپیپر» (sandpaper) است؛ «پوست ساپ» همان سمباده است که سطح آن با دانه‌های ساینده پوشانده شده است.
+  origin_lang: en
+  references:
+  - *id006
+  related_terms:
+  - facing
+  - isolation
+  - pistol
+  - shell
+  - john-is-plastered
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: sap-skin
 - id: shell
   term_fa: پوسته
@@ -479,8 +1494,33 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: روکش نازکی که روی آجرکاری یا سطوح مختلف ساختمان اجرا می‌شود و به‌عنوان پوشش محافظ یا سطح نهایی عمل می‌کند.
-  status: draft
+  definition_fa: روکش نازکی که روی گنبدها یا آجرکاری‌ها کشیده می‌شود و نقش پوشش محافظ یا سطح نهایی را دارد؛ این روکش می‌تواند از ماسه و سیمان، بتن یا مصالح مشابه باشد. در سازه، «پوسته» به عناصر نازک خمیدهٔ بتنی نیز گفته می‌شود.
+  synonyms:
+  - روکش
+  - قشر
+  usage_examples:
+  - پوستهٔ گنبد با ملات ماسه و سیمان کشیده شد تا از نفوذ آب جلوگیری شود.
+  root_fa: پوست
+  etymology_fa: از «پوست» و پسوند «ـه». واژه‌نامهٔ اصطلاحات آجری «پوسته» را «روکشی که روی گنبدها یا آجرکاری‌ها می‌کشند» تعریف می‌کند.
+  origin_lang: fa
+  references:
+  - *id008
+  - *id006
+  - *id003
+  related_terms:
+  - facing
+  - sailor
+  - sap-skin
+  - sealing
+  - two-piece
+  - exposure
+  - gallery
+  - john-is-plastered
+  - pistol
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: shell
 - id: pistol
   term_fa: پیستوله
@@ -492,23 +1532,71 @@ terms:
   domain:
   - construction
   definition_fa: دستگاه پاشندهٔ مواد مانند رنگ، ملات یا بتن پاششی که با فشار هوا مصالح را بر سطح می‌پاشد و برای پوشش‌دهی سریع سطوح بزرگ به کار می‌رود.
-  status: draft
+  synonyms:
+  - پیستولهٔ رنگ
+  - دستگاه پاشش
+  search_aliases:
+  - اسپری
+  - شات‌کریت
+  usage_examples:
+  - اندود نما با پیستوله و فشار هوا به‌طور یکنواخت پاشیده شد.
+  root_fa: پیستوله
+  etymology_fa: وام‌واژه از فرانسوی pistolet؛ در کارگاه به دستگاه پاشندهٔ رنگ، ملات یا بتن پاششی (شات‌کریت) گفته می‌شود.
+  origin_lang: fr
+  references:
+  - *id006
+  related_terms:
+  - facing
+  - sap-skin
+  - sealing
+  - shell
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: pistol
 - id: arch-crown
   term_fa: تاج قوس
   term_en: crown
-  term_fr:
+  term_fr: sommet de voûte
   term_de: Scheitel
   term_ar: تاج القوس
   pos: noun
   domain:
   - construction
   definition_fa: بالاترین نقطهٔ قوس یا طاق که در میانهٔ دهانه قرار دارد و بیشترین ضخامت را دارد؛ بارهای وارده از آنجا به دو سمت قوس منتقل می‌شوند.
-  status: draft
+  synonyms:
+  - تاج
+  - کلید قوس
+  search_aliases:
+  - تاج قوس
+  - کلید قوس
+  - تیزه
+  usage_examples:
+  - خیز قوس، فاصلهٔ عمودی میان تراز پاکار و تاج قوس اندازه‌گیری شد.
+  root_fa: تاج
+  etymology_fa: 'واژه‌نامهٔ اصطلاحات آجری «تاج» را «بالای قوس» و «تاج قوس» را «طرحی که در بالای تقاطع دو قوس زده می‌شود» تعریف می‌کند؛ پس این واژه دو حس دارد: نقطهٔ اوج ساختاری قوس و نقش تزئینی محل تقاطع دو قوس.'
+  origin_lang: fa
+  references:
+  - *id002
+  - *id003
+  related_terms:
+  - behind-the-arm
+  - clavicle-strap
+  - pakar
+  - rise-up
+  - semicircular-arch
+  - springing
+  - spur
+  - two-piece
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: arch-crown
 - id: to-darken
   term_fa: تاریک کردن
-  term_en: to darken
+  term_en: vault closing
   term_fr: assombrir
   term_de: verdunkeln
   term_ar: تغميق
@@ -516,7 +1604,28 @@ terms:
   domain:
   - construction
   definition_fa: پایان دادن به آجرکاری سقف یا سطح بنایی؛ مرحلهٔ آخر اجرا که با تکمیل رج‌ها و پر کردن فاصله‌ها کار به اتمام می‌رسد.
-  status: draft
+  synonyms:
+  - کور کردن
+  - مهر کردن
+  usage_examples:
+  - آجرکاری سقف با پرکردن فاصله‌های باقی‌مانده تاریک (کور) شد تا هیچ روزنهٔ نور باقی نماند.
+  root_fa: تاریک
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «تاریک کردن» را «آجرکاری سقف را به اتمام رسانیدن، به‌طوری که جلوی روشنایی گرفته شود» تعریف می‌کند و «کور کردن» و «مهر کردن» را هم‌معنی آن می‌داند.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id003
+  related_terms:
+  - boarding
+  - care
+  - masonry-course
+  - to-wander
+  - two-piece
+  - tizon
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: to-darken
 - id: boarding
   term_fa: تخته شدن
@@ -528,7 +1637,29 @@ terms:
   domain:
   - construction
   definition_fa: به پایان رساندن دیوارچینی و تکمیل رج‌های بالایی دیوار؛ مرحلهٔ اختتام بنایی که با تراز کردن آخرین رج انجام می‌شود.
-  status: draft
+  synonyms:
+  - تخت کردن
+  - رج آخر
+  usage_examples:
+  - پس از تخته‌شدن دیوار، کلاف بتنی روی آن اجرا شد.
+  root_fa: تخته
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «تخت کردن» را آجرکاری تا زیر سقف یا ردیف آخر آجرکاری دیوار تعریف می‌کند؛ «تخته شدن» پایان دیوارچینی و ترازکردن رج‌های بالایی است.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id003
+  related_terms:
+  - cap
+  - masonry-course
+  - reasoning
+  - to-darken
+  - vertical
+  - shriveled
+  - stiff-head
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: boarding
 - id: tamper
   term_fa: تخماق
@@ -540,7 +1671,39 @@ terms:
   domain:
   - construction
   definition_fa: کوبهٔ سنگین دستی یا مکانیکی برای متراکم کردن خاک، شن یا بتن تازه که با ضربات پی‌درپی موجب فشردگی مصالح می‌شود.
-  status: draft
+  synonyms:
+  - کوبه
+  - دستک کوبش
+  search_aliases:
+  - کوبه
+  - کوبهٔ دستی
+  - قورباغه‌ای
+  - کمپکتر
+  - دکمه‌گیر
+  usage_examples:
+  - لایه‌های خاک زیر کف در ضخامت مجاز ریخته و با تخماق کوبیده شد.
+  root_fa: تخماق
+  etymology_fa: «تخماق» واژه‌ای کهن (هم‌ریشه با ترکی tokmak/döğmek = کوبیدن) برای کوبهٔ سنگین است؛ واژه‌نامهٔ اصطلاحات کارگاهی آن را «کوبهٔ سنگین» تعریف می‌کند.
+  origin_lang: tr
+  plural_fa: تخماق‌ها
+  references:
+  - *id011
+  - type: standard
+    code: ASTM C192
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id012
+  related_terms:
+  - blockage
+  - hard-ground
+  - hit-the-ground
+  - jig-jigging
+  - vibrator
+  - countries
+  - frequency
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: tamper
 - id: traverse
   term_fa: تراورس
@@ -552,19 +1715,65 @@ terms:
   domain:
   - construction
   definition_fa: تخته‌های قطور و عریض که به‌صورت افقی روی تکیه‌گاه‌ها قرار می‌گیرند و برای پل کردن فاصله، توزیع بار یا ساخت سطح کارگاه استفاده می‌شوند.
-  status: draft
+  synonyms:
+  - تراورس چوبی
+  - تختهٔ پهن
+  usage_examples:
+  - تراورس‌های چوبی روی تکیه‌گاه‌ها پل کاری را برای بنایی طبقهٔ بالا فراهم کردند.
+  root_fa: تراورس
+  etymology_fa: وام‌واژه از فرانسوی traverse و انگلیسی traverse (چیز عرضی)؛ واژه‌نامهٔ اصطلاحات کارگاهی آن را «تخته‌های قطور و عریض» تعریف می‌کند که به‌صورت افقی روی تکیه‌گاه‌ها قرار می‌گیرند.
+  origin_lang: fr
+  references:
+  - &id016
+    type: standard
+    code: مبحث دوازدهم مقررات ملی ساختمان
+    note: ضوابط اجرایی و واژگان این مبحث با تعریف هم‌خوان است.
+  - *id006
+  - *id012
+  related_terms:
+  - back-strap
+  - care
+  - pendant
+  - pillow
+  - plate
+  - index-arrow
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: traverse
 - id: contact-him
   term_fa: تماسه
-  term_en: bonding tool
-  term_fr:
-  term_de:
-  term_ar:
+  term_en: header-stretcher bond
+  term_fr: appareil anglais
+  term_de: Kreuzverband
+  term_ar: رصف متبادل
   pos: noun
   domain:
   - construction
   definition_fa: وسیلهٔ اجرای دیوار با چیدمان کله‌راسته که در آن آجرها به‌طور متناوب با سطح کوچک و بزرگ به سمت بیرون چیده می‌شوند تا پیوستگی دیوار تأمین شود.
-  status: draft
+  synonyms:
+  - کله‌راسته
+  - خفته و راسته
+  usage_examples:
+  - دیوار باربر با چیدمان کله‌راسته اجرا شد تا پیوستگی عرضی میان رج‌ها تأمین گردد.
+  root_fa: تماسه
+  etymology_fa: واژه‌نامهٔ اصطلاحات کارگاهی «تماسه» را «وسیلهٔ اجرای دیوار کله‌راسته» تعریف می‌کند. واژه‌نامهٔ اصطلاحات آجری نیز «خفته و راسته» را آجرهایی می‌داند که یکی خوابیده و یکی ایستاده پهلوی هم قرار می‌گیرند. شناسهٔ این مدخل (contact-him) بازماندهٔ ترجمهٔ ماشینی نادرست است و به دلیل تغییرناپذیری نشانی‌ها حفظ شده است.
+  origin_lang: other
+  references:
+  - *id002
+  - *id005
+  - *id012
+  - *id003
+  related_terms:
+  - brick-block
+  - header-brick
+  - masonry-course
+  - zigzag-brickwork
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: contact-him
 - id: tension
   term_fa: تنش
@@ -575,12 +1784,50 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: نیروی کششی وارد بر واحد سطح مقطع یک عضو؛ تنش کششی که میلگردها در بتن عمدتاً آن را تحمل می‌کنند، زیرا مقاومت کششی خود بتن ناچیز است.
-  status: draft
+  definition_fa: نیروی کششی وارد بر واحد سطح مقطع یک عضو. به‌طور کلی‌تر «تنش» (stress) نیرو بر واحد سطح است و «تنش کششی» نوعی از آن است که در جهت طویل‌کردن عضو اثر می‌کند. مقاومت کششی بتن ناچیز است، پس تنش کششی عمدتاً توسط آرماتور تحمل می‌شود.
+  synonyms:
+  - تنش کششی
+  - کشش
+  antonyms:
+  - تنش فشاری
+  - فشار
+  search_aliases:
+  - تنش کششی
+  - کشش بتن
+  usage_examples:
+  - ترک‌های عمود بر محور تیر، نشانهٔ غلبهٔ تنش کششی است.
+  root_fa: تنش
+  etymology_fa: '«تنش» معادل مصوب فرهنگستان برای stress است. برخی واژه‌نامه‌های صنفی آن را به «تنیدن» نسبت داده‌اند که از نظر مهندسی نادرست است: در مهندسی، تنش نیرو بر واحد سطح است و این مدخل به‌طور خاص به تنش کششی (tension) می‌پردازد.'
+  origin_lang: fa
+  references:
+  - *id014
+  - *id008
+  - type: standard
+    code: EN 1992-1-1
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C1583
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - armator
+  - bending-moment
+  - fatigue
+  - modulus-of-elasticity
+  - shear
+  - strain
+  - bending
+  - elasticity
+  - force
+  - friction
+  - retaining-wall
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: tension
 - id: get-stuck
   term_fa: تنگ افتادن
-  term_en: to get stuck
+  term_en: to jam
   term_fr: se coincer
   term_de: einklemmen
   term_ar: يعلق
@@ -588,7 +1835,26 @@ terms:
   domain:
   - construction
   definition_fa: درگیر شدن و مهار شدن یک عضو در برابر حرکت؛ در اجرا به گیر کردن قالب یا قطعه در ملات و در رفتار سازه‌ای به مهار جانبی عضو گفته می‌شود.
-  status: draft
+  synonyms:
+  - گیر افتادن
+  - مهار شدن
+  usage_examples:
+  - قالب در ملات تنگ افتاد و بدون اهرم بیرون نمی‌آمد.
+  root_fa: تنگ
+  etymology_fa: واژه‌نامهٔ اصطلاحات کارگاهی «تنگ افتادن» را «درگیر شدن و مهار شدن» تعریف می‌کند؛ در اجرا به گیرکردن قالب یا قطعه در ملات و در رفتار سازه‌ای به مهار جانبی عضو گفته می‌شود.
+  origin_lang: fa
+  references:
+  - *id006
+  - *id012
+  related_terms:
+  - back-strap
+  - overwhelmed
+  - stiff-head
+  - vertical
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: get-stuck
 - id: a-ball
   term_fa: توپی
@@ -599,8 +1865,30 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: قطعهٔ کروی پلاستیکی یا فلزی که به‌عنوان فاصله‌نگهدار، مهارکننده یا بخشی از اتصالات به کار می‌رود.
-  status: draft
+  definition_fa: 'قطعهٔ کروی پلاستیکی، لاستیکی یا فلزی که در کارگاه چند کاربرد دارد: توپ پاک‌کنندهٔ لولهٔ پمپ بتن که با فشار هوا درون لوله رانده می‌شود، فاصله‌نگهدار یا مهارکننده در اتصالات، و در گفتار صنفی به هر قطعهٔ کروی نیز گفته می‌شود.'
+  synonyms:
+  - گوی
+  - توپک
+  search_aliases:
+  - توپی پمپ
+  - توپ پاک‌کننده
+  usage_examples:
+  - پیش از پایان پمپاژ، توپی پاک‌کننده درون لولهٔ بوم رانده شد.
+  root_fa: توپ
+  etymology_fa: «توپی» از «توپ» و پسوند نسبت «ی». واژه‌نامهٔ اصطلاحات کارگاهی آن را «شیء کروی پلاستیک» تعریف می‌کند.
+  origin_lang: fa
+  references:
+  - *id015
+  - *id012
+  related_terms:
+  - pillow
+  - pin
+  - the-vault
+  - to-pump
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: a-ball
 - id: fancy-lace
   term_fa: توری فنسی
@@ -612,7 +1900,28 @@ terms:
   domain:
   - construction
   definition_fa: کلاف‌بندی مشبک از مفتول‌های نازک نرم (۲ و ۳ میلی‌متری) که در حصارکشی، نگهداری مصالح و تقویت سبک سطوح به کار می‌رود.
-  status: draft
+  synonyms:
+  - توری مشبک
+  - فنس
+  search_aliases:
+  - توری فنسی
+  - توری سیمی
+  usage_examples:
+  - محوطهٔ کارگاه با توری فنسی حصارکشی شد و مصالح انبارشده با آن محافظت گردید.
+  root_fa: توری
+  etymology_fa: واژه‌نامهٔ اصطلاحات کارگاهی «توری فنسی» را «کلاف‌بندی مشبک از مفتول‌های نازک نرم (۲ و ۳ میلی‌متری)» تعریف می‌کند که به‌دلیل چشمه‌های لوزی‌شکل، «توری لوزی» نیز خوانده می‌شود.
+  origin_lang: other
+  references:
+  - *id016
+  - *id012
+  related_terms:
+  - a-basket
+  - wire-reinforcement
+  - zigzag
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: fancy-lace
 - id: index-arrow
   term_fa: تیر شاخص
@@ -624,19 +1933,77 @@ terms:
   domain:
   - construction
   definition_fa: تیر شاخص؛ عضو عمودی میانهٔ خرپا که از گره بالایی به گره پایینی می‌رسد و بار را به تیر پایین منتقل می‌کند.
-  status: draft
+  synonyms:
+  - شاخص خرپا
+  - عضو قائم خرپا
+  search_aliases:
+  - خرپای شاه‌تیری
+  usage_examples:
+  - در خرپای شاه‌تیری، تیر شاخص نیروی گره میانی را به تیر بالایی منتقل می‌کند.
+  root_fa: شاخص
+  etymology_fa: «شاخص» در فارسی به چیزی گفته می‌شود که برجسته و نمایان باشد؛ «تیر شاخص» عضو قائم میانهٔ خرپاست و معادل انگلیسی آن king post است. ترجمهٔ آلمانی آن در این بازبینی راستی‌آزمایی نشد و عمداً تهی مانده است.
+  origin_lang: fa
+  references:
+  - type: book
+    code: هیبی — مکانیک مهندسی
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - *id013
+  related_terms:
+  - bending-moment
+  - concrete-beam
+  - traverse
+  - zigzag
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: index-arrow
 - id: tizon
   term_fa: تیزون
-  term_en: quick-setting
-  term_fr:
-  term_de:
+  term_en: quick-setting admixture
+  term_fr: accélérateur de prise
+  term_de: Erstarrungsbeschleuniger
   term_ar: شديد التصلب
   pos: noun
   domain:
   - construction
   definition_fa: مواد یا افزودنی پرگیر و زودگیر که زمان گرفتن ملات یا بتن را کوتاه می‌کند و برای کارهای ترمیمی و اجرا در هوای سرد به کار می‌رود.
-  status: draft
+  synonyms:
+  - زودگیر
+  - شتاب‌دهندهٔ گیرش
+  - پرگیر
+  antonyms:
+  - کندگیر
+  search_aliases:
+  - تیزاب
+  usage_examples:
+  - برای ترمیم فوری و بتن‌ریزی در هوای سرد، از افزودنی زودگیر مطابق استاندارد استفاده شد.
+  root_fa: تیز
+  etymology_fa: «تیزون» از «تیز» و پسوند «ـون»؛ در کارگاه به مواد یا افزودنی پرگیر و زودگیر گفته می‌شود که زمان گیرش ملات یا بتن را کوتاه می‌کند. معادل هنجاری آن در استانداردهای افزودنی، شتاب‌دهنده (accelerator) است.
+  origin_lang: fa
+  references:
+  - type: standard
+    code: ASTM C494
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: EN 934-2
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ACI 306R
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C403
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - batching
+  - control
+  - sealing
+  - siman
+  - to-darken
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: tizon
 - id: blade
   term_fa: تیغه
@@ -648,43 +2015,150 @@ terms:
   domain:
   - construction
   definition_fa: تیغه؛ دیوار نازک جداکننده که باربر نیست و برای تقسیم فضاها به کار می‌رود؛ معمولاً از آجر تیغه‌ای یا پانل‌های پیش‌ساخته ساخته می‌شود.
-  status: draft
+  synonyms:
+  - دیوار تیغه‌ای
+  - دیوار جداکننده
+  search_aliases:
+  - تیغه چینی
+  - تیغهٔ آجری
+  usage_examples:
+  - تیغهٔ جداکننده با آجر سوراخ‌دار اجرا و به سازهٔ اصلی مهار شد.
+  root_fa: تیغه
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «تیغه» را «دیوار شش‌سانتی‌متری که واسطهٔ دو فضا باشد» و «دیوار نازک و جداکننده» تعریف می‌کند؛ تیغه باربر نیست و باید به سازه مهار شود.
+  origin_lang: fa
+  plural_fa: تیغه‌ها
+  references:
+  - *id002
+  - *id006
+  - *id003
+  related_terms:
+  - affiliation
+  - masonry-course
+  - pier
+  - ripe
+  - jan-panah
+  - retaining-wall
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: blade
 - id: jan-panah
   term_fa: جان پناه
   term_en: parapet
   term_fr: parapet
   term_de: Brüstung
-  term_ar:
+  term_ar: سترة
   pos: noun
   domain:
   - construction
   definition_fa: دیوارک محافظ جلوی بالکن یا اطراف بام که از سقوط افراد جلوگیری می‌کند و حداقل ارتفاع آن در مقررات ملی ساختمان تعیین شده است.
-  status: draft
+  synonyms:
+  - دست‌انداز
+  - دیوارک بام
+  search_aliases:
+  - درابزین
+  - حفاظ بام
+  usage_examples:
+  - حداقل ارتفاع جان‌پناه بام قابل استفاده در مقررات ملی ساختمان تعیین شده است.
+  root_fa: جان
+  etymology_fa: «جان‌پناه» ترکیبی فارسی به معنای پناهگاه جان است. واژه‌نامهٔ اصطلاحات آجری آن را «دست‌انداز لبهٔ بام» و «دست‌انداز» را لبهٔ ایوان، بام یا پله‌ها تعریف می‌کند.
+  origin_lang: fa
+  plural_fa: جان‌پناه‌ها
+  references:
+  - *id016
+  - *id017
+  - *id006
+  - *id003
+  related_terms:
+  - blade
+  - cap
+  - shriveled
+  - stiff-head
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  translation_notes:
+    ar: «سترة» معادل متداول عربی برای جان‌پناه/حفاظ بام است؛ در متون عربی «حاجز» و «درابزين» هم به کار می‌رود.
   slug: jan-panah
 - id: john-is-plastered
   term_fa: جان گچ گرفته شده
-  term_en: gypsum-coated iron
-  term_fr:
-  term_de:
-  term_ar:
+  term_en: gypsum-encased steel
+  term_fr: acier enrobé de plâtre
+  term_de: gipsummantelter Stahl
+  term_ar: حديد مكسو بالجبس
   pos: noun
   domain:
   - construction
-  definition_fa: عضو فلزی (جان) که با گچ پوشانده شده است؛ پوشش گچ از خوردگی و تماس مستقیم آهن با عوامل مخرب جلوگیری می‌کند.
-  status: draft
+  definition_fa: عضوی فولادی (معمولاً جان تیرآهن یا پروفیل) که با پوشش گچ محافظت شده است؛ پوشش گچ علاوه بر جلوگیری از تماس مستقیم فولاد با عوامل مخرب و خوردگی، به‌دلیل آبِ تبلور خود مقاومت عضو را در برابر آتش افزایش می‌دهد.
+  synonyms:
+  - آهن گچ‌پوش
+  - فولاد گچ‌اندود
+  search_aliases:
+  - جان گچ گرفته
+  usage_examples:
+  - جان تیرآهن با گچ پوشانده شد تا هم در برابر خوردگی و هم در برابر آتش محافظت شود.
+  root_fa: جان
+  etymology_fa: «جان» در فارسی فنی به جان (web) مقطع فولادی گفته می‌شود؛ «جان گچ گرفته» عضوی است که جان آن با گچ پوشانده شده باشد. این اصطلاح در واژه‌نامه‌های هنجاری معادل مصوب خارجی ندارد، پس ترجمه‌های آن توصیفی ثبت شده‌اند. شناسهٔ این مدخل بازماندهٔ ترجمهٔ ماشینی نادرست است و به دلیل تغییرناپذیری نشانی‌ها حفظ شده است.
+  origin_lang: fa
+  references:
+  - *id013
+  - *id006
+  - *id016
+  related_terms:
+  - concrete-beam
+  - embedded-steel
+  - plate
+  - sap-skin
+  - shell
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  translation_notes:
+    fr: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
+    de: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
+    ar: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
   slug: john-is-plastered
 - id: pier
   term_fa: جرز
   term_en: pier
-  term_fr:
+  term_fr: pilier
   term_de: Pfeiler
   term_ar: دعامة
   pos: noun
   domain:
   - construction
   definition_fa: جرز؛ دیوار یا پایهٔ ضخیم باربری که بار طبقات یا طاق را به پی منتقل می‌کند و معمولاً در دو سمت درگاه‌ها و دهانه‌ها قرار دارد.
-  status: draft
+  synonyms:
+  - ستون بنایی
+  - پایهٔ باربر
+  usage_examples:
+  - جرز دو طرف درگاه، بار طاق را به پی منتقل می‌کند و نباید نازک‌تر از حد آیین‌نامه باشد.
+  root_fa: جرز
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «جرز» را «دیوار یا پایهٔ ضخیمی که باربر باشد» تعریف می‌کند؛ جرز معمولاً در دو سمت درگاه‌ها و دهانه‌ها قرار دارد و بار طبقات یا طاق را به پی منتقل می‌کند.
+  origin_lang: fa
+  plural_fa: جرزها
+  references:
+  - *id002
+  - *id005
+  - *id003
+  related_terms:
+  - cap
+  - corner-brick
+  - pakar
+  - springing
+  - spur
+  - basket
+  - blade
+  - pillow
+  - retaining-wall
+  - ripe
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: pier
 - id: zigzag-brickwork
   term_fa: جُوَک
@@ -696,7 +2170,28 @@ terms:
   domain:
   - construction
   definition_fa: نوعی آجرکاری که رج‌ها یا قطعات به‌صورت کنگره‌ای و زیگزاگ چیده می‌شوند و علاوه بر نقش معماری، پیوستگی و قفل‌شدگی بهتری میان آجرها ایجاد می‌کند.
-  status: draft
+  synonyms:
+  - جوک
+  - خرند جناغی
+  search_aliases:
+  - جُوَک
+  usage_examples:
+  - نمای حیاط با آجرکاری جوک و بندکشی یکنواخت اجرا شد.
+  root_fa: جوک
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «جوک» را «نوعی آجرکاری زیگزاگ» و «خرند جناغی» را چیدن آجر به شکل هفت و هشت تعریف می‌کند.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id003
+  related_terms:
+  - contact-him
+  - facing
+  - masonry-course
+  - zigzag
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: zigzag-brickwork
 - id: quarter
   term_fa: چارک
@@ -708,7 +2203,28 @@ terms:
   domain:
   - construction
   definition_fa: قطعه‌ای برابر یک‌چهارم آجر چهارگوش یا نصف آجر قزاقی که برای پر کردن فاصله‌ها و تنظیم چیدمان رج در بنایی استفاده می‌شود.
-  status: draft
+  synonyms:
+  - چارک
+  - چهار یک
+  - کلوک
+  usage_examples:
+  - برای تنظیم رج‌چینی، آجر کامل به چهار چارک تقسیم شد.
+  root_fa: چارک
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «چارک یا چهار یک» و «کلوک» را هر دو یک‌چهارم آجر کامل تعریف می‌کند؛ این قطعه برای پرکردن فاصله‌ها و تکمیل رج به کار می‌رود.
+  origin_lang: fa
+  references:
+  - *id001
+  - *id003
+  related_terms:
+  - clavicle-strap
+  - four-dang
+  - square-brick
+  - three-quarter-brick
+  - broken-brick
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: quarter
 - id: blind-well
   term_fa: چاه کور
@@ -720,7 +2236,31 @@ terms:
   domain:
   - construction
   definition_fa: چاهی که محل آن در سطح زیر بنا و اطراف پی مشخص نیست و به‌دلیل پوشیده شدن، خطر نشست موضعی پی را ایجاد می‌کند؛ شناسایی و پر کردن آن پیش از اجرا الزامی است.
-  status: draft
+  synonyms:
+  - چاه پرشده
+  - چاه پنهان
+  usage_examples:
+  - چاه کور حیاط پیش از گودبرداری شناسایی و با مصالح دانه‌ای متراکم پر شد.
+  root_fa: چاه
+  etymology_fa: «کور» در فارسی به معنای نابینا و پوشیده است؛ «چاه کور» چاهی است که دهانهٔ آن پوشیده و محل آن در سطح زیر بنا مشخص نیست و خطر نشست موضعی پی را ایجاد می‌کند.
+  origin_lang: fa
+  references:
+  - *id011
+  - *id016
+  related_terms:
+  - brackish-soil
+  - drop
+  - sealing
+  - the-well
+  - wheel-well
+  - cesspool-tank
+  - hard-ground
+  - isolation
+  - septic-tank
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: blind-well
 - id: the-well
   term_fa: چاهک
@@ -732,7 +2272,29 @@ terms:
   domain:
   - construction
   definition_fa: چاهک یا محفظهٔ عمودی با ارتفاع محدود که برای دسترسی به تأسیسات، زهکشی یا بازرسی در زیر بنا یا حیاط ساخته می‌شود.
-  status: draft
+  synonyms:
+  - چاهک
+  - محفظهٔ عمودی
+  usage_examples:
+  - چاهک بازرسی تأسیسات با درپوش فلزی و دسترسی از کف حیاط اجرا شد.
+  root_fa: چاه
+  etymology_fa: «چاهک» تصغیر «چاه» است؛ در ساختمان به محفظهٔ عمودی با ارتفاع محدود برای دسترسی به تأسیسات، زهکشی یا بازرسی گفته می‌شود.
+  origin_lang: fa
+  plural_fa: چاهک‌ها
+  references:
+  - *id011
+  - *id006
+  related_terms:
+  - blind-well
+  - gallery
+  - septic-tank
+  - wheel-well
+  - cesspool-tank
+  - riser
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: the-well
 - id: wheel-well
   term_fa: چرخ چاه
@@ -744,7 +2306,24 @@ terms:
   domain:
   - construction
   definition_fa: سازهٔ چرخشی در پایهٔ چاه که با چرخاندن آن آب از خزانه بالا کشیده می‌شود؛ از قطعات چوبی یا فلزی ساخته می‌شد و برای انتقال آب به کار می‌رفت.
-  status: draft
+  synonyms:
+  - چرخ آبکشی
+  - محالهٔ چاه
+  usage_examples:
+  - چرخ چاه قدیمی حیاط با تیر چوبی و قرقره، آب را از خزانه بالا می‌کشید.
+  root_fa: چرخ
+  etymology_fa: «چرخ چاه» سازهٔ چرخشی است که با چرخاندن آن آب از چاه بالا کشیده می‌شود؛ از چوب یا فلز ساخته می‌شد.
+  origin_lang: fa
+  references:
+  - *id011
+  - *id006
+  related_terms:
+  - blind-well
+  - the-well
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: wheel-well
 - id: four-dang
   term_fa: چهار دنگ
@@ -756,11 +2335,31 @@ terms:
   domain:
   - construction
   definition_fa: قطعه‌ای برابر سه‌چهارم آجر چهارگوش که برای پر کردن فاصله‌ها و تکمیل چیدمان رج در بنایی به کار می‌رود؛ «دنگ» یکای سنتی تقسیم آجر است.
-  status: draft
+  synonyms:
+  - چهاردنگ
+  - چار دانگ
+  - آجر سه‌چهارم
+  usage_examples:
+  - در رج‌چینی سنتی، قطعهٔ چهار دنگ برای بستن دهانهٔ باقی‌مانده به کار می‌رفت.
+  root_fa: دنگ
+  etymology_fa: «دنگ» یکای سنتی تقسیم آجر است. واژه‌نامهٔ اصطلاحات آجری «چهار دانگ» را «سه قسمت از چهار قسمت آجر» تعریف می‌کند، یعنی سه‌چهارم آجر؛ این مقدار در همین بازبینی با منبع راستی‌آزمایی شد. معادل خارجی ندارد، زیرا یکای آن مخصوص بنایی سنتی ایران است.
+  origin_lang: fa
+  references:
+  - *id001
+  - *id003
+  related_terms:
+  - broken-brick
+  - quarter
+  - square-brick
+  - three-quarter-brick
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: four-dang
 - id: affiliation
   term_fa: الحاق
-  term_en: Affiliation
+  term_en: affiliation
   term_fr: Affiliation
   term_de: Zugehörigkeit
   term_ar: انتساب
@@ -768,7 +2367,27 @@ terms:
   domain:
   - construction
   definition_fa: پیوستگی و اتصال یک عضو یا سطح به عضو دیگر؛ در بنایی به چسبیدن دیوار تیغه‌ای به دیوار اصلی یا اتصال بخش الحاقی به بدنهٔ سازه گفته می‌شود.
-  status: draft
+  synonyms:
+  - الحاق
+  - پیوستگی
+  usage_examples:
+  - الحاق دیوار تیغه‌ای به دیوار باربر باید با اتصال فلزی یا پیوستگی ملات انجام شود.
+  root_fa: الحاق
+  root_ar: ل-ح-ق
+  etymology_fa: «الحاق» وام‌واژهٔ عربی از ریشهٔ «ل-ح-ق» (پیوستن) است؛ در بنایی به چسبیدن دیوار تیغه‌ای به دیوار اصلی و در سازه به اتصال بخش الحاقی به بدنه گفته می‌شود.
+  origin_lang: ar
+  references:
+  - *id002
+  - *id006
+  related_terms:
+  - blade
+  - isolated
+  - ripe
+  - sealing
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: affiliation
 - id: brackish-soil
   term_fa: خاک شوره
@@ -779,8 +2398,36 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: خاک‌های نمکی و شور که به‌دلیل وجود املاح محلول برای پی‌سازی مشکل‌سازند و در تماس با بتن و فولاد می‌توانند موجب خوردگی و تخریب تدریجی سازه شوند.
-  status: draft
+  definition_fa: خاک‌های نمکی و شور که به‌دلیل وجود املاح محلول (به‌ویژه سولفات و کلرید) برای پی‌سازی مشکل‌سازند؛ در تماس با بتن و فولاد می‌توانند موجب حملهٔ شیمیایی، خوردگی آرماتور و تخریب تدریجی سازه شوند و نیاز به سیمان مقاوم یا حفاظت ویژه دارند.
+  synonyms:
+  - خاک شور
+  - زمین شوره‌زار
+  search_aliases:
+  - خاک شوره
+  usage_examples:
+  - به‌دلیل سولفات‌دار بودن خاک، از سیمان مقاوم در برابر سولفات استفاده شد.
+  root_fa: شوره
+  etymology_fa: «شوره» به نمک و املاح سطح زمین گفته می‌شود؛ ترکیب آن با «خاک» نوع خاک مشکل‌ساز را می‌سازد.
+  origin_lang: fa
+  references:
+  - *id009
+  - *id011
+  - type: standard
+    code: ASTM C1202
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - blind-well
+  - hard-ground
+  - hit-the-ground
+  - lime-bloom
+  - siman
+  - exposure
+  - retaining-wall
+  - silt
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: brackish-soil
 - id: shriveled
   term_fa: خرپشته
@@ -792,11 +2439,29 @@ terms:
   domain:
   - construction
   definition_fa: سرپناه یا دیوارک روی پلهٔ بام که از سقوط افراد جلوگیری می‌کند و هم‌زمان پوشش خروجی راه‌پله در پشت‌بام است.
-  status: draft
+  synonyms:
+  - خرپشتهٔ پله
+  - سرپناه پله
+  usage_examples:
+  - خرپشتهٔ پلهٔ بام هم از سقوط جلوگیری می‌کند و هم خروجی راه‌پله را می‌پوشاند.
+  root_fa: خرپشته
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «خرپشته» را «سرپناه پلهٔ روی بام» تعریف می‌کند. شناسهٔ این مدخل (shriveled) بازماندهٔ ترجمهٔ ماشینی نادرست است و به دلیل تغییرناپذیری نشانی‌ها حفظ شده است.
+  origin_lang: fa
+  references:
+  - *id016
+  - *id003
+  related_terms:
+  - boarding
+  - cap
+  - jan-panah
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: shriveled
 - id: the-vault
   term_fa: خرک
-  term_en: rebar spacer
+  term_en: rebar chair
   term_fr: écarteur d'armature
   term_de: Abstandhalter
   term_ar: مباعد حديد التسليح
@@ -804,7 +2469,34 @@ terms:
   domain:
   - construction
   definition_fa: خرک؛ قطعهٔ فاصله‌نگهدار که برای نگه‌داشتن میلگردهای مش فوقانی فونداسیون در ارتفاع مشخص به کار می‌رود و خود با میلگرد ساخته می‌شود.
-  status: draft
+  synonyms:
+  - خرک
+  - فاصله‌نگهدار میلگرد
+  search_aliases:
+  - خرک آرماتور
+  usage_examples:
+  - میلگردهای مش فوقانی فونداسیون با خرک در تراز طراحی نگه داشته شدند.
+  root_fa: خرک
+  etymology_fa: «خرک» در فارسی به پایهٔ چنگال‌مانند گفته می‌شود؛ در بتن مسلح قطعه‌ای است که از میلگرد ساخته می‌شود و مش فوقانی را در ارتفاع طراحی نگه می‌دارد. معادل دقیق انگلیسی آن rebar chair است (نه rebar spacer که واژه‌ای عام‌تر است). شناسهٔ این مدخل (the-vault) بازماندهٔ ترجمهٔ ماشینی نادرست است و حفظ شده است.
+  origin_lang: fa
+  references:
+  - *id008
+  - *id010
+  - type: standard
+    code: ACI 301
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - a-basket
+  - armator
+  - orlip
+  - pin
+  - wire-reinforcement
+  - a-ball
+  - f-bar-bender
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: the-vault
 - id: draw-a-line
   term_fa: خط کردن
@@ -816,7 +2508,31 @@ terms:
   domain:
   - construction
   definition_fa: خط کردن؛ نشان‌گذاری سطح با ریسمان رنگی یا خط‌کش برای تعیین تراز، راستای دیوار یا محل چیدن رج‌ها پیش از شروع بنایی.
-  status: draft
+  synonyms:
+  - خط‌کشی
+  - ریسمان‌کشی
+  search_aliases:
+  - خط کردن
+  - ریسمان رنگی
+  usage_examples:
+  - پیش از شروع بنایی، راستای دیوار با ریسمان رنگی روی کف علامت‌گذاری شد.
+  root_fa: خط
+  root_ar: خ-ط-ط
+  etymology_fa: «خط» وام‌واژهٔ عربی از ریشهٔ «خ-ط-ط» است؛ «خط کردن» در کارگاه به نشان‌گذاری سطح با ریسمان رنگی یا خط‌کش گفته می‌شود. واژه‌نامهٔ اصطلاحات آجری «خط بنایی» را نوعی آجرکاری تزئینی با خطوط راست و زاویه‌دار تعریف می‌کند که با آن تفاوت دارد.
+  origin_lang: ar
+  references:
+  - *id006
+  - *id002
+  - *id003
+  related_terms:
+  - masonry-course
+  - reasoning
+  - to-wander
+  - vertical
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: draw-a-line
 - id: bending
   term_fa: خمش
@@ -828,7 +2544,33 @@ terms:
   domain:
   - construction
   definition_fa: تغییر شکل عضو سازه‌ای تحت اثر لنگر خمشی که موجب کوتاهش الیاف یک سمت و کشیدگی الیاف سمت دیگر می‌شود؛ خمش اصلی‌ترین حالت باربری در تیرها و دال‌ها است.
-  status: draft
+  synonyms:
+  - خمش
+  - انحنا
+  usage_examples:
+  - در خمش، الیاف یک سمت مقطع کوتاه و الیاف سمت دیگر کشیده می‌شوند و در محور خنثی تنش صفر است.
+  root_fa: خم
+  etymology_fa: «خمش» از «خم» و پسوند اسم مصدر «ـش»؛ حالت باربری غالب در تیرها و دال‌ها است.
+  origin_lang: fa
+  references:
+  - *id014
+  - *id008
+  - type: standard
+    code: ASTM C78
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - bending-moment
+  - concrete-beam
+  - rise-up
+  - shear
+  - strain
+  - tension
+  - drop
+  - elasticity
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: bending
 - id: rise-up
   term_fa: خیز
@@ -840,19 +2582,70 @@ terms:
   domain:
   - construction
   definition_fa: خیز یا ارتفاع قوس؛ فاصلهٔ عمودی میان تراز شروع قوس و بالاترین نقطهٔ آن که نسبت آن به دهانه، نوع قوس را تعیین می‌کند.
-  status: draft
+  synonyms:
+  - خیز قوس
+  - ارتفاع قوس
+  antonyms:
+  - دهانه
+  usage_examples:
+  - خیز قوس جناغی نسبت به دهانهٔ آن از مقدار قوس نیم‌دایره بیشتر است.
+  root_fa: خیز
+  etymology_fa: '«خیز» از «خاستن»؛ نسبت خیز به دهانه، نوع قوس را تعیین می‌کند: در قوس نیم‌دایره خیز برابر شعاع و در قوس جناغی بیشتر است.'
+  origin_lang: fa
+  references:
+  - *id002
+  - *id005
+  - *id003
+  related_terms:
+  - arch-crown
+  - bending
+  - drop
+  - semicircular-arch
+  - springing
+  - pakar
+  - spur
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: rise-up
 - id: hard-ground
   term_fa: دج
   term_en: hard ground
-  term_fr:
-  term_de:
+  term_fr: sol dur
+  term_de: fester Untergrund
   term_ar: أرض صلبة
   pos: noun
   domain:
   - construction
   definition_fa: زمین سخت و متراکم با ظرفیت باربری مناسب که نیاز به تقویت یا تعویض خاک ندارد و می‌توان پی را مستقیماً روی آن اجرا کرد.
-  status: draft
+  synonyms:
+  - دج سرخ
+  - زمین متراکم
+  usage_examples:
+  - پس از کف‌برداری، زمین از نوع دج بود و پی مستقیماً روی آن اجرا شد.
+  root_fa: دج
+  etymology_fa: «دج» در اصطلاح کارگاهی به زمین سخت و متراکم با ظرفیت باربری مناسب گفته می‌شود؛ در واژه‌نامه‌های صنفی «دج سرخ» نیز آمده و برای ساختمان مرغوب شمرده شده است. چون یک اصطلاح محلی است، معادل خارجی مصوب ندارد و ترجمه‌های فرانویسی و آلمانی توصیفی‌اند.
+  origin_lang: other
+  references:
+  - *id011
+  - *id012
+  related_terms:
+  - blind-well
+  - blockage
+  - brackish-soil
+  - cumin
+  - hit-the-ground
+  - drop
+  - silt
+  - tamper
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  translation_notes:
+    fr: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
+    de: معادل توصیفی؛ سرِواژهٔ مصوب این زبان برای این اصطلاح راستی‌آزمایی نشد.
   slug: hard-ground
 - id: cap
   term_fa: درپوش
@@ -864,7 +2657,33 @@ terms:
   domain:
   - construction
   definition_fa: پوشش بالایی دیوار آجری که از نفوذ آب به بدنهٔ دیوار جلوگیری می‌کند و با ملات یا قطعات پیش‌ساخته روی رج آخر اجرا می‌شود.
-  status: draft
+  synonyms:
+  - کاپینگ
+  - پوشش تاج دیوار
+  usage_examples:
+  - درپوش دیوار حیاط با قطعات پیش‌ساخته اجرا شد تا آب باران به بدنهٔ آجری نفوذ نکند.
+  root_fa: درپوش
+  etymology_fa: «درپوش» از «در» (به معنِ روی/بر) و «پوش». واژه‌نامهٔ اصطلاحات آجری آن را «قسمتی که روی دیوار آجری یا دیوارهای دیگر می‌سازند» تعریف می‌کند و نقش اصلی آن جلوگیری از نفوذ آب به بدنهٔ دیوار است.
+  origin_lang: fa
+  plural_fa: درپوش‌ها
+  references:
+  - *id002
+  - *id006
+  - *id003
+  related_terms:
+  - jan-panah
+  - pier
+  - sealing
+  - shriveled
+  - basket
+  - boarding
+  - bullnose-brick
+  - exposure
+  - lime-bloom
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: cap
 - id: reasoning
   term_fa: دلیل گذاری
@@ -876,7 +2695,27 @@ terms:
   domain:
   - construction
   definition_fa: رج استاد یا رج اصولی که به‌عنوان مرجع تراز و راستایی برای چیدن رج‌های بعدی دیوار اجرا می‌شود و دقت بنایی را تضمین می‌کند.
-  status: draft
+  synonyms:
+  - رج استاد
+  - رج اصولی
+  usage_examples:
+  - رج استاد (دلیل‌گذاری) مبنای تراز و راستایی همهٔ رج‌های بعدی دیوار است.
+  root_fa: رج
+  etymology_fa: شناسهٔ این مدخل (reasoning) بازماندهٔ یک ترجمهٔ ماشینی نادرست است و به دلیل تغییرناپذیری نشانی‌ها حفظ شده؛ «رج استاد» رج مرجعی است که تراز و راستایی رج‌های بعدی از آن گرفته می‌شود.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id006
+  related_terms:
+  - boarding
+  - draw-a-line
+  - masonry-course
+  - vertical
+  - passing
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: reasoning
 - id: two-piece
   term_fa: دوپوش
@@ -888,7 +2727,27 @@ terms:
   domain:
   - construction
   definition_fa: گنبد یا پوششی که با یک سقف یا پوستهٔ اضافه پوشانده شده باشد؛ ساختاری دوپوسته که فضای میانی آن نقش عایق را ایفا می‌کند.
-  status: draft
+  synonyms:
+  - گنبد دوپوش
+  - دوپوسته
+  usage_examples:
+  - گنبد دوپوش با فضای میانی، هم عایق حرارتی است و هم بار پوستهٔ بیرونی را جدا می‌کند.
+  root_fa: پوش
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «دوپوش» را گنبدی تعریف می‌کند که یک سقف در زیر و یک سقف در بالا دارد و فضایی میان این دو به وجود می‌آید؛ این فضای میانی نقش عایق و سازه‌ای دارد.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id003
+  related_terms:
+  - arch-crown
+  - behind-the-arm
+  - semicircular-arch
+  - shell
+  - to-darken
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: two-piece
 - id: countries
   term_fa: دول
@@ -899,8 +2758,32 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: سطل بنایی که برای حمل ملات، آب یا مصالح به کار می‌رود و معمولاً فلزی یا پلاستیکی با دستهٔ محکم است.
-  status: draft
+  definition_fa: 'این واژه در منابع دو حس دارد: (۱) در گفتار کارگاهی، «دول» صورت محلی «دلو» است و به سطل بنایی گفته می‌شود که برای حمل ملات، آب یا مصالح به کار می‌رود و معمولاً فلزی یا پلاستیکی با دستهٔ محکم است؛ (۲) در بنایی سنتی، «دوال» به برجستگی‌هایی گفته می‌شود که مانند طاقچه بر بدنهٔ دیوار می‌ساختند. هر دو حس در این مدخل نگه داشته شده‌اند.'
+  synonyms:
+  - دلو بنایی
+  - سطل ملات
+  - دوال
+  search_aliases:
+  - دول
+  usage_examples:
+  - ملات با دول (سطل بنایی) به طبقهٔ بالا برده شد.
+  root_fa: دول
+  root_ar: د-ل-و
+  etymology_fa: «دول/دلو» از عربی «دلو» به معنای سطل آب است؛ «دوال» در واژه‌نامهٔ اصطلاحات آجری به برجستگی‌های طاقچه‌مانند روی بدنهٔ دیوار گفته می‌شود. داده‌های پیشین پروژه این مدخل را با معنای نخست ثبت کرده بودند و در این بازبینی، حس دوم نیز مستند شد. شناسهٔ مدخل (countries) بازماندهٔ ترجمهٔ ماشینی نادرست است و حفظ شده است.
+  origin_lang: ar
+  references:
+  - *id006
+  - *id012
+  - *id003
+  related_terms:
+  - basket
+  - pillow
+  - pointing-mortar
+  - tamper
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: countries
 - id: retaining-wall
   term_fa: دیوار حائل
@@ -912,11 +2795,39 @@ terms:
   domain:
   - construction
   definition_fa: دیوار حائل؛ سازه‌ای که برای نگه‌داشتن خاک یا مصالح پشت خود در برابر نیروی جانبی آن‌ها طراحی می‌شود و در گودبرداری‌ها، شیب‌ها و اطراف ساختمان کاربرد دارد.
-  status: draft
+  synonyms:
+  - دیوار نگهبان
+  - دیوار حائل خاک
+  search_aliases:
+  - دیوار نگهبان
+  - دیوار حائل گودبرداری
+  usage_examples:
+  - دیوار حائل گودبرداری باید در برابر لغزش، واژگونی و ظرفیت باربری زمین کنترل شود.
+  root_fa: حائل
+  root_ar: ح-و-ل
+  etymology_fa: '«حائل» وام‌واژهٔ عربی به معنای مانع و جداکننده است؛ در مهندسی به سازه‌ای گفته می‌شود که خاک یا مصالح پشت خود را در برابر نیروی جانبی نگه می‌دارد. توجه: واژه‌نامهٔ اصطلاحات آجری «دیوار حائل» را «دیوار جداکنندهٔ فضا» تعریف کرده که تعریفی عامیانه است؛ تعریف مهندسی همین مدخل معتبر است.'
+  origin_lang: ar
+  plural_fa: دیوارهای حائل
+  references:
+  - *id011
+  - *id010
+  - type: standard
+    code: EN 1992-1-1
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - blade
+  - brackish-soil
+  - drop
+  - pier
+  - tension
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: retaining-wall
 - id: riser
   term_fa: رایزر
-  term_en: Riser
+  term_en: riser
   term_fr: gaine verticale
   term_de: Steigstrang
   term_ar: عمود صاعد
@@ -924,19 +2835,75 @@ terms:
   domain:
   - construction
   definition_fa: کانال یا لولهٔ عمودی تأسیسات که طبقات را به هم پیوند می‌دهد و برای عبور آب، فاضلاب یا کابل‌ها از کف تا بام ساختمان به کار می‌رود.
-  status: draft
+  synonyms:
+  - لولهٔ بالارونده
+  - کانال تأسیسات
+  search_aliases:
+  - رایزر تأسیسات
+  usage_examples:
+  - رایزر آب گرم و سرد در داکت عمودی مشترک و با دسترسی بازرسی اجرا شد.
+  root_fa: رایزر
+  etymology_fa: وام‌واژه از انگلیسی riser (بالارونده)؛ در تأسیسات ساختمان به مسیر عمودی لوله یا کانال گفته می‌شود.
+  origin_lang: en
+  plural_fa: رایزرها
+  references:
+  - *id017
+  - *id006
+  related_terms:
+  - gallery
+  - septic-tank
+  - the-well
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: riser
 - id: masonry-course
   term_fa: رج بنا
   term_en: masonry course
   term_fr: assise
-  term_de:
+  term_de: Mauerschicht
   term_ar: صف بناء
   pos: noun
   domain:
   - construction
   definition_fa: رج بنا؛ هر ردیف افقی از آجر یا سنگ که با ملات روی هم چیده می‌شود و دیوار بنایی از تکرار منظم آن‌ها ساخته می‌شود.
-  status: draft
+  synonyms:
+  - رج
+  - رگچین
+  - رج آجر
+  usage_examples:
+  - تراز و شاقولی بودن هر رج بنا پیش از اجرای رج بعدی کنترل شد.
+  - ضخامت بند ملات در همهٔ رج‌ها یکنواخت نگه داشته شد.
+  root_fa: رج
+  etymology_fa: «رج» در فارسی به معنای ردیف است. واژه‌نامهٔ اصطلاحات آجری «رج بنا» را ردیف آجرچینی تعریف می‌کند که الگوی ساختن دیوارها است، و «رج آجر» را «رگچین» می‌نامد.
+  origin_lang: fa
+  plural_fa: رج‌ها
+  references:
+  - *id002
+  - *id001
+  - *id005
+  - *id003
+  related_terms:
+  - boarding
+  - brick-block
+  - header-brick
+  - passing
+  - reasoning
+  - basket
+  - blade
+  - contact-him
+  - corner-brick
+  - draw-a-line
+  - ginger
+  - pointing-mortar
+  - square-brick
+  - to-darken
+  - zigzag-brickwork
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: masonry-course
 - id: facing
   term_fa: روکار
@@ -948,7 +2915,33 @@ terms:
   domain:
   - construction
   definition_fa: روکار یا نمای ساختمان؛ لایهٔ بیرونی پوشش دیوار که نقش محافظ و تزئینی دارد و می‌تواند از آجر، سنگ، کاشی یا بتن نماسازی اجرا شود.
-  status: draft
+  synonyms:
+  - نما
+  - روبنایی
+  - نماسازی
+  search_aliases:
+  - آجر نما
+  usage_examples:
+  - روکار ساختمان با آجر نما و بندکشی یکنواخت اجرا شد.
+  root_fa: روکار
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «روکار» را «نمای ساختمان» و «روبنایی» را لایه‌ای تعریف می‌کند که روی بنا برای تزیین کشیده می‌شود.
+  origin_lang: fa
+  references:
+  - *id007
+  - *id006
+  - *id003
+  related_terms:
+  - exposure
+  - lime-bloom
+  - pistol
+  - sap-skin
+  - shell
+  - sailor
+  - zigzag-brickwork
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: facing
 - id: semicircular-arch
   term_fa: رومی
@@ -960,7 +2953,31 @@ terms:
   domain:
   - construction
   definition_fa: قوس نیم‌دایره که دهانهٔ آن به‌صورت نیم‌دایرهٔ کامل طاق می‌شود؛ از رایج‌ترین انواع قوس در معماری سنتی ایران و بناهای طاق‌دار است.
-  status: draft
+  synonyms:
+  - قوس نیم‌دایره
+  - طاق رومی
+  - قوس گرد
+  search_aliases:
+  - رومی
+  usage_examples:
+  - طاق رومی سردر ورودی با قالب چوبی (جهازه) اجرا شد.
+  root_fa: رومی
+  etymology_fa: «رومی» در بنایی سنتی ایران به قوس نیم‌دایره گفته می‌شود، زیرا این نوع طاق از معماری روم و بیزانس به ایران رسید؛ واژه‌نامهٔ اصطلاحات آجری «جهازه» را قالب‌سازی زیر قوس رومی تعریف می‌کند.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id005
+  - *id003
+  related_terms:
+  - arch-crown
+  - behind-the-arm
+  - rise-up
+  - springing
+  - two-piece
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: semicircular-arch
 - id: hit-the-ground
   term_fa: زمین زِد
@@ -972,23 +2989,67 @@ terms:
   domain:
   - construction
   definition_fa: زمین سختی که مقاومت و فشردگی دانه‌های ترکیبی آن کمتر از «دج» است و برای اجرای پی نیاز به بررسی ظرفیت باربری دارد.
-  status: draft
+  synonyms:
+  - زمین کوبیده
+  search_aliases:
+  - زمین زد
+  usage_examples:
+  - ظرفیت باربری زمین زِد با آزمایش بارگذاری صفحه‌ای کنترل شد.
+  root_fa: زمین
+  etymology_fa: «زمین زِد» در اصطلاح کارگاهی به زمین سختی گفته می‌شود که فشردگی و مقاومت دانه‌های آن کمتر از «دج» است و برای اجرای پی نیاز به بررسی ظرفیت باربری دارد.
+  origin_lang: other
+  references:
+  - *id011
+  - *id012
+  related_terms:
+  - blockage
+  - brackish-soil
+  - hard-ground
+  - tamper
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: hit-the-ground
 - id: ginger
   term_fa: زنجاب
-  term_en: pre-wetted brick
+  term_en: brick wetting
   term_fr: brique mouillée
   term_de: vorgenässter Ziegel
   term_ar: طوب مبلل
   pos: noun
   domain:
   - construction
-  definition_fa: آبخور؛ عمل تر کردن یا خیساندن آجر پیش از بنایی تا آب ملات را جذب نکند و پیوستگی میان آجر و ملات به‌درستی برقرار شود.
-  status: draft
+  definition_fa: عمل ترکردن یا خیساندن آجر پیش از بنایی، تا آب ملات را جذب نکند و پیوستگی میان آجر و ملات به‌درستی برقرار شود. واژه‌نامهٔ اصطلاحات آجری «زنجاب» را «سیراب کردن آجرها» و «آبخور» را آجری تعریف می‌کند که آب در آن نفوذ کرده و نرم شده باشد.
+  synonyms:
+  - آبخور
+  - سیراب کردن آجر
+  - خیساندن آجر
+  search_aliases:
+  - زنجاب
+  usage_examples:
+  - آجرها پیش از چیدن زنجاب (سیراب) شدند تا آب ملات را نمکند.
+  root_fa: زنجاب
+  etymology_fa: «زنجاب» در بنایی سنتی به سیراب‌کردن آجرها گفته می‌شود. معادل انگلیسی پیشین این مدخل (pre-wetted brick) به خود آجر اشاره داشت، در حالی که واژهٔ فارسی نامِ عمل است؛ در این بازبینی معادل اصلاح شد. شناسهٔ مدخل (ginger) بازماندهٔ ترجمهٔ ماشینی نادرست است و حفظ شده است.
+  origin_lang: other
+  references:
+  - *id002
+  - *id001
+  - *id003
+  related_terms:
+  - broken-brick
+  - gravel
+  - lime-bloom
+  - masonry-course
+  - pointing-mortar
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: ginger
 - id: cumin
   term_fa: زیره
-  term_en: base layer
+  term_en: base course
   term_fr: couche de base
   term_de: Tragschicht
   term_ar: طبقة أساس
@@ -996,7 +3057,31 @@ terms:
   domain:
   - construction
   definition_fa: لایهٔ زیرین از دانه‌های خشن که به‌عنوان بستر یا زیرسازی برای پخش بار و زهکشی در کف‌سازی و روسازی به کار می‌رود.
-  status: draft
+  synonyms:
+  - زیرسازی
+  - لایهٔ بستر
+  search_aliases:
+  - زیره‌چینی
+  usage_examples:
+  - لایهٔ زیره با دانهٔ خشن پخش و متراکم شد تا بار کف‌سازی پخش و زهکشی تأمین شود.
+  root_fa: زیره
+  etymology_fa: «زیره» در بنایی به لایهٔ زیرین کار گفته می‌شود (نه گیاه زیره)؛ واژه‌نامهٔ اصطلاحات کارگاهی آن را در ردیف اصطلاحات زیرسازی آورده است.
+  origin_lang: fa
+  references:
+  - *id006
+  - *id011
+  related_terms:
+  - asphalt
+  - blockage
+  - care
+  - gravel
+  - hard-ground
+  - burnt-asphalt
+  - mesh-sieve-size
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: cumin
 - id: zigzag
   term_fa: زیگزاگ
@@ -1008,7 +3093,34 @@ terms:
   domain:
   - construction
   definition_fa: چیدمان یا حرکت کنگره‌ای که در آن مسیر به‌طور متناوب به چپ و راست منحرف می‌شود؛ در بنایی به نوعی آجرکاری و در سقف تیرچه به میلگردهای زیگزاگی خرپا گفته می‌شود.
-  status: draft
+  synonyms:
+  - هفت‌وهشت
+  - جناغی
+  - کنگره‌ای
+  search_aliases:
+  - خاموت
+  - زیگزاگ
+  - میلگرد زیگزاگ
+  - زیگزاگ خرپا
+  usage_examples:
+  - میلگردهای زیگزاگ خرپای تیرچه باید با فاصلهٔ مشخص و پیوسته بسته شوند.
+  root_fa: زیگزاگ
+  etymology_fa: وام‌واژه از انگلیسی/فرانویسی zigzag؛ در بنایی به چیدمان کنگره‌ای آجر و در سقف تیرچه به میلگردهای زیگزاگی خرپای تیرچه گفته می‌شود.
+  origin_lang: fr
+  references:
+  - *id002
+  - *id008
+  related_terms:
+  - a-basket
+  - concrete-beam
+  - shear
+  - zigzag-brickwork
+  - fancy-lace
+  - index-arrow
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: zigzag
 - id: a-basket
   term_fa: سبدی
@@ -1020,7 +3132,34 @@ terms:
   domain:
   - construction
   definition_fa: میلگرد بافته‌شدهٔ سبدی که برای بالا و پایین شناژ فونداسیون ساخته می‌شود و شبکهٔ تسلیح آن را تشکیل می‌دهد.
-  status: draft
+  synonyms:
+  - سبدی
+  - میلگرد بافته
+  search_aliases:
+  - سبدی
+  - شناژ
+  - آرماتور شناژ
+  usage_examples:
+  - میلگرد سبدی بالا و پایین شناژ فونداسیون پیش از بتن‌ریزی بسته و کنترل شد.
+  root_fa: سبد
+  etymology_fa: «سبدی» از «سبد»؛ به میلگردهای بافته‌شده‌ای گفته می‌شود که برای بالا و پایین شناژ فونداسیون ساخته می‌شوند و شبکهٔ تسلیح آن را تشکیل می‌دهند.
+  origin_lang: fa
+  references:
+  - *id008
+  - *id010
+  - *id018
+  related_terms:
+  - armator
+  - f-bar-bender
+  - the-vault
+  - wire-reinforcement
+  - zigzag
+  - brick-block
+  - fancy-lace
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: a-basket
 - id: septic-tank
   term_fa: سپتیک تانک
@@ -1032,7 +3171,26 @@ terms:
   domain:
   - construction
   definition_fa: مخزن بزرگ فاضلاب که پسماند جامد و مایع را با ته‌نشینی و تجزیهٔ بی‌هوازی جدا می‌کند و در ساختمان‌های بدون اتصال به شبکهٔ فاضلاب به کار می‌رود.
-  status: draft
+  synonyms:
+  - مخزن سپتیک
+  - چاه سپتیک
+  usage_examples:
+  - پساب خروجی از سپتیک تانک باید به میدان جذب یا چاه جذبی منتقل شود.
+  root_fa: سپتیک
+  etymology_fa: «سپتیک» وام‌واژه از فرانسوی/انگلیسی septic، از یونانی sēptikos (فسادآور) و اشاره به تجزیهٔ بی‌هوازی دارد؛ «تانک» از انگلیسی tank. این مخزن پسماند را با ته‌نشینی و تجزیهٔ بی‌هوازی جدا می‌کند.
+  origin_lang: fr
+  references:
+  - *id017
+  - *id006
+  related_terms:
+  - blind-well
+  - cesspool-tank
+  - riser
+  - the-well
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: septic-tank
 - id: stiff-head
   term_fa: سر سفت
@@ -1040,11 +3198,36 @@ terms:
   term_fr: en saillie
   term_de: vorstehend
   term_ar: بارز
-  pos: noun
+  pos: adjective
   domain:
   - construction
   definition_fa: وضعیت عضوی که نسبت به خط قائم جلوتر باشد و به بیرون متمایل شده باشد؛ انحرافی که در بنایی ناشی از اجرای نادرست رج‌ها است.
-  status: draft
+  synonyms:
+  - سرِسفت
+  antonyms:
+  - سرواافتاده
+  - ناشاقولی
+  usage_examples:
+  - دیوار سرِسفت از خط قائم به بیرون منحرف شده و باید اصلاح یا مهار شود.
+  root_fa: سر
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «سرِسفت» را «دیوارهای عمودی که سر آن جلوتر از عمود است» تعریف می‌کند، یعنی دیواری که به بیرون متمایل شده باشد؛ دقیقاً در برابر «سرواافتاده».
+  origin_lang: fa
+  references:
+  - *id002
+  - *id016
+  - *id003
+  related_terms:
+  - boarding
+  - get-stuck
+  - overwhelmed
+  - vertical
+  - basket
+  - jan-panah
+  - to-wander
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: stiff-head
 - id: to-wander
   term_fa: سرگرداندن
@@ -1056,7 +3239,25 @@ terms:
   domain:
   - construction
   definition_fa: سروته کردن قطعه یا عضو بنایی؛ جابه‌جا کردن سر و ته یک قطعه برای تنظیم تراز یا جهت چیدمان در اجرا.
-  status: draft
+  synonyms:
+  - سروته کردن
+  usage_examples:
+  - برای ترازکردن رج، استادکار قطعه را سرگرداندن (سروته) کرد.
+  root_fa: سرگرداندن
+  etymology_fa: «سرگرداندن» در کارگاه به سروته‌کردن یک قطعه یا عضو بنایی گفته می‌شود تا تراز یا جهت چیدمان آن تنظیم شود.
+  origin_lang: fa
+  references:
+  - *id006
+  - *id012
+  related_terms:
+  - draw-a-line
+  - stiff-head
+  - to-darken
+  - vertical
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: to-wander
 - id: overwhelmed
   term_fa: سروا افتاده
@@ -1064,11 +3265,32 @@ terms:
   term_fr: en retrait
   term_de: zurückliegend
   term_ar: متراجع
-  pos: noun
+  pos: adjective
   domain:
   - construction
   definition_fa: وضعیت عضوی که نسبت به خط قائم عقب‌تر باشد و به داخل متمایل شده باشد؛ انحرافی که در بنایی ناشی از اجرای نادرست رج‌ها است.
-  status: draft
+  synonyms:
+  - سرواافتاده
+  - واافتاده
+  antonyms:
+  - سرِسفت
+  usage_examples:
+  - دیوار سرواافتاده نسبت به خط قائم به داخل متمایل شده و پایداری آن بررسی می‌شود.
+  root_fa: وا
+  etymology_fa: واژه‌نامهٔ اصطلاحات آجری «سرواافتاده» را «دیوارهای عمودی که از عمود خارج شده و سر آن عقب‌تر از عمود است» تعریف می‌کند؛ شناسهٔ این مدخل (overwhelmed) بازماندهٔ ترجمهٔ ماشینی نادرست است و به دلیل تغییرناپذیری نشانی‌ها حفظ شده است.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id016
+  - *id003
+  related_terms:
+  - get-stuck
+  - stiff-head
+  - vertical
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: overwhelmed
 - id: basket
   term_fa: سِله
@@ -1080,19 +3302,70 @@ terms:
   domain:
   - construction
   definition_fa: جزء پیش‌آمدهٔ بنایی که از سطح دیوار بیرون زده است و برای تکیه‌دادن یا ایجاد پیش‌آمدگی در نما به کار می‌رود.
-  status: draft
+  synonyms:
+  - کنسول بنایی
+  - پیش‌آمدگی آجری
+  search_aliases:
+  - سله
+  - پیش‌طره
+  usage_examples:
+  - تکیه‌گاه طاقچه با سِله‌های آجری پله‌ای از بدنهٔ دیوار بیرون آورده شد.
+  root_fa: سله
+  etymology_fa: «سِله» واژه‌ای صنفی در بنایی سنتی برای جزء پیش‌آمده‌ای است که از سطح دیوار بیرون می‌زند؛ واژه‌نامهٔ اصطلاحات آجری «پیش‌طره» را پیشامدگی سقف بالکن و سایبان بالای پنجره تعریف می‌کند که از همین خانواده است. معادل علمی آن corbel است.
+  origin_lang: other
+  references:
+  - *id002
+  - *id005
+  - *id003
+  related_terms:
+  - cap
+  - countries
+  - masonry-course
+  - pier
+  - stiff-head
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: basket
 - id: pin
   term_fa: سنجاقی
   term_en: pin
   term_fr: goujon
   term_de: Dorn
-  term_ar:
+  term_ar: دبوس
   pos: noun
   domain:
   - construction
   definition_fa: میلگردهای برش‌گیر فونداسیون که برای مهار نیروهای برشی و اتصال اجزای بتنی در محل پی و فونداسیون کار گذاشته می‌شوند.
-  status: draft
+  synonyms:
+  - میلگرد برش‌گیر
+  - پین
+  search_aliases:
+  - سنجاقی
+  usage_examples:
+  - سنجاقی‌ها (میلگردهای برش‌گیر) برای مهار نیروی برشی در فونداسیون کار گذاشته شدند.
+  root_fa: سنجاق
+  etymology_fa: «سنجاقی» از «سنجاق» (ابزار سوزن‌مانند برای اتصال)؛ در بتن مسلح به میلگردهای کوتاه برش‌گیر گفته می‌شود که اجزای بتنی را در محل پی و فونداسیون به هم متصل می‌کنند.
+  origin_lang: fa
+  references:
+  - *id008
+  - *id010
+  - *id018
+  related_terms:
+  - armator
+  - aspel
+  - cramp
+  - orlip
+  - the-vault
+  - a-ball
+  - plate
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
+  translation_notes:
+    ar: «دبوس» معادل متداول عربی برای پین/سنجاق فلزی در سازه است.
   slug: pin
 - id: gravel
   term_fa: سنگ دانه
@@ -1104,7 +3377,44 @@ terms:
   domain:
   - construction
   definition_fa: دانه‌های خُرد سنگ با ابعاد درشت‌تر از ماسه که از الک‌شدن مصالح رودخانه‌ای یا شکستن سنگ به دست می‌آید؛ در بتن، زیرسازی راه و لایه‌های زهکشی به کار می‌رود.
-  status: draft
+  synonyms:
+  - شن
+  - قلوه‌سنگ
+  - سنگدانهٔ درشت
+  search_aliases:
+  - سنگدانه
+  - شن و ماسه
+  - قلوه‌سنگ
+  usage_examples:
+  - سنگدانهٔ درشت باید عاری از خاک و مواد زیان‌آور باشد و دانه‌بندی آن در محدودهٔ استاندارد قرار گیرد.
+  root_fa: سنگ
+  etymology_fa: «سنگ‌دانه» ترکیبی فارسی و معادل مصوب aggregate است؛ در کارگاه «شن» برای دانهٔ ریز و «قلوه‌سنگ» یا «شن» برای دانهٔ درشت به کار می‌رود.
+  origin_lang: fa
+  plural_fa: سنگدانه‌ها
+  references:
+  - type: standard
+    code: ASTM C33
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id007
+  - type: standard
+    code: ASTM C136
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - type: standard
+    code: ASTM C127
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - beton
+  - blockage
+  - cumin
+  - mesh-sieve-size
+  - pycnometer
+  - silt
+  - depot
+  - ginger
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: gravel
 - id: cesspool-tank
   term_fa: سیسپول تانک
@@ -1116,19 +3426,67 @@ terms:
   domain:
   - construction
   definition_fa: مخزن بزرگ جمع‌آوری فاضلاب مایع که در نبود شبکهٔ فاضلاب شهری، پساب را نگهداری می‌کند و باید به‌طور دوره‌ای تخلیه شود.
-  status: draft
+  synonyms:
+  - چاه فاضلاب
+  - مخزن جمع‌آوری پساب
+  search_aliases:
+  - سیسپول
+  - چاه جذبی
+  - چاه فاضلاب
+  usage_examples:
+  - مخزن جمع‌آوری پساب باید به‌طور دوره‌ای تخلیه و گازهای آن کنترل شود.
+  root_fa: سیسپول
+  etymology_fa: «سیسپول» صورت فارسی‌شدهٔ انگلیسی cesspool است؛ برخلاف سپتیک تانک، تجزیهٔ مؤثر و خروجی تصفیه‌شده ندارد و عمدتاً برای نگهداری و تخلیهٔ دوره‌ای پساب به کار می‌رود.
+  origin_lang: en
+  references:
+  - *id017
+  - *id006
+  related_terms:
+  - blind-well
+  - septic-tank
+  - the-well
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: cesspool-tank
 - id: silt
   term_fa: سیلت
-  term_en: Silt
+  term_en: silt
   term_fr: Limon
   term_de: Schluff
   term_ar: الطمي
   pos: noun
   domain:
   - construction
-  definition_fa: دانه‌های بسیار ریز خاک با ابعادی بین رس و ماسه که در مهندسی خاک به‌دلیل ظرفیت زهکشی پایین و حساسیت به آب اهمیت دارد و لای نامیده می‌شود.
-  status: draft
+  definition_fa: دانه‌های بسیار ریز خاک با ابعادی میان رس و ماسه (تقریباً ۰٫۰۰۲ تا ۰٫۰۷۵ میلی‌متر) که در مهندسی خاک به‌دلیل ظرفیت زهکشی پایین، حساسیت به آب و خطر روان‌گرایی اهمیت دارد و در فارسی «لای» نیز نامیده می‌شود.
+  synonyms:
+  - لای
+  search_aliases:
+  - لای
+  - سیلت
+  - ریزدانه
+  usage_examples:
+  - وجود سیلت (لای) بیش از حد مجاز در سنگدانه، چسبندگی ملات و دوام بتن را کاهش می‌دهد.
+  root_fa: سیلت
+  etymology_fa: وام‌واژه از انگلیسی silt (رسوب ریزدانه)؛ معادل فارسی سنتی آن «لای» است.
+  origin_lang: en
+  references:
+  - type: standard
+    code: ASTM C117
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  - *id011
+  related_terms:
+  - beton
+  - brackish-soil
+  - gravel
+  - hard-ground
+  - mesh-sieve-size
+  - pycnometer
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: silt
 - id: sailor
   term_fa: سیلر
@@ -1140,7 +3498,28 @@ terms:
   domain:
   - construction
   definition_fa: سیلر؛ مادهٔ پوششی تثبیت‌کنندهٔ رنگ و سطح که نفوذپذیری را کاهش می‌دهد و از پودر شدن یا جذب رطوبت لایهٔ زیرین جلوگیری می‌کند.
-  status: draft
+  synonyms:
+  - تثبیت‌کنندهٔ سطح
+  - مواد آب‌بند سطحی
+  search_aliases:
+  - سیلر
+  usage_examples:
+  - پیش از رنگ‌آمیزی، یک لایه سیلر روی گچ اجرا شد تا جذب رنگ یکنواخت شود.
+  root_fa: سیلر
+  etymology_fa: وام‌واژه از انگلیسی sealer (از seal = مهر و نشان بستن). شناسهٔ این مدخل (sailor) بازماندهٔ یک ترجمهٔ ماشینی نادرست است و به دلیل تغییرناپذیری نشانی‌ها حفظ شده است؛ معادل و تعریف اصلاح شدند.
+  origin_lang: en
+  references:
+  - *id006
+  - *id012
+  related_terms:
+  - facing
+  - isolation
+  - sealing
+  - shell
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: sailor
 - id: wire-reinforcement
   term_fa: سیم آرماتور بندی
@@ -1152,7 +3531,32 @@ terms:
   domain:
   - construction
   definition_fa: سیم آرماتوربندی با قطر حدود ۱٫۵ میلی‌متر که برای بستن و مهار میلگردها در شبکهٔ تسلیح به کار می‌رود.
-  status: draft
+  synonyms:
+  - سیم آرماتوربندی
+  - مفتول بست
+  search_aliases:
+  - سیم رباط
+  - سیم گالوانیزه
+  usage_examples:
+  - میلگردها با سیم آرماتوربندی به قطر ۱٫۵ میلی‌متر به یکدیگر بسته و مهار شدند.
+  root_fa: سیم
+  etymology_fa: «سیم» در فارسی به مفتول فلزی گفته می‌شود؛ سیم آرماتوربندی برای بستن و مهار میلگردها در شبکهٔ تسلیح به کار می‌رود.
+  origin_lang: fa
+  references:
+  - *id008
+  - *id010
+  - *id006
+  related_terms:
+  - a-basket
+  - armator
+  - f-bar-bender
+  - orlip
+  - the-vault
+  - fancy-lace
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: wire-reinforcement
 - id: stone-cement
   term_fa: سیمان سنگ شده
@@ -1163,8 +3567,36 @@ terms:
   pos: noun
   domain:
   - construction
-  definition_fa: پودر سیمان فشرده یا سیمان سنگ‌شده که به‌عنوان مادهٔ چسباننده در ملات‌های خاص و ترمیم سطوح بتنی استفاده می‌شود.
-  status: draft
+  definition_fa: سیمان آسیاب‌شدهٔ بسیار نرم یا سیمانی که از آسیاب سنگ‌های آهکی پخته به دست می‌آید و به عنوان مادهٔ چسباننده در ملات‌های خاص، بندکشی و ترمیم سطوح بتنی به کار می‌رود.
+  synonyms:
+  - سیمان نرم
+  - پودر سیمان
+  search_aliases:
+  - سیمان سنگ‌شده
+  usage_examples:
+  - برای ترمیم سطح بتنی، از سیمان سنگ شده با دانه‌بندی بسیار نرم استفاده شد.
+  root_fa: سیمان
+  etymology_fa: ترکیب «سیمان» و «سنگ‌شده»؛ در متون قدیمی‌تر به سیمان‌های طبیعی (natural cement) که از پختن و آسیاب سنگ آهک رسی به دست می‌آمدند نیز گفته می‌شد.
+  origin_lang: fa
+  references:
+  - type: standard
+    code: استاندارد ملی ایران ۳۸۹
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: ASTM C150
+    note: منبع واژه‌شناسی و تعریف هنجاری این اصطلاح.
+  - type: standard
+    code: ASTM C989
+    note: تعریف با دامنهٔ کاربرد این منبع هم‌خوان است؛ ارجاع به معنای نقل مستقیم متن آن نیست.
+  related_terms:
+  - beton
+  - cement-matrix
+  - pointing-mortar
+  - siman
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: stone-cement
 - id: vertical
   term_fa: شاقولی
@@ -1176,5 +3608,34 @@ terms:
   domain:
   - construction
   definition_fa: هم‌تراز بودن یک عضو یا سطح با خط شاقول؛ وضعیت قائم که با شاقول، تراز لیزری یا توتال استیشن کنترل می‌شود و انحراف از آن در بنایی «ناشاقولی» نامیده می‌گردد.
-  status: draft
+  synonyms:
+  - قائم
+  - شاقول
+  antonyms:
+  - ناشاقولی
+  search_aliases:
+  - شاقول
+  - تراز قائم
+  - شاقولی
+  usage_examples:
+  - ناشاقولی دیوار با شاقول و تراز لیزری کنترل و در حد رواداری مجاز بود.
+  root_fa: شاقول
+  etymology_fa: «شاقول» وزنهٔ آویزانی است که راستای قائم را نشان می‌دهد؛ «شاقولی» هم‌ترازی با این راستا و «ناشاقولی» انحراف از آن است.
+  origin_lang: fa
+  references:
+  - *id002
+  - *id006
+  - *id016
+  related_terms:
+  - draw-a-line
+  - get-stuck
+  - overwhelmed
+  - reasoning
+  - stiff-head
+  - boarding
+  - to-wander
+  status: reviewed
+  review_level: ai-assisted
+  reviewed_by: Qwen (بازبینی دستیار هوشمند)
+  reviewed_at: '2026-09-10'
   slug: vertical
