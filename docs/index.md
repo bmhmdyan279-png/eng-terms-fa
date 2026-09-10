@@ -25,11 +25,20 @@ description: فرهنگ واژگان تخصصی مهندسی — معادل دق
 
 ## جستجوی واژه { #search }
 
-<div id="pagefind-ui" dir="rtl" role="search" aria-label="جستجوی واژگان فرهنگ"></div>
+<div id="persian-search" data-persian-search dir="rtl"></div>
+
+??? note "جستجوی متن کامل (Pagefind)"
+    جستجوی بالا ریشه‌محور است و روی داده‌های واژه‌نامه کار می‌کند
+    (نیم‌فاصله، جمع، صفت تفضیلی، شکل فعل و ریشهٔ واژه را می‌شناسد و آفلاین هم
+    کار می‌کند). اگر می‌خواهید در *متن همهٔ صفحه‌ها* — از جمله راهنمای مشارکت و
+    دربارهٔ پروژه — جستجو کنید، از نمایهٔ Pagefind استفاده کنید:
+
+    <div id="pagefind-ui" dir="rtl" role="search" aria-label="جستجوی متن کامل"></div>
 
 ## بخش‌های اصلی
 
 - [فهرست واژگان با فیلتر حوزه، وضعیت و زبان](terms/index.md)
+- [دادهٔ باز: API، SKOS/RDF، NDJSON و بستهٔ داده](data.md)
 - [واژگان کتاب آزمایشات فناوری بتن](book-vocab.md)
 - [اصطلاحات ساختمان](construction-terms.md)
 - [راهنمای مشارکت](contribute.md)

@@ -23,6 +23,14 @@ from pathlib import Path
 import yaml
 from jsonschema import Draft202012Validator
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from persian_text import (  # noqa: E402
+    build_lexicon,
+    build_protected,
+    normalize as persian_normalize,
+    record_roots,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data" / "terms"
 META_FILE = DATA_DIR / "_meta.yaml"
@@ -47,6 +55,19 @@ TERM_SET_NAME = "فرهنگ واژگان تخصصی مهندسی"
 POS_FA = {"noun": "اسم", "verb": "فعل", "adjective": "صفت", "phrase": "عبارت"}
 REF_TYPE_FA = {"standard": "استاندارد", "book": "کتاب", "other": "سایر"}
 STATUS_FA = {"draft": "پیش‌نویس", "reviewed": "بازبینی‌شده", "published": "منتشرشده"}
+REVIEW_LEVEL_FA = {
+    "ai-assisted": "بازبینی دستیار هوشمند (بدون تأیید متخصص انسانی)",
+    "expert": "بازبینی متخصص",
+    "committee": "کمیتهٔ واژه‌گزینی",
+}
+ORIGIN_FA = {
+    "fa": "فارسی", "ar": "عربی", "tr": "ترکی", "fr": "فرانسوی", "en": "انگلیسی",
+    "de": "آلمانی", "la": "لاتین", "el": "یونانی", "ru": "روسی", "es": "اسپانیایی",
+    "it": "ایتالیایی", "hy": "ارمنی", "mn": "مغولی", "other": "سایر",
+}
+
+#: How many same-root neighbours a term page lists at most.
+MAX_ROOT_NEIGHBOURS = 8
 
 
 def normalize_persian(text: str) -> str:
@@ -177,10 +198,52 @@ def _yaml_str(value) -> str:
     return json.dumps(str(value), ensure_ascii=False)
 
 
+def build_root_index(terms, lexicon=None, protected=None):
+    """root (folded) → [slugs]. Powers the «هم‌ریشه‌ها» panel on every page."""
+    if lexicon is None:
+        lexicon = build_lexicon(terms)
+    if protected is None:
+        protected = build_protected(terms)
+    index = {}
+    for record in terms:
+        for root in record_roots(record, lexicon, protected):
+            index.setdefault(root, [])
+            if record["slug"] not in index[root]:
+                index[root].append(record["slug"])
+    return index
+
+
+def root_neighbours(record, root_index, lexicon=None, protected=None, limit=MAX_ROOT_NEIGHBOURS):
+    """(root, [other slugs]) pairs for one record, richest root first.
+
+    The lexicon MUST be the same one the index was built with: without it the
+    guarded suffix rules cannot reduce «بندی» to «بند» and the panel would show
+    a weaker root family than the search actually uses.
+    """
+    from persian_text import fold, root as persian_root
+
+    candidates = record_roots(record, lexicon, protected)
+    candidate_set = {fold(item) for item in candidates}
+    # «بندی» reduces to «بند»; listing both would repeat the same family.
+    out = []
+    for item in candidates:
+        deeper = fold(persian_root(item, lexicon, protected))
+        if deeper != fold(item) and deeper in candidate_set:
+            continue
+        slugs = [slug for slug in root_index.get(item, []) if slug != record["slug"]]
+        if slugs:
+            out.append((item, slugs[:limit]))
+    out.sort(key=lambda pair: len(pair[1]), reverse=True)
+    return out[:3]
+
+
 def render_pages(records, meta):
     domain_titles = {d["id"]: d.get("title_fa", d["id"]) for d in meta["domains"]}
     terms = [record for _, record in records]
     slug_to_term_fa = {t["slug"]: normalize_persian(t["term_fa"]) for t in terms}
+    lexicon = build_lexicon(terms)
+    protected = build_protected(terms)
+    root_index = build_root_index(terms, lexicon, protected)
 
     DOCS_TERMS_DIR.mkdir(parents=True, exist_ok=True)
     for old_file in DOCS_TERMS_DIR.glob("*.md"):
@@ -215,23 +278,47 @@ def render_pages(records, meta):
             page += '\n!!! warning "وضعیت: پیش‌نویس"\n    این مدخل هنوز بازبینی تخصصی نشده است.\n'
         elif status == "reviewed":
             reviewer = _esc(record.get("reviewed_by") or "")
-            page += f'\n!!! success "وضعیت: بازبینی‌شده"\n    بازبینی تخصصی انجام شده است.{(" — " + reviewer) if reviewer else ""}\n'
+            level = REVIEW_LEVEL_FA.get(record.get("review_level"), REVIEW_LEVEL_FA["ai-assisted"])
+            reviewed_at = _esc(record.get("reviewed_at") or "")
+            meta_bits = " • ".join(bit for bit in (level, reviewer, reviewed_at) if bit)
+            page += (
+                f'\n!!! success "وضعیت: بازبینی‌شده"\n'
+                f'    بازبینی انجام شده است{(" — " + meta_bits) if meta_bits else ""}.\n'
+            )
+            if record.get("review_level", "ai-assisted") == "ai-assisted":
+                page += (
+                    "    هنوز تأیید متخصص انسانی را ندارد؛ اگر ایرادی می‌بینید "
+                    "[گزارش کنید](../contribute.md).\n"
+                )
         elif status == "published":
-            page += '\n!!! success "وضعیت: منتشرشده"\n'
+            page += '\n!!! success "وضعیت: منتشرشده (تأیید متخصص)"\n'
 
         book_refs = [r for r in references if isinstance(r, dict) and r.get("type") == "book" and "آزمایشات فناوری بتن" in str(r.get("code", ""))]
         if book_refs:
             page += '\n!!! note "از کتاب آزمایشات فناوری بتن"\n    این واژه در کتاب آزمایشات فناوری بتن آورده شده است.\n'
+
+        translation_notes = record.get("translation_notes") or {}
+
+        equivalents_rows = [
+            ("انگلیسی", "en", term_en, "ltr"),
+            ("فرانسوی", "fr", term_fr, "ltr"),
+            ("آلمانی", "de", term_de, "ltr"),
+            ("عربی", "ar", term_ar, "rtl"),
+        ]
+        equivalents = "\n".join(
+            f"| **{label}** | <span dir=\"{direction}\" lang=\"{code}\">{value}</span>"
+            + (f" <span class=\"translation-note\">{_esc(translation_notes[code])}</span>"
+               if translation_notes.get(code) else "")
+            + " |"
+            for label, code, value, direction in equivalents_rows
+        )
 
         page += f"""
 <div class="term-card">
 ## معادل‌های واژه
 | زبان | معادل |
 |------|-------|
-| **انگلیسی** | <span dir="ltr" lang="en">{term_en}</span> |
-| **فرانسوی** | <span dir="ltr" lang="fr">{term_fr}</span> |
-| **آلمانی** | <span dir="ltr" lang="de">{term_de}</span> |
-| **عربی** | <span dir="rtl" lang="ar">{term_ar}</span> |
+{equivalents}
 </div>
 ## تعریف
 {definition}
@@ -239,13 +326,78 @@ def render_pages(records, meta):
 **{"، ".join(domains)}** • نوع واژه: {pos_fa}
 """
 
+        # ---- ساخت‌واژه و ریشه‌شناسی (فقط وقتی داده‌ای وجود دارد) ----
+        morphology = []
+        if record.get("root_fa"):
+            morphology.append(f"- **ریشهٔ فارسی:** {_esc(normalize_persian(record['root_fa']))}")
+        if record.get("root_ar"):
+            morphology.append(
+                f'- **ریشهٔ عربی:** <span dir="rtl" lang="ar">{_esc(record["root_ar"])}</span>'
+            )
+        if record.get("origin_lang"):
+            morphology.append(
+                f"- **زبان مبدأ واژه:** {_esc(ORIGIN_FA.get(record['origin_lang'], record['origin_lang']))}"
+            )
+        if record.get("plural_fa"):
+            morphology.append(f"- **جمع:** {_esc(normalize_persian(record['plural_fa']))}")
+        if record.get("abbrev_en"):
+            morphology.append(
+                f'- **مخفف انگلیسی:** <span dir="ltr" lang="en">{_esc(record["abbrev_en"])}</span>'
+            )
+        neighbours = root_neighbours(record, root_index, lexicon, protected)
+        if neighbours:
+            chips = []
+            for root_value, slugs in neighbours:
+                links = "، ".join(
+                    f'<a href="./{_esc(slug)}.md">{_esc(slug_to_term_fa.get(slug, slug))}</a>'
+                    for slug in slugs
+                )
+                chips.append(f"    - «{_esc(normalize_persian(root_value))}»: {links}")
+            morphology.append("- **هم‌ریشه‌ها در این فرهنگ:**\n" + "\n".join(chips))
+        if record.get("etymology_fa"):
+            morphology.append(f"- **ریشه‌شناسی:** {_esc(normalize_persian(record['etymology_fa']))}")
+        if morphology:
+            page += '\n<div class="term-morphology">\n## ساخت‌واژه و ریشه\n' + "\n".join(morphology) + "\n</div>\n"
+
+        # ---- مترادف‌ها و متضادها ----
+        synonyms = [normalize_persian(v) for v in (record.get("synonyms") or [])]
+        antonyms = [normalize_persian(v) for v in (record.get("antonyms") or [])]
+        aliases = [normalize_persian(v) for v in (record.get("search_aliases") or [])]
+        if synonyms or antonyms or aliases:
+            page += "\n## مترادف‌ها و متضادها\n"
+            if synonyms:
+                page += f"- **مترادف:** {_esc('، '.join(synonyms))}\n"
+            if antonyms:
+                page += f"- **متضاد:** {_esc('، '.join(antonyms))}\n"
+            if aliases:
+                page += f"- **شکل‌های نوشتاری دیگر:** {_esc('، '.join(aliases))}\n"
+
+        # ---- نمونهٔ کاربرد ----
+        examples = [normalize_persian(v) for v in (record.get("usage_examples") or [])]
+        if examples:
+            page += "\n## نمونهٔ کاربرد\n"
+            for example in examples:
+                page += f"> {_esc(example)}\n\n"
+
         page += "\n## منابع\n"
         if references:
             for ref in references:
                 if isinstance(ref, dict):
                     kind = _esc(REF_TYPE_FA.get(ref.get("type"), "سایر"))
-                    edition = f"، ویرایش {_esc(ref['edition'])}" if ref.get("edition") else ""
-                    page += f"- {_esc(ref.get('code', '—'))} ({kind}{edition})\n"
+                    bits = [kind]
+                    if ref.get("org"):
+                        bits.append(_esc(ref["org"]))
+                    if ref.get("edition"):
+                        bits.append(f"ویرایش {_esc(ref['edition'])}")
+                    if ref.get("section"):
+                        bits.append(f"بخش {_esc(ref['section'])}")
+                    title = _esc(ref.get("code", "—"))
+                    url = str(ref.get("url") or "").strip()
+                    if url and url.lower().startswith(("http://", "https://")):
+                        title = f'<a href="{_esc(url)}" rel="noopener">{title}</a>'
+                    page += f"- {title} ({'، '.join(bits)})\n"
+                    if ref.get("note"):
+                        page += f"    - {_esc(normalize_persian(ref['note']))}\n"
                 else:
                     page += f"- {_esc(ref)}\n"
         else:
@@ -276,6 +428,10 @@ def render_index(records, meta):
     """Generate docs/terms/index.md with client-side faceted filters."""
     import html as _html
 
+    all_terms = [record for _, record in records]
+    lexicon = build_lexicon(all_terms)
+    protected = build_protected(all_terms)
+
     terms = [record for _, record in records]
     domain_titles = {d["id"]: d.get("title_fa", d["id"]) for d in meta.get("domains", [])}
     domain_order = [d["id"] for d in meta.get("domains", [])]
@@ -290,6 +446,8 @@ def render_index(records, meta):
     out = []
     out.append("---\ntitle: فهرست واژگان\ndescription: فهرست واژگان با فیلتر حوزه، وضعیت و ترجمه‌ها\n---\n")
     out.append("# فهرست واژگان")
+    out.append("")
+    out.append('<div id="persian-search" data-persian-search dir="rtl" markdown="0"></div>')
     out.append("")
     out.append('<div class="term-filters" markdown="0">')
     out.append('  <div class="filter-group"><label for="filter-domain">حوزه:</label>'
@@ -326,11 +484,13 @@ def render_index(records, meta):
             if str(record.get(f"term_{code}") or "").strip():
                 langs.append(code)
         domain_labels = "، ".join(domain_titles.get(d, d) for d in domains)
+        roots = record_roots(record, lexicon, protected)
         out.append(
             '  <li class="term-row"'
             f' data-domain="{esc(" ".join(domains))}"'
             f' data-status="{esc(status)}"'
             f' data-langs="{esc(" ".join(langs))}"'
+            f' data-roots="{esc(" ".join(roots))}"'
             f' data-fa="{esc(fa)}" data-en="{esc(en)}">'
             f'<a href="./{esc(record["slug"])}.md">{esc(fa)}</a>'
             f' <span class="term-en" dir="ltr" lang="en">{esc(en)}</span>'

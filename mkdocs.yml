@@ -58,6 +58,10 @@ extra_css:
   - assets/css/extra.css
 
 extra_javascript:
+  # ترتیب بارگذاری مهم است: جدول‌های صرفی، سپس موتور، سپس رابط کاربری.
+  - assets/js/persian-stem-data.js
+  - assets/js/persian-stem.js
+  - assets/js/persian-search.js
   - assets/js/search-init.js
   - assets/js/term-filters.js
   - assets/js/pwa-register.js

@@ -7,12 +7,17 @@
  */
 "use strict";
 
-var CACHE_NAME = "eng-terms-fa-v1";
+var CACHE_NAME = "eng-terms-fa-v2";
 var PRECACHE_URLS = [
   "./",
   "./manifest.webmanifest",
   "./assets/icons/icon-192.png",
-  "./assets/icons/icon-512.png"
+  "./assets/icons/icon-512.png",
+  // موتور جستجوی ریشه‌محور باید آفلاین هم کار کند — همان وعدهٔ PWA.
+  "./assets/js/persian-stem-data.js",
+  "./assets/js/persian-stem.js",
+  "./assets/js/persian-search.js",
+  "./data/api/search-index.json"
 ];
 
 self.addEventListener("install", function (event) {
@@ -20,7 +25,16 @@ self.addEventListener("install", function (event) {
     caches
       .open(CACHE_NAME)
       .then(function (cache) {
-        return cache.addAll(PRECACHE_URLS);
+        // cache.addAll() کل نصب را شکست می‌دهد اگر حتی یک نشانی ۴۰۴ باشد
+        // (مثلاً search-index.json پیش از اجرای build_search_index.py).
+        // تک‌تک اضافه می‌کنیم تا یک فایل غایب، PWA را از کار نیندازد.
+        return Promise.all(
+          PRECACHE_URLS.map(function (url) {
+            return cache.add(url).catch(function () {
+              /* فایل اختیاری نبود — بی‌صدا رد می‌شویم */
+            });
+          })
+        );
       })
       .then(function () {
         return self.skipWaiting();
