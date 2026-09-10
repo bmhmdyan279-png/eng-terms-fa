@@ -127,7 +127,7 @@ pytest tests/
 - `scripts/audit_translations.py --strict` — دودِ تست ترجمه در ۴ زبان
 - `node tools/check_stemmer_parity.js` — موتور ریشه‌یابی پایتون و مرورگر باید
   روی ۷۱ نمونه (۴۹۷ مقایسه) یکسان باشند
-- `pytest tests/` — ۴۸۱ آزمون
+- `pytest tests/` — ۵۰۵ آزمون
 - `git diff --exit-code` روی صفحات فهرست، `persian-stem-data.js`، فیکسچر طلایی،
   `translation_alerts.csv` و `translation_gaps.csv` — یعنی هیچ مصنوع تولیدی
   نمی‌تواند کهنه بماند
