@@ -19,39 +19,78 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: pip install -r requirements.txt
+      # requirements-dev.txt includes rdflib, which is what makes the SKOS/RDF
+      # and JSON-LD assertions in tests/test_opendata.py real instead of skipped.
+      - run: pip install -r requirements.txt -r requirements-dev.txt
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ---------------------------------------------------------- داده: درست است؟
       - name: Validate data (schema, uniqueness, immutable slugs, translations)
         run: python scripts/validate_data.py
+
+      - name: Validate content (citations, review honesty, orthography, graph)
+        run: python scripts/validate_content.py
+
+      - name: Audit translations (multilingual smoke test)
+        run: python scripts/audit_translations.py --strict
 
       - name: Run tests
         run: pytest tests/ -v
 
+      # ---------------------------------------------------- مصنوعات به‌روز هستند؟
       - name: Build pages
         run: python scripts/build_pages.py
 
       - name: Generated list pages are up to date
         run: git diff --exit-code docs/construction-terms.md docs/book-vocab.md
 
-      - name: Audit translations (multilingual smoke test)
-        run: python scripts/audit_translations.py --strict
+      - name: Morphology tables exported to JS are fresh
+        run: |
+          python scripts/generate_stem_data.py
+          git diff --exit-code docs/assets/js/persian-stem-data.js
+
+      - name: Build Persian search index + parity fixture
+        run: python scripts/build_search_index.py
+
+      - name: Stemmer parity (Python ⇄ JavaScript)
+        run: node tools/check_stemmer_parity.js
+
+      - name: Golden stemming fixture is fresh
+        run: git diff --exit-code tests/fixtures/stemming-golden.json
+
+      - name: Translation gap report is up to date
+        run: git diff --exit-code translation_gaps.csv
 
       - name: Translation alerts CSV is up to date
         run: git diff --exit-code translation_alerts.csv
 
+      # --------------------------------------------- تولید داده برای سایت (پیش از بیلد)
       - name: Generate JSON API
         run: python scripts/generate_api.py
+
+      - name: Generate open data bundle (NDJSON / SKOS / JSON-LD / CSV / datapackage)
+        run: python scripts/generate_opendata.py
 
       - name: Build site (strict)
         run: mkdocs build --strict
 
-      - name: Setup Node (Pagefind)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Build Pagefind search index
         run: npx --yes pagefind --site site/
+
+      - name: Verify the search index shipped into the site
+        run: |
+          test -s site/data/api/search-index.json
+          test -s site/data/open/terms.ttl
+          test -s site/data/open/terms.ndjson
+          node -e '
+            const idx = require("./site/data/api/search-index.json");
+            if (idx.algorithm !== "persian-root-v1") { console.error("unexpected algorithm"); process.exit(1); }
+            if (!idx.count || !idx.lexicon || !idx.protected) { console.error("index incomplete"); process.exit(1); }
+            console.log(`search index ok: ${idx.count} terms, ${Object.keys(idx.roots).length} roots`);
+          '
 
       - name: Generate exports (Anki/CSV/PDF)
         run: python scripts/generate_exports.py

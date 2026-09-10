@@ -31,13 +31,37 @@ ANKI_DECK_NAME = "فرهنگ واژگان تخصصی مهندسی"
 
 CSV_FIELDS = [
     "term_fa", "term_en", "term_fr", "term_de", "term_ar",
-    "pos", "domain", "definition_fa", "status", "slug",
-    "references", "related_terms", "url",
+    "pos", "domain", "definition_fa",
+    "synonyms", "antonyms", "search_aliases", "usage_examples",
+    "root_fa", "root_ar", "etymology_fa", "origin_lang", "plural_fa", "abbrev_en",
+    "status", "review_level", "reviewed_by", "reviewed_at",
+    "references", "reference_notes", "related_terms", "slug", "url",
 ]
 
 
-def fa_display(text: str) -> str:
+#: The subsetted Vazirmatn carries no accented Latin glyphs. Etymology notes now
+#: quote foreign headwords («élasticité», «Läufer», «poutre», «caementum»), and
+#: fpdf2 only *warns* about missing glyphs — it drops them silently. The print
+#: edition therefore transliterates Latin accents; the web pages and the
+#: JSON/RDF/CSV exports keep the exact spelling.
+_LATIN_FOLD = str.maketrans({
+    "à": "a", "á": "a", "â": "a", "ã": "a", "ä": "a", "å": "a", "ā": "a", "æ": "ae",
+    "ç": "c", "ć": "c", "č": "c", "è": "e", "é": "e", "ê": "e", "ë": "e", "ē": "e",
+    "ğ": "g", "ì": "i", "í": "i", "î": "i", "ï": "i", "ñ": "n", "ò": "o", "ó": "o",
+    "ô": "o", "õ": "o", "ö": "o", "ø": "o", "ù": "u", "ú": "u", "û": "u", "ü": "u",
+    "ý": "y", "ÿ": "y", "ß": "ss", "š": "s", "ž": "z", "×": "x", "‑": "-",
+})
+
+
+def fold_latin_accents(text: str) -> str:
+    """ASCII-fold Latin accents for fonts that lack the glyphs (print only)."""
+    return str(text or "").translate(_LATIN_FOLD)
+
+
+def fa_display(text: str, fold_accents: bool = False) -> str:
     """Reshape Persian for PDF rendering (visual order)."""
+    if fold_accents:
+        text = fold_latin_accents(text)
     return get_display(arabic_reshaper.reshape(text or ""))
 
 
@@ -61,7 +85,24 @@ def write_csv(terms, out_dir: Path) -> Path:
                     "pos": t.get("pos", ""),
                     "domain": "|".join(t.get("domain") or []),
                     "definition_fa": t.get("definition_fa", ""),
+                    "synonyms": "|".join(t.get("synonyms") or []),
+                    "antonyms": "|".join(t.get("antonyms") or []),
+                    "search_aliases": "|".join(t.get("search_aliases") or []),
+                    "usage_examples": "|".join(t.get("usage_examples") or []),
+                    "root_fa": t.get("root_fa") or "",
+                    "root_ar": t.get("root_ar") or "",
+                    "etymology_fa": t.get("etymology_fa") or "",
+                    "origin_lang": t.get("origin_lang") or "",
+                    "plural_fa": t.get("plural_fa") or "",
+                    "abbrev_en": t.get("abbrev_en") or "",
                     "status": t.get("status", "draft"),
+                    "review_level": t.get("review_level") or "",
+                    "reviewed_by": t.get("reviewed_by") or "",
+                    "reviewed_at": t.get("reviewed_at") or "",
+                    "reference_notes": "|".join(
+                        str(ref.get("note") or "") for ref in (t.get("references") or [])
+                        if isinstance(ref, dict)
+                    ),
                     "slug": t.get("slug", ""),
                     "references": "|".join(
                         r.get("code", "") if isinstance(r, dict) else str(r)
@@ -81,6 +122,7 @@ def write_anki(terms, out_dir: Path) -> Path:
         fields=[
             {"name": "fa"}, {"name": "en"}, {"name": "definition"},
             {"name": "fr"}, {"name": "de"}, {"name": "ar"},
+            {"name": "root"}, {"name": "synonyms"}, {"name": "example"},
         ],
         templates=[
             {
@@ -91,6 +133,9 @@ def write_anki(terms, out_dir: Path) -> Path:
                     '<hr id="answer">'
                     '<div style="text-align:center;font-size:20px">{{en}}</div>'
                     '<div dir="rtl" style="margin-top:8px">{{definition}}</div>'
+                    '<div dir="rtl" style="margin-top:8px;color:#444">ریشه: {{root}}</div>'
+                    '<div dir="rtl" style="margin-top:4px;color:#444">مترادف: {{synonyms}}</div>'
+                    '<div dir="rtl" style="margin-top:4px;color:#666;font-style:italic">{{example}}</div>'
                     '<div style="margin-top:8px;color:#666">FR: {{fr}} | DE: {{de}} | AR: {{ar}}</div>'
                 ),
             }
@@ -108,8 +153,12 @@ def write_anki(terms, out_dir: Path) -> Path:
                     t.get("term_fr") or "",
                     t.get("term_de") or "",
                     t.get("term_ar") or "",
+                    t.get("root_fa") or "",
+                    "، ".join(t.get("synonyms") or []),
+                    (t.get("usage_examples") or [""])[0],
                 ],
-                tags=["engineering", t.get("status", "draft")],
+                tags=["engineering", t.get("status", "draft"),
+                      t.get("review_level") or "draft"],
             )
         )
     path = out_dir / "anki.apkg"
@@ -184,6 +233,27 @@ def write_pdf(terms, out_dir: Path) -> Path:
 
         pdf.set_font("Vazir", "", 10)
         pdf.multi_cell(0, 6, fa_display(t.get("definition_fa", "")), new_x="LMARGIN", new_y="NEXT", align="R")
+
+        # ساخت‌واژه و ریشه‌شناسی — ارزش اصلی نسخهٔ چاپی برای واژه‌شناسان
+        morphology = []
+        if t.get("root_fa"):
+            piece = "ریشه: " + str(t["root_fa"])
+            if t.get("root_ar"):
+                piece += " | ریشهٔ عربی: " + str(t["root_ar"])
+            if t.get("origin_lang"):
+                piece += " | زبان مبدأ: " + str(t["origin_lang"])
+            morphology.append(piece)
+        if t.get("synonyms"):
+            morphology.append("مترادف: " + "، ".join(str(v) for v in t["synonyms"]))
+        if t.get("antonyms"):
+            morphology.append("متضاد: " + "، ".join(str(v) for v in t["antonyms"]))
+        if t.get("etymology_fa"):
+            morphology.append("ریشه‌شناسی: " + str(t["etymology_fa"]))
+        if morphology:
+            pdf.set_font("Vazir", "", 8)
+            pdf.multi_cell(0, 5, fa_display(" • ".join(morphology), fold_accents=True),
+                           new_x="LMARGIN", new_y="NEXT", align="R")
+            pdf.set_font("Vazir", "", 10)
 
         # references
         refs = t.get("references") or []

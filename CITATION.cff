@@ -1,0 +1,55 @@
+# Citation File Format — https://citation-file-format.github.io/
+# GitHub renders a "Cite this repository" button from this file.
+#
+# Honesty rule: the dataset is AI-assisted-reviewed, not expert-reviewed. That is
+# stated in `notes` so no citation can silently imply human sign-off.
+cff-version: 1.2.0
+message: "اگر از این فرهنگ در پژوهش خود استفاده کردید، لطفاً به این شکل استناد کنید."
+title: "فرهنگ واژگان تخصصی مهندسی (Persian Engineering Terminology Dictionary)"
+type: dataset
+version: "0.2"
+date-released: 2026-09-10
+date-updated: 2026-09-10
+license: CC-BY-SA-4.0
+repository-code: "https://github.com/bmhmdyan279-png/eng-terms-fa"
+url: "https://bmhmdyan279-png.github.io/eng-terms-fa/"
+keywords:
+  - terminology
+  - persian
+  - civil-engineering
+  - concrete-technology
+  - construction
+  - mechanics
+  - skos
+  - open-data
+authors:
+  - name: "bmhmdyan279-png"
+    alias: "eng-terms-fa Project"
+    role: maintainer
+contributors:
+  - name: "Qwen (AI-assisted review)"
+    role: contributor
+    description: >-
+      بازبینی داده‌محور محتوا، ریشه‌شناسی، ترجمه‌ها و دروازه‌های کیفیت خودکار؛
+      بدون تأیید متخصص انسانی.
+abstract: >-
+  A Persian-first multilingual (FA/EN/FR/DE/AR) terminology dataset covering
+  civil engineering, concrete technology, building construction and mechanics.
+  Each entry carries a specialist definition, Persian etymology and root,
+  usage examples, verified standard/book citations, and machine-readable
+  exports in NDJSON, SKOS/RDF (Turtle), JSON-LD (schema.org), CSV and a
+  Frictionless Data datapackage.
+notes: >-
+  وضعیت بازبینی: همهٔ ۱۳۲ مدخل `status: reviewed` با
+  `review_level: ai-assisted` هستند — بازبینی داده‌محور با دروازه‌های خودکار
+  انجام شده ولی تأیید متخصص انسانی را ندارند. ترجمه‌های راستی‌آزمایی‌نشده
+  `null` مانده‌اند و فهرست آن‌ها در `translation_gaps.csv` است. DOI ثبت نشده
+  است؛ به محض ثبت در Zenodo شناسهٔ واقعی جایگزین می‌شود.
+preferred-citation:
+  type: data
+  authors:
+    - name: "bmhmdyan279-png"
+  title: "فرهنگ واژگان تخصصی مهندسی — نسخهٔ دادهٔ ۰٫۲"
+  year: 2026
+  url: "https://bmhmdyan279-png.github.io/eng-terms-fa/"
+  license: CC-BY-SA-4.0

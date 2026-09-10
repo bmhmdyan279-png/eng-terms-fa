@@ -1,0 +1,82 @@
+name: "تأیید تخصصی یک مدخل (ارتقا به review_level: expert)"
+description: اگر متخصص این حوزه‌اید، بازبینی یک مدخل را تأیید یا اصلاح کنید
+title: "[بازبینی تخصصی]: "
+labels: ["expert-review", "content", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **این ارزشمند‌ترین مشارکت ممکن در این پروژه است.**
+
+        همهٔ ۱۳۲ مدخل اکنون `status: reviewed` با `review_level: ai-assisted` هستند،
+        یعنی بازبینی داده‌محور با دروازه‌های خودکار انجام شده ولی **هیچ متخصص
+        انسانی آن‌ها را تأیید نکرده است**. تنها راه رسیدن یک مدخل به
+        `status: published`، تأیید شماست (اسکما و `validate_content.py` این را
+        تضمین می‌کنند).
+
+        فهرست کارهای بازِ ترجمه هم در
+        [`translation_gaps.csv`](https://github.com/bmhmdyan279-png/eng-terms-fa/blob/main/translation_gaps.csv)
+        است.
+  - type: input
+    id: slug
+    attributes:
+      label: شناسه (slug) یا نشانی مدخل
+      description: نشانی صفحهٔ واژه، مثلاً `…/terms/sealing/` یا فقط `sealing`
+      placeholder: "sealing"
+    validations:
+      required: true
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: نظر شما
+      options:
+        - تعریف و معادل‌ها درست است — تأیید می‌کنم
+        - درست است ولی نیاز به اصلاح جزئی دارد
+        - خطای فنی دارد — در ادامه توضیح می‌دهم
+        - معادل یکی از زبان‌ها (FR/DE/AR) نادرست یا ناموجود است
+    validations:
+      required: true
+  - type: input
+    id: credential
+    attributes:
+      label: صلاحیت شما در این حوزه (اختیاری ولی برای `reviewed_by` لازم است)
+      description: >-
+        این مقدار در `reviewed_by` مدخل ثبت می‌شود. اگر نمی‌خواهید نامتان منتشر
+        شود، بنویسید «ناشناس» — در آن صورت مدخل `expert` نمی‌شود و `ai-assisted`
+        می‌ماند، چون انتساب باید صادقانه باشد.
+      placeholder: "مثلاً: کارشناس ارشد سازه / ۱۰ سال سابقهٔ اجرای بتن"
+    validations:
+      required: false
+  - type: textarea
+    id: correction
+    attributes:
+      label: اصلاح پیشنهادی
+      description: >-
+        اگر تعریف، معادل، ریشه‌شناسی یا ارجاع نادرست است، صورت درست را بنویسید.
+        برای معادل FR/DE/AR ذکر منبع (فرهنگ واژه، استاندارد، یا متن تخصصی) کمک
+        بزرگی است.
+      placeholder: |
+        تعریف درست: …
+        معادل آلمانی: … (منبع: DIN …)
+    validations:
+      required: false
+  - type: textarea
+    id: source
+    attributes:
+      label: منبع معتبر (اختیاری)
+      description: >-
+        اگر منبعی می‌شناسید که در `data/standards.yaml` نیست، مشخصات کاملش را
+        بنویسید تا پس از راستی‌آزمایی به رجیستری اضافه شود. بدون ثبت در رجیستری،
+        استناد به آن در داده ممکن نیست.
+      placeholder: "عنوان، ناشر/سازمان، سال، نشانی"
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: تأیید
+      options:
+        - label: این اصلاح را با تخصص و حسن نیت پیشنهاد می‌دهم.
+          required: true
+        - label: می‌پذیرم مشارکتم تحت مجوز CC BY-SA 4.0 منتشر شود.
+          required: true
